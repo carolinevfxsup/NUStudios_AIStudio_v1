@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Check } from 'lucide-react';
+import { Phone, Send, FileText, Laptop, Folder } from 'lucide-react';
 import { LogoScroll } from '../components/LogoScroll';
 import { HomeResultsBento } from '../components/HomeResultsBento';
 import { Link, useNavigate } from 'react-router-dom';
@@ -93,10 +93,35 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
 
 export const Home = () => {
   const [url, setUrl] = useState('');
-  const [essentialTab, setEssentialTab] = useState<'creative' | 'automation' | 'stack'>('stack');
   const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+  const [file, setFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFile(e.target.files[0]);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', { ...formData, file });
+    alert('Message sent successfully!');
+  };
 
   const handleAnalyze = () => {
     if (url) {
@@ -445,177 +470,170 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Section: Pricing */}
-      <section className="bg-bg pb-32">
-        <div className="px-6 md:px-[60px] text-center">
-          <FadeIn delay={0.1}>
-            <h2 className="pt-32 text-4xl md:text-6xl font-display font-bold tracking-tighter leading-[0.8] uppercase mb-4">
-              Ready to clear your plate?
-            </h2>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <p className="pb-[60px] text-xl md:text-2xl font-sans text-text/70 max-w-xl mb-0 mx-auto">
-              We don’t just sell "graphics." We build creative systems that help your business grow, engage your community, and save you countless hours.
-            </p>
-          </FadeIn>
-        </div>
+      {/* Section: Contact */}
+      <section id="contact" className="py-32 bg-bg border-t border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            {/* Left Column */}
+            <FadeIn direction="left">
+              <div className="space-y-16">
+                {/* Email or Call Us (Top) */}
+                <div className="space-y-8">
+                  <div className="flex items-center gap-4">
+                    <Laptop className="w-8 h-8 text-red-600" />
+                    <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Email or call us.</h2>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+                    <a 
+                      href="mailto:hello@nustudios.co.uk" 
+                      className="bg-red-600 text-white px-10 py-4 rounded-full font-sans font-bold text-xs uppercase tracking-widest hover:bg-red-700 transition-all text-center"
+                    >
+                      Send Email
+                    </a>
+                    <div className="space-y-1">
+                      <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Direct Contact</p>
+                      <p className="text-lg font-display font-bold">hello@nustudios.co.uk</p>
+                    </div>
+                  </div>
+                </div>
 
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
-          {/* Member Lab */}
-          <div className="flex flex-col p-10 border border-border bg-bg h-full">
-            <div className="min-h-[100px]">
-              <h3 className="text-2xl font-display font-bold mb-2 tracking-tighter">MEMBER LAB</h3>
-              <p className="text-sm font-sans font-bold text-text/60 uppercase tracking-widest mb-6">Studio Tools</p>
-            </div>
-            
-            <div className="min-h-[60px] mb-8"></div> {/* Spacer for toggle alignment */}
+                <p className="text-xl text-text/70 font-sans leading-relaxed max-w-md">
+                  At NuStudios, you'll speak directly with a senior strategist or director, never an account handler or junior.
+                </p>
 
-            <div className="min-h-[80px] mb-8">
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-display font-bold tracking-tighter">$99</span>
-                <span className="text-xs font-sans font-bold text-text/60 uppercase tracking-widest">/mo</span>
+                {/* Location Numbers */}
+                <div className="space-y-8 pt-8 border-t border-border">
+                  <div className="flex items-center gap-4">
+                    <Phone className="w-8 h-8 text-red-600" />
+                    <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Our Locations.</h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div className="space-y-1">
+                      <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">United Kingdom</p>
+                      <a href="tel:+447506230988" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+44 (0) 7506 230988</a>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Portugal</p>
+                      <a href="tel:+351939517942" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+351 939 517 942</a>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Australia</p>
+                      <a href="tel:+61431371024" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+61 431 371 024</a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </FadeIn>
 
-            <div className="min-h-[100px] mb-8">
-              <p className="text-sm font-sans text-text/80 leading-relaxed">"Access the same elite design tools our studio uses. Perfect for teams who want to create in-house."</p>
-            </div>
+            {/* Right Column: Form */}
+            <FadeIn direction="right">
+              <div className="bg-neutral/5 border border-border p-8 md:p-12 rounded-3xl">
+                <div className="flex items-center gap-4 mb-12">
+                  <Folder className="w-8 h-8 text-red-600" />
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Send us a message.</h2>
+                </div>
 
-            <ul className="space-y-3 mb-8 flex-grow">
-              <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Full studio tool access</li>
-              <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Pre-set brand style guides</li>
-              <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Standard creation credits</li>
-              <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Direct help from our team</li>
-            </ul>
-            <button className="mt-auto w-full py-4 bg-text text-bg font-bold uppercase tracking-widest text-sm rounded-full hover:bg-text/90 transition-all">Access the Lab</button>
-          </div>
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-2">
+                      <label className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">First Name (required)</label>
+                      <input
+                        type="text"
+                        name="firstName"
+                        required
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                        className="w-full bg-bg border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Last Name (required)</label>
+                      <input
+                        type="text"
+                        name="lastName"
+                        required
+                        value={formData.lastName}
+                        onChange={handleInputChange}
+                        className="w-full bg-bg border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans"
+                      />
+                    </div>
+                  </div>
 
-          {/* Essential Stack (Toggleable) */}
-          <div className="flex flex-col p-10 border border-border bg-bg h-full">
-            <div className="min-h-[100px]">
-              <h3 className="text-2xl font-display font-bold mb-2 tracking-tighter">
-                {essentialTab === 'creative' ? 'CREATIVE LOCK' : essentialTab === 'automation' ? 'AUTOMATION LOCK' : 'THE ESSENTIAL STACK'}
-              </h3>
-              <p className="text-sm font-sans font-bold text-text/60 uppercase tracking-widest mb-6">
-                {essentialTab === 'creative' ? 'Visual Gateway' : essentialTab === 'automation' ? 'System Gateway' : 'Foundational Gateway'}
-              </p>
-            </div>
-            
-            <div className="min-h-[60px] mb-8">
-              <div className="flex p-1 bg-neutral rounded-full">
-                <button onClick={() => setEssentialTab('creative')} className={`flex-1 py-2 text-[10px] font-bold uppercase tracking-widest rounded-full transition-all ${essentialTab === 'creative' ? 'bg-white shadow-sm' : 'text-text/40'}`}>Creative</button>
-                <button onClick={() => setEssentialTab('automation')} className={`flex-1 py-2 text-[10px] font-bold uppercase tracking-widest rounded-full transition-all ${essentialTab === 'automation' ? 'bg-white shadow-sm' : 'text-text/40'}`}>Automation</button>
-                <button onClick={() => setEssentialTab('stack')} className={`flex-1 py-2 text-[10px] font-bold uppercase tracking-widest rounded-full transition-all ${essentialTab === 'stack' ? 'bg-white shadow-sm' : 'text-text/40'}`}>Stack</button>
+                  <div className="space-y-2">
+                    <label className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Phone</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full bg-bg border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Email (required)</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full bg-bg border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Message (required)</label>
+                    <textarea
+                      name="message"
+                      required
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      className="w-full bg-bg border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans resize-none"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Upload Brief, Media Kit, CV or any other file.</label>
+                    <div 
+                      onClick={() => fileInputRef.current?.click()}
+                      className="w-full border-2 border-dashed border-border rounded-xl p-10 flex flex-col items-center justify-center gap-4 cursor-pointer hover:border-red-600/50 hover:bg-red-600/5 transition-all group"
+                    >
+                      <input
+                        type="file"
+                        ref={fileInputRef}
+                        onChange={handleFileChange}
+                        className="hidden"
+                      />
+                      {file ? (
+                        <div className="flex items-center gap-2 text-red-600 font-sans font-medium">
+                          <FileText className="w-6 h-6" />
+                          <span>{file.name}</span>
+                        </div>
+                      ) : (
+                        <>
+                          <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:border-red-600/50 transition-colors">
+                            <span className="text-2xl font-light text-text/40 group-hover:text-red-600">+</span>
+                          </div>
+                          <span className="text-sm font-sans font-bold uppercase tracking-widest text-text/40 group-hover:text-text/60">Add a File</span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full py-5 bg-text text-bg font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-text/90 transition-all flex items-center justify-center gap-3"
+                  >
+                    <Send className="w-4 h-4" />
+                    Send
+                  </button>
+                </form>
               </div>
-            </div>
-
-            <div className="min-h-[80px] mb-8">
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-display font-bold tracking-tighter">
-                  {essentialTab === 'creative' ? '$600' : essentialTab === 'automation' ? '$600' : '$1,000'}
-                </span>
-                <span className="text-xs font-sans font-bold text-text/60 uppercase tracking-widest">
-                  {essentialTab === 'creative' ? '(One-Off)' : essentialTab === 'automation' ? '+ $30/mo' : '(One-Off)'}
-                </span>
-              </div>
-            </div>
-            
-            <div className="min-h-[100px] mb-8">
-              <p className="text-sm font-sans text-text/80 leading-relaxed">
-                {essentialTab === 'creative' && "Never worry about 'Identity Drift.' We map your signature aesthetic so every post looks world-"}
-                {essentialTab === 'automation' && "Stop the manual posting grind. We build one autonomous system that keeps your brand active"}
-                {essentialTab === 'stack' && "The total digital transition. We anchor your look and automate your reach in one single project."}
-              </p>
-            </div>
-            
-            <ul className="space-y-3 mb-8 flex-grow">
-              {essentialTab === 'creative' && (
-                <>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> 5 high-prestige hero photos</li>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Your signature style guide</li>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Perfect lighting & textures</li>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Expert designer oversight</li>
-                </>
-              )}
-              {essentialTab === 'automation' && (
-                <>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Choice of 1 social platform</li>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> 7 days of 'always-on' content</li>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Zero technical setup for you</li>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Continuous system support</li>
-                </>
-              )}
-              {essentialTab === 'stack' && (
-                <>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> A permanent style lock</li>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Choice of 1 social automation</li>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Save 20% on setup fees</li>
-                  <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> No long-term commitment</li>
-                </>
-              )}
-            </ul>
-            
-            <button className="mt-auto w-full py-4 bg-text text-bg font-bold uppercase tracking-widest text-sm rounded-full hover:bg-text/90 transition-all">
-              {essentialTab === 'creative' || essentialTab === 'automation' ? 'Secure My Lock' : 'Secure My Stack'}
-            </button>
-          </div>
-
-          {/* Growth Stack */}
-          <div className="flex flex-col p-10 border border-border bg-bg h-full">
-            <div className="min-h-[100px]">
-              <h3 className="text-2xl font-display font-bold mb-2 tracking-tighter">GROWTH STACK</h3>
-              <p className="text-sm font-sans font-bold text-text/60 uppercase tracking-widest mb-6">The Content Injection</p>
-            </div>
-            
-            <div className="min-h-[60px] mb-8"></div> {/* Spacer for toggle alignment */}
-
-            <div className="min-h-[80px] mb-8">
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-display font-bold tracking-tighter">$1,500</span>
-                <span className="text-xs font-sans font-bold text-text/60 uppercase tracking-widest">(One-Off)</span>
-              </div>
-            </div>
-
-            <div className="min-h-[100px] mb-8">
-              <p className="text-sm font-sans text-text/80 leading-relaxed">"A total visual reset. We flood your channels with a massive batch of campaign-ready photos and videos."</p>
-            </div>
-
-            <ul className="space-y-3 mb-8 flex-grow">
-              <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Style lock & 1 automation</li>
-              <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> 10 professional studio photos</li>
-              <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> 10 short brand story videos</li>
-              <li className="flex items-start gap-3 text-sm font-sans text-text/80"><Check className="w-4 h-4 shrink-0 mt-1" /> Ready for your next launch</li>
-            </ul>
-            <button className="mt-auto w-full py-4 bg-red-600 text-white font-bold uppercase tracking-widest text-sm rounded-full hover:bg-red-700 transition-all">Get the Growth Stack</button>
-          </div>
-
-          {/* Momentum */}
-          <div className="flex flex-col p-10 border border-border bg-text text-bg h-full">
-            <div className="min-h-[100px]">
-              <h3 className="text-2xl font-display font-bold mb-2 tracking-tighter text-red-600">MOMENTUM</h3>
-              <p className="text-sm font-sans font-bold text-bg/60 uppercase tracking-widest mb-6">Scale Retainer</p>
-            </div>
-            
-            <div className="min-h-[60px] mb-8"></div> {/* Spacer for toggle alignment */}
-
-            <div className="min-h-[80px] mb-8">
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-display font-bold tracking-tighter">$2,000</span>
-                <span className="text-xs font-sans font-bold text-bg/60 uppercase tracking-widest">/mo</span>
-              </div>
-            </div>
-
-            <div className="min-h-[100px] mb-8">
-              <p className="text-sm font-sans text-bg/80 leading-relaxed">"Continuous high-equity flow. The output of a global creative team for the cost of one junior employee."</p>
-            </div>
-
-            <ul className="space-y-3 mb-8 flex-grow text-bg/80">
-              <li className="flex items-start gap-3 text-sm font-sans"><Check className="w-4 h-4 shrink-0 mt-1" /> 2 high-end posts every day</li>
-              <li className="flex items-start gap-3 text-sm font-sans"><Check className="w-4 h-4 shrink-0 mt-1" /> 4 professional brand blogs</li>
-              <li className="flex items-start gap-3 text-sm font-sans"><Check className="w-4 h-4 shrink-0 mt-1" /> We manage the social buzz</li>
-              <li className="flex items-start gap-3 text-sm font-sans"><Check className="w-4 h-4 shrink-0 mt-1" /> Full lab toolkit included</li>
-            </ul>
-            <button className="mt-auto w-full py-4 bg-bg text-text font-bold uppercase tracking-widest text-sm rounded-full hover:bg-bg/90 transition-all">Activate My Engine</button>
+            </FadeIn>
           </div>
         </div>
       </section>
