@@ -25,7 +25,7 @@ export const ShowcaseHero = ({
   imagePosition = 'center',
 }: ShowcaseHeroProps) => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pt-20">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pt-20 pb-12 md:pb-24">
       <div className="absolute inset-0 z-0">
         <img 
           src={getAssetUrl(imageSrc)} 
