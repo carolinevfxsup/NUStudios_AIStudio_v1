@@ -5,7 +5,7 @@ import { services } from '../data/services';
 
 export const Footer = () => {
   return (
-    <footer className="bg-red-600 text-white py-16 px-8 border-t border-black mt-5">
+    <footer className="bg-red-600 text-white py-16 px-8 border-t border-black">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Left Column */}
         <div className="space-y-8 md:col-span-1">

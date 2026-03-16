@@ -93,7 +93,7 @@ export const Header = () => {
                   <div className="space-y-4">
                     <p className="font-sans text-sm font-bold uppercase tracking-widest text-text/60">Socials</p>
                     <div className="flex flex-col gap-2 text-sm font-sans font-bold uppercase tracking-widest text-text">
-                      <a href="#" className="hover:text-red-600 transition-colors flex items-center gap-2">LinkedIn <span className="text-xs">↗</span></a>
+                      <a href="https://www.linkedin.com/company/112232643/" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors flex items-center gap-2">LinkedIn <span className="text-xs">↗</span></a>
                       <a href="https://www.instagram.com/nustudios.agency/" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors flex items-center gap-2">Instagram <span className="text-xs">↗</span></a>
                       <a href="https://www.youtube.com/@NUStudiosAIVFX" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors flex items-center gap-2">Youtube <span className="text-xs">↗</span></a>
                     </div>

@@ -72,7 +72,7 @@ export const Contact = () => {
             <div>
               <p className="text-xs font-sans font-bold uppercase tracking-widest mb-4 text-text/60">Socials</p>
               <div className="flex flex-col gap-2">
-                <a href="#" className="text-xl font-display font-bold hover:text-red-600 transition-colors">LinkedIn</a>
+                <a href="https://www.linkedin.com/company/112232643/" target="_blank" rel="noopener noreferrer" className="text-xl font-display font-bold hover:text-red-600 transition-colors">LinkedIn</a>
                 <a href="https://www.instagram.com/nustudios.agency/" target="_blank" rel="noopener noreferrer" className="text-xl font-display font-bold hover:text-red-600 transition-colors">Instagram</a>
                 <a href="https://www.youtube.com/@NUStudiosAIVFX" target="_blank" rel="noopener noreferrer" className="text-xl font-display font-bold hover:text-red-600 transition-colors">Youtube</a>
                 <a href="https://www.tiktok.com/@nustudios_ai_vfx" target="_blank" rel="noopener noreferrer" className="text-xl font-display font-bold hover:text-red-600 transition-colors">TikTok</a>
