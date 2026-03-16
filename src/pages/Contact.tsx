@@ -1,4 +1,5 @@
 import { FadeIn } from '../components/FadeIn';
+import { Send } from 'lucide-react';
 
 export const Contact = () => {
   return (
@@ -56,15 +57,16 @@ export const Contact = () => {
                 <textarea rows={1} className="w-full bg-transparent border-b border-black/20 py-3 focus:outline-none focus:border-black transition-colors resize-none font-sans min-h-[100px]" />
               </div>
 
-              <button className="bg-black text-white px-10 py-5 font-sans font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-red-600 transition-all">
-                Send Message
+              <button className="bg-black text-white px-10 py-5 rounded-full font-sans font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-red-600 transition-all flex items-center justify-center gap-2 group">
+                <span>Message Us</span>
+                <Send className="w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </button>
             </form>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.3} className="hidden lg:flex items-center justify-center">
-          <div className="w-full max-w-md aspect-square overflow-hidden rounded-sm border border-black/10">
+          <div className="w-full max-w-md aspect-square overflow-hidden rounded-none border border-black/10">
             <video 
               src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/pnn495jt8srmr0cwyy3a1q4te8_result_.mp4"
               autoPlay

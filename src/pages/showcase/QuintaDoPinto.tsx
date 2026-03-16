@@ -44,10 +44,10 @@ export const QuintaDoPinto = () => {
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-[4/5] overflow-hidden shadow-2xl bevel">
+                <div className="aspect-[4/5] overflow-hidden shadow-2xl rounded-md">
                   <img 
                     src={getAssetUrl('quinta-moodboard.jpg')} 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover rounded-md" 
                     alt="Moodboard" 
                     referrerPolicy="no-referrer"
                   />
@@ -98,10 +98,10 @@ export const QuintaDoPinto = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div className="order-2 lg:order-1">
-                <div className="aspect-[4/6] overflow-hidden shadow-2xl bevel">
+                <div className="aspect-[4/6] overflow-hidden shadow-2xl rounded-md">
                   <img 
                     src={getAssetUrl('quinta-the-idea.gif')} 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover rounded-md" 
                     alt="The Idea" 
                     referrerPolicy="no-referrer"
                   />
@@ -134,10 +134,10 @@ export const QuintaDoPinto = () => {
             
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <div className="aspect-[4/6] overflow-hidden bg-white border border-black/5 bevel">
+                <div className="aspect-[4/6] overflow-hidden bg-white border border-black/5 rounded-md">
                   <img 
                     src={getAssetUrl('quinta-before.png')} 
-                    className="w-full h-full object-contain p-12" 
+                    className="w-full h-full object-contain p-12 rounded-md" 
                     alt="Before" 
                     referrerPolicy="no-referrer"
                   />
@@ -145,10 +145,10 @@ export const QuintaDoPinto = () => {
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">{t.quinta.beforeLabel}</p>
               </div>
               <div className="space-y-6">
-                <div className="aspect-[4/6] overflow-hidden bg-white border border-black/5 shadow-xl bevel">
+                <div className="aspect-[4/6] overflow-hidden bg-white border border-black/5 shadow-xl rounded-md">
                   <img 
                     src={getAssetUrl('quinta-after.png')} 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover rounded-md" 
                     alt="After" 
                     referrerPolicy="no-referrer"
                   />
@@ -181,10 +181,10 @@ export const QuintaDoPinto = () => {
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-[9/16] overflow-hidden shadow-2xl bevel">
+                <div className="aspect-[9/16] overflow-hidden shadow-2xl rounded-md">
                   <video 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-attention-to-detail.mp4" 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover rounded-md" 
                     autoPlay 
                     loop 
                     muted 
@@ -215,10 +215,10 @@ export const QuintaDoPinto = () => {
                 "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-results-02.mp4",
                 "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-results-03.mp4"
               ].map((url, i) => (
-                <div key={i} className="aspect-[4/6] overflow-hidden shadow-xl border border-black/5 bevel">
+                <div key={i} className="aspect-[4/6] overflow-hidden shadow-xl border border-black/5 rounded-md">
                   <video 
                     src={url} 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover rounded-md" 
                     autoPlay 
                     loop 
                     muted 
@@ -255,10 +255,10 @@ export const QuintaDoPinto = () => {
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-square overflow-hidden rounded-md shadow-2xl bevel">
+                <div className="aspect-square overflow-hidden rounded-md shadow-2xl">
                   <img 
                     src={getAssetUrl('quinta-wine-brands.png')} 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover rounded-md" 
                     alt="Why it works" 
                     referrerPolicy="no-referrer"
                   />
@@ -272,12 +272,12 @@ export const QuintaDoPinto = () => {
           prevProject={{ 
             title: 'Franks Australia', 
             slug: '/showcase/franks-australia', 
-            thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/FRANKS_SHOW.png' 
+            thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%205-100.jpg' 
           }}
           nextProject={{ 
             title: t.saltLily.heroTitle, 
             slug: '/showcase/salt-lily', 
-            thumbnail: getAssetUrl('Salt_lily_FEMME_product.png') 
+            thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png' 
           }}
         />
       </main>

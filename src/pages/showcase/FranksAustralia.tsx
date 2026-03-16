@@ -3,7 +3,6 @@ import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
 import { BeforeAfterSlider } from '../../components/BeforeAfterSlider';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { getAssetUrl } from '../../constants';
 import { ExternalLink, Heart, MessageCircle, Send, Bookmark } from 'lucide-react';
 
 export const FranksAustralia = () => {
@@ -97,14 +96,14 @@ export const FranksAustralia = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5">
-                <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/Eccom_1.png" className="w-full h-full object-cover" alt="E-comm 1" referrerPolicy="no-referrer" />
+              <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
+                <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/Eccom_1.png" className="w-full h-full object-cover rounded-md" alt="E-comm 1" referrerPolicy="no-referrer" />
               </div>
-              <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5">
-                <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/ECOM_FRONT.png" className="w-full h-full object-cover" alt="E-comm 2" referrerPolicy="no-referrer" />
+              <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
+                <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/ECOM_FRONT.png" className="w-full h-full object-cover rounded-md" alt="E-comm 2" referrerPolicy="no-referrer" />
               </div>
-              <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5">
-                <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/ECOM_BACK_1%20(1).png" className="w-full h-full object-cover" alt="E-comm 3" referrerPolicy="no-referrer" />
+              <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
+                <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/ECOM_BACK_1%20(1).png" className="w-full h-full object-cover rounded-md" alt="E-comm 3" referrerPolicy="no-referrer" />
               </div>
             </div>
           </div>
@@ -170,7 +169,7 @@ export const FranksAustralia = () => {
             
             <div className="grid md:grid-cols-3 gap-8">
               {instagramPosts.map((post, i) => (
-                <div key={i} className="bg-white border border-black/10 shadow-xl overflow-hidden">
+                <div key={i} className="bg-white border border-black/10 shadow-xl overflow-hidden rounded-md">
                   <div className="flex items-center p-3 gap-3">
                     <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] text-white font-bold">FA</div>
                     <div className="text-xs font-bold">franksaustralia • <span className="text-primary">Follow</span></div>
@@ -229,7 +228,7 @@ export const FranksAustralia = () => {
 
         <ProjectNavigation 
           prevProject={{ title: t.palmeiral.heroTitle, slug: '/showcase/o-palmeiral', thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/2Artboard%201.png' }}
-          nextProject={{ title: t.quinta.heroTitle, slug: '/showcase/quinta-do-pinto', thumbnail: getAssetUrl('quinta-the-idea-TycnOolF.gif') }}
+          nextProject={{ title: t.quinta.heroTitle, slug: '/showcase/quinta-do-pinto', thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-wine-brands.png' }}
         />
       </main>
     </div>

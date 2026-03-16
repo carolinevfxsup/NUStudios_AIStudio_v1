@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Phone, FileText, Laptop } from 'lucide-react';
+import { Phone, FileText, Laptop, Send } from 'lucide-react';
 import { LogoScroll } from '../components/LogoScroll';
 import { HomeResultsBento } from '../components/HomeResultsBento';
 import { Link, useNavigate } from 'react-router-dom';
@@ -565,7 +565,7 @@ export const Home = () => {
           <FadeIn>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
               <div>
-                <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-12 leading-[0.8] text-white">
+                <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-12 leading-[0.8] !text-white">
                   CONTACT US<span className="text-red-600">.</span>
                 </h2>
                 <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">Let's Talk</p>
@@ -671,15 +671,16 @@ export const Home = () => {
 
                   <button
                     type="submit"
-                    className="bg-white text-black px-10 py-5 font-sans font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white transition-all"
+                    className="bg-white text-black px-10 py-5 rounded-full font-sans font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white transition-all flex items-center justify-center gap-2 group"
                   >
-                    Send Message
+                    <span>Message Us</span>
+                    <Send className="w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </button>
                 </form>
               </div>
 
               <div className="hidden lg:flex items-center justify-center">
-                <div className="w-full max-w-md aspect-square overflow-hidden rounded-sm border border-white/10">
+                <div className="w-full max-w-md aspect-square overflow-hidden rounded-none border border-white/10">
                   <video 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/pnn495jt8srmr0cwyy3a1q4te8_result_.mp4"
                     autoPlay

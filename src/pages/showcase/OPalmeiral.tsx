@@ -2,7 +2,6 @@ import { Header } from '../../components/Header';
 import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { getAssetUrl } from '../../constants';
 import { 
   Folder, ScanEye, Tags, Sparkles, ListOrdered, CalendarClock, 
   CheckSquare
@@ -33,43 +32,38 @@ export const OPalmeiral = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
-                <span className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 block">The Brief</span>
+                <span className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 block">{t.palmeiral.requestTitle} {t.palmeiral.requestTitleItalic}</span>
                 <h2 className="text-3xl md:text-5xl font-sans font-bold italic mb-10 leading-tight">
-                  "I have a Google Drive folder <br/>
-                  full of photos. Can you make it post <br/>
-                  <span className="text-primary">automatically to Instagram?</span>"
+                  {t.palmeiral.requestQuote}
                 </h2>
                 
                 <div className="space-y-8 text-lg text-narrative-shadow/80 leading-relaxed">
                   <div>
-                    <p className="font-bold mb-2 text-black">O Palmeiral already had what most restaurants don't:</p>
+                    <p className="font-bold mb-2 text-black">{t.palmeiral.contentTitle} {t.palmeiral.contentTitleItalic}</p>
                     <ul className="list-disc pl-5 space-y-1 text-narrative-shadow/60">
-                      <li>A large library of high-quality photos</li>
-                      <li>Regularly updated visual content</li>
+                      <li>{t.palmeiral.contentHas1}</li>
                     </ul>
                   </div>
                   
                   <div>
                     <p className="font-bold mb-2 text-black">What they didn't have:</p>
                     <ul className="list-disc pl-5 space-y-1 text-narrative-shadow/60">
-                      <li>Time to post daily</li>
-                      <li>A system for consistency</li>
-                      <li>A way to stay visible without manual effort</li>
+                      <li>{t.palmeiral.contentMissing1}</li>
                     </ul>
                   </div>
                   
                   <p className="italic font-serif text-xl text-black">
-                    Instagram simply wasn't happening — even though the content existed.
+                    {t.palmeiral.contentText}
                   </p>
                 </div>
               </div>
               
               <div className="order-1 lg:order-2 relative">
-                <div className="border border-black/5 shadow-2xl overflow-hidden bg-white bevel">
+                <div className="border border-black/5 shadow-2xl overflow-hidden bg-white rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png" 
                     alt="Google Drive Folder" 
-                    className="w-full h-auto block" 
+                    className="w-full h-auto block rounded-md" 
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-mono border border-black/10 shadow-sm">
@@ -86,11 +80,11 @@ export const OPalmeiral = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div className="relative">
-                <div className="max-w-md mx-auto border border-black/5 shadow-2xl overflow-hidden bg-white bevel">
+                <div className="max-w-md mx-auto border border-black/5 shadow-2xl overflow-hidden bg-white rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png" 
                     alt="Instagram Post" 
-                    className="w-full h-auto block" 
+                    className="w-full h-auto block rounded-md" 
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -100,36 +94,26 @@ export const OPalmeiral = () => {
               
               <div>
                 <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-10">
-                  Automation — <br/>
-                  <span className="text-primary">without giving up control</span>
+                  {t.palmeiral.automationTitle} <br/>
+                  <span className="text-primary">{t.palmeiral.automationTitleItalic}</span>
                 </h2>
                 
                 <div className="space-y-8 text-lg text-narrative-shadow/80 leading-relaxed">
                   <p>
-                    Instead of blindly auto-posting everything, we designed a system that balances automation with approval.
+                    {t.palmeiral.checkpointKey}
                   </p>
                   
                   <div className="bg-white p-8 border-l-4 border-primary shadow-sm">
                     <p className="font-bold mb-4 text-black uppercase tracking-widest text-xs">The Result:</p>
                     <ul className="space-y-3">
-                      <li className="flex items-center gap-3">
-                        <CheckSquare className="w-5 h-5 text-primary" />
-                        <span>The restaurant stays in control</span>
-                      </li>
-                      <li className="flex items-center gap-3">
-                        <CheckSquare className="w-5 h-5 text-primary" />
-                        <span>Posting still happens automatically</span>
-                      </li>
-                      <li className="flex items-center gap-3">
-                        <CheckSquare className="w-5 h-5 text-primary" />
-                        <span>Nothing goes live without sign-off</span>
-                      </li>
+                      {t.palmeiral.outcomeItems.map((item, i) => (
+                        <li key={i} className="flex items-center gap-3">
+                          <CheckSquare className="w-5 h-5 text-primary" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
-                  
-                  <p className="font-serif italic text-xl">
-                    This turned a simple uploader into a content pipeline.
-                  </p>
                 </div>
               </div>
             </div>
@@ -141,7 +125,7 @@ export const OPalmeiral = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-sans font-bold italic">
-                How the <span className="text-primary">system works</span>
+                {t.palmeiral.systemTitle} <span className="text-primary">{t.palmeiral.systemTitleItalic}</span>
               </h2>
             </div>
             
@@ -149,32 +133,32 @@ export const OPalmeiral = () => {
               {[
                 { 
                   icon: Folder, 
-                  title: "1. Content Source", 
+                  title: t.palmeiral.step1Title, 
                   desc: "A single Google Drive folder. Images can be added at any time." 
                 },
                 { 
                   icon: ScanEye, 
-                  title: "2. Automatic Scanning", 
+                  title: t.palmeiral.step2Title, 
                   desc: "The system continuously scans the folder. New images are detected automatically." 
                 },
                 { 
                   icon: Tags, 
-                  title: "3. Categorisation", 
-                  desc: "Images are organised into four categories: Food, Drink, People, Decor." 
+                  title: t.palmeiral.step3Title, 
+                  desc: `${t.palmeiral.step3Categories.join(', ')}.` 
                 },
                 { 
                   icon: Sparkles, 
-                  title: "4. Automated Enhancements", 
-                  desc: "Hashtags generated automatically. Location tagging. Alternative text for accessibility." 
+                  title: t.palmeiral.step4Title, 
+                  desc: t.palmeiral.step4Description 
                 },
                 { 
                   icon: ListOrdered, 
-                  title: "5. Queue Ready", 
-                  desc: "Approved posts enter the queue. Visual preview before publishing." 
+                  title: t.palmeiral.step5Title, 
+                  desc: t.palmeiral.step5Description 
                 },
                 { 
                   icon: CalendarClock, 
-                  title: "6. Scheduled Posting", 
+                  title: t.palmeiral.step6Title, 
                   desc: "Automatic posting at scheduled times. Consistent daily presence." 
                 }
               ].map((step, i) => (
@@ -241,7 +225,7 @@ export const OPalmeiral = () => {
               {/* Column 3 */}
               <div className="bg-white p-6 shadow-sm border border-black/5">
                 <div className="mb-6 h-12"></div>
-                <h3 className="font-sans font-bold italic text-2xl mb-4">Automation with a <span className="font-bold not-italic">human checkpoint</span></h3>
+                <h3 className="font-sans font-bold italic text-2xl mb-4">{t.palmeiral.checkpointTitle} with a <span className="font-bold not-italic">{t.palmeiral.checkpointTitleItalic}</span></h3>
                 <p className="text-xs text-narrative-shadow/60 mb-4">Before anything goes live:</p>
                 <ul className="space-y-2 text-xs font-medium">
                   <li className="flex items-start gap-2">
@@ -270,14 +254,13 @@ export const OPalmeiral = () => {
         <section className="py-24 md:py-32 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl md:text-6xl font-sans font-bold mb-12">
-              What changed for <span className="italic">O Palmeiral</span>
+              {t.palmeiral.outcomeTitle} <span className="italic">O Palmeiral</span>
             </h2>
             
             <div className="space-y-4 text-lg md:text-xl text-narrative-shadow/80">
-              <p>Daily Instagram posting without effort</p>
-              <p>Consistent visual storytelling</p>
-              <p>Improved organic visibility over time</p>
-              <p>Zero day-to-day workload</p>
+              {t.palmeiral.outcomeItems.map((item, i) => (
+                <p key={i}>{item}</p>
+              ))}
               <p className="font-bold text-black">Marketing now runs quietly in the background.</p>
             </div>
           </div>
@@ -287,12 +270,12 @@ export const OPalmeiral = () => {
           prevProject={{ 
             title: t.saltLily.heroTitle, 
             slug: '/showcase/salt-lily', 
-            thumbnail: getAssetUrl('Salt_lily_FEMME_product.png') 
+            thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png' 
           }}
           nextProject={{ 
             title: 'Franks Australia', 
             slug: '/showcase/franks-australia', 
-            thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/FRANKS_SHOW.png' 
+            thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%205-100.jpg' 
           }}
         />
       </main>

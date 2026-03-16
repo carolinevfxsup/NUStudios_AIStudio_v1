@@ -3,7 +3,6 @@ import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
 import { BeforeAfterSlider } from '../../components/BeforeAfterSlider';
 import { Sparkles, Check, Zap, Camera, Play, ShoppingCart, Globe } from 'lucide-react';
-import { getAssetUrl } from '../../constants';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 export const SaltLily = () => {
@@ -188,22 +187,22 @@ export const SaltLily = () => {
                 </div>
               </div>
               <div className="space-y-8">
-                <div className="border border-black/5 shadow-xl">
+                <div className="border border-black/5 shadow-xl rounded-md">
                   <BeforeAfterSlider 
                     beforeImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/5a56838a-7813-48c8-ae76-5898844dc13a.jpg" 
                     afterImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/Gemini_Generated_Image_nqssybnqssybnqss.png" 
                     beforeLabel="Before" 
                     afterLabel="After"
-                    className="aspect-square"
+                    className="aspect-square rounded-md"
                   />
                 </div>
-                <div className="border border-black/5 shadow-xl">
+                <div className="border border-black/5 shadow-xl rounded-md">
                   <BeforeAfterSlider 
                     beforeImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/21be479c-78f9-4710-8412-0dbeee5747a7_1.jpg" 
                     afterImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/smiling_no_watermark.jpeg" 
                     beforeLabel="Before" 
                     afterLabel="After"
-                    className="aspect-square"
+                    className="aspect-square rounded-md"
                   />
                 </div>
               </div>
@@ -260,7 +259,7 @@ export const SaltLily = () => {
           prevProject={{ 
             title: t.quinta.heroTitle, 
             slug: '/showcase/quinta-do-pinto', 
-            thumbnail: getAssetUrl('quinta-wine-brands.png') 
+            thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-wine-brands.png' 
           }}
           nextProject={{ 
             title: t.palmeiral.heroTitle, 

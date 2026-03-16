@@ -104,7 +104,7 @@ export const Pricing = () => {
       <section id="contact-form" className="py-32 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <div className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl">
+            <div className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-xl">
               <div className="flex items-center gap-4 mb-12">
                 <Folder className="w-8 h-8 text-red-600" />
                 <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter text-white">Send us a message.</h2>
@@ -201,10 +201,10 @@ export const Pricing = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-5 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-white/90 transition-all flex items-center justify-center gap-3"
+                  className="w-full py-5 bg-white text-black font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-red-600 hover:text-white transition-all flex items-center justify-center gap-2 group"
                 >
-                  <Send className="w-4 h-4" />
-                  Send
+                  <span>Message Us</span>
+                  <Send className="w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </button>
               </form>
             </div>
