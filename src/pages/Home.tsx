@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Phone, Send, FileText, Laptop, Folder } from 'lucide-react';
+import { Phone, FileText, Laptop } from 'lucide-react';
 import { LogoScroll } from '../components/LogoScroll';
 import { HomeResultsBento } from '../components/HomeResultsBento';
 import { Link, useNavigate } from 'react-router-dom';
@@ -563,114 +563,137 @@ export const Home = () => {
       <section id="contact-form" className="py-32 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <div className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl">
-              <div className="flex items-center gap-4 mb-12">
-                <Folder className="w-8 h-8 text-red-600" />
-                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter text-white">Send us a message.</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+              <div>
+                <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-12 leading-[0.8] text-white">
+                  CONTACT US<span className="text-red-600">.</span>
+                </h2>
+                <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">Let's Talk</p>
+                
+                <form onSubmit={handleSubmit} className="space-y-12">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="space-y-2 relative">
+                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">First Name*</label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="firstName"
+                          required
+                          value={formData.firstName}
+                          onChange={handleInputChange}
+                          className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors text-white font-sans"
+                        />
+                        <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
+                            <path d="M7 4v16M17 4v16M7 12h10" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-2 relative">
+                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Last Name*</label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="lastName"
+                          required
+                          value={formData.lastName}
+                          onChange={handleInputChange}
+                          className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors text-white font-sans"
+                        />
+                        <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
+                            <path d="M7 4v16M17 4v16M7 12h10" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 relative">
+                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Email*</label>
+                    <div className="relative">
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors text-white font-sans"
+                      />
+                      <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
+                          <path d="M7 4v16M17 4v16M7 12h10" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Message</label>
+                    <textarea
+                      name="message"
+                      required
+                      rows={1}
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors resize-none text-white font-sans min-h-[100px]"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Attachments</label>
+                    <div 
+                      onClick={() => fileInputRef.current?.click()}
+                      className="w-full border border-dashed border-white/10 rounded-sm p-8 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-white/30 hover:bg-white/5 transition-all group"
+                    >
+                      <input
+                        type="file"
+                        ref={fileInputRef}
+                        onChange={handleFileChange}
+                        className="hidden"
+                      />
+                      {file ? (
+                        <div className="flex items-center gap-2 text-white font-sans font-medium">
+                          <FileText className="w-5 h-5" />
+                          <span>{file.name}</span>
+                        </div>
+                      ) : (
+                        <>
+                          <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
+                            <span className="text-xl font-light text-white/40 group-hover:text-white">+</span>
+                          </div>
+                          <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-white/40 group-hover:text-white/60">Add a File</span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="bg-white text-black px-10 py-5 font-sans font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white transition-all"
+                  >
+                    Send Message
+                  </button>
+                </form>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-2">
-                    <label className="text-xs font-sans font-bold text-white/40 uppercase tracking-widest">First Name (required)</label>
-                    <input
-                      type="text"
-                      name="firstName"
-                      required
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-sans font-bold text-white/40 uppercase tracking-widest">Last Name (required)</label>
-                    <input
-                      type="text"
-                      name="lastName"
-                      required
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-sans font-bold text-white/40 uppercase tracking-widest">Phone</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
+              <div className="hidden lg:flex items-center justify-center">
+                <div className="w-full max-w-md aspect-square overflow-hidden rounded-sm border border-white/10">
+                  <video 
+                    src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/pnn495jt8srmr0cwyy3a1q4te8_result_.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
                   />
                 </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-sans font-bold text-white/40 uppercase tracking-widest">Email (required)</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-sans font-bold text-white/40 uppercase tracking-widest">Message (required)</label>
-                  <textarea
-                    name="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans resize-none text-black"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-sans font-bold text-white/40 uppercase tracking-widest">Upload Brief, Media Kit, CV or any other file.</label>
-                  <div 
-                    onClick={() => fileInputRef.current?.click()}
-                    className="w-full border-2 border-dashed border-white/10 rounded-xl p-10 flex flex-col items-center justify-center gap-4 cursor-pointer hover:border-red-600/50 hover:bg-red-600/5 transition-all group"
-                  >
-                    <input
-                      type="file"
-                      ref={fileInputRef}
-                      onChange={handleFileChange}
-                      className="hidden"
-                    />
-                    {file ? (
-                      <div className="flex items-center gap-2 text-red-600 font-sans font-medium">
-                        <FileText className="w-6 h-6" />
-                        <span>{file.name}</span>
-                      </div>
-                    ) : (
-                      <>
-                        <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-red-600/50 transition-colors">
-                          <span className="text-2xl font-light text-white/40 group-hover:text-red-600">+</span>
-                        </div>
-                        <span className="text-sm font-sans font-bold uppercase tracking-widest text-white/40 group-hover:text-white/60">Add a File</span>
-                      </>
-                    )}
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-5 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-white/90 transition-all flex items-center justify-center gap-3"
-                >
-                  <Send className="w-4 h-4" />
-                  Send
-                </button>
-              </form>
+              </div>
             </div>
           </FadeIn>
         </div>
       </section>
-
     </div>
   );
 };
