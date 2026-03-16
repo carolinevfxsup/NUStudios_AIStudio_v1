@@ -43,69 +43,71 @@ export const Pricing = () => {
         </FadeIn>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 mb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-          {/* Left Column: Email/Call */}
-          <FadeIn direction="left">
-            <div className="space-y-8">
-              <div className="flex items-center gap-4">
-                <Laptop className="w-8 h-8 text-red-600" />
-                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Email or call us.</h2>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
-                <a 
-                  href="mailto:hello@nustudios.co.uk" 
-                  className="bg-red-600 text-white px-10 py-4 rounded-full font-sans font-bold text-xs uppercase tracking-widest hover:bg-red-700 transition-all text-center"
-                >
-                  Send Email
-                </a>
-                <div className="space-y-1">
-                  <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Direct Contact</p>
-                  <p className="text-lg font-display font-bold">hello@nustudios.co.uk</p>
+      <section id="contact-info" className="py-32 bg-[#f8f8f8] border-t border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            {/* Left Column: Email/Call */}
+            <FadeIn direction="left">
+              <div className="space-y-8">
+                <div className="flex items-center gap-4">
+                  <Laptop className="w-8 h-8 text-red-600" />
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Email or call us.</h2>
                 </div>
+                
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+                  <a 
+                    href="mailto:hello@nustudios.co.uk" 
+                    className="bg-red-600 text-white px-10 py-4 rounded-full font-sans font-bold text-xs uppercase tracking-widest hover:bg-red-700 transition-all text-center"
+                  >
+                    Send Email
+                  </a>
+                  <div className="space-y-1">
+                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Direct Contact</p>
+                    <p className="text-lg font-display font-bold">hello@nustudios.co.uk</p>
+                  </div>
+                </div>
+                <p className="text-xl text-text/70 font-sans leading-relaxed max-w-md">
+                  At NuStudios, you'll speak directly with a senior strategist or director, never an account handler or junior.
+                </p>
               </div>
-              <p className="text-xl text-text/70 font-sans leading-relaxed max-w-md">
-                At NuStudios, you'll speak directly with a senior strategist or director, never an account handler or junior.
-              </p>
-            </div>
-          </FadeIn>
+            </FadeIn>
 
-          {/* Right Column: Locations */}
-          <FadeIn direction="right">
-            <div className="space-y-8">
-              <div className="flex items-center gap-4">
-                <Phone className="w-8 h-8 text-red-600" />
-                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Our Locations.</h2>
-              </div>
+            {/* Right Column: Locations */}
+            <FadeIn direction="right">
+              <div className="space-y-8">
+                <div className="flex items-center gap-4">
+                  <Phone className="w-8 h-8 text-red-600" />
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Our Locations.</h2>
+                </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div className="space-y-1">
-                  <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">United Kingdom</p>
-                  <a href="tel:+447506230988" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+44 (0) 7506 230988</a>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Portugal</p>
-                  <a href="tel:+351939517942" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+351 939 517 942</a>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Australia</p>
-                  <a href="tel:+61431371024" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+61 431 371 024</a>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className="space-y-1">
+                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">United Kingdom</p>
+                    <a href="tel:+447506230988" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+44 (0) 7506 230988</a>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Portugal</p>
+                    <a href="tel:+351939517942" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+351 939 517 942</a>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Australia</p>
+                    <a href="tel:+61431371024" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+61 431 371 024</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Section: Contact Form */}
       <section id="contact-form" className="py-32 bg-black text-white">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
             <div className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl">
               <div className="flex items-center gap-4 mb-12">
                 <Folder className="w-8 h-8 text-red-600" />
-                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Send us a message.</h2>
+                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter text-white">Send us a message.</h2>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-8">
@@ -118,7 +120,7 @@ export const Pricing = () => {
                       required
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-white"
+                      className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
                     />
                   </div>
                   <div className="space-y-2">
@@ -129,7 +131,7 @@ export const Pricing = () => {
                       required
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-white"
+                      className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
                     />
                   </div>
                 </div>
@@ -141,7 +143,7 @@ export const Pricing = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-white"
+                    className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
                   />
                 </div>
 
@@ -153,7 +155,7 @@ export const Pricing = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-white"
+                    className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
                   />
                 </div>
 
@@ -165,7 +167,7 @@ export const Pricing = () => {
                     rows={5}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans resize-none text-white"
+                    className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans resize-none text-black"
                   />
                 </div>
 

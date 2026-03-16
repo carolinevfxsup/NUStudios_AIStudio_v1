@@ -442,7 +442,7 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="left">
-              <div className="relative aspect-video rounded-3xl overflow-hidden border border-border">
+              <div className="relative aspect-video rounded-md overflow-hidden border border-border">
                 <video 
                   autoPlay 
                   loop 
@@ -502,7 +502,7 @@ export const Home = () => {
       </section>
 
       {/* Section: Contact Info */}
-      <section id="contact-info" className="py-32 bg-bg border-t border-border">
+      <section id="contact-info" className="py-32 bg-[#f8f8f8] border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             {/* Left Column: Email/Call */}
@@ -561,12 +561,12 @@ export const Home = () => {
 
       {/* Section: Contact Form */}
       <section id="contact-form" className="py-32 bg-black text-white">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
             <div className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl">
               <div className="flex items-center gap-4 mb-12">
                 <Folder className="w-8 h-8 text-red-600" />
-                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Send us a message.</h2>
+                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter text-white">Send us a message.</h2>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-8">
@@ -579,7 +579,7 @@ export const Home = () => {
                       required
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-white"
+                      className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
                     />
                   </div>
                   <div className="space-y-2">
@@ -590,7 +590,7 @@ export const Home = () => {
                       required
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-white"
+                      className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
                     />
                   </div>
                 </div>
@@ -602,7 +602,7 @@ export const Home = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-white"
+                    className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
                   />
                 </div>
 
@@ -614,7 +614,7 @@ export const Home = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-white"
+                    className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans text-black"
                   />
                 </div>
 
@@ -626,7 +626,7 @@ export const Home = () => {
                     rows={5}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans resize-none text-white"
+                    className="w-full bg-white border border-border rounded-xl px-4 py-4 focus:border-red-600 outline-none transition-colors font-sans resize-none text-black"
                   />
                 </div>
 
