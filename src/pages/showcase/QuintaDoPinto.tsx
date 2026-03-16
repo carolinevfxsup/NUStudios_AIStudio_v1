@@ -80,7 +80,7 @@ export const QuintaDoPinto = () => {
               ].map((item, i) => (
                 <div key={i} className="bg-white p-10 border border-black/5 relative group">
                   <div className="flex justify-between items-start mb-8">
-                    <div className="w-12 h-12 bg-[#F5F5F0] flex items-center justify-center rounded-lg">
+                    <div className="w-12 h-12 bg-[#F5F5F0] flex items-center justify-center rounded-md">
                       <item.icon className="w-6 h-6 text-black" />
                     </div>
                     <span className="text-4xl font-serif italic text-black/10 group-hover:text-primary/20 transition-colors">{item.num}</span>

@@ -47,7 +47,7 @@ export const OPalmeiral = () => {
                 transition={{ duration: 0.8 }}
                 className="order-2 lg:order-1"
               >
-                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-2xl">
+                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-daniel.webp" 
                     alt="Daniel - O Palmeiral" 
@@ -59,7 +59,7 @@ export const OPalmeiral = () => {
 
               <motion.div {...fadeInUp} className="order-1 lg:order-2">
                 <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">THE INITIAL REQUEST</span>
-                <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-12 leading-tight tracking-tight">
+                <h2 className="text-4xl md:text-6xl font-display font-bold mb-12 leading-tight tracking-tight uppercase">
                   {t.palmeiral.requestQuote}
                 </h2>
                 <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed">
@@ -77,9 +77,8 @@ export const OPalmeiral = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <h2 className="text-4xl md:text-7xl font-sans font-bold mb-8 leading-[0.9] tracking-tighter">
-                  {t.palmeiral.heroNewTitle} <br/>
-                  <span className="italic font-serif text-primary">{t.palmeiral.heroNewTitleItalic}</span>
+                <h2 className="text-4xl md:text-7xl font-display font-bold mb-8 leading-[0.9] tracking-tighter uppercase">
+                  {t.palmeiral.heroNewTitle} {t.palmeiral.heroNewTitleItalic}
                 </h2>
                 
                 <div className="space-y-8">
@@ -124,7 +123,7 @@ export const OPalmeiral = () => {
                 transition={{ duration: 0.8 }}
                 className="relative"
               >
-                <div className="relative border border-black/5 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] overflow-hidden bg-white rounded-2xl">
+                <div className="relative border border-black/5 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] overflow-hidden bg-white rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png" 
                     alt="Content Library" 
@@ -149,7 +148,7 @@ export const OPalmeiral = () => {
               {...fadeInUp}
               className="text-3xl md:text-5xl text-black font-serif italic leading-tight"
             >
-              "{t.palmeiral.heroNewFooter}"
+              “{t.palmeiral.heroNewFooter}”
             </motion.p>
           </div>
 
@@ -159,7 +158,7 @@ export const OPalmeiral = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-black/5"
+              className="relative aspect-video rounded-md overflow-hidden shadow-2xl border border-black/5"
             >
               <video 
                 src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/OPalmeiral_TVformat.mp4"
@@ -181,9 +180,8 @@ export const OPalmeiral = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <h2 className="text-4xl md:text-7xl font-sans font-bold mb-12 leading-[0.9] tracking-tighter">
-                  {t.palmeiral.growthTitle} <br/>
-                  <span className="italic font-serif text-primary">{t.palmeiral.growthTitleItalic}</span>
+                <h2 className="text-4xl md:text-7xl font-display font-bold mb-12 leading-[0.9] tracking-tighter uppercase">
+                  {t.palmeiral.growthTitle} {t.palmeiral.growthTitleItalic}
                 </h2>
                 <p className="text-xl text-narrative-shadow/80 leading-relaxed mb-12">
                   {t.palmeiral.growthText}
@@ -206,7 +204,7 @@ export const OPalmeiral = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-2xl bg-white">
+                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md bg-white">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png" 
                     alt="Instagram Growth" 
@@ -223,8 +221,8 @@ export const OPalmeiral = () => {
         <section className="py-24 md:py-40 bg-[#0A0A0A] text-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="text-center mb-24">
-              <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-6 text-white">
-                {t.palmeiral.systemTitle} <span className="not-italic">{t.palmeiral.systemTitleItalic}</span>
+              <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 text-white uppercase">
+                {t.palmeiral.systemTitle} {t.palmeiral.systemTitleItalic}
               </h2>
               <p className="text-white/40 text-lg max-w-2xl mx-auto">
                 A fully autonomous pipeline that transforms raw assets into polished social presence.
@@ -246,7 +244,7 @@ export const OPalmeiral = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-10 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all group"
+                  className="p-10 bg-white/5 rounded-md border border-white/10 hover:bg-white/10 transition-all group"
                 >
                   <div className="w-14 h-14 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                     <step.icon className="w-10 h-10 text-red-600" />
@@ -269,7 +267,7 @@ export const OPalmeiral = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-2xl">
+                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-posting-logic.png" 
                     alt="Posting Logic" 
@@ -280,9 +278,8 @@ export const OPalmeiral = () => {
               </motion.div>
 
               <motion.div {...fadeInUp}>
-                <h2 className="text-4xl md:text-7xl font-sans font-bold mb-12 leading-[0.9] tracking-tighter">
-                  {t.palmeiral.postingLogicTitle} <br/>
-                  <span className="italic font-serif text-primary">{t.palmeiral.postingLogicTitleItalic}</span>
+                <h2 className="text-4xl md:text-7xl font-display font-bold mb-12 leading-[0.9] tracking-tighter uppercase">
+                  {t.palmeiral.postingLogicTitle} {t.palmeiral.postingLogicTitleItalic}
                 </h2>
                 <p className="text-xl text-narrative-shadow/60 mb-10">{t.palmeiral.postingLogicSub}</p>
                 <ul className="space-y-6 mb-12">
@@ -309,10 +306,26 @@ export const OPalmeiral = () => {
         <section className="py-24 md:py-40 bg-[#F9F9F7]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
-              <motion.div {...fadeInUp}>
-                <h2 className="text-4xl md:text-7xl font-sans font-bold mb-12 leading-[0.9] tracking-tighter">
-                  {t.palmeiral.checkpointTitle} <br/>
-                  <span className="italic font-serif text-primary">{t.palmeiral.checkpointTitleItalic}</span>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="order-1 lg:order-2"
+              >
+                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
+                  <img 
+                    src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-human-checkpoint.png" 
+                    alt="Human Checkpoint" 
+                    className="w-full h-auto block" 
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              </motion.div>
+
+              <motion.div {...fadeInUp} className="order-2 lg:order-1">
+                <h2 className="text-4xl md:text-7xl font-display font-bold mb-12 leading-[0.9] tracking-tighter uppercase">
+                  {t.palmeiral.checkpointTitle} {t.palmeiral.checkpointTitleItalic}
                 </h2>
                 <p className="text-xl text-narrative-shadow/60 mb-10">{t.palmeiral.checkpointSub}</p>
                 <ul className="space-y-6">
@@ -329,22 +342,6 @@ export const OPalmeiral = () => {
                   ))}
                 </ul>
               </motion.div>
-
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-2xl">
-                  <img 
-                    src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-human-checkpoint.png" 
-                    alt="Human Checkpoint" 
-                    className="w-full h-auto block" 
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              </motion.div>
             </div>
           </div>
         </section>
@@ -359,7 +356,7 @@ export const OPalmeiral = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-2xl">
+                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-informed.png" 
                     alt="Always Informed" 
@@ -370,9 +367,8 @@ export const OPalmeiral = () => {
               </motion.div>
 
               <motion.div {...fadeInUp}>
-                <h2 className="text-4xl md:text-7xl font-sans font-bold mb-12 leading-[0.9] tracking-tighter">
-                  {t.palmeiral.informedTitle} <br/>
-                  <span className="italic font-serif text-primary">{t.palmeiral.informedTitleItalic}</span>
+                <h2 className="text-4xl md:text-7xl font-display font-bold mb-12 leading-[0.9] tracking-tighter uppercase">
+                  {t.palmeiral.informedTitle} {t.palmeiral.informedTitleItalic}
                 </h2>
                 <p className="text-xl text-narrative-shadow/60 mb-10">{t.palmeiral.informedSub}</p>
                 <div className="grid gap-6">
@@ -381,7 +377,7 @@ export const OPalmeiral = () => {
                     { icon: Mail, text: t.palmeiral.informedItem2 },
                     { icon: CheckSquare, text: t.palmeiral.informedItem3 }
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-6 p-6 bg-[#F9F9F9] rounded-xl border border-black/5">
+                    <div key={i} className="flex items-center gap-6 p-6 bg-[#F9F9F9] rounded-md border border-black/5">
                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
                         <item.icon className="w-6 h-6 text-black" />
                       </div>
@@ -403,10 +399,8 @@ export const OPalmeiral = () => {
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
                 <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">THE OUTCOME</span>
-                <h2 className="text-4xl md:text-7xl font-sans font-bold mb-12 leading-[0.9] tracking-tighter text-white">
-                  {t.palmeiral.outcomeTitleMain} <br/>
-                  <span className="italic font-serif">{t.palmeiral.outcomeTitleItalic}</span>
-                  <span className="text-red-600">.</span>
+                <h2 className="text-4xl md:text-7xl font-display font-bold mb-12 leading-[0.9] tracking-tighter text-white uppercase">
+                  {t.palmeiral.outcomeTitleMain} {t.palmeiral.outcomeTitleItalic}
                 </h2>
                 <div className="space-y-8 text-xl text-white/60 leading-relaxed mb-12">
                   <p>
@@ -432,7 +426,7 @@ export const OPalmeiral = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="relative border border-white/10 shadow-2xl overflow-hidden rounded-2xl">
+                <div className="relative border border-white/10 shadow-2xl overflow-hidden rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-social-post.jpeg" 
                     alt="Final Social Post" 
