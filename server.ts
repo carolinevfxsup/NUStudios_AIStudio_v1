@@ -22,7 +22,7 @@ async function startServer() {
       const { data, error } = await resend.emails.send({
         from: 'NuStudios <info@send.nustudios.co.uk>',
         to: ['tech@nustudios.co.uk'],
-        reply_to: 'info@nustudios.co.uk',
+        reply_to: email,
         subject: `New Onboarding Brief: ${businessName}`,
         html: `
           <h1>New Onboarding Brief</h1>
@@ -54,7 +54,7 @@ async function startServer() {
       const { data, error } = await resend.emails.send({
         from: 'NuStudios <info@send.nustudios.co.uk>',
         to: ['tech@nustudios.co.uk'],
-        reply_to: 'info@nustudios.co.uk',
+        reply_to: email,
         subject: `New Contact Message from ${firstName} ${lastName}`,
         html: `
           <h1>New Contact Message</h1>

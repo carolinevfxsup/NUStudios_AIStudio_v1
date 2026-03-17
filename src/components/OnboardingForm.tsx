@@ -112,7 +112,7 @@ export const OnboardingForm = () => {
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white p-12 rounded-none shadow-xl text-center max-w-2xl mx-auto border border-gray-100"
+        className="bg-white p-12 rounded-md shadow-xl text-center max-w-2xl mx-auto border border-gray-100"
       >
         <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-none flex items-center justify-center mx-auto mb-8">
           <Check className="w-10 h-10" />
@@ -139,14 +139,14 @@ export const OnboardingForm = () => {
     <div className="max-w-2xl mx-auto">
       <div className="mb-12">
         <div className="flex justify-between items-center mb-4">
-          <span className="text-[10px] font-black uppercase tracking-widest text-gray-500">
+          <span className="text-[10px] font-black uppercase tracking-widest text-red-600">
             Step {step} of {totalSteps}
           </span>
           <div className="flex gap-1">
             {[...Array(totalSteps)].map((_, i) => (
               <div 
                 key={i} 
-                className={`h-1 w-8 rounded-none transition-all duration-500 ${i + 1 <= step ? 'bg-white' : 'bg-white/10'}`}
+                className={`h-1 w-8 rounded-none transition-all duration-500 ${i + 1 <= step ? 'bg-red-600' : 'bg-white/10'}`}
               />
             ))}
           </div>
@@ -163,30 +163,30 @@ export const OnboardingForm = () => {
               exit={{ opacity: 0, x: -20 }}
               className="space-y-6"
             >
-              <Link to="/" className="flex items-center gap-2 text-xs font-black uppercase tracking-widest hover:text-white/60 transition-colors mb-8">
+              <Link to="/" className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-600 hover:text-red-700 transition-colors mb-8">
                 <ArrowLeft className="w-4 h-4" />
                 Back
               </Link>
               <h3 className="text-3xl font-bold tracking-tight mb-8">Let's start with the <span className="sans-pink italic">Basics.</span></h3>
               <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">Business Name</label>
+                <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-2">Business Name</label>
                 <input 
                   type="text"
                   required
                   value={formData.businessName}
                   onChange={e => setFormData({...formData, businessName: e.target.value})}
-                  className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-lg"
+                  className="w-full bg-transparent border-b border-white/20 p-4 rounded-none focus:border-red-600 outline-none transition-all text-lg"
                   placeholder="e.g. Salt Lily"
                 />
               </div>
               <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">Website / Store URL</label>
+                <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-2">Website / Store URL</label>
                 <input 
                   type="url"
                   required
                   value={formData.website}
                   onChange={e => setFormData({...formData, website: e.target.value})}
-                  className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-lg"
+                  className="w-full bg-transparent border-b border-white/20 p-4 rounded-none focus:border-red-600 outline-none transition-all text-lg"
                   placeholder="https://yourstore.com"
                 />
               </div>
@@ -203,14 +203,14 @@ export const OnboardingForm = () => {
             >
               <h3 className="text-3xl font-bold tracking-tight mb-8">Size & <span className="sans-pink italic">Market.</span></h3>
               <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-4">Team Size</label>
+                <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-4">Team Size</label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {['1-5', '6-20', '21-50', '50+'].map(size => (
                     <button
                       key={size}
                       type="button"
                       onClick={() => setFormData({...formData, size})}
-                      className={`p-4 rounded-none font-bold text-sm border-2 transition-all ${formData.size === size ? 'border-white bg-white/10 text-white' : 'border-white/10 hover:border-white/20'}`}
+                      className={`p-4 rounded-none font-bold text-sm border-2 transition-all ${formData.size === size ? 'border-red-600 bg-red-600/10 text-white' : 'border-white/10 hover:border-red-600/50'}`}
                     >
                       {size}
                     </button>
@@ -218,14 +218,14 @@ export const OnboardingForm = () => {
                 </div>
               </div>
               <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-4">Primary Market</label>
+                <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-4">Primary Market</label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {['UK', 'EU', 'US', 'Brazil', 'Other'].map(market => (
                     <button
                       key={market}
                       type="button"
                       onClick={() => setFormData({...formData, market})}
-                      className={`p-4 rounded-none font-bold text-sm border-2 transition-all ${formData.market === market ? 'border-white bg-white/10 text-white' : 'border-white/10 hover:border-white/20'}`}
+                      className={`p-4 rounded-none font-bold text-sm border-2 transition-all ${formData.market === market ? 'border-red-600 bg-red-600/10 text-white' : 'border-white/10 hover:border-red-600/50'}`}
                     >
                       {market}
                     </button>
@@ -246,32 +246,32 @@ export const OnboardingForm = () => {
               <h3 className="text-3xl font-bold tracking-tight mb-8">Social <span className="sans-pink italic">Presence.</span></h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">Instagram Handle</label>
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-2">Instagram Handle</label>
                   <input 
                     type="text"
                     value={formData.socials.instagram}
                     onChange={e => setFormData({...formData, socials: {...formData.socials, instagram: e.target.value}})}
-                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all"
+                    className="w-full bg-transparent border-b border-white/20 p-4 rounded-none focus:border-red-600 outline-none transition-all"
                     placeholder="@yourbrand"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">TikTok Handle</label>
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-2">TikTok Handle</label>
                   <input 
                     type="text"
                     value={formData.socials.tiktok}
                     onChange={e => setFormData({...formData, socials: {...formData.socials, tiktok: e.target.value}})}
-                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all"
+                    className="w-full bg-transparent border-b border-white/20 p-4 rounded-none focus:border-red-600 outline-none transition-all"
                     placeholder="@yourbrand"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">LinkedIn Page</label>
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-2">LinkedIn Page</label>
                   <input 
                     type="text"
                     value={formData.socials.linkedin}
                     onChange={e => setFormData({...formData, socials: {...formData.socials, linkedin: e.target.value}})}
-                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all"
+                    className="w-full bg-transparent border-b border-white/20 p-4 rounded-none focus:border-red-600 outline-none transition-all"
                     placeholder="linkedin.com/company/yourbrand"
                   />
                 </div>
@@ -300,10 +300,10 @@ export const OnboardingForm = () => {
                     key={outcome}
                     type="button"
                     onClick={() => toggleOutcome(outcome)}
-                    className={`p-4 rounded-none font-bold text-left border-2 transition-all flex justify-between items-center ${formData.outcomes.includes(outcome) ? 'border-white bg-white/10 text-white' : 'border-white/10 hover:border-white/20'}`}
+                    className={`p-4 rounded-none font-bold text-left border-2 transition-all flex justify-between items-center ${formData.outcomes.includes(outcome) ? 'border-red-600 bg-red-600/10 text-white' : 'border-white/10 hover:border-red-600/50'}`}
                   >
                     {outcome}
-                    {formData.outcomes.includes(outcome) && <Check className="w-5 h-5" />}
+                    {formData.outcomes.includes(outcome) && <Check className="w-5 h-5 text-red-600" />}
                   </button>
                 ))}
               </div>
@@ -319,47 +319,47 @@ export const OnboardingForm = () => {
               className="space-y-6"
             >
               <h3 className="text-3xl font-bold tracking-tight mb-8">Final <span className="sans-pink italic">Step.</span></h3>
-              <p className="text-gray-400 mb-8">Where should we send your custom creative brief and strategy?</p>
+              <p className="text-white/60 mb-8">Where should we send your custom creative brief and strategy?</p>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">Work Email</label>
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-2">Work Email</label>
                   <input 
                     type="email"
                     value={formData.email}
                     onChange={e => setFormData({...formData, email: e.target.value})}
-                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-lg"
+                    className="w-full bg-transparent border-b border-white/20 p-4 rounded-none focus:border-red-600 outline-none transition-all text-lg"
                     placeholder="name@company.com"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">Phone Number</label>
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-2">Phone Number</label>
                   <input 
                     type="tel"
                     value={formData.phone}
                     onChange={e => setFormData({...formData, phone: e.target.value})}
-                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-lg"
+                    className="w-full bg-transparent border-b border-white/20 p-4 rounded-none focus:border-red-600 outline-none transition-all text-lg"
                     placeholder="+44 7700 900000"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">Message</label>
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-2">Message</label>
                   <textarea 
                     value={formData.message}
                     onChange={e => setFormData({...formData, message: e.target.value})}
-                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-lg h-32"
+                    className="w-full bg-transparent border-b border-white/20 p-4 rounded-none focus:border-red-600 outline-none transition-all text-lg h-32"
                     placeholder="Tell us more about your project..."
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">Attach Brief (Optional)</label>
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-2">Attach Brief (Optional)</label>
                   <input 
                     type="file"
                     onChange={e => setFormData({...formData, file: e.target.files?.[0] || null})}
-                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-sm"
+                    className="w-full bg-transparent border-b border-white/20 p-4 rounded-none focus:border-red-600 outline-none transition-all text-sm"
                   />
                 </div>
               </div>
-              <div className="bg-white/5 p-6 rounded-none text-xs text-gray-400 leading-relaxed">
+              <div className="bg-white/5 p-6 rounded-none text-xs text-white/40 leading-relaxed">
                 By submitting this brief, you agree to our terms. We'll use this information to build a tailored proposal for your business.
               </div>
             </motion.div>
@@ -371,7 +371,7 @@ export const OnboardingForm = () => {
             <button
               type="button"
               onClick={handleBack}
-              className="flex items-center gap-2 text-xs font-black uppercase tracking-widest hover:text-white/60 transition-colors"
+              className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-600 hover:text-red-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Back
@@ -384,7 +384,7 @@ export const OnboardingForm = () => {
             <button
               type="button"
               onClick={handleNext}
-              className="bg-white text-black px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-white/90 transition-all flex items-center gap-3"
+              className="bg-red-600 text-white px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-red-700 transition-all flex items-center gap-3"
             >
               Continue
               <ArrowRight className="w-4 h-4" />
@@ -393,7 +393,7 @@ export const OnboardingForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-white text-black px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-white/90 transition-all flex items-center gap-3 disabled:opacity-50"
+              className="bg-red-600 text-white px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-red-700 transition-all flex items-center gap-3 disabled:opacity-50"
             >
               {isSubmitting ? (
                 <>

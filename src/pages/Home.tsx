@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Phone, FileText, Laptop, Send, Loader2, Check, ExternalLink, ArrowRight } from 'lucide-react';
 import { LogoScroll } from '../components/LogoScroll';
 import { HomeResultsBento } from '../components/HomeResultsBento';
@@ -7,9 +7,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getAssetUrl } from '../constants';
 import { FadeIn } from '../components/FadeIn';
 import { ShowreelModal } from '../components/ShowreelModal';
-import { AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isOpen: boolean, onToggle: () => void }) => {
+  const { t } = useLanguage();
   return (
     <div className="border-b border-border overflow-hidden">
       <button 
@@ -82,7 +83,7 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
 
             <div className="flex justify-end">
               <Link to="/onboarding" className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit group">
-                {service.id === '06' ? 'BOOK A DEMO' : 'LEARN MORE'}
+                {service.id === '06' ? t.home.services.ctaDemo : t.home.services.cta}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -94,6 +95,7 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
 };
 
 export const Home = () => {
+  const { t } = useLanguage();
   const [url, setUrl] = useState('');
   const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -174,7 +176,7 @@ export const Home = () => {
             onClick={() => setIsModalOpen(true)}
             className="bg-red-600 text-white px-8 py-3 rounded-full font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-red-700 transition-all shadow-xl"
           >
-            Watch Showreel
+            {t.home.hero.watchShowreel}
           </button>
         </div>
       </section>
@@ -188,7 +190,7 @@ export const Home = () => {
           <div className="md:col-span-2 text-center relative">
             <FadeIn delay={0.1}>
               <div className="absolute -top-16 md:-top-24 left-1/2 -translate-x-1/2 flex flex-col items-center">
-                 <span className="text-[11px] font-sans font-bold uppercase tracking-widest text-text/60 mb-2">AI Like You Mean Business</span>
+                 <span className="text-[11px] font-sans font-bold uppercase tracking-widest text-text/60 mb-2">{t.home.vision.label}</span>
                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-text/40">
                    <path d="M12 4L12 20M12 20L18 14M12 20L6 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                  </svg>
@@ -196,17 +198,17 @@ export const Home = () => {
             </FadeIn>
             <FadeIn delay={0.2}>
               <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter leading-[0.85] mb-12 uppercase mt-12 md:mt-0">
-                Time to trigger explosive growth.
+                {t.home.vision.title}
               </h2>
             </FadeIn>
             <FadeIn delay={0.3}>
               <p className="text-sm md:text-base text-text/80 max-w-2xl mx-auto font-sans leading-relaxed mb-12">
-                We help independent businesses, ambitious founders, and local visionaries look and operate like global industry leaders. We don't just provide "pretty pictures"—we hand build creative and automation systems using the power of Ai designed for tangible growth.
+                {t.home.vision.desc}
               </p>
             </FadeIn>
             <FadeIn delay={0.4}>
               <Link to="/onboarding" className="bg-black text-white px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 transition-all flex items-center justify-center gap-3 w-fit mx-auto group">
-                GROW YOUR BUSINESS
+                {t.home.vision.cta}
                 <ExternalLink className="w-4 h-4" />
               </Link>
             </FadeIn>
@@ -220,10 +222,10 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <FadeIn delay={0.1}>
-              <p className="section-label mb-4 !text-red-600 uppercase opacity-100">OUR WORK</p>
+              <p className="section-label mb-4 !text-red-600 uppercase opacity-100">{t.home.results.label}</p>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.8] uppercase text-white">RESULTS<span className="text-red-600">.</span></h2>
+              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.8] uppercase text-white">{t.home.results.title}<span className="text-red-600">.</span></h2>
             </FadeIn>
           </div>
           
@@ -234,7 +236,7 @@ export const Home = () => {
           <div className="mt-16 text-center">
             <FadeIn delay={0.4}>
               <Link to="/results" className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit mx-auto group">
-                VIEW ALL RESULTS
+                {t.home.results.cta}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>
@@ -247,7 +249,7 @@ export const Home = () => {
         <div className="max-w-7xl">
           <FadeIn delay={0.1}>
             <h2 className="text-2xl md:text-4xl font-display font-bold tracking-tighter leading-[1.2] max-w-3xl">
-              Forget the algorithms, the AI hype, and the tech buzzwords. We use the world's most advanced technology to do two very simple, human things: make your brand look beautiful, and give you your weekends back.
+              {t.home.quote}
             </h2>
           </FadeIn>
         </div>
@@ -257,7 +259,7 @@ export const Home = () => {
       <section className="border-b border-border">
         <div className="px-6 md:px-[120px] mb-2 flex items-end gap-4">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/60">
-            OUR PARTNERS
+            {t.home.partners}
           </p>
         </div>
         <LogoScroll />
@@ -268,10 +270,10 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mb-24 px-6">
             <FadeIn delay={0.1}>
-              <p className="section-label mb-4 uppercase">OUR CAPABILITIES</p>
+              <p className="section-label mb-4 uppercase">{t.home.services.label}</p>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.8] uppercase">SERVICES<span className="text-red-600">.</span></h2>
+              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.8] uppercase">{t.home.services.title}<span className="text-red-600">.</span></h2>
             </FadeIn>
           </div>
 
@@ -279,71 +281,71 @@ export const Home = () => {
             {[
               { 
                 id: '01', 
-                title: 'Branding',
-                subHeading: 'Strategy & Identity',
-                desc: "Our Identity Mapping process begins here. Before a single pixel is moved, we define your strategic foundation. We conduct deep Market Research and Brand Strategy to craft a Visual Identity and Messaging framework that anchors your brand soul.",
-                subServices: ['Market Research', 'Brand Strategy', 'Strategic Messaging', 'Brand Positioning', 'Visual DNA Mapping'],
+                title: t.home.services.items.branding.title,
+                subHeading: t.home.services.items.branding.subHeading,
+                desc: t.home.services.items.branding.desc,
+                subServices: t.home.services.items.branding.subServices,
                 images: [
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/BRAND_1.png', caption: 'Brand Visual DNA Mapping' },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Trend.png', caption: 'Forcasting & Research' },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Develp.png', caption: 'DEFINING THE STRATEGIC DNA' }
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/BRAND_1.png', caption: t.home.services.items.branding.captions[0] },
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Trend.png', caption: t.home.services.items.branding.captions[1] },
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Develp.png', caption: t.home.services.items.branding.captions[2] }
                 ]
               },
               { 
                 id: '02', 
-                title: 'Creative',
-                subHeading: 'The Virtual Studio',
-                desc: 'Premium Art Direction at the speed of AI, powered by our HITL (Human-In-The-Loop) standard. We translate your Branding into high-impact Campaigns, Editorial Shoots, and Social Media content, ensuring consistent artistic prestige across every output.',
-                subServices: ['Art Direction', 'Campaign Production', 'Graphic Design', 'Social Media Content', 'Location-Based Shoots', 'Model & Lighting Control'],
+                title: t.home.services.items.creative.title,
+                subHeading: t.home.services.items.creative.subHeading,
+                desc: t.home.services.items.creative.desc,
+                subServices: t.home.services.items.creative.subServices,
                 images: [
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREAT_1.png', caption: 'ELEVATING E-COMMERCE THROUGH ARTFUL DESIGN' },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREATE_2.png', caption: 'CRAFTING IMMERSIVE BRAND EXPERIENCES' },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREAT_3.PNG', caption: 'CRAFTING IMMERSIVE BRAND EXPERIENCES' }
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREAT_1.png', caption: t.home.services.items.creative.captions[0] },
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREATE_2.png', caption: t.home.services.items.creative.captions[1] },
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREAT_3.PNG', caption: t.home.services.items.creative.captions[2] }
                 ]
               },
               { 
                 id: '03', 
-                title: 'Automation', 
-                desc: "The connective tissue of the agency. We build autonomous systems that power the entire brand lifecycle. From our bread-and-butter Social Media Automation to bespoke AI-driven marketing systems, we ensure your brand remains 'always-on' while protecting your creative margins.",
-                subServices: ['Social Media Automation', 'Workflow Automation', 'AI Pipeline Design', 'Content Iteration Tools', 'API & CRM Integration', 'Autonomous Production'],
+                title: t.home.services.items.automation.title, 
+                desc: t.home.services.items.automation.desc,
+                subServices: t.home.services.items.automation.subServices,
                 images: [
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png', caption: 'POSTING LOGIC THAT FEELS HUMAN' },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png', caption: 'AUTOMATION WORKFLOWS' },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png', caption: 'AUTOMATION WITH A HUMAN CHECKPOINT' }
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png', caption: t.home.services.items.automation.captions[0] },
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png', caption: t.home.services.items.automation.captions[1] },
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png', caption: t.home.services.items.automation.captions[2] }
                 ]
               },
               { 
                 id: '04', 
-                title: 'Growth', 
-                subHeading: 'Blogs & Social Engagement',
-                desc: "Feeding the social media beast so you don't have to. We produce high-equity long-form content and drive active social engagement to ensure your brand is not just seen, but heard. From SEO-optimized blogs to community management, we keep your audience anchored and growing.",
-                subServices: ['SEO Blog Production', 'Community Management', 'Social Engagement Strategy', 'Newsletter Curation', 'Narrative Long-form', 'Active Audience Growth'],
+                title: t.home.services.items.growth.title, 
+                subHeading: t.home.services.items.growth.subHeading,
+                desc: t.home.services.items.growth.desc,
+                subServices: t.home.services.items.growth.subServices,
                 images: [
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Growth_Vid.mp4', caption: 'SCALING BRAND GROWTH' }
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Growth_Vid.mp4', caption: t.home.services.items.growth.captions[0] }
                 ]
               },
               { 
                 id: '05', 
-                title: 'Ecomm', 
-                subHeading: 'Product & Storefront',
-                desc: 'The Technical Engine. We function as an embedded department for surgical product execution. From high-fidelity Product Flatlays to specialized Pattern Repeats and CADs, we handle the precision required to turn art into shippable product.',
-                subServices: ['Ecomm Product Flatlays', 'Product shots on models', 'Product Development', 'Technical CAD Design', 'Pattern Repeats', 'Shopify Storefronts'],
+                title: t.home.services.items.ecomm.title, 
+                subHeading: t.home.services.items.ecomm.subHeading,
+                desc: t.home.services.items.ecomm.desc,
+                subServices: t.home.services.items.ecomm.subServices,
                 images: [
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_1.png', caption: 'PRODUCT FLAT-LAYS' },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECCOM_2.png', caption: 'PRODUCT IMAGERY' },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_3.png', caption: 'ECOMM PRODUCT IMAGES' }
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_1.png', caption: t.home.services.items.ecomm.captions[0] },
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECCOM_2.png', caption: t.home.services.items.ecomm.captions[1] },
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_3.png', caption: t.home.services.items.ecomm.captions[2] }
                 ]
               },
               { 
                 id: '06', 
-                title: 'Ai Tool Kit', 
-                subHeading: 'Subscription-Based Member Lab',
-                desc: 'Ultimate editorial control for high-growth brands. Our subscription-based Tool Kit provides members with private infrastructure to generate, style, and lock their brand identity with surgical precision and cinematic quality.',
-                subServices: ['Directors Chair: Ultimate GFX/Video Control', 'Model Agency: Locked Brand Models', 'The Virtual Stylist: AI Outfit Generator', 'Garment Fit & Accessory Tools', 'Infinite Generation Bandwidth', 'Member-Only API Access'],
+                title: t.home.services.items.aiToolkit.title, 
+                subHeading: t.home.services.items.aiToolkit.subHeading,
+                desc: t.home.services.items.aiToolkit.desc,
+                subServices: t.home.services.items.aiToolkit.subServices,
                 images: [
-                { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_1.png', caption: 'EDITORIAL SHOTS' },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_2_1.png', caption: 'CONSISTENT MODELS' },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_3.png', caption: 'ADD & REMOVE ACCESSORIES' }
+                { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_1.png', caption: t.home.services.items.aiToolkit.captions[0] },
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_2_1.png', caption: t.home.services.items.aiToolkit.captions[1] },
+                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_3.png', caption: t.home.services.items.aiToolkit.captions[2] }
                 ]
               }
             ].map((service, i) => (
@@ -363,18 +365,18 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-[60px]">
           <FadeIn delay={0.1}>
             <h2 className="text-5xl md:text-[80px] font-display font-bold tracking-tighter leading-[0.9] uppercase text-left mb-24 text-[#111]">
-              INDUSTRY SOLUTIONS<span className="text-[#ff4081]">.</span>
+              {t.home.industries.title}<span className="text-[#ff4081]">.</span>
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: "WINERIES", desc: "Capturing terroir and heritage through high-prestige visuals.", image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-wine-brands.png" },
-              { title: "HOSPITALITY", desc: "Immersive culinary and architectural atmospheres.", image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-main.png" },
-              { title: "ECOMMERCE", desc: "High-conversion narratives and product consistency.", image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECCOM_2.png" },
-              { title: "FASHION", desc: "From raw sketches to fully realized studio shoots.", image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/FRANKS_1.png" },
-              { title: "JEWELLERY", desc: "Macro shots emphasizing stone clarity and luster.", image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png" },
-              { title: "B2B", desc: "Elevating infrastructure into strategic narratives.", image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-do-pinto-header.jpg" }
+              { title: t.home.industries.items.wineries.title, desc: t.home.industries.items.wineries.desc, image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-wine-brands.png" },
+              { title: t.home.industries.items.hospitality.title, desc: t.home.industries.items.hospitality.desc, image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-main.png" },
+              { title: t.home.industries.items.ecommerce.title, desc: t.home.industries.items.ecommerce.desc, image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECCOM_2.png" },
+              { title: t.home.industries.items.fashion.title, desc: t.home.industries.items.fashion.desc, image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/FRANKS_1.png" },
+              { title: t.home.industries.items.jewellery.title, desc: t.home.industries.items.jewellery.desc, image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png" },
+              { title: t.home.industries.items.b2b.title, desc: t.home.industries.items.b2b.desc, image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-do-pinto-header.jpg" }
             ].map((industry, idx) => (
               <FadeIn key={idx} delay={0.1 * (idx + 1)}>
                 <div className="group relative bg-white rounded-md p-10 h-[320px] flex flex-col justify-between overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
@@ -421,7 +423,7 @@ export const Home = () => {
                   visible: { opacity: 1, y: 0 }
                 }}
               >
-                LISBON<span className="text-red-600">.</span>
+                {t.home.stats.lisbon}<span className="text-red-600">.</span>
               </motion.span>
               <motion.span
                 variants={{
@@ -429,7 +431,7 @@ export const Home = () => {
                   visible: { opacity: 1, x: 0 }
                 }}
               >
-                MELBOURNE<span className="text-red-600">.</span>
+                {t.home.stats.melbourne}<span className="text-red-600">.</span>
               </motion.span>
               <motion.span
                 variants={{
@@ -437,30 +439,30 @@ export const Home = () => {
                   visible: { opacity: 1, y: 0 }
                 }}
               >
-                LONDON<span className="text-red-600">.</span>
+                {t.home.stats.london}<span className="text-red-600">.</span>
               </motion.span>
             </motion.div>
           </div>
           <div className="grid grid-cols-2 gap-4 md:col-span-1">
             <div className="p-8 border border-white/10 flex flex-col justify-center">
               <span className="text-4xl font-display font-bold mb-2">30%</span>
-              <span className="text-xs uppercase tracking-widest text-white/60">The Cost of A Standard Agency</span>
+              <span className="text-xs uppercase tracking-widest text-white/60">{t.home.stats.cost}</span>
             </div>
             <div className="p-8 border border-white/10 flex flex-col justify-center">
               <span className="text-4xl font-display font-bold mb-2">10x</span>
-              <span className="text-xs uppercase tracking-widest text-white/60">The Content Output</span>
+              <span className="text-xs uppercase tracking-widest text-white/60">{t.home.stats.output}</span>
             </div>
             <div className="p-8 border border-white/10 flex flex-col justify-center">
               <span className="text-4xl font-display font-bold mb-2">100%</span>
-              <span className="text-xs uppercase tracking-widest text-white/60">On Brand</span>
+              <span className="text-xs uppercase tracking-widest text-white/60">{t.home.stats.onBrand}</span>
             </div>
             <div className="p-8 border border-white/10 flex flex-col justify-center">
               <span className="text-4xl font-display font-bold mb-2">24/7</span>
-              <span className="text-xs uppercase tracking-widest text-white/60">Automation Output</span>
+              <span className="text-xs uppercase tracking-widest text-white/60">{t.home.stats.automation}</span>
             </div>
           </div>
           <div className="md:col-span-1 p-6 border border-white/10 flex flex-col justify-center items-center text-center">
-            <p className="text-2xl md:text-4xl font-display font-bold tracking-tighter leading-[1.2] text-white/70 max-w-3xl">The world is moving at machine speed. Don't get left behind because you were too busy doing things the old way.</p>
+            <p className="text-2xl md:text-4xl font-display font-bold tracking-tighter leading-[1.2] text-white/70 max-w-3xl">{t.home.stats.quote}</p>
           </div>
         </div>
       </section>
@@ -485,10 +487,10 @@ export const Home = () => {
             <FadeIn direction="right">
               <div className="space-y-8">
                 <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter leading-[0.9]">
-                  Ready to clear your plate?
+                  {t.home.ready.title}
                 </h2>
                 <p className="text-xl md:text-2xl text-text/70 font-sans leading-relaxed">
-                  We don’t just sell "graphics." We build creative systems that help your business grow, engage your community, and save you countless hours.
+                  {t.home.ready.desc}
                 </p>
               </div>
             </FadeIn>
@@ -504,10 +506,10 @@ export const Home = () => {
             
             <p className="section-label mb-12">Vision Lab / Phase 01</p>
             <h2 className="text-5xl md:text-8xl font-display font-bold mb-12 tracking-tighter leading-[0.8] uppercase">
-              DNA Scan
+              {t.nav.dnaScan}
             </h2>
             <p className="text-xl md:text-2xl text-text/60 mb-16 font-sans max-w-2xl leading-relaxed">
-              Map your brand's visual soul and unlock unstoppable growth. Enter your URL to begin the analysis.
+              {t.dnaScan.subtitle}
             </p>
             
             <div className="w-full max-w-2xl flex flex-col sm:flex-row gap-4">
@@ -522,7 +524,7 @@ export const Home = () => {
                 onClick={handleAnalyze}
                 className="bg-red-600 text-white px-12 py-6 font-sans font-bold text-sm uppercase tracking-widest hover:bg-red-700 transition-all whitespace-nowrap"
               >
-                Analyze Brand
+                {t.dnaScan.button}
               </button>
             </div>
           </div>
@@ -538,17 +540,17 @@ export const Home = () => {
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <Laptop className="w-8 h-8 text-red-600" />
-                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Email or call us.</h2>
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home.contact.emailTitle}</h2>
                 </div>
                 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
                   <div className="space-y-1">
-                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Direct Contact</p>
+                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">{t.home.contact.emailLabel}</p>
                     <p className="text-lg font-display font-bold">hello@nustudios.co.uk</p>
                   </div>
                 </div>
                 <p className="text-xl text-text/70 font-sans leading-relaxed max-w-md">
-                  At NuStudios, you'll speak directly with a senior strategist or director, never an account handler or junior.
+                  {t.home.contact.emailDesc}
                 </p>
               </div>
             </FadeIn>
@@ -558,20 +560,20 @@ export const Home = () => {
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <Phone className="w-8 h-8 text-red-600" />
-                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">Our Locations.</h2>
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home.contact.locationsTitle}</h2>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div className="space-y-1">
-                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">United Kingdom</p>
+                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">{t.home.stats.london}</p>
                     <a href="tel:+447506230988" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+44 (0) 7506 230988</a>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Portugal</p>
+                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">{t.home.stats.lisbon}</p>
                     <a href="tel:+351939517942" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+351 939 517 942</a>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Australia</p>
+                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">{t.home.stats.melbourne}</p>
                     <a href="tel:+61431371024" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+61 431 371 024</a>
                   </div>
                 </div>
@@ -588,9 +590,9 @@ export const Home = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
               <div>
                 <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-12 leading-[0.8] !text-white">
-                  CONTACT US<span className="text-red-600">.</span>
+                  {t.home.contact.title}<span className="text-red-600">.</span>
                 </h2>
-                <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">Let's Talk</p>
+                <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">{t.home.contact.subtitle}</p>
                 
                 <AnimatePresence mode="wait">
                   {!isSubmitted ? (
@@ -604,7 +606,7 @@ export const Home = () => {
                     >
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div className="space-y-2 relative">
-                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">First Name*</label>
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.home.contact.form.firstName}</label>
                           <div className="relative">
                             <input
                               type="text"
@@ -622,7 +624,7 @@ export const Home = () => {
                           </div>
                         </div>
                         <div className="space-y-2 relative">
-                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Last Name*</label>
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.home.contact.form.lastName}</label>
                           <div className="relative">
                             <input
                               type="text"
@@ -642,7 +644,7 @@ export const Home = () => {
                       </div>
 
                       <div className="space-y-2 relative">
-                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Email*</label>
+                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.home.contact.form.email}</label>
                         <div className="relative">
                           <input
                             type="email"
@@ -661,7 +663,7 @@ export const Home = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Message</label>
+                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.home.contact.form.message}</label>
                         <textarea
                           name="message"
                           required
@@ -673,7 +675,7 @@ export const Home = () => {
                       </div>
 
                       <div className="space-y-4">
-                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Attachments</label>
+                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.home.contact.form.attachments}</label>
                         <div 
                           onClick={() => fileInputRef.current?.click()}
                           className="w-full border border-dashed border-white/10 rounded-sm p-8 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-white/30 hover:bg-white/5 transition-all group"
@@ -694,7 +696,7 @@ export const Home = () => {
                               <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
                                 <span className="text-xl font-light text-white/40 group-hover:text-white">+</span>
                               </div>
-                              <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-white/40 group-hover:text-white/60">Add a File</span>
+                              <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-white/40 group-hover:text-white/60">{t.home.contact.form.addFile}</span>
                             </>
                           )}
                         </div>
@@ -714,11 +716,11 @@ export const Home = () => {
                         {isSubmitting ? (
                           <>
                             <Loader2 className="w-3 h-3 animate-spin" />
-                            <span>Sending...</span>
+                            <span>{t.home.contact.form.sending}</span>
                           </>
                         ) : (
                           <>
-                            <span>Message Us</span>
+                            <span>{t.home.contact.form.button}</span>
                             <Send className="w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                           </>
                         )}
@@ -735,16 +737,16 @@ export const Home = () => {
                         <Check className="w-10 h-10 text-[#E11D48]" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="text-3xl font-display font-bold uppercase tracking-tighter text-white">Thank You<span className="text-red-600">.</span></h3>
+                        <h3 className="text-3xl font-display font-bold uppercase tracking-tighter text-white">{t.home.contact.form.success.title}<span className="text-red-600">.</span></h3>
                         <p className="text-white/60 font-sans max-w-sm">
-                          Your message has been received. Our team will reach out to you shortly.
+                          {t.home.contact.form.success.desc}
                         </p>
                       </div>
                       <button
                         onClick={() => setIsSubmitted(false)}
                         className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors border-b border-white/20 pb-1"
                       >
-                        Send another message
+                        {t.home.contact.form.success.another}
                       </button>
                     </motion.div>
                   )}

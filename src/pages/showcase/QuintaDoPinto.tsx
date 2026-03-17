@@ -21,14 +21,14 @@ export const QuintaDoPinto = () => {
       <Header />
       <main>
         <ShowcaseHero 
-          title="Quinta do Pinto"
+          title={t.quinta.heroTitle}
           subtitle={t.quinta.heroSubtitle}
           description={t.quinta.heroDescription}
           imageSrc="quinta-wine-brands.png"
           caseStudyNumber="01"
-          sector="Wine & Spirits"
-          deliverables="AI Creative / Video / Stills"
-          railText="ESTABLISHED IN LISBON / 2024"
+          sector={t.quinta.sector}
+          deliverables={t.quinta.deliverables}
+          railText={t.quinta.railText}
         />
 
         <section className="py-24 bg-black text-white text-center border-b border-white/10">
@@ -37,7 +37,7 @@ export const QuintaDoPinto = () => {
               {...fadeInUp}
               className="text-3xl md:text-5xl font-serif italic leading-tight"
             >
-              "Crafting the future of wine storytelling through AI-driven creativity."
+              "{t.quinta.heroQuote}"
             </motion.blockquote>
           </div>
         </section>
@@ -47,9 +47,9 @@ export const QuintaDoPinto = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">01. THE BRIEF</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">01. {t.common.theBrief}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                  The Brief<span className="text-primary">.</span>
+                  {t.quinta.briefTitle}<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed">
                   <p>{t.quinta.briefText}</p>
@@ -66,12 +66,12 @@ export const QuintaDoPinto = () => {
                   <img 
                     src={getAssetUrl('quinta-moodboard.jpg')} 
                     className="w-full h-full object-cover rounded-md" 
-                    alt="Moodboard" 
+                    alt={t.quinta.altMoodboard} 
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="bg-white/90 backdrop-blur-sm px-8 py-4 rotate-[-5deg] shadow-xl border border-black/5">
-                      <span className="text-black font-serif italic text-4xl uppercase tracking-widest">mood BOARD</span>
+                      <span className="text-black font-serif italic text-4xl uppercase tracking-widest">{t.quinta.altMoodboard}</span>
                     </div>
                   </div>
                 </div>
@@ -84,9 +84,9 @@ export const QuintaDoPinto = () => {
         <section className="py-24 md:py-40 bg-[#F9F9F7] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">02. WHAT WE DID</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">02. {t.common.whatWeDid}</span>
               <h2 className="text-4xl md:text-7xl font-display mb-8 leading-[0.9] tracking-tighter uppercase text-black">
-                The Process<span className="text-primary">.</span>
+                {t.quinta.whatWeDidTitle}<span className="text-primary">.</span>
               </h2>
               <p className="text-narrative-shadow/60 uppercase tracking-widest text-xs">{t.quinta.whatWeDidSubtitle}</p>
             </motion.div>
@@ -134,15 +134,15 @@ export const QuintaDoPinto = () => {
                   <img 
                     src={getAssetUrl('quinta-the-idea.gif')} 
                     className="w-full h-full object-cover rounded-md" 
-                    alt="The Idea" 
+                    alt={t.quinta.altTheIdea} 
                     referrerPolicy="no-referrer"
                   />
                 </div>
               </motion.div>
               <motion.div {...fadeInUp} className="order-1 lg:order-2">
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">03. THE IDEA</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">03. {t.common.theIdea}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                  The Idea<span className="text-primary">.</span>
+                  {t.quinta.theIdeaTitle}<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed">
                   <p>{t.quinta.theIdeaText1}</p>
@@ -157,9 +157,9 @@ export const QuintaDoPinto = () => {
         <section className="py-24 md:py-40 bg-[#F9F9F7] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="max-w-3xl mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">04. TRANSFORMATION</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">04. {t.common.transformation}</span>
               <h2 className="text-4xl md:text-7xl font-display mb-8 leading-[0.9] tracking-tighter uppercase text-black">
-                From Bottle to Launch<span className="text-primary">.</span>
+                {t.quinta.fromBottleTitle}<span className="text-primary">.</span>
               </h2>
               <p className="text-xl text-narrative-shadow/60 leading-relaxed">
                 {t.quinta.fromBottleText}
@@ -172,7 +172,7 @@ export const QuintaDoPinto = () => {
                   <img 
                     src={getAssetUrl('quinta-before.png')} 
                     className="w-full h-full object-contain p-12 rounded-md" 
-                    alt="Before" 
+                    alt={t.quinta.altBefore} 
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -183,7 +183,7 @@ export const QuintaDoPinto = () => {
                   <img 
                     src={getAssetUrl('quinta-after.png')} 
                     className="w-full h-full object-cover rounded-md" 
-                    alt="After" 
+                    alt={t.quinta.altAfter} 
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -198,9 +198,9 @@ export const QuintaDoPinto = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">05. CRAFTSMANSHIP</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">05. {t.common.craftsmanship}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                  Attention to Detail<span className="text-primary">.</span>
+                  {t.quinta.attentionTitle}<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed mb-12">
                   <p>{t.quinta.attentionText}</p>
@@ -241,9 +241,9 @@ export const QuintaDoPinto = () => {
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="text-center mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">06. THE IMPACT</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">06. {t.common.impact}</span>
               <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                Results Matter<span className="text-primary">.</span>
+                {t.quinta.resultsTitle}<span className="text-primary">.</span>
               </h2>
               <div className="max-w-3xl mx-auto space-y-6 text-xl text-narrative-shadow/60 leading-relaxed">
                 <p>{t.quinta.resultsText1}</p>
@@ -294,15 +294,15 @@ export const QuintaDoPinto = () => {
                   <img 
                     src={getAssetUrl('quinta-wine-brands.png')} 
                     className="w-full h-full object-cover rounded-md" 
-                    alt="Why it works" 
+                    alt={t.quinta.altWhyItWorks} 
                     referrerPolicy="no-referrer"
                   />
                 </div>
               </motion.div>
               <motion.div {...fadeInUp} className="order-1 lg:order-2">
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">07. STRATEGY</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">07. {t.common.strategy}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                  Why this Works<span className="text-primary">.</span>
+                  {t.quinta.whyWineTitle}<span className="text-primary">.</span>
                 </h2>
                 <p className="text-xl text-narrative-shadow/60 mb-12 leading-relaxed">
                   {t.quinta.whyWineText}
@@ -336,7 +336,7 @@ export const QuintaDoPinto = () => {
               {...fadeInUp}
               className="text-3xl md:text-5xl text-black font-serif italic leading-tight"
             >
-              “Quinta do Pinto represents the perfect marriage of heritage and innovation. By using AI to visualize the soul of their wine, we've created a new standard for luxury spirits content.”
+              “{t.quinta.footerQuote}”
             </motion.p>
           </div>
         </section>
@@ -345,29 +345,29 @@ export const QuintaDoPinto = () => {
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-6xl md:text-8xl font-display uppercase mb-16 leading-[0.9] tracking-tighter text-black">
-              Speed. Soul. Scale<span className="text-primary">.</span>
+              {t.common.speedSoulScale}<span className="text-primary">.</span>
             </h2>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
               <a 
                 href="/contact" 
                 className="bg-black text-white px-10 py-5 text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform flex items-center justify-center gap-3"
               >
-                INQUIRE NOW <ExternalLink className="w-4 h-4" />
+                {t.common.inquireNow} <ExternalLink className="w-4 h-4" />
               </a>
               <a 
                 href="/creative" 
                 className="bg-white text-black border border-black px-10 py-5 text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform"
               >
-                VIEW FRAMEWORK
+                {t.common.viewFramework}
               </a>
             </div>
-            <p className="mt-24 text-[10px] font-bold uppercase tracking-[0.5em] text-black/20">© 2024 NUSTUDIOS × QUINTA DO PINTO.</p>
+            <p className="mt-24 text-[10px] font-bold uppercase tracking-[0.5em] text-black/20">{t.common.copyright} × QUINTA DO PINTO.</p>
           </div>
         </section>
 
         <ProjectNavigation 
           prevProject={{ 
-            title: 'Franks Australia', 
+            title: t.franks.heroTitle, 
             slug: '/showcase/franks-australia', 
             thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%205-100.jpg' 
           }}

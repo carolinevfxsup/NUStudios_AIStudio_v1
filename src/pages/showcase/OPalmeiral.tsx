@@ -25,14 +25,14 @@ export const OPalmeiral = () => {
       
       <main>
         <ShowcaseHero 
-          title="O Palmeiral"
+          title={t.palmeiral.heroTitle}
           subtitle={t.palmeiral.heroSubtitle}
           description={t.palmeiral.heroDescription}
           imageSrc="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/2Artboard%201.png"
           caseStudyNumber="03"
-          sector="Restaurants"
-          deliverables="Social Automation / Content"
-          railText="ESTABLISHED IN LISBON / AUTOMATED"
+          sector={t.palmeiral.sector}
+          deliverables={t.palmeiral.deliverables}
+          railText={t.palmeiral.railText}
           imagePosition="right"
         />
 
@@ -50,7 +50,7 @@ export const OPalmeiral = () => {
                 <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-daniel.webp" 
-                    alt="Daniel - O Palmeiral" 
+                    alt={t.palmeiral.altDaniel} 
                     className="w-full h-auto block" 
                     referrerPolicy="no-referrer"
                   />
@@ -58,7 +58,7 @@ export const OPalmeiral = () => {
               </motion.div>
 
               <motion.div {...fadeInUp} className="order-1 lg:order-2">
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">THE INITIAL REQUEST</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">01. {t.palmeiral.initialRequest}</span>
                 <h2 className="text-4xl md:text-6xl font-display mb-12 leading-tight tracking-tight uppercase">
                   {t.palmeiral.requestQuote}
                 </h2>
@@ -126,12 +126,12 @@ export const OPalmeiral = () => {
                 <div className="relative border border-black/5 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] overflow-hidden bg-white rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png" 
-                    alt="Content Library" 
+                    alt={t.palmeiral.altContentLibrary} 
                     className="w-full h-auto block" 
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute top-6 right-6 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-[10px] font-black tracking-widest border border-black/10 shadow-sm">
-                    SOURCE: GOOGLE DRIVE
+                    {t.palmeiral.sourceGoogleDrive}
                   </div>
                 </div>
                 {/* Decorative background element */}
@@ -189,11 +189,11 @@ export const OPalmeiral = () => {
                 <div className="space-y-6">
                   <div className="flex items-center gap-4 text-sm font-black uppercase tracking-widest">
                     <Calendar className="w-5 h-5 text-primary" />
-                    <span>DAILY PRESENCE</span>
+                    <span>{t.palmeiral.dailyPresence}</span>
                   </div>
                   <div className="flex items-center gap-4 text-sm font-black uppercase tracking-widest">
                     <span className="text-2xl">👌</span>
-                    <span>ZERO MANUAL TIME</span>
+                    <span>{t.palmeiral.zeroManualTime}</span>
                   </div>
                 </div>
               </motion.div>
@@ -207,7 +207,7 @@ export const OPalmeiral = () => {
                 <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md bg-white">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png" 
-                    alt="Instagram Growth" 
+                    alt={t.palmeiral.altInstagramGrowth} 
                     className="w-full h-auto block" 
                     referrerPolicy="no-referrer"
                   />
@@ -225,18 +225,18 @@ export const OPalmeiral = () => {
                 {t.palmeiral.systemTitle} {t.palmeiral.systemTitleItalic.replace(/\.$/, '')}<span className="text-primary">.</span>
               </h2>
               <p className="text-white/40 text-lg max-w-2xl mx-auto">
-                A fully autonomous pipeline that transforms raw assets into polished social presence.
+                {t.palmeiral.systemSub}
               </p>
             </motion.div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: Folder, title: t.palmeiral.step1Title, desc: "A single Google Drive folder. Images can be added at any time." },
-                { icon: ScanEye, title: t.palmeiral.step2Title, desc: "The system continuously scans the folder. New images are detected automatically." },
+                { icon: Folder, title: t.palmeiral.step1Title, desc: t.palmeiral.step1Description },
+                { icon: ScanEye, title: t.palmeiral.step2Title, desc: t.palmeiral.step2Description },
                 { icon: Tags, title: t.palmeiral.step3Title, desc: `${t.palmeiral.step3Categories.join(', ')}.` },
                 { icon: Sparkles, title: t.palmeiral.step4Title, desc: t.palmeiral.step4Description },
                 { icon: ListOrdered, title: t.palmeiral.step5Title, desc: t.palmeiral.step5Description },
-                { icon: CalendarClock, title: t.palmeiral.step6Title, desc: "Automatic posting at scheduled times. Consistent daily presence." }
+                { icon: CalendarClock, title: t.palmeiral.step6Title, desc: t.palmeiral.step6Description }
               ].map((step, i) => (
                 <motion.div 
                   key={i}
@@ -249,7 +249,7 @@ export const OPalmeiral = () => {
                   <div className="w-14 h-14 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                     <step.icon className="w-10 h-10 text-red-600" />
                   </div>
-                  <h3 className="font-bold text-xl mb-4 text-white">{step.title}</h3>
+                  <h3 className="font-bold text-xl mb-4 text-white uppercase">{step.title}</h3>
                   <p className="text-white/40 leading-relaxed">{step.desc}</p>
                 </motion.div>
               ))}
@@ -270,7 +270,7 @@ export const OPalmeiral = () => {
                 <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-posting-logic.png" 
-                    alt="Posting Logic" 
+                    alt={t.palmeiral.altPostingLogic} 
                     className="w-full h-auto block" 
                     referrerPolicy="no-referrer"
                   />
@@ -316,7 +316,7 @@ export const OPalmeiral = () => {
                 <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-human-checkpoint.png" 
-                    alt="Human Checkpoint" 
+                    alt={t.palmeiral.altHumanCheckpoint} 
                     className="w-full h-auto block" 
                     referrerPolicy="no-referrer"
                   />
@@ -359,7 +359,7 @@ export const OPalmeiral = () => {
                 <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-informed.png" 
-                    alt="Always Informed" 
+                    alt={t.palmeiral.altAlwaysInformed} 
                     className="w-full h-auto block" 
                     referrerPolicy="no-referrer"
                   />
@@ -398,13 +398,13 @@ export const OPalmeiral = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">THE OUTCOME</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">08. {t.palmeiral.outcome}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter text-white uppercase">
                   {t.palmeiral.outcomeTitleMain} {t.palmeiral.outcomeTitleItalic.replace(/\.$/, '')}<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-white/60 leading-relaxed mb-12">
                   <p>
-                    O Palmeiral now maintains a world-class social presence without the owner ever needing to log in to Instagram.
+                    {t.palmeiral.outcomeText}
                   </p>
                   <ul className="space-y-4">
                     {t.palmeiral.outcomeItems.map((item, i) => (
@@ -415,9 +415,12 @@ export const OPalmeiral = () => {
                     ))}
                   </ul>
                 </div>
-                <button className="px-10 py-5 bg-red-600 text-white font-black uppercase tracking-widest text-xs hover:scale-105 transition-transform">
+                <a 
+                  href="/contact"
+                  className="inline-block px-10 py-5 bg-red-600 text-white font-black uppercase tracking-widest text-xs hover:scale-105 transition-transform"
+                >
                   {t.palmeiral.ctaButton}
-                </button>
+                </a>
               </motion.div>
 
               <motion.div 
@@ -429,7 +432,7 @@ export const OPalmeiral = () => {
                 <div className="relative border border-white/10 shadow-2xl overflow-hidden rounded-md">
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-social-post.jpeg" 
-                    alt="Final Social Post" 
+                    alt={t.palmeiral.altFinalSocialPost} 
                     className="w-full h-auto block" 
                     referrerPolicy="no-referrer"
                   />
@@ -446,7 +449,7 @@ export const OPalmeiral = () => {
             thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png' 
           }}
           nextProject={{ 
-            title: 'Franks Australia', 
+            title: t.franks.heroTitle, 
             slug: '/showcase/franks-australia', 
             thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%205-100.jpg' 
           }}

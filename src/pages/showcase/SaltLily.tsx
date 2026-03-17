@@ -21,14 +21,14 @@ export const SaltLily = () => {
       <Header />
       <main>
         <ShowcaseHero 
-          title="Salt Lily"
-          subtitle="Scaling Jewellery Content"
-          description="A full visual and automation system built for Salt Lily—designed to create, manage, and distribute premium jewellery content at scale."
+          title={t.saltLily.heroTitle}
+          subtitle={t.saltLily.heroSubtitle}
+          description={t.saltLily.heroDescription}
           imageSrc="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png"
           caseStudyNumber="02"
-          sector="Jewellery"
-          deliverables="AI Imagery / Automation / SEO"
-          railText="ESTABLISHED IN 2023 / SCALABLE"
+          sector={t.saltLily.sector}
+          deliverables={t.saltLily.deliverables}
+          railText={t.saltLily.railText}
         />
 
         {/* Section 01: The Brand We Built This For */}
@@ -36,13 +36,12 @@ export const SaltLily = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">01. THE BRAND</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">01. {t.common.theBrand}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                  The Brand We Built This For<span className="text-primary">.</span>
+                  {t.saltLily.brandTitle}<span className="italic text-primary lowercase font-serif">{t.saltLily.brandTitleItalic}</span><span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed">
-                  <p>Salt Lily is a modern waterproof jewellery brand with an established Shopify store and an active, engaged Instagram presence. Their visual identity is refined, their audience loyal.</p>
-                  <p className="text-narrative-shadow/60">The challenge wasn't creating content—it was producing enough high-quality visuals at scale while maintaining the brand consistency their customers expect.</p>
+                  <p>{t.saltLily.brandText1}</p>
                 </div>
               </motion.div>
               <motion.div 
@@ -56,7 +55,7 @@ export const SaltLily = () => {
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/Gemini_Generated_Image_gx9357gx9357gx93_1.jpeg" 
                     className="w-full h-full object-cover rounded-md" 
-                    alt="Salt Lily Brand" 
+                    alt={t.saltLily.altBrand} 
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -69,21 +68,21 @@ export const SaltLily = () => {
         <section className="py-24 md:py-40 bg-[#F9F9F7] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="text-center max-w-3xl mx-auto mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">02. CONTENT ENGINE</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">02. {t.common.contentEngine}</span>
               <h2 className="text-4xl md:text-7xl font-display mb-8 leading-[0.9] tracking-tighter uppercase text-black">
-                Feed-Ready Imagery<span className="text-primary">.</span>
+                {t.saltLily.feedTitle}<span className="text-primary">.</span>
               </h2>
               <p className="text-xl text-narrative-shadow/60 leading-relaxed">
-                AI-assisted imagery created specifically for Salt Lily's Instagram grid, matching the look and quality of their existing posts.
+                {t.saltLily.feedText}
               </p>
             </motion.div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { title: 'Basic product photography', src: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/jewelry_prodoct.jpg", icon: Camera },
-                { title: 'Earring product photo', src: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/49b80539-fe19-479e-9dae-e0eb82e19511.jpg", icon: Sparkles },
-                { title: 'Finished social-ready AI Image', src: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png", icon: Check },
-                { title: 'Video content', src: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/sped_up_video.mp4", icon: Play, isVideo: true }
+                { title: t.saltLily.feedBasic, src: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/jewelry_prodoct.jpg", icon: Camera },
+                { title: t.saltLily.feedEarring, src: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/49b80539-fe19-479e-9dae-e0eb82e19511.jpg", icon: Sparkles },
+                { title: t.saltLily.feedSocial, src: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png", icon: Check },
+                { title: t.saltLily.feedVideo, src: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/sped_up_video.mp4", icon: Play, isVideo: true }
               ].map((item, i) => (
                 <motion.div 
                   key={i} 
@@ -125,20 +124,20 @@ export const SaltLily = () => {
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/FEMME_HER.png" 
                     className="w-full h-full object-cover rounded-md" 
-                    alt="Jewellery Detail" 
+                    alt={t.saltLily.altDetail} 
                     referrerPolicy="no-referrer"
                   />
                 </div>
               </motion.div>
               <motion.div {...fadeInUp} className="order-1 lg:order-2">
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">03. THE CHALLENGE</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">03. {t.common.theChallenge}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                  Jewellery Precision<span className="text-primary">.</span>
+                  {t.saltLily.whyHardTitle}<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed">
-                  <p>Jewellery presents unique challenges that expose the limitations of most AI image generation. Reflections on polished metal surfaces, accurate colour representation of gold, silver, and rose gold, the way light interacts with gemstones—these details matter.</p>
+                  <p>{t.saltLily.whyHardText1}</p>
                   <div className="p-8 bg-[#F9F9F7] border-l-4 border-primary rounded-r-md">
-                    <p className="italic font-serif">"Our approach is controlled, human-directed AI. Every output is reviewed, refined, and approved before it represents the brand."</p>
+                    <p className="italic font-serif">"{t.saltLily.approachQuote}"</p>
                   </div>
                 </div>
               </motion.div>
@@ -150,12 +149,12 @@ export const SaltLily = () => {
         <section className="py-24 md:py-40 bg-[#F9F9F7] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="text-center max-w-3xl mx-auto mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">04. MOTION ASSETS</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">04. {t.common.motionAssets}</span>
               <h2 className="text-4xl md:text-7xl font-display mb-8 leading-[0.9] tracking-tighter uppercase text-black">
-                Still to Video<span className="text-primary">.</span>
+                {t.saltLily.stillToVideoTitle}<span className="text-primary">.</span>
               </h2>
               <p className="text-xl text-narrative-shadow/60 leading-relaxed">
-                Still imagery transformed into video content suitable for Reels, TikTok, and paid social—without traditional filming.
+                {t.saltLily.stillToVideoText}
               </p>
             </motion.div>
             
@@ -165,11 +164,11 @@ export const SaltLily = () => {
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/baae6b23-4f9e-49d9-8b07-9c5b8efbd951-aXWCm98I%20(1).jpg" 
                     className="w-full h-full object-cover rounded-md" 
-                    alt="Source Still" 
+                    alt={t.saltLily.altSourceStill} 
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">SOURCE STILL</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">{t.saltLily.sourceStill}</p>
               </motion.div>
               <motion.div {...fadeInUp} className="space-y-6">
                 <div className="aspect-video overflow-hidden bg-white border border-[#EEEEEE] shadow-xl rounded-md">
@@ -179,7 +178,7 @@ export const SaltLily = () => {
                     autoPlay loop muted playsInline
                   />
                 </div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">RESULTING SHORT-FORM VIDEO</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">{t.saltLily.resultVideo}</p>
               </motion.div>
             </div>
           </div>
@@ -189,12 +188,12 @@ export const SaltLily = () => {
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="text-center max-w-3xl mx-auto mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">05. CONVERSION</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">05. {t.common.conversion}</span>
               <h2 className="text-4xl md:text-7xl font-display mb-8 leading-[0.9] tracking-tighter uppercase text-black">
-                Built for Conversion<span className="text-primary">.</span>
+                {t.saltLily.productTitle}<span className="text-primary">.</span>
               </h2>
               <p className="text-xl text-narrative-shadow/60 leading-relaxed">
-                Lifestyle and close-up images designed for Shopify product and collection pages. These visuals support customer trust, clarity, and conversion.
+                {t.saltLily.productText}
               </p>
             </motion.div>
             
@@ -204,8 +203,8 @@ export const SaltLily = () => {
                   <BeforeAfterSlider 
                     beforeImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/Salt_lily_FEMME_product_earring.png" 
                     afterImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/Salt_lily_FEMME_product.png" 
-                    beforeLabel="Before" 
-                    afterLabel="After"
+                    beforeLabel={t.saltLily.before} 
+                    afterLabel={t.saltLily.after}
                     className="aspect-square"
                   />
                 </motion.div>
@@ -213,8 +212,8 @@ export const SaltLily = () => {
                   <BeforeAfterSlider 
                     beforeImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/94eb8954-6637-43f2-9553-042705895ff8.jpg" 
                     afterImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/ChunkyFinal.jpg" 
-                    beforeLabel="Before" 
-                    afterLabel="After"
+                    beforeLabel={t.saltLily.before} 
+                    afterLabel={t.saltLily.after}
                     className="aspect-square"
                   />
                 </motion.div>
@@ -224,8 +223,8 @@ export const SaltLily = () => {
                   <BeforeAfterSlider 
                     beforeImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/5a56838a-7813-48c8-ae76-5898844dc13a.jpg" 
                     afterImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/Gemini_Generated_Image_nqssybnqssybnqss.png" 
-                    beforeLabel="Before" 
-                    afterLabel="After"
+                    beforeLabel={t.saltLily.before} 
+                    afterLabel={t.saltLily.after}
                     className="aspect-square"
                   />
                 </motion.div>
@@ -233,8 +232,8 @@ export const SaltLily = () => {
                   <BeforeAfterSlider 
                     beforeImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/21be479c-78f9-4710-8412-0dbeee5747a7_1.jpg" 
                     afterImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/smiling_no_watermark.jpeg" 
-                    beforeLabel="Before" 
-                    afterLabel="After"
+                    beforeLabel={t.saltLily.before} 
+                    afterLabel={t.saltLily.after}
                     className="aspect-square"
                   />
                 </motion.div>
@@ -248,19 +247,19 @@ export const SaltLily = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">06. AUTOMATION</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">06. {t.common.automation}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                  The AI Brain<span className="text-primary">.</span>
+                  {t.saltLily.aiBrainTitle}<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed mb-12">
-                  <p>We built a system for Salt Lily that scans their Shopify products and posts daily on Instagram, Facebook and TikTok — and publishes an SEO-optimised blog every day.</p>
+                  <p>{t.saltLily.aiBrainText}</p>
                 </div>
                 <div className="grid grid-cols-2 gap-8">
                   {[
-                    { icon: ShoppingCart, title: 'Shopify Sync', text: 'Real-time product data ingestion.' },
-                    { icon: Globe, title: 'SEO Blog', text: 'Automated high-intent articles.' },
-                    { icon: Zap, title: 'Daily Posts', text: 'Hands-off social distribution.' },
-                    { icon: Sparkles, title: 'AI Creative', text: 'Continuous asset generation.' }
+                    { icon: ShoppingCart, title: t.saltLily.shopifySyncTitle, text: t.saltLily.shopifySyncText },
+                    { icon: Globe, title: t.saltLily.seoBlogTitle, text: t.saltLily.seoBlogText },
+                    { icon: Zap, title: t.saltLily.dailyPostsTitle, text: t.saltLily.dailyPostsText },
+                    { icon: Sparkles, title: t.saltLily.aiCreativeTitle, text: t.saltLily.aiCreativeText }
                   ].map((item, i) => (
                     <div key={i} className="space-y-3 group">
                       <div className="flex items-center gap-3">
@@ -285,7 +284,7 @@ export const SaltLily = () => {
                   <img 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/socials.webp" 
                     className="w-full h-full object-cover" 
-                    alt="AI Automation System" 
+                    alt={t.saltLily.altAutomationSystem} 
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -301,17 +300,17 @@ export const SaltLily = () => {
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="text-center mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">THE IMPACT</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">{t.common.impact}</span>
               <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                Results that Scale<span className="text-primary">.</span>
+                {t.common.resultsThatScale}<span className="text-primary">.</span>
               </h2>
             </motion.div>
  
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { icon: TrendingUp, title: "Growth", text: "200% increase in organic traffic through daily SEO-optimized publishing." },
-                { icon: Share2, title: "Presence", text: "Always-on social strategy with zero manual content creation required." },
-                { icon: Sparkles, title: "Quality", text: "Premium jewelry visuals that outperform traditional photography in engagement." }
+                { icon: TrendingUp, title: t.saltLily.impactGrowthTitle, text: t.saltLily.impactGrowthText },
+                { icon: Share2, title: t.saltLily.impactPresenceTitle, text: t.saltLily.impactPresenceText },
+                { icon: Sparkles, title: t.saltLily.impactQualityTitle, text: t.saltLily.impactQualityText }
               ].map((item, i) => (
                 <motion.div 
                   key={i}
@@ -339,7 +338,7 @@ export const SaltLily = () => {
               {...fadeInUp}
               className="text-3xl md:text-5xl text-black font-serif italic leading-tight"
             >
-              “NUstudios didn't just give us content; they gave us a content engine. Our brand is now always-on, always-growing, and always-consistent across every platform.”
+              {t.saltLily.footerQuote}
             </motion.p>
           </div>
         </section>
@@ -348,23 +347,23 @@ export const SaltLily = () => {
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-6xl md:text-8xl font-display uppercase mb-16 leading-[0.9] tracking-tighter text-black">
-              Speed. Soul. Scale<span className="text-primary">.</span>
+              {t.common.speedSoulScale}<span className="text-primary">.</span>
             </h2>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
               <a 
                 href="/contact" 
                 className="bg-black text-white px-10 py-5 text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform flex items-center justify-center gap-3"
               >
-                INQUIRE NOW <ExternalLink className="w-4 h-4" />
+                {t.common.inquireNow} <ExternalLink className="w-4 h-4" />
               </a>
               <a 
                 href="/creative" 
                 className="bg-white text-black border border-black px-10 py-5 text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform"
               >
-                VIEW FRAMEWORK
+                {t.common.viewFramework}
               </a>
             </div>
-            <p className="mt-24 text-[10px] font-bold uppercase tracking-[0.5em] text-black/20">© 2024 NUSTUDIOS × SALT LILY.</p>
+            <p className="mt-24 text-[10px] font-bold uppercase tracking-[0.5em] text-black/20">{t.common.copyright} × SALT LILY.</p>
           </div>
         </section>
 
