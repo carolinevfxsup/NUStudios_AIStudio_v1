@@ -10,7 +10,7 @@ export const Results = () => {
           {/* Header container */}
           <div className="mb-24">
             <FadeIn delay={0.1}>
-              <h1 className="text-6xl md:text-9xl font-display font-bold uppercase tracking-tighter text-black">
+              <h1 className="text-6xl md:text-9xl font-display uppercase tracking-tighter text-black">
                 RESULTS<span className="text-red-600">.</span>
               </h1>
             </FadeIn>

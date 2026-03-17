@@ -27,8 +27,8 @@ export const SaltLily = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div>
-                <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-10">
-                  The Brand We <span className="text-primary">Built This For</span>
+                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
+                  The Brand We <span className="text-primary">Built This For<span className="text-primary">.</span></span>
                 </h2>
                 <div className="space-y-6 text-lg text-narrative-shadow/80 leading-relaxed">
                   <p>Salt Lily is a modern waterproof jewellery brand with an established Shopify store and an active, engaged Instagram presence. Their visual identity is refined, their audience loyal.</p>
@@ -53,8 +53,8 @@ export const SaltLily = () => {
         <section className="py-24 md:py-32 bg-[#F5F5F0] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
-              <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-6">
-                Feed-Ready Imagery <span className="text-primary">That Matches the Brand</span>
+              <h2 className="text-4xl md:text-6xl font-display uppercase mb-6">
+                Feed-Ready Imagery <span className="text-primary">That Matches the Brand<span className="text-primary">.</span></span>
               </h2>
               <p className="text-lg text-narrative-shadow/60 leading-relaxed">
                 AI-assisted imagery created specifically for Salt Lily's Instagram grid, matching the look and quality of their existing posts.
@@ -101,8 +101,8 @@ export const SaltLily = () => {
                 </div>
               </div>
               <div className="order-1 lg:order-2">
-                <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-10">
-                  The Brand We <span className="text-primary">Built This For</span>
+                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
+                  The Brand We <span className="text-primary">Built This For<span className="text-primary">.</span></span>
                 </h2>
                 <div className="space-y-8 text-lg text-narrative-shadow/80 leading-relaxed">
                   <p>Jewellery presents unique challenges that expose the limitations of most AI image generation. Reflections on polished metal surfaces, accurate colour representation of gold, silver, and rose gold, the way light interacts with gemstones—these details matter.</p>
@@ -119,8 +119,8 @@ export const SaltLily = () => {
         <section className="py-24 md:py-32 bg-[#F5F5F0] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
-              <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-6">
-                From Still Images <span className="text-primary">to Scroll-Stopping Video</span>
+              <h2 className="text-4xl md:text-6xl font-display uppercase mb-6">
+                From Still Images <span className="text-primary">to Scroll-Stopping Video<span className="text-primary">.</span></span>
               </h2>
               <p className="text-lg text-narrative-shadow/60 leading-relaxed">
                 Still imagery transformed into video content suitable for Reels, TikTok, and paid social—without traditional filming.
@@ -157,8 +157,8 @@ export const SaltLily = () => {
         <section className="py-24 md:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
-              <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-6">
-                Product Imagery <span className="text-primary">Built for Conversion</span>
+              <h2 className="text-4xl md:text-6xl font-display uppercase mb-6">
+                Product Imagery <span className="text-primary">Built for Conversion<span className="text-primary">.</span></span>
               </h2>
               <p className="text-lg text-narrative-shadow/60 leading-relaxed">
                 Lifestyle and close-up images designed for Shopify product and collection pages. These visuals support customer trust, clarity, and conversion.
@@ -215,8 +215,8 @@ export const SaltLily = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div>
-                <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-10">
-                  The AI Brain <span className="text-primary">Behind the Publishing</span>
+                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
+                  The AI Brain <span className="text-primary">Behind the Publishing<span className="text-primary">.</span></span>
                 </h2>
                 <div className="space-y-8 text-lg text-narrative-shadow/80 leading-relaxed mb-12">
                   <p>We built a system for Salt Lily that scans their Shopify products and posts daily on Instagram, Facebook and TikTok — and publishes an SEO-optimised blog every day.</p>

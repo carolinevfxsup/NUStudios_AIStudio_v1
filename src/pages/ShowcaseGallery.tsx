@@ -6,7 +6,7 @@ export const ShowcaseGallery = () => {
       <section id="results" className="py-16 text-white border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
-            <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.8] uppercase text-white">RESULTS<span className="text-red-600">.</span></h2>
+            <h2 className="text-5xl md:text-7xl font-display tracking-tighter leading-[0.8] uppercase text-white">RESULTS<span className="text-red-600">.</span></h2>
           </div>
           
           <HomeResultsBento />

@@ -36,8 +36,8 @@ export const QuintaDoPinto = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div>
-                <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-10">
-                  The <span className="text-primary">brief</span>
+                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
+                  The <span className="text-primary">brief<span className="text-primary">.</span></span>
                 </h2>
                 <div className="space-y-6 text-lg text-narrative-shadow/80 leading-relaxed">
                   <p>{t.quinta.briefText}</p>
@@ -66,8 +66,8 @@ export const QuintaDoPinto = () => {
         <section className="py-24 md:py-32 bg-[#F5F5F0] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-20">
-              <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-4">
-                What <span className="text-primary">We Did</span>
+              <h2 className="text-4xl md:text-6xl font-display uppercase mb-4">
+                What <span className="text-primary">We Did<span className="text-primary">.</span></span>
               </h2>
               <p className="text-narrative-shadow/60 uppercase tracking-widest text-xs">{t.quinta.whatWeDidSubtitle}</p>
             </div>
@@ -108,8 +108,8 @@ export const QuintaDoPinto = () => {
                 </div>
               </div>
               <div className="order-1 lg:order-2">
-                <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-10">
-                  The <span className="text-primary">idea</span>
+                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
+                  The <span className="text-primary">idea<span className="text-primary">.</span></span>
                 </h2>
                 <div className="space-y-8 text-lg text-narrative-shadow/80 leading-relaxed">
                   <p>{t.quinta.theIdeaText1}</p>
@@ -124,8 +124,8 @@ export const QuintaDoPinto = () => {
         <section className="py-24 md:py-32 bg-[#F5F5F0] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-3xl mb-20">
-              <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-8">
-                From bottle <span className="text-primary">to launch content</span>
+              <h2 className="text-4xl md:text-6xl font-display uppercase mb-8">
+                From bottle <span className="text-primary">to launch content<span className="text-primary">.</span></span>
               </h2>
               <p className="text-lg text-narrative-shadow/60 leading-relaxed">
                 {t.quinta.fromBottleText}
@@ -164,8 +164,8 @@ export const QuintaDoPinto = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div>
-                <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-10">
-                  Attention <span className="text-primary">to detail</span>
+                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
+                  Attention <span className="text-primary">to detail<span className="text-primary">.</span></span>
                 </h2>
                 <div className="space-y-8 text-lg text-narrative-shadow/80 leading-relaxed mb-12">
                   <p>{t.quinta.attentionText}</p>
@@ -200,8 +200,8 @@ export const QuintaDoPinto = () => {
         <section className="py-24 md:py-32 bg-[#F5F5F0] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-3xl mb-20">
-              <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-8">
-                Results <span className="text-primary">Matter</span>
+              <h2 className="text-4xl md:text-6xl font-display uppercase mb-8">
+                Results <span className="text-primary">Matter<span className="text-primary">.</span></span>
               </h2>
               <div className="space-y-6 text-lg text-narrative-shadow/60 leading-relaxed">
                 <p>{t.quinta.resultsText1}</p>
@@ -235,8 +235,8 @@ export const QuintaDoPinto = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div>
-                <h2 className="text-4xl md:text-6xl font-sans font-bold italic mb-10">
-                  Why this <span className="text-primary">works for wine brands</span>
+                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
+                  Why this <span className="text-primary">works for wine brands<span className="text-primary">.</span></span>
                 </h2>
                 <p className="text-lg text-narrative-shadow/60 mb-12 leading-relaxed">
                   {t.quinta.whyWineText}

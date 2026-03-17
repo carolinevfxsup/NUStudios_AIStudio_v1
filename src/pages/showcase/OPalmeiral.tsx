@@ -59,7 +59,7 @@ export const OPalmeiral = () => {
 
               <motion.div {...fadeInUp} className="order-1 lg:order-2">
                 <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">THE INITIAL REQUEST</span>
-                <h2 className="text-4xl md:text-6xl font-display font-bold mb-12 leading-tight tracking-tight uppercase">
+                <h2 className="text-4xl md:text-6xl font-display mb-12 leading-tight tracking-tight uppercase">
                   {t.palmeiral.requestQuote}
                 </h2>
                 <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed">
@@ -77,8 +77,8 @@ export const OPalmeiral = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <h2 className="text-4xl md:text-7xl font-display font-bold mb-8 leading-[0.9] tracking-tighter uppercase">
-                  {t.palmeiral.heroNewTitle} {t.palmeiral.heroNewTitleItalic}
+                <h2 className="text-4xl md:text-7xl font-display mb-8 leading-[0.9] tracking-tighter uppercase">
+                  {t.palmeiral.heroNewTitle} {t.palmeiral.heroNewTitleItalic.replace(/\.$/, '')}<span className="text-primary">.</span>
                 </h2>
                 
                 <div className="space-y-8">
@@ -180,8 +180,8 @@ export const OPalmeiral = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <h2 className="text-4xl md:text-7xl font-display font-bold mb-12 leading-[0.9] tracking-tighter uppercase">
-                  {t.palmeiral.growthTitle} {t.palmeiral.growthTitleItalic}
+                <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase">
+                  {t.palmeiral.growthTitle} {t.palmeiral.growthTitleItalic.replace(/\.$/, '')}<span className="text-primary">.</span>
                 </h2>
                 <p className="text-xl text-narrative-shadow/80 leading-relaxed mb-12">
                   {t.palmeiral.growthText}
@@ -221,8 +221,8 @@ export const OPalmeiral = () => {
         <section className="py-24 md:py-40 bg-[#0A0A0A] text-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div {...fadeInUp} className="text-center mb-24">
-              <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 text-white uppercase">
-                {t.palmeiral.systemTitle} {t.palmeiral.systemTitleItalic}
+              <h2 className="text-4xl md:text-6xl font-display mb-6 text-white uppercase">
+                {t.palmeiral.systemTitle} {t.palmeiral.systemTitleItalic.replace(/\.$/, '')}<span className="text-primary">.</span>
               </h2>
               <p className="text-white/40 text-lg max-w-2xl mx-auto">
                 A fully autonomous pipeline that transforms raw assets into polished social presence.
@@ -278,8 +278,8 @@ export const OPalmeiral = () => {
               </motion.div>
 
               <motion.div {...fadeInUp}>
-                <h2 className="text-4xl md:text-7xl font-display font-bold mb-12 leading-[0.9] tracking-tighter uppercase">
-                  {t.palmeiral.postingLogicTitle} {t.palmeiral.postingLogicTitleItalic}
+                <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase">
+                  {t.palmeiral.postingLogicTitle} {t.palmeiral.postingLogicTitleItalic.replace(/\.$/, '')}<span className="text-primary">.</span>
                 </h2>
                 <p className="text-xl text-narrative-shadow/60 mb-10">{t.palmeiral.postingLogicSub}</p>
                 <ul className="space-y-6 mb-12">
@@ -324,8 +324,8 @@ export const OPalmeiral = () => {
               </motion.div>
 
               <motion.div {...fadeInUp} className="order-2 lg:order-1">
-                <h2 className="text-4xl md:text-7xl font-display font-bold mb-12 leading-[0.9] tracking-tighter uppercase">
-                  {t.palmeiral.checkpointTitle} {t.palmeiral.checkpointTitleItalic}
+                <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase">
+                  {t.palmeiral.checkpointTitle} {t.palmeiral.checkpointTitleItalic.replace(/\.$/, '')}<span className="text-primary">.</span>
                 </h2>
                 <p className="text-xl text-narrative-shadow/60 mb-10">{t.palmeiral.checkpointSub}</p>
                 <ul className="space-y-6">
@@ -367,8 +367,8 @@ export const OPalmeiral = () => {
               </motion.div>
 
               <motion.div {...fadeInUp}>
-                <h2 className="text-4xl md:text-7xl font-display font-bold mb-12 leading-[0.9] tracking-tighter uppercase">
-                  {t.palmeiral.informedTitle} {t.palmeiral.informedTitleItalic}
+                <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase">
+                  {t.palmeiral.informedTitle} {t.palmeiral.informedTitleItalic.replace(/\.$/, '')}<span className="text-primary">.</span>
                 </h2>
                 <p className="text-xl text-narrative-shadow/60 mb-10">{t.palmeiral.informedSub}</p>
                 <div className="grid gap-6">
@@ -399,8 +399,8 @@ export const OPalmeiral = () => {
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
                 <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">THE OUTCOME</span>
-                <h2 className="text-4xl md:text-7xl font-display font-bold mb-12 leading-[0.9] tracking-tighter text-white uppercase">
-                  {t.palmeiral.outcomeTitleMain} {t.palmeiral.outcomeTitleItalic}
+                <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter text-white uppercase">
+                  {t.palmeiral.outcomeTitleMain} {t.palmeiral.outcomeTitleItalic.replace(/\.$/, '')}<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-white/60 leading-relaxed mb-12">
                   <p>
