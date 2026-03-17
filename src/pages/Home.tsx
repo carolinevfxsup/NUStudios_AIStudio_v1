@@ -1,12 +1,13 @@
 import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Phone, FileText, Laptop, Send } from 'lucide-react';
+import { Phone, FileText, Laptop, Send, Loader2, Check, ExternalLink, ArrowRight } from 'lucide-react';
 import { LogoScroll } from '../components/LogoScroll';
 import { HomeResultsBento } from '../components/HomeResultsBento';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAssetUrl } from '../constants';
 import { FadeIn } from '../components/FadeIn';
 import { ShowreelModal } from '../components/ShowreelModal';
+import { AnimatePresence } from 'framer-motion';
 
 const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isOpen: boolean, onToggle: () => void }) => {
   return (
@@ -53,11 +54,11 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
             <div className={`grid grid-cols-1 ${service.id === '06' || service.id === '05' || service.id === '02' || service.id === '03' || service.id === '01' ? 'sm:grid-cols-3' : 'sm:grid-cols-2'} gap-8 mb-16`}>
               {service.images.map((img: any, idx: number) => (
                 <div key={idx} className="space-y-4">
-                  <div className={`${service.id === '04' ? 'aspect-[19/6]' : 'aspect-[4/6]'} overflow-hidden rounded-md`}>
+                  <div className={`${service.id === '04' ? 'aspect-[19/6]' : 'aspect-[4/6]'} overflow-hidden rounded-none`}>
                     {img.src.endsWith('.mp4') ? (
                       <video 
                         src={getAssetUrl(img.src)} 
-                        className="w-full h-full object-cover rounded-md"
+                        className="w-full h-full object-cover rounded-none"
                         autoPlay 
                         loop 
                         muted 
@@ -67,7 +68,7 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
                       <img 
                         src={getAssetUrl(img.src)} 
                         alt={img.caption} 
-                        className="w-full h-full object-cover rounded-md"
+                        className="w-full h-full object-cover rounded-none"
                         referrerPolicy="no-referrer"
                       />
                     )}
@@ -80,8 +81,9 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
             </div>
 
             <div className="flex justify-end">
-              <Link to="/onboarding" className="bg-red-600 text-white px-10 py-4 rounded-full font-sans font-bold text-xs uppercase tracking-widest hover:bg-red-700 transition-all w-fit">
-                {service.id === '06' ? 'Book A Demo' : 'Learn More'}
+              <Link to="/onboarding" className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit group">
+                {service.id === '06' ? 'BOOK A DEMO' : 'LEARN MORE'}
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -103,12 +105,16 @@ export const Home = () => {
     message: ''
   });
   const [file, setFile] = useState<File | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    if (submitError) setSubmitError(null);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -117,10 +123,30 @@ export const Home = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', { ...formData, file });
-    alert('Message sent successfully!');
+    setIsSubmitting(true);
+    setSubmitError(null);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ firstName: '', lastName: '', phone: '', email: '', message: '' });
+        setFile(null);
+      } else {
+        const data = await response.json();
+        setSubmitError(data.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      setSubmitError('An error occurred. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleAnalyze = () => {
@@ -179,8 +205,9 @@ export const Home = () => {
               </p>
             </FadeIn>
             <FadeIn delay={0.4}>
-              <Link to="/onboarding" className="bg-red-600 text-white px-10 py-4 rounded-full font-sans font-bold text-xs uppercase tracking-widest hover:bg-red-700 transition-all">
-                Grow Your Business
+              <Link to="/onboarding" className="bg-black text-white px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 transition-all flex items-center justify-center gap-3 w-fit mx-auto group">
+                GROW YOUR BUSINESS
+                <ExternalLink className="w-4 h-4" />
               </Link>
             </FadeIn>
           </div>
@@ -206,8 +233,9 @@ export const Home = () => {
           
           <div className="mt-16 text-center">
             <FadeIn delay={0.4}>
-              <Link to="/results" className="bg-red-600 text-white px-10 py-4 rounded-full font-sans font-bold text-xs uppercase tracking-widest hover:bg-red-700 transition-all">
-                View All Results
+              <Link to="/results" className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit mx-auto group">
+                VIEW ALL RESULTS
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>
           </div>
@@ -514,12 +542,6 @@ export const Home = () => {
                 </div>
                 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
-                  <a 
-                    href="mailto:hello@nustudios.co.uk" 
-                    className="bg-red-600 text-white px-10 py-4 rounded-full font-sans font-bold text-xs uppercase tracking-widest hover:bg-red-700 transition-all text-center"
-                  >
-                    Send Email
-                  </a>
                   <div className="space-y-1">
                     <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">Direct Contact</p>
                     <p className="text-lg font-display font-bold">hello@nustudios.co.uk</p>
@@ -570,113 +592,163 @@ export const Home = () => {
                 </h2>
                 <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">Let's Talk</p>
                 
-                <form onSubmit={handleSubmit} className="space-y-12">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div className="space-y-2 relative">
-                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">First Name*</label>
-                      <div className="relative">
-                        <input
-                          type="text"
-                          name="firstName"
-                          required
-                          value={formData.firstName}
-                          onChange={handleInputChange}
-                          className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors text-white font-sans"
-                        />
-                        <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
-                            <path d="M7 4v16M17 4v16M7 12h10" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="space-y-2 relative">
-                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Last Name*</label>
-                      <div className="relative">
-                        <input
-                          type="text"
-                          name="lastName"
-                          required
-                          value={formData.lastName}
-                          onChange={handleInputChange}
-                          className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors text-white font-sans"
-                        />
-                        <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
-                            <path d="M7 4v16M17 4v16M7 12h10" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 relative">
-                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Email*</label>
-                    <div className="relative">
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors text-white font-sans"
-                      />
-                      <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
-                          <path d="M7 4v16M17 4v16M7 12h10" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Message</label>
-                    <textarea
-                      name="message"
-                      required
-                      rows={1}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors resize-none text-white font-sans min-h-[100px]"
-                    />
-                  </div>
-
-                  <div className="space-y-4">
-                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Attachments</label>
-                    <div 
-                      onClick={() => fileInputRef.current?.click()}
-                      className="w-full border border-dashed border-white/10 rounded-sm p-8 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-white/30 hover:bg-white/5 transition-all group"
+                <AnimatePresence mode="wait">
+                  {!isSubmitted ? (
+                    <motion.form
+                      key="contact-form"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onSubmit={handleSubmit}
+                      className="space-y-12"
                     >
-                      <input
-                        type="file"
-                        ref={fileInputRef}
-                        onChange={handleFileChange}
-                        className="hidden"
-                      />
-                      {file ? (
-                        <div className="flex items-center gap-2 text-white font-sans font-medium">
-                          <FileText className="w-5 h-5" />
-                          <span>{file.name}</span>
-                        </div>
-                      ) : (
-                        <>
-                          <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
-                            <span className="text-xl font-light text-white/40 group-hover:text-white">+</span>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div className="space-y-2 relative">
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">First Name*</label>
+                          <div className="relative">
+                            <input
+                              type="text"
+                              name="firstName"
+                              required
+                              value={formData.firstName}
+                              onChange={handleInputChange}
+                              className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors text-white font-sans"
+                            />
+                            <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
+                                <path d="M7 4v16M17 4v16M7 12h10" />
+                              </svg>
+                            </div>
                           </div>
-                          <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-white/40 group-hover:text-white/60">Add a File</span>
-                        </>
-                      )}
-                    </div>
-                  </div>
+                        </div>
+                        <div className="space-y-2 relative">
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Last Name*</label>
+                          <div className="relative">
+                            <input
+                              type="text"
+                              name="lastName"
+                              required
+                              value={formData.lastName}
+                              onChange={handleInputChange}
+                              className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors text-white font-sans"
+                            />
+                            <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
+                                <path d="M7 4v16M17 4v16M7 12h10" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-                  <button
-                    type="submit"
-                    className="bg-white text-black px-10 py-5 rounded-full font-sans font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white transition-all flex items-center justify-center gap-2 group"
-                  >
-                    <span>Message Us</span>
-                    <Send className="w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  </button>
-                </form>
+                      <div className="space-y-2 relative">
+                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Email*</label>
+                        <div className="relative">
+                          <input
+                            type="email"
+                            name="email"
+                            required
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors text-white font-sans"
+                          />
+                          <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
+                              <path d="M7 4v16M17 4v16M7 12h10" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Message</label>
+                        <textarea
+                          name="message"
+                          required
+                          rows={1}
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          className="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none focus:border-white transition-colors resize-none text-white font-sans min-h-[100px]"
+                        />
+                      </div>
+
+                      <div className="space-y-4">
+                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">Attachments</label>
+                        <div 
+                          onClick={() => fileInputRef.current?.click()}
+                          className="w-full border border-dashed border-white/10 rounded-sm p-8 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-white/30 hover:bg-white/5 transition-all group"
+                        >
+                          <input
+                            type="file"
+                            ref={fileInputRef}
+                            onChange={handleFileChange}
+                            className="hidden"
+                          />
+                          {file ? (
+                            <div className="flex items-center gap-2 text-white font-sans font-medium">
+                              <FileText className="w-5 h-5" />
+                              <span>{file.name}</span>
+                            </div>
+                          ) : (
+                            <>
+                              <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
+                                <span className="text-xl font-light text-white/40 group-hover:text-white">+</span>
+                              </div>
+                              <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-white/40 group-hover:text-white/60">Add a File</span>
+                            </>
+                          )}
+                        </div>
+                      </div>
+
+                      {submitError && (
+                        <div className="text-red-500 text-xs font-bold uppercase tracking-widest">
+                          {submitError}
+                        </div>
+                      )}
+
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="bg-white text-black px-10 py-5 font-sans font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="w-3 h-3 animate-spin" />
+                            <span>Sending...</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Message Us</span>
+                            <Send className="w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                          </>
+                        )}
+                      </button>
+                    </motion.form>
+                  ) : (
+                    <motion.div
+                      key="success-message"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="flex flex-col items-center justify-center py-20 text-center space-y-6"
+                    >
+                      <div className="w-20 h-20 rounded-none bg-[#E11D48]/10 flex items-center justify-center">
+                        <Check className="w-10 h-10 text-[#E11D48]" />
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-3xl font-display font-bold uppercase tracking-tighter text-white">Thank You<span className="text-red-600">.</span></h3>
+                        <p className="text-white/60 font-sans max-w-sm">
+                          Your message has been received. Our team will reach out to you shortly.
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setIsSubmitted(false)}
+                        className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors border-b border-white/20 pb-1"
+                      >
+                        Send another message
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               <div className="hidden lg:flex items-center justify-center">

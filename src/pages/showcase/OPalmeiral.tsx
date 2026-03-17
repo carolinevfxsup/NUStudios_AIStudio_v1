@@ -415,7 +415,7 @@ export const OPalmeiral = () => {
                     ))}
                   </ul>
                 </div>
-                <button className="px-10 py-5 bg-red-600 text-white font-black uppercase tracking-widest text-xs rounded-full hover:scale-105 transition-transform">
+                <button className="px-10 py-5 bg-red-600 text-white font-black uppercase tracking-widest text-xs hover:scale-105 transition-transform">
                   {t.palmeiral.ctaButton}
                 </button>
               </motion.div>

@@ -350,13 +350,13 @@ export const QuintaDoPinto = () => {
             <div className="flex flex-col md:flex-row gap-6 justify-center">
               <a 
                 href="/contact" 
-                className="bg-black text-white px-10 py-5 text-xs font-black uppercase tracking-widest rounded-full hover:scale-105 transition-transform flex items-center justify-center gap-3"
+                className="bg-black text-white px-10 py-5 text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform flex items-center justify-center gap-3"
               >
                 INQUIRE NOW <ExternalLink className="w-4 h-4" />
               </a>
               <a 
                 href="/creative" 
-                className="bg-white text-black border border-black px-10 py-5 text-xs font-black uppercase tracking-widest rounded-full hover:scale-105 transition-transform"
+                className="bg-white text-black border border-black px-10 py-5 text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform"
               >
                 VIEW FRAMEWORK
               </a>

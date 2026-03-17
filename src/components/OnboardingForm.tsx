@@ -112,9 +112,9 @@ export const OnboardingForm = () => {
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white p-12 rounded-3xl shadow-xl text-center max-w-2xl mx-auto border border-gray-100"
+        className="bg-white p-12 rounded-none shadow-xl text-center max-w-2xl mx-auto border border-gray-100"
       >
-        <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-8">
+        <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-none flex items-center justify-center mx-auto mb-8">
           <Check className="w-10 h-10" />
         </div>
         <h2 className="text-3xl font-bold mb-4">Brief Received.</h2>
@@ -146,7 +146,7 @@ export const OnboardingForm = () => {
             {[...Array(totalSteps)].map((_, i) => (
               <div 
                 key={i} 
-                className={`h-1 w-8 rounded-full transition-all duration-500 ${i + 1 <= step ? 'bg-white' : 'bg-white/10'}`}
+                className={`h-1 w-8 rounded-none transition-all duration-500 ${i + 1 <= step ? 'bg-white' : 'bg-white/10'}`}
               />
             ))}
           </div>
@@ -175,7 +175,7 @@ export const OnboardingForm = () => {
                   required
                   value={formData.businessName}
                   onChange={e => setFormData({...formData, businessName: e.target.value})}
-                  className="w-full bg-white/5 border-none p-4 rounded-xl focus:ring-2 focus:ring-white transition-all text-lg"
+                  className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-lg"
                   placeholder="e.g. Salt Lily"
                 />
               </div>
@@ -186,7 +186,7 @@ export const OnboardingForm = () => {
                   required
                   value={formData.website}
                   onChange={e => setFormData({...formData, website: e.target.value})}
-                  className="w-full bg-white/5 border-none p-4 rounded-xl focus:ring-2 focus:ring-white transition-all text-lg"
+                  className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-lg"
                   placeholder="https://yourstore.com"
                 />
               </div>
@@ -210,7 +210,7 @@ export const OnboardingForm = () => {
                       key={size}
                       type="button"
                       onClick={() => setFormData({...formData, size})}
-                      className={`p-4 rounded-xl font-bold text-sm border-2 transition-all ${formData.size === size ? 'border-white bg-white/10 text-white' : 'border-white/10 hover:border-white/20'}`}
+                      className={`p-4 rounded-none font-bold text-sm border-2 transition-all ${formData.size === size ? 'border-white bg-white/10 text-white' : 'border-white/10 hover:border-white/20'}`}
                     >
                       {size}
                     </button>
@@ -225,7 +225,7 @@ export const OnboardingForm = () => {
                       key={market}
                       type="button"
                       onClick={() => setFormData({...formData, market})}
-                      className={`p-4 rounded-xl font-bold text-sm border-2 transition-all ${formData.market === market ? 'border-white bg-white/10 text-white' : 'border-white/10 hover:border-white/20'}`}
+                      className={`p-4 rounded-none font-bold text-sm border-2 transition-all ${formData.market === market ? 'border-white bg-white/10 text-white' : 'border-white/10 hover:border-white/20'}`}
                     >
                       {market}
                     </button>
@@ -251,7 +251,7 @@ export const OnboardingForm = () => {
                     type="text"
                     value={formData.socials.instagram}
                     onChange={e => setFormData({...formData, socials: {...formData.socials, instagram: e.target.value}})}
-                    className="w-full bg-white/5 border-none p-4 rounded-xl focus:ring-2 focus:ring-white transition-all"
+                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all"
                     placeholder="@yourbrand"
                   />
                 </div>
@@ -261,7 +261,7 @@ export const OnboardingForm = () => {
                     type="text"
                     value={formData.socials.tiktok}
                     onChange={e => setFormData({...formData, socials: {...formData.socials, tiktok: e.target.value}})}
-                    className="w-full bg-white/5 border-none p-4 rounded-xl focus:ring-2 focus:ring-white transition-all"
+                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all"
                     placeholder="@yourbrand"
                   />
                 </div>
@@ -271,7 +271,7 @@ export const OnboardingForm = () => {
                     type="text"
                     value={formData.socials.linkedin}
                     onChange={e => setFormData({...formData, socials: {...formData.socials, linkedin: e.target.value}})}
-                    className="w-full bg-white/5 border-none p-4 rounded-xl focus:ring-2 focus:ring-white transition-all"
+                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all"
                     placeholder="linkedin.com/company/yourbrand"
                   />
                 </div>
@@ -300,7 +300,7 @@ export const OnboardingForm = () => {
                     key={outcome}
                     type="button"
                     onClick={() => toggleOutcome(outcome)}
-                    className={`p-4 rounded-xl font-bold text-left border-2 transition-all flex justify-between items-center ${formData.outcomes.includes(outcome) ? 'border-white bg-white/10 text-white' : 'border-white/10 hover:border-white/20'}`}
+                    className={`p-4 rounded-none font-bold text-left border-2 transition-all flex justify-between items-center ${formData.outcomes.includes(outcome) ? 'border-white bg-white/10 text-white' : 'border-white/10 hover:border-white/20'}`}
                   >
                     {outcome}
                     {formData.outcomes.includes(outcome) && <Check className="w-5 h-5" />}
@@ -327,7 +327,7 @@ export const OnboardingForm = () => {
                     type="email"
                     value={formData.email}
                     onChange={e => setFormData({...formData, email: e.target.value})}
-                    className="w-full bg-white/5 border-none p-4 rounded-xl focus:ring-2 focus:ring-white transition-all text-lg"
+                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-lg"
                     placeholder="name@company.com"
                   />
                 </div>
@@ -337,7 +337,7 @@ export const OnboardingForm = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={e => setFormData({...formData, phone: e.target.value})}
-                    className="w-full bg-white/5 border-none p-4 rounded-xl focus:ring-2 focus:ring-white transition-all text-lg"
+                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-lg"
                     placeholder="+44 7700 900000"
                   />
                 </div>
@@ -346,7 +346,7 @@ export const OnboardingForm = () => {
                   <textarea 
                     value={formData.message}
                     onChange={e => setFormData({...formData, message: e.target.value})}
-                    className="w-full bg-white/5 border-none p-4 rounded-xl focus:ring-2 focus:ring-white transition-all text-lg h-32"
+                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-lg h-32"
                     placeholder="Tell us more about your project..."
                   />
                 </div>
@@ -355,11 +355,11 @@ export const OnboardingForm = () => {
                   <input 
                     type="file"
                     onChange={e => setFormData({...formData, file: e.target.files?.[0] || null})}
-                    className="w-full bg-white/5 border-none p-4 rounded-xl focus:ring-2 focus:ring-white transition-all text-sm"
+                    className="w-full bg-white/5 border-none p-4 rounded-none focus:ring-2 focus:ring-white transition-all text-sm"
                   />
                 </div>
               </div>
-              <div className="bg-white/5 p-6 rounded-2xl text-xs text-gray-400 leading-relaxed">
+              <div className="bg-white/5 p-6 rounded-none text-xs text-gray-400 leading-relaxed">
                 By submitting this brief, you agree to our terms. We'll use this information to build a tailored proposal for your business.
               </div>
             </motion.div>
@@ -384,7 +384,7 @@ export const OnboardingForm = () => {
             <button
               type="button"
               onClick={handleNext}
-              className="bg-white text-black px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase hover:bg-white/90 transition-all flex items-center gap-3"
+              className="bg-white text-black px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-white/90 transition-all flex items-center gap-3"
             >
               Continue
               <ArrowRight className="w-4 h-4" />
@@ -393,7 +393,7 @@ export const OnboardingForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-white text-black px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase hover:bg-white/90 transition-all flex items-center gap-3 disabled:opacity-50"
+              className="bg-white text-black px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-white/90 transition-all flex items-center gap-3 disabled:opacity-50"
             >
               {isSubmitting ? (
                 <>

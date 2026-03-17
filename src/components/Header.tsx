@@ -28,7 +28,7 @@ export const Header = () => {
             <img 
               src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/logo-black.png" 
               alt="NuStudios" 
-              className="h-8 w-auto"
+              className="h-8 md:h-16 w-auto"
               referrerPolicy="no-referrer"
             />
           </Link>

@@ -1,10 +1,12 @@
 import express from "express";
 import { createServer as createViteServer } from "vite";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import dotenv from "dotenv";
 import path from "path";
 
 dotenv.config();
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function startServer() {
   const app = express();
@@ -12,35 +14,58 @@ async function startServer() {
 
   app.use(express.json());
 
-  // Email transporter
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || "587"),
-    secure: process.env.SMTP_SECURE === "true",
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
-
-  // API route for lead submission
+  // API route for lead submission (Onboarding)
   app.post("/api/submit-brief", async (req, res) => {
-    const { businessName, email, phone, message, outcomes } = req.body;
+    const { businessName, email, phone, message, outcomes, website, size, market, socials } = req.body;
 
     try {
-      await transporter.sendMail({
-        from: '"NuStudios Lead" <noreply@nustudios.co.uk>',
-        to: "claude@nustudios.co.uk, caroline@nustudios.co.uk",
-        subject: `New Lead: ${businessName}`,
-        text: `
-          Business Name: ${businessName}
-          Email: ${email}
-          Phone: ${phone}
-          Outcomes: ${outcomes.join(", ")}
-          Message: ${message}
+      const { data, error } = await resend.emails.send({
+        from: 'NuStudios <info@send.nustudios.co.uk>',
+        to: ['tech@nustudios.co.uk'],
+        reply_to: 'info@nustudios.co.uk',
+        subject: `New Onboarding Brief: ${businessName}`,
+        html: `
+          <h1>New Onboarding Brief</h1>
+          <p><strong>Business Name:</strong> ${businessName}</p>
+          <p><strong>Website:</strong> ${website}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Team Size:</strong> ${size}</p>
+          <p><strong>Market:</strong> ${market}</p>
+          <p><strong>Socials:</strong> Instagram: ${socials?.instagram}, TikTok: ${socials?.tiktok}, LinkedIn: ${socials?.linkedin}</p>
+          <p><strong>Outcomes:</strong> ${outcomes?.join(", ")}</p>
+          <p><strong>Message:</strong> ${message}</p>
         `,
       });
-      res.json({ success: true });
+
+      if (error) throw error;
+      res.json({ success: true, data });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      res.status(500).json({ success: false, error: "Failed to send email" });
+    }
+  });
+
+  // API route for general contact
+  app.post("/api/contact", async (req, res) => {
+    const { firstName, lastName, email, message } = req.body;
+
+    try {
+      const { data, error } = await resend.emails.send({
+        from: 'NuStudios <info@send.nustudios.co.uk>',
+        to: ['tech@nustudios.co.uk'],
+        reply_to: 'info@nustudios.co.uk',
+        subject: `New Contact Message from ${firstName} ${lastName}`,
+        html: `
+          <h1>New Contact Message</h1>
+          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong> ${message}</p>
+        `,
+      });
+
+      if (error) throw error;
+      res.json({ success: true, data });
     } catch (error) {
       console.error("Error sending email:", error);
       res.status(500).json({ success: false, error: "Failed to send email" });

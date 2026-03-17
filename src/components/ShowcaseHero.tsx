@@ -30,7 +30,7 @@ export const ShowcaseHero = ({
         <img 
           src={getAssetUrl(imageSrc)} 
           alt={title} 
-          className="w-full h-full object-cover opacity-40 grayscale rounded-md" 
+          className="w-full h-full object-cover opacity-40 grayscale rounded-none" 
           style={{ objectPosition: imagePosition }}
           referrerPolicy="no-referrer"
         />
