@@ -4,7 +4,6 @@ export const translations = {
   en: {
     nav: {
       creative: 'CREATIVE',
-      growth: 'GROWTH',
       automation: 'AUTOMATION',
       aiToolkit: 'AI TOOL KIT',
       showcase: 'SHOWCASE',
@@ -17,6 +16,7 @@ export const translations = {
       allWork: 'View Work',
       dnaScan: 'DNA SCAN',
       creativePage: 'CREATIVE',
+      aboutUs: 'ABOUT US',
     },
     home: {
       hero: {
@@ -486,8 +486,8 @@ export const translations = {
       footerQuote: '“NUstudios didn\'t just give us content; they gave us a content engine. Our brand is now always-on, always-growing, and always-consistent across every platform.”',
       viewWork: 'View the Work',
       bookCall: 'Book a Call',
-      brandTitle: 'The Brand We',
-      brandTitleItalic: 'Built This For',
+      brandTitle: 'The Brand We Built This For',
+      brandTitleItalic: '',
       brandText1: 'Salt Lily is a modern waterproof jewellery brand with an established Shopify store.',
       whyHardTitle: 'Why Jewellery is One of the',
       whyHardTitleItalic: 'Hardest Categories for AI',
@@ -695,12 +695,53 @@ export const translations = {
       transformation: 'TRANSFORMATION',
       craftsmanship: 'CRAFTSMANSHIP',
       strategy: 'STRATEGY',
-    }
+    },
+    about: {
+      title: 'About',
+      subtitle: 'Agency Thinking. AI Execution.',
+      subtext: 'The perfect blend of human taste and modern technology.',
+      p1: 'A lot of people are using AI right now, and to be honest, a lot of it looks cheap, generic, and fake. That’s because AI is just a paintbrush. Without a skilled artist holding the brush, it’s just noise.',
+      p2: 'We are the artists.',
+      p3: "We don't do \"set it and forget it\" automation. We offer a hand-held, fully guided partnership. We take the time to deeply understand your brand’s soul, your colors, your vibe, and your goals. Then, we use our mastery of AI to build stunning campaigns, beautiful product photography, and daily social content faster and more affordably than a traditional agency ever could.",
+      p4: 'Context over Guesswork:',
+      p4Text: 'We train our tools on your specific brand. Nothing we make will ever look like your competitors.',
+      p5: 'Taste is Never Automated:',
+      p5Text: 'Every single image, video, and post is art-directed and approved by our founders. We never let the machines run unsupervised.',
+      foundersTitle: 'FOUNDERS',
+      foundersSubtitle: 'The Artist & The Technologist',
+      foundersDesc: "We grew up in the world of physical products and tangible art. Now, we use the world's most advanced tools to bring that reality to the digital space.",
+    },
+    automationPage: {
+      heroTitle: 'AI Automation.',
+      heroSubtitle: 'Scale your business with intelligent systems.',
+      heroDesc: 'We build custom AI agents and automated workflows that handle the heavy lifting, so you can focus on strategy.',
+      sections: {
+        voice: {
+          title: 'Voice Agents',
+          desc: 'Automated voice interactions for customer support and sales.',
+        },
+        marketing: {
+          title: 'Marketing Automation',
+          desc: 'Intelligent campaigns that adapt to user behavior.',
+        },
+        seo: {
+          title: 'Blog & SEO',
+          desc: 'Automated content creation optimized for search engines.',
+        },
+        ecomm: {
+          title: 'E-commerce',
+          desc: 'Sync products, manage inventory, and automate storefront updates.',
+        },
+        email: {
+          title: 'Email Marketing',
+          desc: 'Personalized email sequences triggered by real-time data.',
+        }
+      }
+    },
   },
   pt: {
     nav: {
       creative: 'CRIATIVO',
-      growth: 'CRESCIMENTO',
       automation: 'AUTOMAÇÃO',
       aiToolkit: 'AI TOOL KIT',
       showcase: 'SHOWCASE',
@@ -713,6 +754,7 @@ export const translations = {
       allWork: 'Ver Trabalho',
       dnaScan: 'DNA SCAN',
       creativePage: 'CRIATIVO',
+      aboutUs: 'SOBRE NÓS',
     },
     home: {
       hero: {
@@ -1391,7 +1433,49 @@ export const translations = {
       transformation: 'TRANSFORMAÇÃO',
       craftsmanship: 'MESTRIA',
       strategy: 'ESTRATÉGIA',
-    }
+    },
+    about: {
+      title: 'Sobre',
+      subtitle: 'Pensamento de Agência. Execução de IA.',
+      subtext: 'A mistura perfeita de gosto humano e tecnologia moderna.',
+      p1: 'Muitas pessoas estão a usar IA agora e, para ser sincero, muito disso parece barato, genérico e falso. Isso é porque a IA é apenas um pincel. Sem um artista qualificado a segurar o pincel, é apenas ruído.',
+      p2: 'Nós somos os artistas.',
+      p3: "Não fazemos automação do tipo \"configurar e esquecer\". Oferecemos uma parceria guiada e próxima. Dedicamos tempo a compreender profundamente a alma da sua marca, as suas cores, a sua vibração e os seus objetivos. Depois, usamos o nosso domínio da IA para construir campanhas deslumbrantes, fotografia de produto bonita e conteúdo social diário de forma mais rápida e acessível do que uma agência tradicional alguma vez conseguiria.",
+      p4: 'Contexto acima de Adivinhação:',
+      p4Text: 'Treinamos as nossas ferramentas na sua marca específica. Nada do que fizermos parecerá com os seus concorrentes.',
+      p5: 'O Gosto Nunca é Automatizado:',
+      p5Text: 'Cada imagem, vídeo e publicação é dirigida artisticamente e aprovada pelos nossos fundadores. Nunca deixamos as máquinas correrem sem supervisão.',
+      foundersTitle: 'FUNDADORES',
+      foundersSubtitle: 'O Artista e o Tecnólogo',
+      foundersDesc: "Crescemos no mundo dos produtos físicos e da arte tangível. Agora, usamos as ferramentas mais avançadas do mundo para trazer essa realidade para o espaço digital.",
+    },
+    automationPage: {
+      heroTitle: 'Automação de IA.',
+      heroSubtitle: 'Escala o teu negócio com sistemas inteligentes.',
+      heroDesc: 'Construímos agentes de IA personalizados e fluxos de trabalho automatizados que tratam do trabalho pesado, para que te possas focar na estratégia.',
+      sections: {
+        voice: {
+          title: 'Agentes de Voz',
+          desc: 'Interações de voz automatizadas para suporte ao cliente e vendas.',
+        },
+        marketing: {
+          title: 'Automação de Marketing',
+          desc: 'Campanhas inteligentes que se adaptam ao comportamento do utilizador.',
+        },
+        seo: {
+          title: 'Blog e SEO',
+          desc: 'Criação de conteúdo automatizada otimizada para motores de busca.',
+        },
+        ecomm: {
+          title: 'E-commerce',
+          desc: 'Sincroniza produtos, gere inventário e automatiza atualizações de loja.',
+        },
+        email: {
+          title: 'Email Marketing',
+          desc: 'Sequências de email personalizadas acionadas por dados em tempo real.',
+        }
+      }
+    },
   },
 };
 

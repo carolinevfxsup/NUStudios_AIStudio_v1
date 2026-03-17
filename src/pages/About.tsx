@@ -1,39 +1,40 @@
 import { founders } from '../data/founders';
 import { FadeIn } from '../components/FadeIn';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const About = () => {
+  const { t } = useLanguage();
+
   return (
-    <div className="pt-32 px-6 max-w-7xl mx-auto">
+    <div className="pt-32 pb-32 px-6 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* About Section */}
         <div className="bg-black text-white border border-border rounded-none p-8 md:p-12 shadow-sm">
           <FadeIn delay={0.1}>
             <h1 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mb-8 text-white">
-              About
+              {t.about.title}
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-2xl font-display font-medium leading-tight mb-8">
-              Agency Thinking. AI Execution.
+              {t.about.subtitle}
               <br />
-              <span className="text-white/60 text-xl">The perfect blend of human taste and modern technology.</span>
+              <span className="text-white/60 text-xl">{t.about.subtext}</span>
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <div className="font-sans text-lg space-y-6 text-white/60">
+              <p>{t.about.p1}</p>
               <p>
-                A lot of people are using AI right now, and to be honest, a lot of it looks cheap, generic, and fake. That’s because AI is just a paintbrush. Without a skilled artist holding the brush, it’s just noise.
-              </p>
-              <p>
-                <strong className="text-white">We are the artists.</strong>
+                <strong className="text-white">{t.about.p2}</strong>
                 <br />
-                We don't do "set it and forget it" automation. We offer a hand-held, fully guided partnership. We take the time to deeply understand your brand’s soul, your colors, your vibe, and your goals. Then, we use our mastery of AI to build stunning campaigns, beautiful product photography, and daily social content faster and more affordably than a traditional agency ever could.
+                {t.about.p3}
               </p>
               <p>
-                <strong className="text-white">Context over Guesswork:</strong> We train our tools on your specific brand. Nothing we make will ever look like your competitors.
+                <strong className="text-white">{t.about.p4}</strong> {t.about.p4Text}
               </p>
               <p>
-                <strong className="text-white">Taste is Never Automated:</strong> Every single image, video, and post is art-directed and approved by our founders. We never let the machines run unsupervised.
+                <strong className="text-white">{t.about.p5}</strong> {t.about.p5Text}
               </p>
             </div>
           </FadeIn>
@@ -43,12 +44,12 @@ export const About = () => {
         <div className="flex flex-col gap-6">
           <FadeIn delay={0.4}>
             <div className="bg-white border border-border rounded-none p-8 md:p-12 shadow-sm">
-              <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase">FOUNDERS<span className="text-red-600">.</span></h2>
+              <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase">{t.about.foundersTitle}<span className="text-red-600">.</span></h2>
               <p className="text-2xl font-display font-medium leading-tight mt-8">
-                The Artist & The Technologist
+                {t.about.foundersSubtitle}
               </p>
               <p className="text-lg font-sans leading-relaxed mt-4 text-text/70">
-                We grew up in the world of physical products and tangible art. Now, we use the world's most advanced tools to bring that reality to the digital space.
+                {t.about.foundersDesc}
               </p>
             </div>
           </FadeIn>

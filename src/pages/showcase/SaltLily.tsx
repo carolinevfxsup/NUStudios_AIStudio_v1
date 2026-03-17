@@ -38,7 +38,7 @@ export const SaltLily = () => {
               <motion.div {...fadeInUp}>
                 <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">01. {t.common.theBrand}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                  {t.saltLily.brandTitle}<span className="italic text-primary lowercase font-serif">{t.saltLily.brandTitleItalic}</span><span className="text-primary">.</span>
+                  {t.saltLily.brandTitle}<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed">
                   <p>{t.saltLily.brandText1}</p>
