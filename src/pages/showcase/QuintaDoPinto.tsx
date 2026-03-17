@@ -1,15 +1,23 @@
 import { Header } from '../../components/Header';
 import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
-import { Bot, Clapperboard, Camera } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { getAssetUrl } from '../../constants';
+import { motion } from 'framer-motion';
+import { Bot, Clapperboard, Camera, ExternalLink, Sparkles, TrendingUp, Share2 } from 'lucide-react';
 
 export const QuintaDoPinto = () => {
   const { t } = useLanguage();
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 }
+  };
+
   return (
-    <div className="min-h-screen bg-off-white">
+    <div className="min-h-screen bg-white">
       <Header />
       <main>
         <ShowcaseHero 
@@ -25,25 +33,35 @@ export const QuintaDoPinto = () => {
 
         <section className="py-24 bg-black text-white text-center border-b border-white/10">
           <div className="max-w-4xl mx-auto px-6">
-            <blockquote className="text-3xl md:text-5xl font-serif italic leading-tight">
+            <motion.blockquote 
+              {...fadeInUp}
+              className="text-3xl md:text-5xl font-serif italic leading-tight"
+            >
               "Crafting the future of wine storytelling through AI-driven creativity."
-            </blockquote>
+            </motion.blockquote>
           </div>
         </section>
 
         {/* Section 01: The Brief */}
-        <section className="py-24 md:py-32 bg-white">
+        <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
-              <div>
-                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
-                  The <span className="text-primary">brief<span className="text-primary">.</span></span>
+            <div className="grid lg:grid-cols-2 gap-24 items-center">
+              <motion.div {...fadeInUp}>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">01. THE BRIEF</span>
+                <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
+                  The Brief<span className="text-primary">.</span>
                 </h2>
-                <div className="space-y-6 text-lg text-narrative-shadow/80 leading-relaxed">
+                <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed">
                   <p>{t.quinta.briefText}</p>
                 </div>
-              </div>
-              <div className="relative">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
                 <div className="aspect-[4/5] overflow-hidden shadow-2xl rounded-md">
                   <img 
                     src={getAssetUrl('quinta-moodboard.jpg')} 
@@ -57,20 +75,21 @@ export const QuintaDoPinto = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Section 02: What We Did */}
-        <section className="py-24 md:py-32 bg-[#F5F5F0] border-y border-black/5">
+        <section className="py-24 md:py-40 bg-[#F9F9F7] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-20">
-              <h2 className="text-4xl md:text-6xl font-display uppercase mb-4">
-                What <span className="text-primary">We Did<span className="text-primary">.</span></span>
+            <motion.div {...fadeInUp} className="mb-24">
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">02. WHAT WE DID</span>
+              <h2 className="text-4xl md:text-7xl font-display mb-8 leading-[0.9] tracking-tighter uppercase text-black">
+                The Process<span className="text-primary">.</span>
               </h2>
               <p className="text-narrative-shadow/60 uppercase tracking-widest text-xs">{t.quinta.whatWeDidSubtitle}</p>
-            </div>
+            </motion.div>
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
@@ -78,26 +97,39 @@ export const QuintaDoPinto = () => {
                 { icon: Clapperboard, title: t.quinta.card2Title, desc: t.quinta.card2Text, num: '02' },
                 { icon: Camera, title: t.quinta.card3Title, desc: t.quinta.card3Text, num: '03' }
               ].map((item, i) => (
-                <div key={i} className="bg-white p-10 border border-black/5 relative group">
-                  <div className="flex justify-between items-start mb-8">
-                    <div className="w-12 h-12 bg-[#F5F5F0] flex items-center justify-center rounded-md">
-                      <item.icon className="w-6 h-6 text-black" />
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white p-12 border border-[#EEEEEE] rounded-md shadow-sm hover:shadow-md transition-all group"
+                >
+                  <div className="flex justify-between items-start mb-10">
+                    <div className="w-14 h-14 flex items-center justify-center">
+                      <item.icon className="w-10 h-10 text-primary" />
                     </div>
-                    <span className="text-4xl font-serif italic text-black/10 group-hover:text-primary/20 transition-colors">{item.num}</span>
+                    <span className="text-4xl font-serif italic text-black/5 group-hover:text-primary/10 transition-colors">{item.num}</span>
                   </div>
                   <h3 className="text-xl font-bold mb-4 uppercase tracking-tight">{item.title}</h3>
-                  <p className="text-sm text-narrative-shadow/60 leading-relaxed">{item.desc}</p>
-                </div>
+                  <p className="text-base text-narrative-shadow/60 leading-relaxed">{item.desc}</p>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Section 03: The Idea */}
-        <section className="py-24 md:py-32 bg-white">
+        <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
-              <div className="order-2 lg:order-1">
+            <div className="grid lg:grid-cols-2 gap-24 items-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="order-2 lg:order-1"
+              >
                 <div className="aspect-[4/6] overflow-hidden shadow-2xl rounded-md">
                   <img 
                     src={getAssetUrl('quinta-the-idea.gif')} 
@@ -106,35 +138,37 @@ export const QuintaDoPinto = () => {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-              </div>
-              <div className="order-1 lg:order-2">
-                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
-                  The <span className="text-primary">idea<span className="text-primary">.</span></span>
+              </motion.div>
+              <motion.div {...fadeInUp} className="order-1 lg:order-2">
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">03. THE IDEA</span>
+                <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
+                  The Idea<span className="text-primary">.</span>
                 </h2>
-                <div className="space-y-8 text-lg text-narrative-shadow/80 leading-relaxed">
+                <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed">
                   <p>{t.quinta.theIdeaText1}</p>
                   <p>{t.quinta.theIdeaText2}</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Section 04: From bottle to launch content */}
-        <section className="py-24 md:py-32 bg-[#F5F5F0] border-y border-black/5">
+        <section className="py-24 md:py-40 bg-[#F9F9F7] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-3xl mb-20">
-              <h2 className="text-4xl md:text-6xl font-display uppercase mb-8">
-                From bottle <span className="text-primary">to launch content<span className="text-primary">.</span></span>
+            <motion.div {...fadeInUp} className="max-w-3xl mb-24">
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">04. TRANSFORMATION</span>
+              <h2 className="text-4xl md:text-7xl font-display mb-8 leading-[0.9] tracking-tighter uppercase text-black">
+                From Bottle to Launch<span className="text-primary">.</span>
               </h2>
-              <p className="text-lg text-narrative-shadow/60 leading-relaxed">
+              <p className="text-xl text-narrative-shadow/60 leading-relaxed">
                 {t.quinta.fromBottleText}
               </p>
-            </div>
+            </motion.div>
             
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="space-y-6">
-                <div className="aspect-[4/6] overflow-hidden bg-white border border-black/5 rounded-md">
+            <div className="grid md:grid-cols-2 gap-16">
+              <motion.div {...fadeInUp} className="space-y-8">
+                <div className="aspect-[4/6] overflow-hidden bg-white border border-[#EEEEEE] rounded-md shadow-sm">
                   <img 
                     src={getAssetUrl('quinta-before.png')} 
                     className="w-full h-full object-contain p-12 rounded-md" 
@@ -143,9 +177,9 @@ export const QuintaDoPinto = () => {
                   />
                 </div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/40">{t.quinta.beforeLabel}</p>
-              </div>
-              <div className="space-y-6">
-                <div className="aspect-[4/6] overflow-hidden bg-white border border-black/5 shadow-xl rounded-md">
+              </motion.div>
+              <motion.div {...fadeInUp} className="space-y-8">
+                <div className="aspect-[4/6] overflow-hidden bg-white border border-[#EEEEEE] shadow-xl rounded-md">
                   <img 
                     src={getAssetUrl('quinta-after.png')} 
                     className="w-full h-full object-cover rounded-md" 
@@ -154,20 +188,21 @@ export const QuintaDoPinto = () => {
                   />
                 </div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">{t.quinta.afterLabel}</p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Section 05: Attention to detail */}
-        <section className="py-24 md:py-32 bg-white">
+        <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
-              <div>
-                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
-                  Attention <span className="text-primary">to detail<span className="text-primary">.</span></span>
+            <div className="grid lg:grid-cols-2 gap-24 items-center">
+              <motion.div {...fadeInUp}>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">05. CRAFTSMANSHIP</span>
+                <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
+                  Attention to Detail<span className="text-primary">.</span>
                 </h2>
-                <div className="space-y-8 text-lg text-narrative-shadow/80 leading-relaxed mb-12">
+                <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed mb-12">
                   <p>{t.quinta.attentionText}</p>
                   <p>{t.quinta.attentionText2}</p>
                 </div>
@@ -179,8 +214,14 @@ export const QuintaDoPinto = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-              <div className="relative">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
                 <div className="aspect-[9/16] overflow-hidden shadow-2xl rounded-md">
                   <video 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-attention-to-detail.mp4" 
@@ -191,23 +232,24 @@ export const QuintaDoPinto = () => {
                     playsInline
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Section 06: Results Matter */}
-        <section className="py-24 md:py-32 bg-[#F5F5F0] border-y border-black/5">
+        <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-3xl mb-20">
-              <h2 className="text-4xl md:text-6xl font-display uppercase mb-8">
-                Results <span className="text-primary">Matter<span className="text-primary">.</span></span>
+            <motion.div {...fadeInUp} className="text-center mb-24">
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">06. THE IMPACT</span>
+              <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
+                Results Matter<span className="text-primary">.</span>
               </h2>
-              <div className="space-y-6 text-lg text-narrative-shadow/60 leading-relaxed">
+              <div className="max-w-3xl mx-auto space-y-6 text-xl text-narrative-shadow/60 leading-relaxed">
                 <p>{t.quinta.resultsText1}</p>
                 <p>{t.quinta.resultsText2}</p>
               </div>
-            </div>
+            </motion.div>
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
@@ -215,7 +257,14 @@ export const QuintaDoPinto = () => {
                 "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-results-02.mp4",
                 "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-results-03.mp4"
               ].map((url, i) => (
-                <div key={i} className="aspect-[4/6] overflow-hidden shadow-xl border border-black/5 rounded-md">
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="aspect-[4/6] overflow-hidden shadow-xl border border-[#EEEEEE] rounded-md"
+                >
                   <video 
                     src={url} 
                     className="w-full h-full object-cover rounded-md" 
@@ -224,37 +273,23 @@ export const QuintaDoPinto = () => {
                     muted 
                     playsInline
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Section 07: Why this works for wine brands */}
-        <section className="py-24 md:py-32 bg-white">
+        <section className="py-24 md:py-40 bg-[#F9F9F7] border-y border-black/5">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
-              <div>
-                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
-                  Why this <span className="text-primary">works for wine brands<span className="text-primary">.</span></span>
-                </h2>
-                <p className="text-lg text-narrative-shadow/60 mb-12 leading-relaxed">
-                  {t.quinta.whyWineText}
-                </p>
-                <div className="space-y-10">
-                  {[
-                    { title: t.quinta.whyWine1Title, text: t.quinta.whyWine1Text },
-                    { title: t.quinta.whyWine2Title, text: t.quinta.whyWine2Text },
-                    { title: t.quinta.whyWine3Title, text: t.quinta.whyWine3Text }
-                  ].map((item, i) => (
-                    <div key={i} className="group">
-                      <h4 className="text-xl font-bold mb-3 uppercase tracking-tight group-hover:text-primary transition-colors">{item.title}</h4>
-                      <p className="text-base text-narrative-shadow/50 leading-relaxed">{item.text}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="relative">
+            <div className="grid lg:grid-cols-2 gap-24 items-center">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="order-2 lg:order-1"
+              >
                 <div className="aspect-square overflow-hidden rounded-md shadow-2xl">
                   <img 
                     src={getAssetUrl('quinta-wine-brands.png')} 
@@ -263,8 +298,70 @@ export const QuintaDoPinto = () => {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-              </div>
+              </motion.div>
+              <motion.div {...fadeInUp} className="order-1 lg:order-2">
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">07. STRATEGY</span>
+                <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
+                  Why this Works<span className="text-primary">.</span>
+                </h2>
+                <p className="text-xl text-narrative-shadow/60 mb-12 leading-relaxed">
+                  {t.quinta.whyWineText}
+                </p>
+                <div className="grid gap-8">
+                  {[
+                    { icon: TrendingUp, title: t.quinta.whyWine1Title, text: t.quinta.whyWine1Text },
+                    { icon: Share2, title: t.quinta.whyWine2Title, text: t.quinta.whyWine2Text },
+                    { icon: Sparkles, title: t.quinta.whyWine3Title, text: t.quinta.whyWine3Text }
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-6 items-start group">
+                      <div className="w-12 h-12 flex items-center justify-center shrink-0">
+                        <item.icon className="w-10 h-10 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold mb-2 uppercase tracking-tight group-hover:text-primary transition-colors">{item.title}</h4>
+                        <p className="text-base text-narrative-shadow/50 leading-relaxed">{item.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Quote Section */}
+        <section className="py-24 md:py-40 bg-white">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <motion.p 
+              {...fadeInUp}
+              className="text-3xl md:text-5xl text-black font-serif italic leading-tight"
+            >
+              “Quinta do Pinto represents the perfect marriage of heritage and innovation. By using AI to visualize the soul of their wine, we've created a new standard for luxury spirits content.”
+            </motion.p>
+          </div>
+        </section>
+
+        {/* Speed. Soul. Scale. Section */}
+        <section className="py-24 md:py-40 bg-white">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <h2 className="text-6xl md:text-8xl font-display uppercase mb-16 leading-[0.9] tracking-tighter text-black">
+              Speed. Soul. Scale<span className="text-primary">.</span>
+            </h2>
+            <div className="flex flex-col md:flex-row gap-6 justify-center">
+              <a 
+                href="/contact" 
+                className="bg-black text-white px-10 py-5 text-xs font-black uppercase tracking-widest rounded-full hover:scale-105 transition-transform flex items-center justify-center gap-3"
+              >
+                INQUIRE NOW <ExternalLink className="w-4 h-4" />
+              </a>
+              <a 
+                href="/creative" 
+                className="bg-white text-black border border-black px-10 py-5 text-xs font-black uppercase tracking-widest rounded-full hover:scale-105 transition-transform"
+              >
+                VIEW FRAMEWORK
+              </a>
+            </div>
+            <p className="mt-24 text-[10px] font-bold uppercase tracking-[0.5em] text-black/20">© 2024 NUSTUDIOS × QUINTA DO PINTO.</p>
           </div>
         </section>
 
@@ -284,3 +381,4 @@ export const QuintaDoPinto = () => {
     </div>
   );
 };
+

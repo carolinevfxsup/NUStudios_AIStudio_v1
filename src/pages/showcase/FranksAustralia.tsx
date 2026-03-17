@@ -48,8 +48,8 @@ export const FranksAustralia = () => {
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div>
                 <span className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 block">01. Digital Prototyping</span>
-                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
-                  From Pattern <span className="text-primary">to Reality<span className="text-primary">.</span></span>
+                <h2 className="text-4xl md:text-6xl font-display uppercase mb-10 text-black">
+                  From Pattern to Reality<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8 text-lg text-narrative-shadow/80 leading-relaxed">
                   <p>We bridge the gap between design and physical production. By ingesting your sewing patterns and technical CADs, we generate hyper-realistic digital samples.</p>
@@ -77,8 +77,8 @@ export const FranksAustralia = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center mb-20">
               <span className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 block">02. Detail & Constancy</span>
-              <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
-                E-comm <span className="text-primary">Imagery<span className="text-primary">.</span></span>
+              <h2 className="text-4xl md:text-6xl font-display uppercase mb-10 text-black">
+                E-comm Imagery<span className="text-primary">.</span>
               </h2>
               <div className="space-y-6 text-lg text-narrative-shadow/80 leading-relaxed">
                 <p>The biggest flaw in standard AI is inconsistency. We solve this by using proprietary consistent models and e-commerce best practices.</p>
@@ -114,8 +114,8 @@ export const FranksAustralia = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center mb-20">
               <span className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 block">03. Brand Building</span>
-              <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
-                Lifestyle & <span className="text-primary">Editorial<span className="text-primary">.</span></span>
+              <h2 className="text-4xl md:text-6xl font-display uppercase mb-10 text-black">
+                Lifestyle & Editorial<span className="text-primary">.</span>
               </h2>
               <div className="space-y-6 text-lg text-narrative-shadow/80 leading-relaxed">
                 <p>The biggest flaw in standard AI is inconsistency. We solve this by using proprietary consistent models and e-commerce best practices.</p>
@@ -155,14 +155,14 @@ export const FranksAustralia = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center mb-20">
               <span className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 block">Getting Social</span>
-              <h2 className="text-4xl md:text-6xl font-display uppercase mb-10">
-                Social & <span className="text-primary">Engagement<span className="text-primary">.</span></span>
+              <h2 className="text-4xl md:text-6xl font-display uppercase mb-10 text-black">
+                Social & Engagement<span className="text-primary">.</span>
               </h2>
               <div className="space-y-8 text-lg text-narrative-shadow/80 leading-relaxed">
                 <p>We close the loop between the studio and the feed. We cover the full lifecycle of a product launch, generating high-volume, platform-ready content in days rather than weeks.</p>
                 <div className="grid md:grid-cols-2 gap-8 text-left">
-                  <p><span className="font-bold text-black uppercase tracking-wider text-xs block mb-2">The Power:</span> Instant social assets—from high-fidelity product flatlays to macro detail shots and sun-drenched lifestyle content—all ready for Instagram and TikTok.</p>
-                  <p><span className="font-bold text-black uppercase tracking-wider text-xs block mb-2">The Result:</span> A never-ending stream of high-engagement content that keeps the brand "always-on," feeding the algorithm with consistent quality and scaling visibility without manual friction.</p>
+                  <p><span className="font-bold text-black uppercase tracking-wider text-sm block mb-2">The Power:</span> Instant social assets—from high-fidelity product flatlays to macro detail shots and sun-drenched lifestyle content—all ready for Instagram and TikTok.</p>
+                  <p><span className="font-bold text-black uppercase tracking-wider text-sm block mb-2">The Result:</span> A never-ending stream of high-engagement content that keeps the brand "always-on," feeding the algorithm with consistent quality and scaling visibility without manual friction.</p>
                 </div>
               </div>
             </div>
@@ -207,7 +207,7 @@ export const FranksAustralia = () => {
         {/* Speed. Soul. Scale. Section */}
         <section className="py-24 md:py-32 bg-[#F5F5F0] border-t border-black/5">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="text-6xl md:text-8xl font-display uppercase mb-16">Speed. Soul. Scale<span className="text-primary">.</span></h2>
+            <h2 className="text-6xl md:text-8xl font-display uppercase mb-16 text-black">Speed. Soul. Scale<span className="text-primary">.</span></h2>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
               <a 
                 href="/contact" 
@@ -234,4 +234,3 @@ export const FranksAustralia = () => {
     </div>
   );
 };
-

@@ -395,7 +395,7 @@ export const translations = {
       ctaText: 'Salt Lily is one example of a scalable system designed for jewellery brands.',
     },
     palmeiral: {
-      heroTitle: 'From unused photos to daily Instagram posts —',
+      heroTitle: 'O Palmeiral',
       heroSubtitle: 'fully automated.',
       heroDescription: 'O Palmeiral had hundreds of great photos sitting in Google Drive. We built a system to run it automatically.',
       heroTitleItalic: 'fully automated.',
@@ -865,7 +865,7 @@ export const translations = {
       ctaText: 'A Salt Lily é um exemplo de um sistema escalável desenhado para marcas de joalharia.',
     },
     palmeiral: {
-      heroTitle: 'De fotos não utilizadas para posts diários no Instagram —',
+      heroTitle: 'O Palmeiral',
       heroSubtitle: 'totalmente automatizado.',
       heroDescription: 'O Palmeiral tinha centenas de ótimas fotos paradas no Google Drive. Construímos um sistema para as gerir automaticamente.',
       heroTitleItalic: 'totalmente automatizado.',

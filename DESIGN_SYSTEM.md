@@ -21,7 +21,7 @@ This document outlines the visual language and design patterns used across the N
 | Level | Font | Case | Characteristics |
 | :--- | :--- | :--- | :--- |
 | **H1 (Hero)** | Sans | Bold Italic | `text-[15vw] md:text-[12vw]`, tracking-tighter, white |
-| **H2 (Showcase)** | Display | Uppercase | `text-4xl md:text-6xl`, tracking-tight, **Red Full Stop** |
+| **H2 (Showcase)** | Display | Uppercase | `text-4xl md:text-6xl`, tracking-tight, **Black Text Only**, **Red Full Stop at End** |
 | **H2 (Home)** | Display | Normal/Mixed | `text-5xl md:text-7xl`, tracking-tighter |
 | **H3** | Display | Uppercase | `text-xl md:text-2xl`, tracking-tight |
 
@@ -56,13 +56,13 @@ This document outlines the visual language and design patterns used across the N
 ## 3. Component Patterns
 
 ### The "Red Full Stop" Pattern
-All major showcase titles and results headings should end with a red full stop.
+All major showcase titles and results headings (H2) must use black text with only the trailing period in red. This applies to all showcase pages except the Hero section.
 ```tsx
-<h2 className="font-display uppercase">
-  TITLE TEXT<span className="text-red-600">.</span>
+<h2 className="text-black font-display uppercase">
+  TITLE TEXT<span className="text-primary">.</span>
 </h2>
 ```
-*Note: In some files, `text-primary` is used, which maps to this same brand red.*
+*Note: `text-primary` or `text-red-600` is used for the red color. The text itself must be explicitly `text-black` on light backgrounds.*
 
 ### Bento Grids
 Used for results and infographics.
