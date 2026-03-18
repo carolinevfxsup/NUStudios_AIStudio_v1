@@ -70,8 +70,13 @@ Used for results and infographics.
 - **Item:** `p-6 border border-border bg-neutral rounded-md`
 
 ### Buttons
-- **Primary:** `bg-red-600 text-white rounded-full px-10 py-4 uppercase tracking-widest font-bold text-xs`
-- **Secondary:** `bg-black text-white` or `border border-black text-black`
+- **Primary:** `bg-red-600 text-white rounded-none px-10 py-4 uppercase tracking-widest font-bold text-xs`
+- **Secondary:** `bg-black text-white rounded-none` or `border border-black text-black rounded-none`
+- **Rule:** All buttons **MUST** be square (`rounded-none`). Rounded or pill-shaped buttons are strictly forbidden.
+
+### Dark Mode / Contrast Rules
+- **Color Inversion:** On dark backgrounds (`bg-black`, `bg-[#0A0A0A]`), all primary text and titles **MUST** invert to white for maximum contrast.
+- **Title Pattern:** The "Red Full Stop" pattern still applies: White text with a Primary Red period.
 
 ---
 
