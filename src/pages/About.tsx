@@ -24,7 +24,7 @@ export const About = () => {
 
   return (
     <div className="pt-32 pb-32 px-6 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-[0.6fr_1.4fr] lg:grid-cols-[0.5fr_1.5fr] gap-6">
         {/* About Section */}
         <div className="bg-black text-white border border-border rounded-none p-8 md:p-12 shadow-sm">
           <FadeIn delay={0.1}>

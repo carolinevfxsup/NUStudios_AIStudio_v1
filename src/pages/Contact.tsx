@@ -1,41 +1,71 @@
 import { useState } from 'react';
 import { FadeIn } from '../components/FadeIn';
-import { Send, Check, Loader2 } from 'lucide-react';
+import { Send, Check, Loader2, Laptop, Phone, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+
+const contactSchema = z.object({
+  firstName: z.string().min(2, 'First name is required'),
+  lastName: z.string().min(2, 'Last name is required'),
+  email: z.string().email('Please enter a valid email address'),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: ''
-  });
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [file, setFile] = useState<File | null>(null);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    if (submitError) setSubmitError(null);
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    mode: 'onChange'
+  });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSubmitError(null);
     try {
+      let attachment = null;
+      if (file) {
+        const reader = new FileReader();
+        const base64Promise = new Promise<string>((resolve) => {
+          reader.onload = () => {
+            const base64 = (reader.result as string).split(',')[1];
+            resolve(base64);
+          };
+        });
+        reader.readAsDataURL(file);
+        const base64Content = await base64Promise;
+        attachment = {
+          filename: file.name,
+          content: base64Content,
+        };
+      }
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...data, attachment }),
       });
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ firstName: '', lastName: '', email: '', message: '' });
+        setFile(null);
+        reset();
       } else {
-        const data = await response.json();
-        setSubmitError(data.error || 'Failed to send message. Please try again.');
+        const errorData = await response.json();
+        setSubmitError(errorData.error || 'Failed to send message. Please try again.');
       }
     } catch (error) {
       console.error(error);
@@ -46,17 +76,17 @@ export const Contact = () => {
   };
 
   return (
-    <div className="pt-32 px-6 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-32 pb-32 px-6 max-w-7xl mx-auto min-h-screen">
       <FadeIn delay={0.1}>
         <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-12 leading-[0.8]">
-          CONTACT US<span className="text-red-600">.</span>
+          {t.home.contact.title}<span className="text-red-600">.</span>
         </h1>
       </FadeIn>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
         <FadeIn delay={0.2}>
           <div>
-            <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">Let's Talk</p>
+            <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">{t.home.contact.subtitle}</p>
             
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
@@ -65,20 +95,16 @@ export const Contact = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  onSubmit={handleSubmit}
+                  onSubmit={handleSubmit(onSubmit)}
                   className="space-y-12"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="space-y-2 relative">
-                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">First Name*</label>
+                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.home.contact.form.firstName}</label>
                       <div className="relative">
                         <input 
-                          type="text" 
-                          name="firstName"
-                          required
-                          value={formData.firstName}
-                          onChange={handleInputChange}
-                          className="w-full bg-transparent border-b border-black/20 py-3 focus:outline-none focus:border-black transition-colors font-sans" 
+                          {...register('firstName')}
+                          className={`w-full bg-transparent border-b py-3 focus:outline-none transition-colors font-sans ${errors.firstName ? 'border-red-500' : 'border-black/20 focus:border-black'}`} 
                         />
                         <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
@@ -86,17 +112,14 @@ export const Contact = () => {
                           </svg>
                         </div>
                       </div>
+                      {errors.firstName && <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest mt-1">{errors.firstName.message}</p>}
                     </div>
                     <div className="space-y-2 relative">
-                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">Last Name*</label>
+                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.home.contact.form.lastName}</label>
                       <div className="relative">
                         <input 
-                          type="text" 
-                          name="lastName"
-                          required
-                          value={formData.lastName}
-                          onChange={handleInputChange}
-                          className="w-full bg-transparent border-b border-black/20 py-3 focus:outline-none focus:border-black transition-colors font-sans" 
+                          {...register('lastName')}
+                          className={`w-full bg-transparent border-b py-3 focus:outline-none transition-colors font-sans ${errors.lastName ? 'border-red-500' : 'border-black/20 focus:border-black'}`} 
                         />
                         <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
@@ -104,19 +127,16 @@ export const Contact = () => {
                           </svg>
                         </div>
                       </div>
+                      {errors.lastName && <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest mt-1">{errors.lastName.message}</p>}
                     </div>
                   </div>
                   
                   <div className="space-y-2 relative">
-                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">Email*</label>
+                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.home.contact.form.email}</label>
                     <div className="relative">
                       <input 
-                        type="email" 
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full bg-transparent border-b border-black/20 py-3 focus:outline-none focus:border-black transition-colors font-sans" 
+                        {...register('email')}
+                        className={`w-full bg-transparent border-b py-3 focus:outline-none transition-colors font-sans ${errors.email ? 'border-red-500' : 'border-black/20 focus:border-black'}`} 
                       />
                       <div className="absolute right-0 bottom-3 text-[#008080] opacity-50">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
@@ -124,23 +144,47 @@ export const Contact = () => {
                         </svg>
                       </div>
                     </div>
+                    {errors.email && <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest mt-1">{errors.email.message}</p>}
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">Message</label>
+                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.home.contact.form.message}</label>
                     <textarea 
-                      name="message"
-                      required
+                      {...register('message')}
                       rows={1} 
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="w-full bg-transparent border-b border-black/20 py-3 focus:outline-none focus:border-black transition-colors resize-none font-sans min-h-[100px]" 
+                      className={`w-full bg-transparent border-b py-3 focus:outline-none transition-colors resize-none font-sans min-h-[100px] ${errors.message ? 'border-red-500' : 'border-black/20 focus:border-black'}`} 
                     />
+                    {errors.message && <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest mt-1">{errors.message.message}</p>}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60 flex justify-between items-center">
+                      <span>{t.home.contact.form.attachments}</span>
+                      <span className="text-black/30">{t.home.contact.form.maxFileSize}</span>
+                    </label>
+                    <div className="relative">
+                      <input 
+                        type="file"
+                        onChange={(e) => {
+                          const selectedFile = e.target.files?.[0] || null;
+                          if (selectedFile && selectedFile.size > 10 * 1024 * 1024) {
+                            setSubmitError('File size exceeds 10MB limit.');
+                            setFile(null);
+                            e.target.value = '';
+                          } else {
+                            setFile(selectedFile);
+                            if (submitError === 'File size exceeds 10MB limit.') setSubmitError(null);
+                          }
+                        }}
+                        className="w-full bg-transparent border-b py-3 focus:outline-none transition-colors font-sans text-[10px] uppercase tracking-widest border-black/20 focus:border-black" 
+                      />
+                    </div>
                   </div>
 
                   {submitError && (
-                    <div className="text-red-500 text-xs font-bold uppercase tracking-widest">
-                      {submitError}
+                    <div className="bg-red-500/10 border border-red-500 p-4 rounded-none flex items-center gap-3 text-red-500">
+                      <AlertCircle className="w-5 h-5 shrink-0" />
+                      <p className="text-[10px] font-bold uppercase tracking-widest">{submitError}</p>
                     </div>
                   )}
 
@@ -152,11 +196,11 @@ export const Contact = () => {
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-3 h-3 animate-spin" />
-                        <span>Sending...</span>
+                        <span>{t.home.contact.form.sending}</span>
                       </>
                     ) : (
                       <>
-                        <span>Message Us</span>
+                        <span>{t.home.contact.form.button}</span>
                         <Send className="w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                       </>
                     )}
@@ -173,16 +217,16 @@ export const Contact = () => {
                     <Check className="w-10 h-10 text-[#E11D48]" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-3xl font-display font-bold uppercase tracking-tighter">Thank You<span className="text-red-600">.</span></h3>
+                    <h3 className="text-3xl font-display font-bold uppercase tracking-tighter">{t.home.contact.form.success.title}<span className="text-red-600">.</span></h3>
                     <p className="text-black/60 font-sans max-w-sm">
-                      Your message has been received. Our team will reach out to you shortly.
+                      {t.home.contact.form.success.desc}
                     </p>
                   </div>
                   <button
                     onClick={() => setIsSubmitted(false)}
                     className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/40 hover:text-black transition-colors border-b border-black/20 pb-1"
                   >
-                    Send another message
+                    {t.home.contact.form.success.another}
                   </button>
                 </motion.div>
               )}
@@ -202,6 +246,56 @@ export const Contact = () => {
             />
           </div>
         </FadeIn>
+      </div>
+
+      {/* Contact Info Section */}
+      <div className="mt-32 border-t border-black/10 pt-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          {/* Left Column: Email/Call */}
+          <FadeIn delay={0.4} direction="left">
+            <div className="space-y-8">
+              <div className="flex items-center gap-4">
+                <Laptop className="w-8 h-8 text-red-600" />
+                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home.contact.emailTitle}</h2>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+                <div className="space-y-1">
+                  <p className="text-xs font-sans font-bold text-black/40 uppercase tracking-widest">{t.home.contact.emailLabel}</p>
+                  <p className="text-lg font-display font-bold">hello@nustudios.co.uk</p>
+                </div>
+              </div>
+              <p className="text-xl text-black/70 font-sans leading-relaxed max-w-md">
+                {t.home.contact.emailDesc}
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Right Column: Locations */}
+          <FadeIn delay={0.5} direction="right">
+            <div className="space-y-8">
+              <div className="flex items-center gap-4">
+                <Phone className="w-8 h-8 text-red-600" />
+                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home.contact.locationsTitle}</h2>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="space-y-1">
+                  <p className="text-xs font-sans font-bold text-black/40 uppercase tracking-widest">{t.home.stats.london}</p>
+                  <a href="tel:+447506230988" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+44 (0) 7506 230988</a>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs font-sans font-bold text-black/40 uppercase tracking-widest">{t.home.stats.lisbon}</p>
+                  <a href="tel:+351939517942" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+351 939 517 942</a>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs font-sans font-bold text-black/40 uppercase tracking-widest">{t.home.stats.melbourne}</p>
+                  <a href="tel:+61431371024" className="text-xl font-display font-bold hover:text-red-600 transition-colors">+61 431 371 024</a>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </div>
   );

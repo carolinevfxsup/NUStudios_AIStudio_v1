@@ -26,14 +26,14 @@ async function startServer() {
 
   // API route for lead submission (Onboarding)
   app.post("/api/submit-brief", async (req, res) => {
-    const { businessName, email, phone, message, outcomes, website, size, market, socials } = req.body;
+    const { businessName, email, phone, message, outcomes, website, size, market, socials, attachment } = req.body;
     const senderEmail = email.trim();
     const senderName = businessName.trim();
     const timestamp = new Date().toISOString();
     const sourceUrl = req.headers.referer || "Onboarding Page";
 
     try {
-      const { data, error } = await resend.emails.send({
+      const emailOptions: any = {
         from: 'NuStudios <info@send.nustudios.co.uk>',
         to: ['tech@nustudios.co.uk', 'caroline.pires2d@gmail.com'],
         reply_to: senderEmail,
@@ -76,7 +76,18 @@ Source: ${sourceUrl}
             </p>
           </div>
         `,
-      });
+      };
+
+      if (attachment && attachment.content && attachment.filename) {
+        emailOptions.attachments = [
+          {
+            filename: attachment.filename,
+            content: attachment.content, // Base64 string
+          },
+        ];
+      }
+
+      const { data, error } = await resend.emails.send(emailOptions);
 
       if (error) throw error;
       res.json({ success: true, data });
@@ -88,7 +99,7 @@ Source: ${sourceUrl}
 
   // API route for general contact
   app.post("/api/contact", async (req, res) => {
-    const { firstName, lastName, email, message, subject: userSubject } = req.body;
+    const { firstName, lastName, email, message, subject: userSubject, attachment } = req.body;
     const senderEmail = email.trim();
     const senderName = `${firstName} ${lastName}`.trim();
     const subject = (userSubject || "New website enquiry").trim();
@@ -96,7 +107,7 @@ Source: ${sourceUrl}
     const sourceUrl = req.headers.referer || "Contact Page";
 
     try {
-      const { data, error } = await resend.emails.send({
+      const emailOptions: any = {
         from: 'NuStudios <info@send.nustudios.co.uk>',
         to: ['tech@nustudios.co.uk', 'caroline.pires2d@gmail.com'],
         reply_to: senderEmail,
@@ -129,7 +140,18 @@ Source: ${sourceUrl}
             </p>
           </div>
         `,
-      });
+      };
+
+      if (attachment && attachment.content && attachment.filename) {
+        emailOptions.attachments = [
+          {
+            filename: attachment.filename,
+            content: attachment.content, // Base64 string
+          },
+        ];
+      }
+
+      const { data, error } = await resend.emails.send(emailOptions);
 
       if (error) throw error;
       res.json({ success: true, data });
