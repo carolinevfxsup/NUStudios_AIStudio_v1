@@ -49,7 +49,7 @@ export const ShowcaseHero = ({
               <span className="text-primary font-bold tracking-[0.4em] uppercase text-[10px] mb-6 block">
                 Case Study / {caseStudyNumber}
               </span>
-              <h1 className="text-[15vw] md:text-[12vw] font-sans font-bold italic text-white leading-[0.85] tracking-tighter mb-8">
+              <h1 className="text-[15vw] md:text-[12vw] font-display font-bold italic text-white leading-[0.85] tracking-tighter mb-8">
                 {title}
               </h1>
             </div>

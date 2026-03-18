@@ -710,6 +710,8 @@ export const translations = {
       foundersTitle: 'FOUNDERS',
       foundersSubtitle: 'The Artist & The Technologist',
       foundersDesc: "We grew up in the world of physical products and tangible art. Now, we use the world's most advanced tools to bring that reality to the digital space.",
+      socials: 'Socials',
+      vfxReel: 'VFX SHOWREEL',
     },
     automationPage: {
       heroTitle: 'AI Automation.',
@@ -1448,6 +1450,8 @@ export const translations = {
       foundersTitle: 'FUNDADORES',
       foundersSubtitle: 'O Artista e o Tecnólogo',
       foundersDesc: "Crescemos no mundo dos produtos físicos e da arte tangível. Agora, usamos as ferramentas mais avançadas do mundo para trazer essa realidade para o espaço digital.",
+      socials: 'Redes Sociais',
+      vfxReel: 'SHOWREEL DE VFX',
     },
     automationPage: {
       heroTitle: 'Automação de IA.',

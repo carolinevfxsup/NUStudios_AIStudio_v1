@@ -1,9 +1,26 @@
 import { founders } from '../data/founders';
 import { FadeIn } from '../components/FadeIn';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useState } from 'react';
+import { ShowreelModal } from '../components/ShowreelModal';
+import { ExternalLink, Play } from 'lucide-react';
 
 export const About = () => {
   const { t } = useLanguage();
+  const [modalState, setModalState] = useState<{ isOpen: boolean; url: string }>({
+    isOpen: false,
+    url: '',
+  });
+
+  const openModal = (url: string) => {
+    // Convert Vimeo URL to embed URL
+    let embedUrl = url;
+    if (url.includes('vimeo.com')) {
+      const videoId = url.split('/').pop()?.split('?')[0];
+      embedUrl = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
+    }
+    setModalState({ isOpen: true, url: embedUrl });
+  };
 
   return (
     <div className="pt-32 pb-32 px-6 max-w-7xl mx-auto">
@@ -70,7 +87,44 @@ export const About = () => {
                     <h3 className="text-xl md:text-2xl font-display font-bold mb-1 tracking-tighter uppercase">{founder.name}</h3>
                     <p className="text-sm font-sans font-bold text-gray-500 mb-4 uppercase tracking-widest">{founder.role}</p>
                     <a href={`mailto:${founder.email}`} className="text-sm font-sans font-bold text-red-600 mb-4 hover:underline">{founder.email}</a>
-                    <p className="text-sm text-text/70 font-sans leading-relaxed">{founder.bio}</p>
+                    <p className="text-sm text-text/70 font-sans leading-relaxed mb-6">{founder.bio}</p>
+                    
+                    {/* Social Links */}
+                    {(founder.linkedin || founder.imdb || founder.vfxReel) && (
+                      <div className="space-y-4 pt-6 border-t border-border">
+                        <p className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-text/40">{t.about.socials}</p>
+                        <div className="flex flex-col gap-3">
+                          {founder.linkedin && (
+                            <a 
+                              href={founder.linkedin} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-sm font-sans font-bold uppercase tracking-widest flex items-center gap-2 hover:text-red-600 transition-colors"
+                            >
+                              LINKEDIN <ExternalLink size={14} />
+                            </a>
+                          )}
+                          {founder.imdb && (
+                            <a 
+                              href={founder.imdb} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-sm font-sans font-bold uppercase tracking-widest flex items-center gap-2 hover:text-red-600 transition-colors"
+                            >
+                              IMDB <ExternalLink size={14} />
+                            </a>
+                          )}
+                          {founder.vfxReel && (
+                            <button 
+                              onClick={() => openModal(founder.vfxReel!)}
+                              className="text-sm font-sans font-bold uppercase tracking-widest flex items-center gap-2 hover:text-red-600 transition-colors text-left"
+                            >
+                              {t.about.vfxReel} <Play size={14} fill="currentColor" />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </FadeIn>
@@ -78,6 +132,12 @@ export const About = () => {
           </div>
         </div>
       </div>
+      
+      <ShowreelModal 
+        isOpen={modalState.isOpen} 
+        onClose={() => setModalState({ ...modalState, isOpen: false })} 
+        videoUrl={modalState.url}
+      />
     </div>
   );
 };

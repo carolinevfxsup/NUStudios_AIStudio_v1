@@ -4,9 +4,10 @@ import { motion, AnimatePresence } from 'motion/react';
 interface ShowreelModalProps {
   isOpen: boolean;
   onClose: () => void;
+  videoUrl?: string;
 }
 
-export const ShowreelModal = ({ isOpen, onClose }: ShowreelModalProps) => {
+export const ShowreelModal = ({ isOpen, onClose, videoUrl = "https://www.youtube.com/embed/0ipzZpintNQ?autoplay=1" }: ShowreelModalProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -32,8 +33,8 @@ export const ShowreelModal = ({ isOpen, onClose }: ShowreelModalProps) => {
             </button>
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/0ipzZpintNQ?autoplay=1"
-              title="Showreel"
+              src={videoUrl}
+              title="Video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

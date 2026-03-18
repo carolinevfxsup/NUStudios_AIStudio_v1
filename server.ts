@@ -8,6 +8,16 @@ dotenv.config();
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+function escapeHtml(str: string) {
+  if (!str) return "";
+  return str
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 async function startServer() {
   const app = express();
   const PORT = 3000;
@@ -17,24 +27,54 @@ async function startServer() {
   // API route for lead submission (Onboarding)
   app.post("/api/submit-brief", async (req, res) => {
     const { businessName, email, phone, message, outcomes, website, size, market, socials } = req.body;
+    const senderEmail = email.trim();
+    const senderName = businessName.trim();
+    const timestamp = new Date().toISOString();
+    const sourceUrl = req.headers.referer || "Onboarding Page";
 
     try {
       const { data, error } = await resend.emails.send({
         from: 'NuStudios <info@send.nustudios.co.uk>',
-        to: ['tech@nustudios.co.uk'],
-        reply_to: email,
-        subject: `New Onboarding Brief: ${businessName}`,
+        to: ['tech@nustudios.co.uk', 'caroline.pires2d@gmail.com'],
+        reply_to: senderEmail,
+        subject: `New Onboarding Brief: ${senderName}`,
+        text: `
+New Onboarding Brief
+
+Business Name: ${senderName}
+Website: ${website}
+Email: ${senderEmail}
+Phone: ${phone}
+Team Size: ${size}
+Market: ${market}
+Socials: Instagram: ${socials?.instagram}, TikTok: ${socials?.tiktok}, LinkedIn: ${socials?.linkedin}
+Outcomes: ${outcomes?.join(", ")}
+
+Message:
+${message}
+
+Timestamp: ${timestamp}
+Source: ${sourceUrl}
+        `.trim(),
         html: `
-          <h1>New Onboarding Brief</h1>
-          <p><strong>Business Name:</strong> ${businessName}</p>
-          <p><strong>Website:</strong> ${website}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Team Size:</strong> ${size}</p>
-          <p><strong>Market:</strong> ${market}</p>
-          <p><strong>Socials:</strong> Instagram: ${socials?.instagram}, TikTok: ${socials?.tiktok}, LinkedIn: ${socials?.linkedin}</p>
-          <p><strong>Outcomes:</strong> ${outcomes?.join(", ")}</p>
-          <p><strong>Message:</strong> ${message}</p>
+          <div style="font-family:Arial,sans-serif;line-height:1.6;color:#111">
+            <h2>New Onboarding Brief</h2>
+            <p><strong>Business Name:</strong> ${escapeHtml(senderName)}</p>
+            <p><strong>Website:</strong> ${escapeHtml(website)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(senderEmail)}</p>
+            <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+            <p><strong>Team Size:</strong> ${escapeHtml(size)}</p>
+            <p><strong>Market:</strong> ${escapeHtml(market)}</p>
+            <p><strong>Socials:</strong> Instagram: ${escapeHtml(socials?.instagram)}, TikTok: ${escapeHtml(socials?.tiktok)}, LinkedIn: ${escapeHtml(socials?.linkedin)}</p>
+            <p><strong>Outcomes:</strong> ${escapeHtml(outcomes?.join(", "))}</p>
+            <p><strong>Message:</strong></p>
+            <div style="white-space:pre-wrap">${escapeHtml(message)}</div>
+            <hr />
+            <p style="font-size:12px;color:#666">
+              <strong>Timestamp:</strong> ${timestamp}<br />
+              <strong>Source:</strong> ${sourceUrl}
+            </p>
+          </div>
         `,
       });
 
@@ -48,19 +88,46 @@ async function startServer() {
 
   // API route for general contact
   app.post("/api/contact", async (req, res) => {
-    const { firstName, lastName, email, message } = req.body;
+    const { firstName, lastName, email, message, subject: userSubject } = req.body;
+    const senderEmail = email.trim();
+    const senderName = `${firstName} ${lastName}`.trim();
+    const subject = (userSubject || "New website enquiry").trim();
+    const timestamp = new Date().toISOString();
+    const sourceUrl = req.headers.referer || "Contact Page";
 
     try {
       const { data, error } = await resend.emails.send({
         from: 'NuStudios <info@send.nustudios.co.uk>',
-        to: ['tech@nustudios.co.uk'],
-        reply_to: email,
-        subject: `New Contact Message from ${firstName} ${lastName}`,
+        to: ['tech@nustudios.co.uk', 'caroline.pires2d@gmail.com'],
+        reply_to: senderEmail,
+        subject: `Website enquiry: ${subject}`,
+        text: `
+New website enquiry
+
+Name: ${senderName}
+Email: ${senderEmail}
+Subject: ${subject}
+
+Message:
+${message}
+
+Timestamp: ${timestamp}
+Source: ${sourceUrl}
+        `.trim(),
         html: `
-          <h1>New Contact Message</h1>
-          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Message:</strong> ${message}</p>
+          <div style="font-family:Arial,sans-serif;line-height:1.6;color:#111">
+            <h2>New website enquiry</h2>
+            <p><strong>Name:</strong> ${escapeHtml(senderName)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(senderEmail)}</p>
+            <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+            <p><strong>Message:</strong></p>
+            <div style="white-space:pre-wrap">${escapeHtml(message)}</div>
+            <hr />
+            <p style="font-size:12px;color:#666">
+              <strong>Timestamp:</strong> ${timestamp}<br />
+              <strong>Source:</strong> ${sourceUrl}
+            </p>
+          </div>
         `,
       });
 
