@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Header } from '../../components/Header';
 import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
@@ -6,7 +7,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { ExternalLink, Heart, MessageCircle, Send, Bookmark } from 'lucide-react';
 
 export const FranksAustralia = () => {
-  const { t } = useLanguage();
+  const { t, getLanguagePath } = useLanguage();
 
   const instagramPosts = [
     {
@@ -209,26 +210,26 @@ export const FranksAustralia = () => {
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-6xl md:text-8xl font-display uppercase mb-16 text-black">{t.common.speedSoulScale}<span className="text-primary">.</span></h2>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
-              <a 
-                href="/contact" 
+              <Link 
+                to={getLanguagePath('/contact')} 
                 className="bg-black text-white px-10 py-5 text-sm font-black uppercase tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-primary transition-colors"
               >
                 {t.common.inquireNow} <ExternalLink className="w-4 h-4" />
-              </a>
-              <a 
-                href="/creative" 
+              </Link>
+              <Link 
+                to={getLanguagePath('/creative')} 
                 className="bg-white text-black border border-black px-10 py-5 text-sm font-black uppercase tracking-[0.3em] hover:bg-black hover:text-white transition-colors"
               >
                 {t.common.viewFramework}
-              </a>
+              </Link>
             </div>
             <p className="mt-20 text-[10px] font-bold uppercase tracking-[0.5em] text-black/20">{t.common.copyright} × FRANKS AUSTRALIA.</p>
           </div>
         </section>
 
         <ProjectNavigation 
-          prevProject={{ title: t.palmeiral.heroTitle, slug: '/showcase/o-palmeiral', thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/2Artboard%201.png' }}
-          nextProject={{ title: t.quinta.heroTitle, slug: '/showcase/quinta-do-pinto', thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-wine-brands.png' }}
+          prevProject={{ title: t.palmeiral.heroTitle, slug: getLanguagePath('/showcase/o-palmeiral'), thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/2Artboard%201.png' }}
+          nextProject={{ title: t.quinta.heroTitle, slug: getLanguagePath('/showcase/quinta-do-pinto'), thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-wine-brands.png' }}
         />
       </main>
     </div>

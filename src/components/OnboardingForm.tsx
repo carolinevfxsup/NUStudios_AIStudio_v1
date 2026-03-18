@@ -44,7 +44,7 @@ const INITIAL_DATA: OnboardingFormData = {
 };
 
 export const OnboardingForm = () => {
-  const { t } = useLanguage();
+  const { t, getLanguagePath } = useLanguage();
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -219,7 +219,7 @@ export const OnboardingForm = () => {
               exit={{ opacity: 0, x: -20 }}
               className="space-y-6"
             >
-              <Link to="/" className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-600 hover:text-red-700 transition-colors mb-8">
+              <Link to={getLanguagePath('/')} className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-600 hover:text-red-700 transition-colors mb-8">
                 <ArrowLeft className="w-4 h-4" />
                 Back
               </Link>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Header } from '../../components/Header';
 import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
@@ -10,7 +11,7 @@ import {
 } from 'lucide-react';
 
 export const OPalmeiral = () => {
-  const { t } = useLanguage();
+  const { t, getLanguagePath } = useLanguage();
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -415,12 +416,12 @@ export const OPalmeiral = () => {
                     ))}
                   </ul>
                 </div>
-                <a 
-                  href="/contact"
+                <Link 
+                  to={getLanguagePath('/contact')}
                   className="inline-block px-10 py-5 bg-red-600 text-white font-black uppercase tracking-widest text-xs hover:scale-105 transition-transform"
                 >
                   {t.palmeiral.ctaButton}
-                </a>
+                </Link>
               </motion.div>
 
               <motion.div 
@@ -445,12 +446,12 @@ export const OPalmeiral = () => {
         <ProjectNavigation 
           prevProject={{ 
             title: t.saltLily.heroTitle, 
-            slug: '/showcase/salt-lily', 
+            slug: getLanguagePath('/showcase/salt-lily'), 
             thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png' 
           }}
           nextProject={{ 
             title: t.franks.heroTitle, 
-            slug: '/showcase/franks-australia', 
+            slug: getLanguagePath('/showcase/franks-australia'), 
             thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%205-100.jpg' 
           }}
         />

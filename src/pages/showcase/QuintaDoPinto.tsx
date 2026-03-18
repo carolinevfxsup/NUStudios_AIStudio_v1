@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Header } from '../../components/Header';
 import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
@@ -7,7 +8,7 @@ import { motion } from 'framer-motion';
 import { Bot, Clapperboard, Camera, ExternalLink, Sparkles, TrendingUp, Share2 } from 'lucide-react';
 
 export const QuintaDoPinto = () => {
-  const { t } = useLanguage();
+  const { t, getLanguagePath } = useLanguage();
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -348,18 +349,18 @@ export const QuintaDoPinto = () => {
               {t.common.speedSoulScale}<span className="text-primary">.</span>
             </h2>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
-              <a 
-                href="/contact" 
+              <Link 
+                to={getLanguagePath('/contact')} 
                 className="bg-black text-white px-10 py-5 text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform flex items-center justify-center gap-3"
               >
                 {t.common.inquireNow} <ExternalLink className="w-4 h-4" />
-              </a>
-              <a 
-                href="/creative" 
+              </Link>
+              <Link 
+                to={getLanguagePath('/creative')} 
                 className="bg-white text-black border border-black px-10 py-5 text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform"
               >
                 {t.common.viewFramework}
-              </a>
+              </Link>
             </div>
             <p className="mt-24 text-[10px] font-bold uppercase tracking-[0.5em] text-black/20">{t.common.copyright} × QUINTA DO PINTO.</p>
           </div>
@@ -368,12 +369,12 @@ export const QuintaDoPinto = () => {
         <ProjectNavigation 
           prevProject={{ 
             title: t.franks.heroTitle, 
-            slug: '/showcase/franks-australia', 
+            slug: getLanguagePath('/showcase/franks-australia'), 
             thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%205-100.jpg' 
           }}
           nextProject={{ 
             title: t.saltLily.heroTitle, 
-            slug: '/showcase/salt-lily', 
+            slug: getLanguagePath('/showcase/salt-lily'), 
             thumbnail: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/necklace_and_hoops.png' 
           }}
         />

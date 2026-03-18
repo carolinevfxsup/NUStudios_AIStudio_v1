@@ -33,11 +33,11 @@ export const ContactForm = () => {
 
       if (error) throw error;
       
-      alert(t.form.success);
+      console.log(t.form.success);
       reset();
     } catch (error) {
       console.error('Error submitting contact form:', error);
-      alert('There was an error sending your message. Please try again.');
+      console.error('There was an error sending your message. Please try again.');
     }
   };
 

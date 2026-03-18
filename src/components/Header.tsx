@@ -7,7 +7,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage, t, getLanguagePath } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
@@ -15,11 +15,11 @@ export const Header = () => {
   }, [location]);
 
   const navLinks = [
-    { href: '/results', label: t.nav.showcase },
-    { href: '/services', label: t.nav.creativePage },
-    { href: '/automation', label: t.nav.automation },
-    { href: '/about', label: t.nav.aboutUs },
-    { href: '/contact', label: t.nav.contact },
+    { href: getLanguagePath('/results'), label: t.nav.showcase },
+    { href: getLanguagePath('/services'), label: t.nav.creativePage },
+    { href: getLanguagePath('/automation'), label: t.nav.automation },
+    { href: getLanguagePath('/about'), label: t.nav.aboutUs },
+    { href: getLanguagePath('/contact'), label: t.nav.contact },
   ];
 
   const LanguageToggle = ({ className = "" }: { className?: string }) => (
@@ -44,7 +44,7 @@ export const Header = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white py-3 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to={getLanguagePath('/')} className="flex items-center gap-2 group">
             <img 
               src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/logo-black.png" 
               alt="NuStudios" 
@@ -67,20 +67,9 @@ export const Header = () => {
             {/* Desktop Watch Showreel Button */}
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="hidden md:block bg-red-600 text-white px-6 py-2 rounded-full font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-red-700 transition-all"
+              className="hidden md:block bg-red-600 text-white border-2 border-red-600 px-6 py-2 font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-white hover:text-red-600 transition-all duration-300 whitespace-nowrap"
             >
               {t.nav.watchShowreel}
-            </button>
-
-            {/* Mobile Watch Showreel Button - Square, Outline */}
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="md:hidden w-10 h-10 flex items-center justify-center border-2 border-red-600 bg-white text-red-600 hover:bg-red-600 hover:text-white transition-all duration-300"
-              title={t.nav.watchShowreel}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg>
             </button>
 
             <button 
@@ -123,7 +112,7 @@ export const Header = () => {
               </nav>
               <div className="lg:col-span-4 flex flex-col justify-between h-full gap-12">
                 <div className="space-y-8">
-                  <Link to="/blog" className="block text-3xl font-display font-bold uppercase tracking-tighter text-text hover:text-red-600 transition-colors">
+                  <Link to={getLanguagePath('/blog')} className="block text-3xl font-display font-bold uppercase tracking-tighter text-text hover:text-red-600 transition-colors">
                     {t.footer.links.blog}
                   </Link>
                   <div className="h-px w-full bg-border" />

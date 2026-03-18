@@ -10,7 +10,7 @@ import { ShowreelModal } from '../components/ShowreelModal';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isOpen: boolean, onToggle: () => void }) => {
-  const { t } = useLanguage();
+  const { t, getLanguagePath } = useLanguage();
   return (
     <div className="border-b border-border overflow-hidden">
       <button 
@@ -82,7 +82,7 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
             </div>
 
             <div className="flex justify-end">
-              <Link to="/onboarding" className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit group">
+              <Link to={getLanguagePath('/onboarding')} className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit group">
                 {service.id === '06' ? t.home.services.ctaDemo : t.home.services.cta}
                 <ArrowRight className="w-4 h-4" />
               </Link>
@@ -95,7 +95,7 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
 };
 
 export const Home = () => {
-  const { t } = useLanguage();
+  const { t, getLanguagePath } = useLanguage();
   const [url, setUrl] = useState('');
   const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -153,7 +153,7 @@ export const Home = () => {
 
   const handleAnalyze = () => {
     if (url) {
-      navigate(`/dna-scan?url=${encodeURIComponent(url)}`);
+      navigate(getLanguagePath(`/dna-scan?url=${encodeURIComponent(url)}`));
     }
   };
 
@@ -174,8 +174,11 @@ export const Home = () => {
         <div className="absolute bottom-[28px] left-1/2 -translate-x-1/2 z-10 md:hidden">
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="bg-red-600 text-white px-8 py-3 rounded-full font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-red-700 transition-all shadow-xl"
+            className="bg-red-600 text-white border-2 border-red-600 px-6 py-3 font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-white hover:text-red-600 transition-all duration-300 flex items-center gap-2 whitespace-nowrap"
           >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
             {t.home.hero.watchShowreel}
           </button>
         </div>
@@ -207,7 +210,7 @@ export const Home = () => {
               </p>
             </FadeIn>
             <FadeIn delay={0.4}>
-              <Link to="/onboarding" className="bg-black text-white px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 transition-all flex items-center justify-center gap-3 w-fit mx-auto group">
+              <Link to={getLanguagePath('/onboarding')} className="bg-black text-white px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 transition-all flex items-center justify-center gap-3 w-fit mx-auto group">
                 {t.home.vision.cta}
                 <ExternalLink className="w-4 h-4" />
               </Link>
@@ -235,7 +238,7 @@ export const Home = () => {
           
           <div className="mt-16 text-center">
             <FadeIn delay={0.4}>
-              <Link to="/results" className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit mx-auto group">
+              <Link to={getLanguagePath('/results')} className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit mx-auto group">
                 {t.home.results.cta}
                 <ArrowRight className="w-4 h-4" />
               </Link>
