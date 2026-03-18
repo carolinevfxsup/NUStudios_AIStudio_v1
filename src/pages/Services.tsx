@@ -16,10 +16,10 @@ export const Services = () => {
   }, [searchParams]);
 
   return (
-    <div className="pt-32 px-6 max-w-7xl mx-auto">
+    <div className="pt-32 pb-32 px-6 max-w-7xl mx-auto">
       <FadeIn delay={0.1}>
         <h1 className="text-6xl md:text-9xl font-display font-bold uppercase tracking-tighter mb-24">
-          Services
+          Services<span className="text-red-600">.</span>
         </h1>
       </FadeIn>
       

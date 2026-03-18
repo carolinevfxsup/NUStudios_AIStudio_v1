@@ -109,7 +109,7 @@ export const CreativeAssistant = () => {
                       key={outcome}
                       type="button"
                       onClick={() => toggleOutcome(outcome)}
-                      className={`px-5 py-2.5 rounded-full font-bold text-[11px] transition-all border-2 ${
+                      className={`px-5 py-2.5 font-bold text-[11px] transition-all border-2 ${
                         outcomes.includes(outcome) 
                           ? 'border-primary bg-primary text-white' 
                           : 'border-black/5 bg-white text-black hover:border-black'
@@ -124,7 +124,7 @@ export const CreativeAssistant = () => {
               <button 
                 type="submit"
                 disabled={isLoading || !businessName || outcomes.length === 0}
-                className="w-full bg-black text-white py-4 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-primary transition-all flex items-center justify-center gap-3 disabled:opacity-50"
+                className="w-full bg-black text-white py-4 font-bold text-xs tracking-widest uppercase hover:bg-primary transition-all flex items-center justify-center gap-3 disabled:opacity-50"
               >
                 {isLoading ? (
                   <>

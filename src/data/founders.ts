@@ -4,7 +4,10 @@ export const founders = [
     role: 'Technical Director (The Technologist)', 
     bio: 'Caroline brings nearly two decades of visual effects expertise from global ad campaigns and multi-Oscar-winning films (like Martin Scorsese’s Hugo 3D). She is the guardian of our quality, ensuring our technology operates flawlessly so your brand looks nothing short of spectacular.', 
     image: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Caroline_Clay_2%20(1).jpg',
-    email: 'caroline@nustudios.co.uk'
+    email: 'caroline@nustudios.co.uk',
+    linkedin: 'https://www.linkedin.com/in/carolinepires/',
+    imdb: 'https://www.imdb.com/name/nm3017473/',
+    vfxReel: 'https://vimeo.com/1139981506?fl=pl&fe=vl'
   },
   { 
     name: 'CLAUDIO MARCOS', 

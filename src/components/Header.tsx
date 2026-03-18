@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShowreelModal } from './ShowreelModal';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { language, setLanguage, t, getLanguagePath } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
@@ -13,39 +15,63 @@ export const Header = () => {
   }, [location]);
 
   const navLinks = [
-    { href: '/results', label: 'Results' },
-    { href: '/services', label: 'Services' },
-    { href: '/industries', label: 'Industries' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
+    { href: getLanguagePath('/results'), label: t.nav.showcase },
+    { href: getLanguagePath('/services'), label: t.nav.creativePage },
+    { href: getLanguagePath('/automation'), label: t.nav.automation },
+    { href: getLanguagePath('/about'), label: t.nav.aboutUs },
+    { href: getLanguagePath('/contact'), label: t.nav.contact },
   ];
+
+  const LanguageToggle = ({ className = "" }: { className?: string }) => (
+    <div className={`flex items-center gap-2 font-sans font-bold text-[10px] sm:text-[12px] uppercase tracking-widest ${className}`}>
+      <button 
+        onClick={() => setLanguage('en')}
+        className={`transition-all hover:text-red-600 ${language === 'en' ? 'text-red-600' : 'text-black'}`}
+      >
+        EN
+      </button>
+      <span className="text-black/20">|</span>
+      <button 
+        onClick={() => setLanguage('pt')}
+        className={`transition-all hover:text-red-600 ${language === 'pt' ? 'text-red-600' : 'text-black'}`}
+      >
+        PT
+      </button>
+    </div>
+  );
 
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white py-3 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to={getLanguagePath('/')} className="flex items-center gap-2 group">
             <img 
               src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/logo-black.png" 
               alt="NuStudios" 
-              className="h-8 w-auto"
+              className="h-8 md:h-10 w-auto"
               referrerPolicy="no-referrer"
             />
           </Link>
           
-          <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-black">
-              LETS GRAB A COFFE | BOOK A CALL NOW
-            </span>
+          {/* Desktop/Tablet Language Toggle - Centered */}
+          <div className="hidden sm:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <LanguageToggle />
           </div>
 
           <div className="flex items-center gap-4">
+            {/* Mobile Language Toggle - Right Aligned with Menu */}
+            <div className="sm:hidden">
+              <LanguageToggle />
+            </div>
+
+            {/* Desktop Watch Showreel Button */}
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="hidden md:block bg-red-600 text-white px-6 py-2 rounded-full font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-red-700 transition-all"
+              className="hidden md:block bg-red-600 text-white border-2 border-red-600 px-6 py-2 font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-white hover:text-red-600 transition-all duration-300 whitespace-nowrap"
             >
-              Watch Showreel
+              {t.nav.watchShowreel}
             </button>
+
             <button 
               className="flex items-center gap-2 px-2 py-2 transition-colors text-black font-sans font-bold text-[10px] uppercase tracking-widest hover:text-red-600"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -86,8 +112,8 @@ export const Header = () => {
               </nav>
               <div className="lg:col-span-4 flex flex-col justify-between h-full gap-12">
                 <div className="space-y-8">
-                  <Link to="/blog" className="block text-3xl font-display font-bold uppercase tracking-tighter text-text hover:text-red-600 transition-colors">
-                    Blog
+                  <Link to={getLanguagePath('/blog')} className="block text-3xl font-display font-bold uppercase tracking-tighter text-text hover:text-red-600 transition-colors">
+                    {t.footer.links.blog}
                   </Link>
                   <div className="h-px w-full bg-border" />
                   <div className="space-y-4">
@@ -101,7 +127,7 @@ export const Header = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <p className="font-sans text-sm font-bold uppercase tracking-widest text-text/60">Contact</p>
+                  <p className="font-sans text-sm font-bold uppercase tracking-widest text-text/60">{t.nav.contact}</p>
                   <a href="mailto:info@nustudios.co.uk" className="block text-xl font-display font-bold hover:text-red-600 transition-colors">
                     info@nustudios.co.uk
                   </a>

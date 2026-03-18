@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'motion/react';
 import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
@@ -14,7 +15,7 @@ import {
 } from 'lucide-react';
 
 export const Creative = () => {
-  const { t } = useLanguage();
+  const { t, getLanguagePath } = useLanguage();
 
   const capabilities = [
     { title: t.creative.socialTitle, desc: t.creative.socialDesc, icon: Instagram },
@@ -56,10 +57,13 @@ export const Creative = () => {
               {t.creative.heroSub}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-bg text-text px-8 py-4 font-sans font-bold text-xs uppercase tracking-widest hover:opacity-80 transition-all flex items-center justify-center gap-2">
+              <Link 
+                to={getLanguagePath('/dna-scan')}
+                className="bg-bg text-text px-8 py-4 font-sans font-bold text-xs uppercase tracking-widest hover:opacity-80 transition-all flex items-center justify-center gap-2"
+              >
                 <Sparkles className="w-4 h-4" />
                 Scan Your Brand DNA
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>

@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { getAssetUrl } from '../constants';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isOpen: boolean, onToggle: () => void }) => {
+  const { getLanguagePath } = useLanguage();
   return (
     <div className="border-b border-black overflow-hidden">
       <button 
@@ -79,7 +81,7 @@ export const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: a
                 </div>
 
                 <div className="flex justify-end">
-                  <Link to="/onboarding" className="bg-red-600 text-white px-8 py-3 rounded-full font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-red-700 transition-all w-fit inline-block">
+                  <Link to={getLanguagePath('/onboarding')} className="bg-red-600 text-white px-8 py-3 font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-red-700 transition-all w-fit inline-block">
                     {service.title === 'Ai Tool Kit' ? 'Book A Demo' : 'Learn More'}
                   </Link>
                 </div>

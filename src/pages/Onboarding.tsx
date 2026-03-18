@@ -29,7 +29,7 @@ export const Onboarding = () => {
           </h1>
         </motion.div>
         
-        <div className="bg-white text-black p-12 md:p-20 rounded-3xl max-w-4xl mx-auto">
+        <div className="bg-white text-black p-12 md:p-20 rounded-md max-w-4xl mx-auto">
           <OnboardingForm />
         </div>
       </div>

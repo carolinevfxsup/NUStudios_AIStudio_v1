@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { showcases } from '../constants';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const HomeResultsBento = () => {
+  const { getLanguagePath } = useLanguage();
   // Home theme is dark
   const bgColor = 'bg-white/5';
   const textColor = 'text-white';
@@ -9,7 +11,7 @@ export const HomeResultsBento = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-1">
       {/* Project 1 (Wide) */}
-      <Link to={showcases[0].slug} className={`relative md:col-span-8 aspect-video ${bgColor} flex flex-col items-center justify-center`}>
+      <Link to={getLanguagePath(showcases[0].slug)} className={`relative md:col-span-8 aspect-video ${bgColor} flex flex-col items-center justify-center`}>
         <div className="relative w-full h-full md:w-[75%] md:h-[75%] overflow-hidden rounded-md">
           <video 
             src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/salt-lily-zoom.mp4" 
@@ -26,7 +28,7 @@ export const HomeResultsBento = () => {
       </Link>
 
       {/* Project 3 (Portrait 9:16) - Quinta Do Pinto */}
-      <Link to={showcases[2].slug} className={`relative md:col-span-4 md:row-span-2 ${bgColor} flex flex-col items-center justify-center`}>
+      <Link to={getLanguagePath(showcases[2].slug)} className={`relative md:col-span-4 md:row-span-2 ${bgColor} flex flex-col items-center justify-center`}>
         <div className="relative w-full h-full md:w-[75%] md:h-[75%] overflow-hidden rounded-md">
           <video 
             src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-results-02.mp4" 
@@ -51,7 +53,7 @@ export const HomeResultsBento = () => {
       </div>
 
       {/* Project 2 (Portrait) - Franks Australia */}
-      <Link to={showcases[1].slug} className={`relative md:col-span-4 md:row-span-2 ${bgColor} flex flex-col items-center justify-center`}>
+      <Link to={getLanguagePath(showcases[1].slug)} className={`relative md:col-span-4 md:row-span-2 ${bgColor} flex flex-col items-center justify-center`}>
         <div className="relative w-full h-full md:w-[75%] md:h-[75%] overflow-hidden rounded-md">
           <video 
             src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/Beach_Franks1.mp4" 
@@ -68,7 +70,7 @@ export const HomeResultsBento = () => {
       </Link>
 
       {/* Project 4 (Square) - O Palmeiral */}
-      <Link to={showcases[3].slug} className={`relative md:col-span-4 aspect-square ${bgColor} flex flex-col items-center justify-center`}>
+      <Link to={getLanguagePath(showcases[3].slug)} className={`relative md:col-span-4 aspect-square ${bgColor} flex flex-col items-center justify-center`}>
         <div className="relative w-full h-full md:w-[75%] md:h-[75%] overflow-hidden rounded-md">
           <video 
             src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/OP_SQUARE.mp4" 

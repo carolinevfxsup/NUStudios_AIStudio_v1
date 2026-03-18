@@ -87,7 +87,7 @@ export const FAQs = () => {
           <p className="text-[13px] text-gray-500 mb-6">We're here to help you navigate the future of creative production.</p>
           <a 
             href="/#contact" 
-            className="inline-block bg-black text-white px-7 py-3.5 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-primary transition-colors"
+            className="inline-block bg-black text-white px-7 py-3.5 font-bold text-xs tracking-widest uppercase hover:bg-primary transition-colors"
           >
             Get in Touch
           </a>
