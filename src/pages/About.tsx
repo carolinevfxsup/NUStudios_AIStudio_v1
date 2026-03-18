@@ -24,7 +24,7 @@ export const About = () => {
 
   return (
     <div className="pt-32 pb-32 px-6 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-[0.6fr_1.4fr] lg:grid-cols-[0.5fr_1.5fr] gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-[0.4fr_1.6fr] lg:grid-cols-[0.35fr_1.65fr] gap-6">
         {/* About Section */}
         <div className="bg-black text-white border border-border rounded-none p-8 md:p-12 shadow-sm">
           <FadeIn delay={0.1}>
@@ -75,7 +75,7 @@ export const About = () => {
             {founders.map((founder, i) => (
               <FadeIn key={i} delay={0.5 + (i * 0.1)}>
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="bg-white border border-border rounded-none p-6 md:p-8 shadow-sm aspect-square overflow-hidden border border-border flex-shrink-0 md:w-1/3">
+                  <div className="bg-white border border-border rounded-none p-6 md:p-8 shadow-sm aspect-square overflow-hidden border border-border flex-shrink-0 md:w-[48%]">
                     <img 
                       src={founder.image || `https://picsum.photos/seed/founder${i}/1200/1200`}
                       alt={founder.name}
@@ -83,7 +83,7 @@ export const About = () => {
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <div className="bg-white border border-border rounded-none p-6 md:p-8 shadow-sm flex flex-col justify-center md:w-2/3">
+                  <div className="bg-white border border-border rounded-none p-6 md:p-8 shadow-sm flex flex-col justify-center md:w-[52%]">
                     <h3 className="text-xl md:text-2xl font-display font-bold mb-1 tracking-tighter uppercase">{founder.name}</h3>
                     <p className="text-sm font-sans font-bold text-gray-500 mb-4 uppercase tracking-widest">{founder.role}</p>
                     <a href={`mailto:${founder.email}`} className="text-sm font-sans font-bold text-red-600 mb-4 hover:underline">{founder.email}</a>
