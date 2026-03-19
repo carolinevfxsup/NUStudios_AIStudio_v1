@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { LazyVideo } from './LazyVideo';
 
 const SUPABASE_ASSET_BASE = 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/';
 
@@ -16,16 +17,15 @@ export const LogoScroll = () => {
     <div className="relative py-16 md:py-24 overflow-hidden flex items-center min-h-[200px] bg-black">
       
       {/* Background Video - Using your Supabase link but ensuring attributes are set */}
-      <video 
+      <LazyVideo 
         key="bg-video"
         className="absolute inset-0 w-full h-full object-cover opacity-60 z-0"
         autoPlay 
         loop 
         muted 
         playsInline
-      >
-        <source src={`${SUPABASE_ASSET_BASE}BG_rev.mp4`} type="video/mp4" />
-      </video>
+        src={`${SUPABASE_ASSET_BASE}BG_rev.mp4`}
+      />
       
       {/* Dark Overlay to help logo legibility - reduced by 30% */}
       <div className="absolute inset-0 bg-black/20 z-1" />

@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { getAssetUrl } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
+import { LazyVideo } from './LazyVideo';
 
 export const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isOpen: boolean, onToggle: () => void }) => {
   const { getLanguagePath } = useLanguage();
@@ -46,7 +47,7 @@ export const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: a
                   {service.images.map((img: any, idx: number) => (
                     <div key={idx} className={`${service.id === '04' ? 'aspect-[19/6]' : 'aspect-[4/6]'} overflow-hidden rounded-md`}>
                       {img.src.endsWith('.mp4') ? (
-                        <video 
+                        <LazyVideo 
                           src={getAssetUrl(img.src)} 
                           className="w-full h-full object-cover rounded-md"
                           autoPlay 

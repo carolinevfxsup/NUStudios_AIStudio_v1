@@ -4,6 +4,7 @@ import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
 import { BeforeAfterSlider } from '../../components/BeforeAfterSlider';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { LazyVideo } from '../../components/LazyVideo';
 import { ExternalLink, Heart, MessageCircle, Send, Bookmark } from 'lucide-react';
 
 export const FranksAustralia = () => {
@@ -138,7 +139,7 @@ export const FranksAustralia = () => {
                 <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%202.png" className="w-full h-full object-cover rounded-md" alt="Lifestyle 1" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[9/16] overflow-hidden shadow-2xl max-w-sm mx-auto md:ml-auto rounded-md">
-                <video 
+                <LazyVideo 
                   src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/Franks%20Lifestyle.%20Vid%20.mp4" 
                   className="w-full h-full object-cover rounded-md" 
                   autoPlay 

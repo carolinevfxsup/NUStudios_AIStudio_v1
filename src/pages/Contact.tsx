@@ -6,6 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import { LazyVideo } from '../components/LazyVideo';
 
 const contactSchema = z.object({
   firstName: z.string().min(2, 'First name is required'),
@@ -236,7 +237,7 @@ export const Contact = () => {
 
         <FadeIn delay={0.3} className="hidden lg:flex items-center justify-center">
           <div className="w-full max-w-md aspect-square overflow-hidden rounded-none border border-black/10">
-            <video 
+            <LazyVideo 
               src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/pnn495jt8srmr0cwyy3a1q4te8_result_.mp4"
               autoPlay
               loop
@@ -300,3 +301,5 @@ export const Contact = () => {
     </div>
   );
 };
+
+export default Contact;

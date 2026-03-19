@@ -162,32 +162,88 @@ export const translations = {
       gallerySub: 'A collection of lasting visuals.'
     },
     automations: {
-      heroTitle: 'Scalable Excellence.',
-      heroTitleItalic: 'Autonomous Soul.',
-      heroSub: 'Stop trading quality for volume. Protect your margins with HITL-certified pipelines.',
-      flywheelTitle: 'The Agency Flywheel',
-      flywheelSub: 'Turning elite creative DNA into a high-velocity growth engine.',
-      flywheelStep1: 'Creative DNA',
-      flywheelStep2: 'Automated Production',
-      flywheelStep3: 'Exponential Growth',
-      flywheelDesc: 'Once the DNA is locked, the automation engine takes over the repetitive execution, allowing the brand to be "Always-On".',
-      pipelinesTitle: 'The Pipelines',
-      pipelinesSub: 'Custom workflows designed for surgical precision.',
-      pipeline1Title: 'Content Pipelines',
-      pipeline1Desc: 'From a single hero asset to 1,000+ omnichannel iterations (Social, Display, Print).',
-      pipeline2Title: 'Dynamic Personalization',
-      pipeline2Desc: 'Leveraging live data to adapt messaging in real-time based on audience intent.',
-      pipeline3Title: 'Lead Gen DNA Scanners',
-      pipeline3Desc: 'Automated market audits that find scale leaks for your clients.',
-      pipeline4Title: 'Strategic Reporting',
-      pipeline4Desc: 'Automated dashboards that track "Identity Equity" and ROI.',
-      moatTitle: 'The Technical Moat',
-      moatSub: 'Unify, Automate, and Scale.',
-      moatDesc: 'Real-time catalog syncing, multi-territory localization, and privacy-compliant data adaptation.',
-      roiTitle: 'The Margin Protector',
+      heroTitle: 'AUTONOMOUS SYSTEMS',
+      heroTitleItalic: 'VOLUME & QUALITY',
+      heroSub: 'Autonomous systems that keep your brand voice, protect your margins and give you back your time.',
+      capabilitiesLabel: '01. CAPABILITIES',
+      capabilitiesTitle: 'WHAT WE AUTOMATE',
+      capabilitiesDesc: 'Surgical precision across every touchpoint. We build the connective tissue that powers your brand lifecycle.',
+      pillars: [
+        {
+          title: "AI Chatbots",
+          items: [
+            "Customer support (24/7 replies)",
+            "Sales chatbots (lead conversion)",
+            "Instagram & Messenger automation",
+            "FAQ + product recommendation bots"
+          ]
+        },
+        {
+          title: "Workflow Automation",
+          items: [
+            "Repetitive tasks eliminated",
+            "Internal operations automated",
+            "CRM + API integrations",
+            "Order / client workflows"
+          ]
+        },
+        {
+          title: "Marketing Automation",
+          items: [
+            "Email flows (welcome, abandoned cart)",
+            "Lead nurturing systems",
+            "Campaign automation",
+            "Retention systems"
+          ]
+        },
+        {
+          title: "Content & Social Automation",
+          items: [
+            "Auto-posting systems (like O Palmeiral)",
+            "Content pipelines (Drive → IG/TikTok)",
+            "AI-assisted content generation",
+            "Scheduling & repurposing"
+          ]
+        }
+      ],
+      processLabel: '02. PROCESS',
+      processTitle: 'THE ARCHITECTURE',
+      processDesc: 'A horizontal flow from audit to autonomous scale, connected by a circuit-board-style trace.',
+      processSteps: [
+        { step: "01", title: "Audit", desc: "We map your existing workflows and identify efficiency leaks." },
+        { step: "02", title: "Strategy", desc: "Architecting the custom AI layer tailored to your brand soul." },
+        { step: "03", title: "Build", desc: "Developing and stress-testing your autonomous pipelines." },
+        { step: "04", title: "Scale", desc: "Hands-off growth with 24/7 HITL-certified monitoring." }
+      ],
+      caseStudiesLabel: '03. CASE STUDIES',
+      caseStudiesTitle: 'REAL IMPACT',
+      caseStudiesSub: 'Proven results for established brands',
+      viewAllWork: 'VIEW ALL WORK',
+      palmeiralCardTitle: 'O Palmeiral',
+      palmeiralCardDesc: 'How we turned a static Google Drive into a 24/7 automated marketing engine.',
+      palmeiralStat1Label: 'Manual Posting Time',
+      palmeiralStat2Label: 'Content Cadence',
+      saltLilyCardTitle: 'Salt Lily',
+      saltLilyCardDesc: 'Automating high-intent SEO blogs and Shopify product syncs for revenue growth.',
+      saltLilyStat1Label: 'Organic Traffic',
+      saltLilyStat2Label: 'Autonomous Sync',
+      roiLabel: '04. THE MARGIN PROTECTOR',
+      roiTitle: 'THE MARGIN PROTECTOR',
       roiSub: 'The cost of a junior, the velocity of a global lab.',
       roiStat1: 'Time Recovered',
       roiStat2: 'Margin Protection',
+      benefitsLabel: '05. SOLVING REAL LIFE PROBLEMS',
+      benefitsTitle: 'THIS SOLVES MY LIFE',
+      benefitsList: [
+        "Stop answering the same messages every day",
+        "Never miss a lead again",
+        "Run your business 24/7 without hiring",
+        "Focus on creative work, not admin",
+        "Scale without increasing workload"
+      ],
+      finalCtaTitle: 'READY TO SCALE?',
+      finalCtaDesc: 'Stop trading your creative margins for repetitive execution. Build your autonomous moat today.',
+      finalCtaButton: 'Book a Strategy Call',
     },
     dnaScan: {
       title: 'Strategic DNA Scan',
@@ -405,8 +461,8 @@ export const translations = {
       altBefore: 'Before',
       altAfter: 'After',
       altWhyItWorks: 'Why it works',
-      heroQuote: 'The wine is aged in cement vats — a distinctive winemaking choice that speaks to both tradition and innovation. We used this as the conceptual anchor for the entire visual direction.',
-      footerQuote: 'NUstudios didn\'t just give us content; they gave us a content engine. Our brand is now always-on, always-growing, and always-consistent across every platform.',
+      heroQuote: "The speed at which they turn around high-quality creative is unlike anything we've seen in the industry.",
+      footerQuote: "NUstudios didn't just give us content; they gave us a system that scales with our ambition.",
       briefTitle: 'The brief',
       briefText: 'Quinta do Pinto, a distinguished Portuguese winery with deep roots in the Lisbon wine region, approached us ahead of a new wine launch. They needed launch content that would translate the craftsmanship and character of their winemaking into scroll-stopping social visuals — without the time, cost, or complexity of a traditional production shoot. The timeline was tight, the expectations high, and the product deserved more than stock photography.',
       whatWeDidTitle: 'What We Did',
@@ -484,12 +540,12 @@ export const translations = {
       impactPresenceText: 'Always-on social strategy with zero manual content creation required.',
       impactQualityTitle: 'Quality',
       impactQualityText: 'Premium jewelry visuals that outperform traditional photography in engagement.',
-      footerQuote: '“NUstudios didn\'t just give us content; they gave us a content engine. Our brand is now always-on, always-growing, and always-consistent across every platform.”',
+      footerQuote: "NUstudios didn't just give us content; they gave us a system that scales with our ambition.",
       viewWork: 'View the Work',
       bookCall: 'Book a Call',
       brandTitle: 'The Brand We Built This For',
       brandTitleItalic: '',
-      brandText1: 'Salt Lily is a modern waterproof jewellery brand with an established Shopify store.',
+      brandText1: 'Salt Lily is a modern waterproof jewellery brand with an established Shopify store and an active, engaged Instagram presence. Their visual identity is refined, their audience loyal. The challenge wasn\'t creating content—it was producing enough high-quality visuals at scale while maintaining the brand consistency their customers expect.',
       whyHardTitle: 'Why Jewellery is One of the',
       whyHardTitleItalic: 'Hardest Categories for AI',
       whyHardText1: 'Jewellery presents unique challenges like reflections and accurate color representation.',
@@ -571,7 +627,7 @@ export const translations = {
       socialText: 'High-velocity assets designed for Instagram and TikTok, optimized for engagement and reach.',
       socialPower: 'Narrative-driven content that stops the scroll.',
       socialResult: 'Increased engagement through consistent, high-quality storytelling.',
-      footerQuote: 'NUstudios didn\'t just give us content; they gave us a content engine. Our brand is now always-on, always-growing, and always-consistent across every platform.',
+      footerQuote: "NUstudios didn't just give us content; they gave us a system that scales with our ambition.",
     },
     palmeiral: {
       heroTitle: 'O Palmeiral',
@@ -671,6 +727,7 @@ export const translations = {
     },
     common: {
       inquireNow: 'INQUIRE NOW',
+      playWithSound: 'play with sound',
       viewFramework: 'VIEW FRAMEWORK',
       speedSoulScale: 'Speed. Soul. Scale',
       copyright: '© 2024 NUSTUDIOS.',
@@ -765,8 +822,8 @@ export const translations = {
       },
       vision: {
         label: 'IA Como Se Fosse a Sério',
-        title: 'Hora de desencadear um crescimento explosivo.',
-        desc: "Ajudamos empresas independentes, fundadores ambiciosos e visionários locais a parecerem e operarem como líderes globais da indústria. Não fornecemos apenas \"imagens bonitas\"—construímos manualmente sistemas criativos e de automação usando o poder da IA desenhados para um crescimento tangível.",
+        title: 'Produção Digital de Impacto. Performance Explosiva.',
+        desc: "Através de fluxos de trabalho AI-native, eliminamos a fricção logística e elevamos o padrão estético. Menos recursos, maior performance, resultados mensuráveis.",
         cta: 'FAÇA CRESCER O SEU NEGÓCIO',
       },
       results: {
@@ -903,32 +960,88 @@ export const translations = {
       gallerySub: 'Uma coleção de visuais duradouros.'
     },
     automations: {
-      heroTitle: 'Excelência Escalável.',
-      heroTitleItalic: 'Alma Autónoma.',
-      heroSub: 'Pare de trocar qualidade por volume. Proteja as suas margens com pipelines certificados por HITL.',
-      flywheelTitle: 'O Flywheel da Agência',
-      flywheelSub: 'Transformando o DNA criativo de elite num motor de crescimento de alta velocidade.',
-      flywheelStep1: 'DNA Criativo',
-      flywheelStep2: 'Produção Automatizada',
-      flywheelStep3: 'Crescimento Exponencial',
-      flywheelDesc: 'Uma vez bloqueado o DNA, o motor de automação assume a execução repetitiva, permitindo que a marca esteja "Sempre Ativa".',
-      pipelinesTitle: 'As Pipelines',
-      pipelinesSub: 'Workflows personalizados desenhados para precisão cirúrgica.',
-      pipeline1Title: 'Pipelines de Conteúdo',
-      pipeline1Desc: 'De um único ativo hero para mais de 1.000 iterações omnicanal (Social, Display, Print).',
-      pipeline2Title: 'Personalização Dinâmica',
-      pipeline2Desc: 'Aproveitando dados em tempo real para adaptar mensagens com base na intenção do público.',
-      pipeline3Title: 'Scanners de DNA de Lead Gen',
-      pipeline3Desc: 'Auditorias de mercado automatizadas que encontram fugas de escala para os seus clientes.',
-      pipeline4Title: 'Relatórios Estratégicos',
-      pipeline4Desc: 'Dashboards automatizados que rastreiam a "Equidade de Identidade" e o ROI.',
-      moatTitle: 'O Fosso Técnico',
-      moatSub: 'Unificar, Automatizar e Escalar.',
-      moatDesc: 'Sincronização de catálogo em tempo real, localização multi-território e adaptação de dados em conformidade com a privacidade.',
-      roiTitle: 'O Protetor de Margem',
+      heroTitle: 'SISTEMAS AUTÓNOMOS',
+      heroTitleItalic: 'VOLUME E QUALIDADE',
+      heroSub: 'Sistemas autónomos que mantêm a voz da sua marca, protegem as suas margens e devolvem-lhe o seu tempo.',
+      capabilitiesLabel: '01. CAPACIDADES',
+      capabilitiesTitle: 'O QUE AUTOMATIZAMOS',
+      capabilitiesDesc: 'Precisão cirúrgica em cada ponto de contacto. Construímos o tecido conjuntivo que alimenta o ciclo de vida da sua marca.',
+      pillars: [
+        {
+          title: "Chatbots de IA",
+          items: [
+            "Suporte ao cliente (respostas 24/7)",
+            "Chatbots de vendas (conversão de leads)",
+            "Automação de Instagram e Messenger",
+            "Bots de FAQ + recomendação de produtos"
+          ]
+        },
+        {
+          title: "Automação de Workflow",
+          items: [
+            "Tarefas repetitivas eliminadas",
+            "Operações internas automatizadas",
+            "Integrações de CRM + API",
+            "Workflows de pedidos / clientes"
+          ]
+        },
+        {
+          title: "Automação de Marketing",
+          items: [
+            "Fluxos de email (boas-vindas, carrinho abandonado)",
+            "Sistemas de nutrição de leads",
+            "Automação de campanhas",
+            "Sistemas de retenção"
+          ]
+        },
+        {
+          title: "Automação de Conteúdo e Social",
+          items: [
+            "Sistemas de auto-postagem (como O Palmeiral)",
+            "Pipelines de conteúdo (Drive → IG/TikTok)",
+            "Geração de conteúdo assistida por IA",
+            "Agendamento e reaproveitamento"
+          ]
+        }
+      ],
+      processLabel: '02. PROCESSO',
+      processTitle: 'A ARQUITETURA',
+      processDesc: 'Um fluxo horizontal desde a auditoria até à escala autónoma, ligado por um traço estilo placa de circuito.',
+      processSteps: [
+        { step: "01", title: "Auditoria", desc: "Mapeamos os seus workflows existentes e identificamos fugas de eficiência." },
+        { step: "02", title: "Estratégia", desc: "Arquitetando a camada de IA personalizada adaptada à alma da sua marca." },
+        { step: "03", title: "Construção", desc: "Desenvolvendo e testando as suas pipelines autónomas." },
+        { step: "04", title: "Escala", desc: "Crescimento sem intervenção com monitorização certificada por HITL 24/7." }
+      ],
+      caseStudiesLabel: '03. CASOS DE ESTUDO',
+      caseStudiesTitle: 'IMPACTO REAL',
+      caseStudiesSub: 'Resultados comprovados para marcas estabelecidas',
+      viewAllWork: 'VER TODO O TRABALHO',
+      palmeiralCardTitle: 'O Palmeiral',
+      palmeiralCardDesc: 'Como transformámos um Google Drive estático num motor de marketing automatizado 24/7.',
+      palmeiralStat1Label: 'Tempo de Postagem Manual',
+      palmeiralStat2Label: 'Cadência de Conteúdo',
+      saltLilyCardTitle: 'Salt Lily',
+      saltLilyCardDesc: 'Automatizando blogs de SEO de alta intenção e sincronizações de produtos Shopify para crescimento de receita.',
+      saltLilyStat1Label: 'Tráfego Orgânico',
+      saltLilyStat2Label: 'Sincronização Autónoma',
+      roiLabel: '04. O PROTETOR DE MARGEM',
+      roiTitle: 'O PROTETOR DE MARGEM',
       roiSub: 'O custo de um júnior, a velocidade de um laboratório global.',
       roiStat1: 'Tempo Recuperado',
       roiStat2: 'Proteção de Margem',
+      benefitsLabel: '05. RESOLVENDO PROBLEMAS DA VIDA REAL',
+      benefitsTitle: 'ISTO RESOLVE A MINHA VIDA',
+      benefitsList: [
+        "Pare de responder às mesmas mensagens todos os dias",
+        "Nunca mais perca uma lead",
+        "Gira o seu negócio 24/7 sem contratar",
+        "Foque-se no trabalho criativo, não no administrativo",
+        "Escale sem aumentar a carga de trabalho"
+      ],
+      finalCtaTitle: 'PRONTO PARA ESCALAR?',
+      finalCtaDesc: 'Pare de trocar as suas margens criativas por execução repetitiva. Construa o seu fosso autónomo hoje.',
+      finalCtaButton: 'Marcar Chamada de Estratégia',
     },
     dnaScan: {
       title: 'Scan de DNA Estratégico',
@@ -1146,8 +1259,8 @@ export const translations = {
       altBefore: 'Antes',
       altAfter: 'Depois',
       altWhyItWorks: 'Porque funciona',
-      heroQuote: 'O vinho é envelhecido em cubas de cimento — uma escolha distintiva de vinificação que fala tanto de tradição como de inovação. Usámos isto como a âncora conceptual para toda a direção visual.',
-      footerQuote: 'A NUstudios não nos deu apenas conteúdo; deu-nos um motor de conteúdo. A nossa marca está agora sempre ativa, sempre a crescer e sempre consistente em todas as plataformas.',
+      heroQuote: 'A velocidade com que entregam criativos de alta qualidade é diferente de tudo o que já vimos na indústria.',
+      footerQuote: 'A NUstudios não nos deu apenas conteúdo; deu-nos um sistema que escala com a nossa ambição.',
       briefTitle: 'O brief',
       briefText: 'A Quinta do Pinto, uma prestigiada vinícola portuguesa com raízes profundas na região vinícola de Lisboa, abordou-nos antes de um novo lançamento de vinho. Precisavam de conteúdo de lançamento que traduzisse a mestria e o caráter da sua produção em visuais sociais impactantes — sem o tempo, custo ou complexidade de uma produção tradicional.',
       whatWeDidTitle: 'O Que Fizemos',
@@ -1225,12 +1338,12 @@ export const translations = {
       impactPresenceText: 'Estratégia social sempre ativa com zero criação manual de conteúdo necessária.',
       impactQualityTitle: 'Qualidade',
       impactQualityText: 'Visuais de joalharia premium que superam a fotografia tradicional em envolvimento.',
-      footerQuote: '“A NUstudios não nos deu apenas conteúdo; deu-nos um motor de conteúdo. A nossa marca está agora sempre ativa, sempre a crescer e sempre consistente em todas as plataformas.”',
+      footerQuote: 'A NUstudios não nos deu apenas conteúdo; deu-nos um sistema que escala com a nossa ambição.',
       viewWork: 'Ver o Trabalho',
       bookCall: 'Marcar Chamada',
       brandTitle: 'A Marca Para a Qual',
       brandTitleItalic: 'Construímos Isto',
-      brandText1: 'A Salt Lily é uma marca moderna de joalharia à prova de água com uma loja Shopify estabelecida.',
+      brandText1: 'A Salt Lily é uma marca moderna de joalharia à prova de água com uma loja Shopify estabelecida e uma presença ativa e envolvente no Instagram. A sua identidade visual é refinada, o seu público fiel. O desafio não era criar conteúdo — era produzir visuais de alta qualidade suficientes em escala, mantendo a consistência da marca que os seus clientes esperam.',
       whyHardTitle: 'Porque é que a Joalharia é uma das',
       whyHardTitleItalic: 'Categorias Mais Difíceis para a IA',
       whyHardText1: 'A joalharia apresenta desafios únicos como reflexos e representação precisa de cores.',
@@ -1253,6 +1366,11 @@ export const translations = {
       aiBrainTitleItalic: 'Por Trás da Publicação',
       aiBrainText: 'Construímos um sistema que analisa produtos e publica diariamente no Instagram e TikTok.',
       aiBrainLink: 'Quer ver que outras automações construímos? → O Palmeiral',
+      instagramEngineTitle: 'O Motor do',
+      instagramEngineTitleItalic: 'Instagram',
+      instagramEngineText: 'Construímos um sistema que pega em ativos de produtos brutos e os formata automaticamente para o Instagram, adicionando sobreposições e legendas consistentes com a marca.',
+      instagramEngineLabel1: 'ATIVO BRUTO',
+      instagramEngineLabel2: 'PRONTO PARA O INSTAGRAM',
       howSocialsTitle: 'Como a IA',
       howSocialsTitleItalic: 'Funciona para as Redes Sociais',
       socialSteps: [
@@ -1312,7 +1430,7 @@ export const translations = {
       socialText: 'Ativos de alta velocidade desenhados para Instagram e TikTok, otimizados para envolvimento e alcance.',
       socialPower: 'Conteúdo focado na narrativa que prende a atenção.',
       socialResult: 'Aumento do envolvimento através de storytelling consistente e de alta qualidade.',
-      footerQuote: 'A NUstudios não nos deu apenas conteúdo; deu-nos um motor de conteúdo. A nossa marca está agora sempre ativa, sempre a crescer e sempre consistente em todas as plataformas.',
+      footerQuote: 'A NUstudios não nos deu apenas conteúdo; deu-nos um sistema que escala com a nossa ambição.',
     },
     palmeiral: {
       heroTitle: 'O Palmeiral',
@@ -1412,6 +1530,7 @@ export const translations = {
     },
     common: {
       inquireNow: 'SOLICITAR AGORA',
+      playWithSound: 'reproduzir com som',
       viewFramework: 'VER FRAMEWORK',
       speedSoulScale: 'Velocidade. Alma. Escala',
       copyright: '© 2024 NUSTUDIOS.',

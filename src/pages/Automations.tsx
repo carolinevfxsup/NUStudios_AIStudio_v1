@@ -25,9 +25,10 @@ export const Automations = () => {
     <div className="min-h-screen bg-white">
       <main>
         <ShowcaseHero 
-          title="AUTONOMOUS SYSTEMS"
-          subtitle="VOLUME & QUALITY"
-          description="Autonomous systems that keep your brand voice, protect your margins and give you back your time."
+          title={t.automations.heroTitle}
+          mobileTitle="AUTO- MATE YOUR FUTURE"
+          subtitle={t.automations.heroTitleItalic}
+          description={t.automations.heroSub}
           imageSrc="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1920"
           caseStudyNumber="04"
           sector="B2B / SaaS"
@@ -40,77 +41,40 @@ export const Automations = () => {
         <section className="py-24 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-20">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">01. CAPABILITIES</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">{t.automations.capabilitiesLabel}</span>
               <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                WHAT WE AUTOMATE<span className="text-primary">.</span>
+                {t.automations.capabilitiesTitle}<span className="text-primary">.</span>
               </h2>
               <p className="text-xl text-black/60 max-w-2xl font-sans">
-                Surgical precision across every touchpoint. We build the connective tissue that powers your brand lifecycle.
+                {t.automations.capabilitiesDesc}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "AI Chatbots",
-                  icon: Bot,
-                  items: [
-                    "Customer support (24/7 replies)",
-                    "Sales chatbots (lead conversion)",
-                    "Instagram & Messenger automation",
-                    "FAQ + product recommendation bots"
-                  ]
-                },
-                {
-                  title: "Workflow Automation",
-                  icon: Settings,
-                  items: [
-                    "Repetitive tasks eliminated",
-                    "Internal operations automated",
-                    "CRM + API integrations",
-                    "Order / client workflows"
-                  ]
-                },
-                {
-                  title: "Marketing Automation",
-                  icon: Send,
-                  items: [
-                    "Email flows (welcome, abandoned cart)",
-                    "Lead nurturing systems",
-                    "Campaign automation",
-                    "Retention systems"
-                  ]
-                },
-                {
-                  title: "Content & Social Automation",
-                  icon: Clapperboard,
-                  items: [
-                    "Auto-posting systems (like O Palmeiral)",
-                    "Content pipelines (Drive → IG/TikTok)",
-                    "AI-assisted content generation",
-                    "Scheduling & repurposing"
-                  ]
-                }
-              ].map((pillar, i) => (
-                <motion.div 
-                  key={i}
-                  {...fadeInUp}
-                  className="p-10 border border-border bg-neutral rounded-md group hover:bg-black hover:text-white transition-all duration-500"
-                >
-                  <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-8 shadow-sm border border-border group-hover:bg-primary group-hover:border-primary transition-colors">
-                    <pillar.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <h3 className="text-3xl font-display font-bold mb-8 uppercase tracking-tighter text-black group-hover:text-white transition-colors">{pillar.title}</h3>
-                  <ul className="space-y-4">
-                    {pillar.items.map((item, j) => (
-                      <li key={j} className="flex items-center gap-4 text-lg font-sans opacity-70 group-hover:opacity-100">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
+              {t.automations.pillars.map((pillar: any, i: number) => {
+                const icons = [Bot, Settings, Send, Clapperboard];
+                const Icon = icons[i] || Bot;
+                return (
+                  <motion.div 
+                    key={i}
+                    {...fadeInUp}
+                    className="p-10 border border-border bg-neutral rounded-md group hover:bg-black hover:text-white transition-all duration-500"
+                  >
+                    <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-8 shadow-sm border border-border group-hover:bg-primary group-hover:border-primary transition-colors">
+                      <Icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+                    </div>
+                    <h3 className="text-3xl font-display font-bold mb-8 uppercase tracking-tighter text-black group-hover:text-white transition-colors">{pillar.title}</h3>
+                    <ul className="space-y-4">
+                      {pillar.items.map((item: string, j: number) => (
+                        <li key={j} className="flex items-center gap-4 text-lg font-sans opacity-70 group-hover:opacity-100">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -119,12 +83,12 @@ export const Automations = () => {
         <section className="py-24 md:py-40 bg-[#F9F9F7] border-y border-border overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">02. PROCESS</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">{t.automations.processLabel}</span>
               <h2 className="text-4xl md:text-6xl font-display mb-6 text-black uppercase tracking-tighter">
-                THE ARCHITECTURE<span className="text-primary">.</span>
+                {t.automations.processTitle}<span className="text-primary">.</span>
               </h2>
               <p className="text-black/40 text-lg max-w-2xl mx-auto font-sans">
-                A horizontal flow from audit to autonomous scale, connected by a circuit-board-style trace.
+                {t.automations.processDesc}
               </p>
             </div>
 
@@ -133,12 +97,7 @@ export const Automations = () => {
               <div className="absolute top-[96px] left-0 w-full h-[1px] bg-primary/20 hidden md:block" />
               
               <div className="grid md:grid-cols-4 gap-12 relative z-10">
-                {[
-                  { step: "01", title: "Audit", desc: "We map your existing workflows and identify efficiency leaks." },
-                  { step: "02", title: "Strategy", desc: "Architecting the custom AI layer tailored to your brand soul." },
-                  { step: "03", title: "Build", desc: "Developing and stress-testing your autonomous pipelines." },
-                  { step: "04", title: "Scale", desc: "Hands-off growth with 24/7 HITL-certified monitoring." }
-                ].map((item, i) => (
+                {t.automations.processSteps.map((item: any, i: number) => (
                   <div key={i} className="text-center group">
                     <div className="w-20 h-20 bg-white border border-border rounded-full flex items-center justify-center mx-auto mb-8 group-hover:border-primary transition-all duration-500 relative shadow-sm">
                       <span className="text-xl font-display font-bold text-primary">{item.step}</span>
@@ -158,21 +117,21 @@ export const Automations = () => {
         </section>
 
         {/* Section 3: REAL IMPACT (Case Studies) */}
-        <section className="pt-24 md:pt-40 pb-0 bg-white">
+        <section className="pt-24 md:pt-40 pb-12 md:pb-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
               <div>
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">03. CASE STUDIES</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">{t.automations.caseStudiesLabel}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
-                  REAL IMPACT<span className="text-primary">.</span>
+                  {t.automations.caseStudiesTitle}<span className="text-primary">.</span>
                 </h2>
-                <p className="text-black/40 text-lg uppercase tracking-widest font-sans mt-4">Proven results for elite brands</p>
+                <p className="text-black/40 text-lg uppercase tracking-widest font-sans mt-4">{t.automations.caseStudiesSub}</p>
               </div>
               <Link 
                 to={getLanguagePath('/showcase')}
                 className="text-xs font-black uppercase tracking-widest text-black/60 hover:text-primary transition-colors flex items-center gap-2 group border-b border-black/10 pb-2"
               >
-                VIEW ALL WORK
+                {t.automations.viewAllWork}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -193,18 +152,18 @@ export const Automations = () => {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                 </div>
                 <div className="p-10">
-                  <h3 className="text-3xl font-display font-bold mb-6 uppercase tracking-tighter">O Palmeiral</h3>
+                  <h3 className="text-3xl font-display font-bold mb-6 uppercase tracking-tighter">{t.automations.palmeiralCardTitle}</h3>
                   <p className="text-lg text-black/60 font-sans mb-10 leading-relaxed">
-                    How we turned a static Google Drive into a 24/7 automated marketing engine.
+                    {t.automations.palmeiralCardDesc}
                   </p>
                   <div className="grid grid-cols-2 gap-8 border-t border-border pt-10">
                     <div>
                       <div className="text-4xl font-display font-bold text-primary tracking-tighter">0h</div>
-                      <div className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-2">Manual Posting Time</div>
+                      <div className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-2">{t.automations.palmeiralStat1Label}</div>
                     </div>
                     <div>
                       <div className="text-4xl font-display font-bold text-black tracking-tighter">Daily</div>
-                      <div className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-2">Content Cadence</div>
+                      <div className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-2">{t.automations.palmeiralStat2Label}</div>
                     </div>
                   </div>
                 </div>
@@ -225,18 +184,18 @@ export const Automations = () => {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                 </div>
                 <div className="p-10">
-                  <h3 className="text-3xl font-display font-bold mb-6 uppercase tracking-tighter">Salt Lily</h3>
+                  <h3 className="text-3xl font-display font-bold mb-6 uppercase tracking-tighter">{t.automations.saltLilyCardTitle}</h3>
                   <p className="text-lg text-black/60 font-sans mb-10 leading-relaxed">
-                    Automating high-intent SEO blogs and Shopify product syncs for revenue growth.
+                    {t.automations.saltLilyCardDesc}
                   </p>
                   <div className="grid grid-cols-2 gap-8 border-t border-border pt-10">
                     <div>
                       <div className="text-4xl font-display font-bold text-primary tracking-tighter">+200%</div>
-                      <div className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-2">Organic Traffic</div>
+                      <div className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-2">{t.automations.saltLilyStat1Label}</div>
                     </div>
                     <div>
                       <div className="text-4xl font-display font-bold text-black tracking-tighter">100%</div>
-                      <div className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-2">Autonomous Sync</div>
+                      <div className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-2">{t.automations.saltLilyStat2Label}</div>
                     </div>
                   </div>
                 </div>
@@ -246,11 +205,11 @@ export const Automations = () => {
         </section>
 
         {/* Section 4: ROI / Margin Protector */}
-        <section className="pt-12 md:pt-[150px] pb-24 md:pb-40 bg-white">
+        <section className="pt-12 md:pt-20 pb-24 md:pb-40 bg-[#F5F5F3] border-y border-border">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">04. {t.automations.roiTitle}</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">{t.automations.roiLabel}</span>
                 <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
                   {t.automations.roiTitle}<span className="text-primary">.</span>
                 </h2>
@@ -274,18 +233,19 @@ export const Automations = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
+                className="w-full"
               >
-                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md bg-neutral p-12">
-                  <div className="space-y-6">
+                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md bg-neutral p-6 md:p-12 w-full max-w-full">
+                  <div className="space-y-4 md:space-y-6">
                     {[1, 2, 3].map((i) => (
-                      <div key={i} className="h-16 bg-white rounded border border-border flex items-center px-6 justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                            <CheckCircle2 className="w-4 h-4 text-primary" />
+                      <div key={i} className="h-12 md:h-16 bg-white rounded border border-border flex items-center px-4 md:px-6 justify-between w-full">
+                        <div className="flex items-center gap-3 md:gap-4">
+                          <div className="w-6 h-6 md:w-8 md:h-8 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                            <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4 text-primary" />
                           </div>
-                          <div className="w-32 h-2 bg-border rounded-full" />
+                          <div className="w-20 md:w-32 h-1.5 md:h-2 bg-border rounded-full" />
                         </div>
-                        <div className="w-12 h-4 bg-primary/20 rounded" />
+                        <div className="w-10 md:w-12 h-3 md:h-4 bg-primary/20 rounded shrink-0" />
                       </div>
                     ))}
                   </div>
@@ -302,16 +262,10 @@ export const Automations = () => {
               <motion.div {...fadeInUp}>
                 <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">05. THE OUTCOME</span>
                 <h2 className="text-5xl md:text-8xl font-display font-bold mb-12 leading-[0.85] tracking-tighter uppercase text-white">
-                  THIS SOLVES <br />MY LIFE<span className="text-primary">.</span>
+                  SOLVING REAL <br />LIFE PROBLEMS<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8">
-                  {[
-                    "Stop answering the same messages every day",
-                    "Never miss a lead again",
-                    "Run your business 24/7 without hiring",
-                    "Focus on creative work, not admin",
-                    "Scale without increasing workload"
-                  ].map((benefit, i) => (
+                  {t.automations.benefitsList.map((benefit: string, i: number) => (
                     <motion.div 
                       key={i}
                       initial={{ opacity: 0, x: -20 }}
@@ -353,17 +307,17 @@ export const Automations = () => {
           <div className="max-w-4xl mx-auto px-6">
             <motion.div {...fadeInUp}>
               <h2 className="text-5xl md:text-8xl font-display font-bold mb-12 tracking-tighter uppercase text-white">
-                READY TO <br />SCALE<span className="text-primary">?</span>
+                {t.automations.finalCtaTitle.split(' ').slice(0, -1).join(' ')} <br />{t.automations.finalCtaTitle.split(' ').slice(-1)}<span className="text-primary">?</span>
               </h2>
               <p className="text-xl text-white/60 mb-16 max-w-2xl mx-auto font-sans">
-                Stop trading your creative margins for repetitive execution. Build your autonomous moat today.
+                {t.automations.finalCtaDesc}
               </p>
               <div className="flex flex-col md:flex-row gap-6 justify-center">
                 <Link 
                   to={getLanguagePath('/contact')}
                   className="px-12 py-5 bg-red-600 text-white font-black uppercase tracking-widest text-xs hover:scale-105 transition-transform rounded-none"
                 >
-                  Book a Strategy Call
+                  {t.automations.finalCtaButton}
                 </Link>
               </div>
             </motion.div>

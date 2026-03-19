@@ -5,6 +5,7 @@ import { ShowcaseHero } from '../../components/ShowcaseHero';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { getAssetUrl } from '../../constants';
 import { motion } from 'framer-motion';
+import { LazyVideo } from '../../components/LazyVideo';
 import { Bot, Clapperboard, Camera, ExternalLink, Sparkles, TrendingUp, Share2 } from 'lucide-react';
 
 export const QuintaDoPinto = () => {
@@ -224,7 +225,7 @@ export const QuintaDoPinto = () => {
                 className="relative"
               >
                 <div className="aspect-[9/16] overflow-hidden shadow-2xl rounded-md">
-                  <video 
+                  <LazyVideo 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-attention-to-detail.mp4" 
                     className="w-full h-full object-cover rounded-md" 
                     autoPlay 
@@ -266,7 +267,7 @@ export const QuintaDoPinto = () => {
                   transition={{ delay: i * 0.1 }}
                   className="aspect-[4/6] overflow-hidden shadow-xl border border-[#EEEEEE] rounded-md"
                 >
-                  <video 
+                  <LazyVideo 
                     src={url} 
                     className="w-full h-full object-cover rounded-md" 
                     autoPlay 

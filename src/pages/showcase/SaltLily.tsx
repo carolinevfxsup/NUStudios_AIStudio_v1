@@ -5,6 +5,7 @@ import { ShowcaseHero } from '../../components/ShowcaseHero';
 import { BeforeAfterSlider } from '../../components/BeforeAfterSlider';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { motion } from 'framer-motion';
+import { LazyVideo } from '../../components/LazyVideo';
 import { Sparkles, Check, Zap, Camera, Play, ShoppingCart, Globe, ExternalLink, TrendingUp, Share2 } from 'lucide-react';
 
 export const SaltLily = () => {
@@ -95,7 +96,7 @@ export const SaltLily = () => {
                 >
                   <div className="aspect-[3/4] overflow-hidden bg-white border border-[#EEEEEE] shadow-sm group-hover:shadow-md transition-all rounded-md">
                     {item.isVideo ? (
-                      <video src={item.src} className="w-full h-full object-cover rounded-md" autoPlay loop muted playsInline />
+                      <LazyVideo src={item.src} className="w-full h-full object-cover rounded-md" autoPlay loop muted playsInline />
                     ) : (
                       <img src={item.src} className="w-full h-full object-cover rounded-md" alt={item.title} referrerPolicy="no-referrer" />
                     )}
@@ -173,7 +174,7 @@ export const SaltLily = () => {
               </motion.div>
               <motion.div {...fadeInUp} className="space-y-6">
                 <div className="aspect-video overflow-hidden bg-white border border-[#EEEEEE] shadow-xl rounded-md">
-                  <video 
+                  <LazyVideo 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily-zoom.mp4" 
                     className="w-full h-full object-cover rounded-md" 
                     autoPlay loop muted playsInline
@@ -281,9 +282,9 @@ export const SaltLily = () => {
                 transition={{ duration: 0.8 }}
                 className="relative"
               >
-                <div className="aspect-square overflow-hidden rounded-full border-8 border-white shadow-2xl">
+                <div className="aspect-square overflow-hidden rounded-md border-8 border-white shadow-2xl">
                   <img 
-                    src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/socials.webp" 
+                    src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/AUTO_STACK.png" 
                     className="w-full h-full object-cover" 
                     alt={t.saltLily.altAutomationSystem} 
                     referrerPolicy="no-referrer"
@@ -291,6 +292,66 @@ export const SaltLily = () => {
                 </div>
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary flex items-center justify-center rounded-full shadow-xl rotate-12">
                   <Sparkles className="w-12 h-12 text-black" />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 07: The Instagram Engine */}
+        <section className="py-24 md:py-40 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-24 items-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="order-2 lg:order-1"
+              >
+                <div className="relative bg-white p-4 shadow-2xl border border-black/5 rounded-md">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 to-purple-600" />
+                    <span className="text-xs font-bold">saltlily_jewelry</span>
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/smiling_no_watermark.jpeg" 
+                      className="w-full h-full object-cover" 
+                      alt="Instagram Post Preview" 
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="flex gap-4 mb-2">
+                    <Share2 className="w-5 h-5" />
+                    <Zap className="w-5 h-5" />
+                  </div>
+                  <div className="h-2 w-2/3 bg-black/5 rounded-full mb-2" />
+                  <div className="h-2 w-1/2 bg-black/5 rounded-full" />
+                </div>
+              </motion.div>
+              <motion.div {...fadeInUp} className="order-1 lg:order-2">
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">07. THE INSTAGRAM ENGINE</span>
+                <h2 className="text-4xl md:text-7xl font-display mb-12 leading-[0.9] tracking-tighter uppercase text-black">
+                  THE INSTAGRAM ENGINE<span className="text-primary">.</span>
+                </h2>
+                <div className="space-y-8 text-xl text-narrative-shadow/80 leading-relaxed mb-12">
+                  <p>We built an autonomous content pipeline that pulls raw assets from a shared Google Drive, processes them through our AI visual DNA, and schedules them for daily publishing—all with zero manual intervention.</p>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    "Automated Asset Retrieval",
+                    "AI-Powered Visual Enhancement",
+                    "Smart Caption & Hashtag Generation",
+                    "Autonomous Scheduling & Posting"
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                        <Check className="w-4 h-4 text-primary" />
+                      </div>
+                      <span className="text-lg font-medium text-narrative-shadow/80">{feature}</span>
+                    </div>
+                  ))}
                 </div>
               </motion.div>
             </div>
