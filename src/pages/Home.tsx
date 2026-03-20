@@ -8,6 +8,7 @@ import { getAssetUrl } from '../constants';
 import { FadeIn } from '../components/FadeIn';
 import { ShowreelModal } from '../components/ShowreelModal';
 import { useLanguage } from '../contexts/LanguageContext';
+import { LazyVideo } from '../components/LazyVideo';
 
 const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isOpen: boolean, onToggle: () => void }) => {
   const { t, getLanguagePath } = useLanguage();
@@ -52,18 +53,21 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
             </div>
 
             {/* Images */}
-            <div className={`grid grid-cols-1 ${service.id === '06' || service.id === '05' || service.id === '02' || service.id === '03' || service.id === '01' ? 'sm:grid-cols-3' : 'sm:grid-cols-2'} gap-8 mb-16`}>
+            <div className={`grid grid-cols-1 ${service.id === '03' ? 'sm:grid-cols-1' : (service.id === '06' || service.id === '05' || service.id === '02' || service.id === '01' ? 'sm:grid-cols-3' : 'sm:grid-cols-2')} gap-8 mb-16`}>
               {service.images.map((img: any, idx: number) => (
-                <div key={idx} className="space-y-4">
-                  <div className={`${service.id === '04' ? 'aspect-[19/6]' : 'aspect-[4/6]'} overflow-hidden rounded-none`}>
+                <div key={idx} className={service.id === '03' ? 'space-y-12' : 'space-y-4'}>
+                  <div className={`${service.id === '04' ? 'aspect-[19/6]' : (service.id === '03' ? 'aspect-video' : 'aspect-[4/6]')} overflow-hidden rounded-none`}>
                     {img.src.endsWith('.mp4') ? (
-                      <video 
+                      <LazyVideo 
                         src={getAssetUrl(img.src)} 
                         className="w-full h-full object-cover rounded-none"
-                        autoPlay 
+                        autoPlay={true}
                         loop 
-                        muted 
+                        muted={true}
                         playsInline
+                        showControls={service.id === '03'}
+                        controlsColor={service.id === '03' ? 'red-600' : undefined}
+                        poster={img.poster}
                       />
                     ) : (
                       <img 
@@ -74,15 +78,22 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
                       />
                     )}
                   </div>
-                  <p className="text-[10px] font-sans font-bold uppercase tracking-widest text-text/60 leading-tight">
-                    {img.caption}
-                  </p>
+                  <div className="flex flex-col gap-1">
+                    <p className="text-[10px] font-sans font-bold uppercase tracking-widest text-text/60 leading-tight">
+                      {img.caption}
+                    </p>
+                    {service.id === '03' && (
+                      <p className="text-[10px] font-sans font-bold uppercase tracking-widest text-red-600">
+                        play with sound
+                      </p>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
 
             <div className="flex justify-end">
-              <Link to={getLanguagePath('/onboarding')} className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit group">
+              <Link to={getLanguagePath(service.id === '03' ? '/automation' : '/onboarding')} className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit group">
                 {service.id === '06' ? t.home.services.ctaDemo : t.home.services.cta}
                 <ArrowRight className="w-4 h-4" />
               </Link>
@@ -163,7 +174,7 @@ export const Home = () => {
       <section id="growth" className="relative w-full h-screen flex items-center justify-center overflow-hidden border-b border-border">
         <div className="absolute inset-0 z-0">
           <video 
-            src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/HNG/Starling_Investigates_Grenade_Loop.mp4" 
+            src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Bird_Granade_HD.mp4" 
             className="w-full h-full object-cover"
             autoPlay 
             loop 
@@ -312,9 +323,11 @@ export const Home = () => {
                 desc: t.home.services.items.automation.desc,
                 subServices: t.home.services.items.automation.subServices,
                 images: [
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png', caption: t.home.services.items.automation.captions[0] },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png', caption: t.home.services.items.automation.captions[1] },
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png', caption: t.home.services.items.automation.captions[2] }
+                  { 
+                    src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automation%20Final%20Video%20v3.mp4', 
+                    caption: 'AUTOMATION WORKFLOW',
+                    poster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Gemini_Generated_Image_n4ulyon4ulyon4ul%20(1).png'
+                  }
                 ]
               },
               { 
@@ -476,15 +489,14 @@ export const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="left">
               <div className="relative aspect-video rounded-md overflow-hidden border border-border">
-                <video 
+                <LazyVideo 
                   autoPlay 
                   loop 
                   muted 
                   playsInline 
                   className="w-full h-full object-cover"
-                >
-                  <source src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/leoaprd_01.mp4" type="video/mp4" />
-                </video>
+                  src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/leoaprd_01.mp4"
+                />
               </div>
             </FadeIn>
             <FadeIn direction="right">
@@ -543,17 +555,17 @@ export const Home = () => {
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <Laptop className="w-8 h-8 text-red-600" />
-                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home.contact.emailTitle}</h2>
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home?.contact?.emailTitle ?? ""}</h2>
                 </div>
                 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
                   <div className="space-y-1">
-                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">{t.home.contact.emailLabel}</p>
+                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">{t.home?.contact?.emailLabel ?? ""}</p>
                     <p className="text-lg font-display font-bold">hello@nustudios.co.uk</p>
                   </div>
                 </div>
                 <p className="text-xl text-text/70 font-sans leading-relaxed max-w-md">
-                  {t.home.contact.emailDesc}
+                  {t.home?.contact?.emailDesc ?? ""}
                 </p>
               </div>
             </FadeIn>
@@ -563,7 +575,7 @@ export const Home = () => {
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <Phone className="w-8 h-8 text-red-600" />
-                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home.contact.locationsTitle}</h2>
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home?.contact?.locationsTitle ?? ""}</h2>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -758,7 +770,7 @@ export const Home = () => {
 
               <div className="hidden lg:flex items-center justify-center">
                 <div className="w-full max-w-md aspect-square overflow-hidden rounded-none border border-white/10">
-                  <video 
+                  <LazyVideo 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/pnn495jt8srmr0cwyy3a1q4te8_result_.mp4"
                     autoPlay
                     loop

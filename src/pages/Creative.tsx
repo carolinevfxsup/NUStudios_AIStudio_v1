@@ -50,7 +50,7 @@ export const Creative = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl md:text-8xl font-display font-bold leading-[0.9] tracking-tighter mb-8 text-bg uppercase">
+            <h1 className="text-4xl sm:text-5xl md:text-[10vw] lg:text-[12vw] font-display font-bold italic leading-[0.85] tracking-tighter mb-8 text-bg">
               AI is the Brush.<br />We are the Artist.
             </h1>
             <p className="text-lg text-bg/70 max-w-md mx-auto mb-10 font-sans">

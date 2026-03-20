@@ -28,7 +28,7 @@ export const About = () => {
         {/* About Section */}
         <div className="bg-black text-white border border-border rounded-none p-8 md:p-12 shadow-sm">
           <FadeIn delay={0.1}>
-            <h1 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mb-8 text-white">
+            <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-8 text-white">
               {t.about.title}
             </h1>
           </FadeIn>

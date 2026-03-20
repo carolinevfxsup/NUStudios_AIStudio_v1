@@ -4,6 +4,7 @@ import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { motion } from 'framer-motion';
+import { LazyVideo } from '../../components/LazyVideo';
 import { 
   Folder, ScanEye, Tags, Sparkles, ListOrdered, CalendarClock, 
   CheckSquare, Mail, Bell, Calendar, ArrowRight,
@@ -161,16 +162,17 @@ export const OPalmeiral = () => {
               transition={{ duration: 1 }}
               className="relative aspect-video rounded-md overflow-hidden shadow-2xl border border-black/5"
             >
-              <video 
-                src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/OPalmeiral_TVformat.mp4"
-                autoPlay
+              <LazyVideo 
+                src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/OPalm_website_v2.mp4"
                 loop
-                muted
                 playsInline
                 controls
                 className="w-full h-full object-cover"
               />
             </motion.div>
+            <p className="text-center mt-6 text-[10px] font-bold uppercase tracking-widest text-black/40">
+              play video with sound
+            </p>
           </div>
         </section>
 

@@ -4,6 +4,7 @@ import { ProjectNavigation } from '../../components/ProjectNavigation';
 import { ShowcaseHero } from '../../components/ShowcaseHero';
 import { BeforeAfterSlider } from '../../components/BeforeAfterSlider';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { LazyVideo } from '../../components/LazyVideo';
 import { ExternalLink, Heart, MessageCircle, Send, Bookmark } from 'lucide-react';
 
 export const FranksAustralia = () => {
@@ -138,7 +139,7 @@ export const FranksAustralia = () => {
                 <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%202.png" className="w-full h-full object-cover rounded-md" alt="Lifestyle 1" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[9/16] overflow-hidden shadow-2xl max-w-sm mx-auto md:ml-auto rounded-md">
-                <video 
+                <LazyVideo 
                   src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/Franks%20Lifestyle.%20Vid%20.mp4" 
                   className="w-full h-full object-cover rounded-md" 
                   autoPlay 
@@ -211,16 +212,16 @@ export const FranksAustralia = () => {
             <h2 className="text-6xl md:text-8xl font-display uppercase mb-16 text-black">{t.common.speedSoulScale}<span className="text-primary">.</span></h2>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
               <Link 
-                to={getLanguagePath('/contact')} 
+                to={getLanguagePath('/onboarding')} 
                 className="bg-black text-white px-10 py-5 text-sm font-black uppercase tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-primary transition-colors"
               >
                 {t.common.inquireNow} <ExternalLink className="w-4 h-4" />
               </Link>
               <Link 
-                to={getLanguagePath('/creative')} 
+                to={getLanguagePath('/automation')} 
                 className="bg-white text-black border border-black px-10 py-5 text-sm font-black uppercase tracking-[0.3em] hover:bg-black hover:text-white transition-colors"
               >
-                {t.common.viewFramework}
+                Automate
               </Link>
             </div>
             <p className="mt-20 text-[10px] font-bold uppercase tracking-[0.5em] text-black/20">{t.common.copyright} × FRANKS AUSTRALIA.</p>

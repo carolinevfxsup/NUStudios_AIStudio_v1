@@ -5,6 +5,7 @@ import { ShowcaseHero } from '../../components/ShowcaseHero';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { getAssetUrl } from '../../constants';
 import { motion } from 'framer-motion';
+import { LazyVideo } from '../../components/LazyVideo';
 import { Bot, Clapperboard, Camera, ExternalLink, Sparkles, TrendingUp, Share2 } from 'lucide-react';
 
 export const QuintaDoPinto = () => {
@@ -224,7 +225,7 @@ export const QuintaDoPinto = () => {
                 className="relative"
               >
                 <div className="aspect-[9/16] overflow-hidden shadow-2xl rounded-md">
-                  <video 
+                  <LazyVideo 
                     src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-attention-to-detail.mp4" 
                     className="w-full h-full object-cover rounded-md" 
                     autoPlay 
@@ -266,7 +267,7 @@ export const QuintaDoPinto = () => {
                   transition={{ delay: i * 0.1 }}
                   className="aspect-[4/6] overflow-hidden shadow-xl border border-[#EEEEEE] rounded-md"
                 >
-                  <video 
+                  <LazyVideo 
                     src={url} 
                     className="w-full h-full object-cover rounded-md" 
                     autoPlay 
@@ -350,16 +351,16 @@ export const QuintaDoPinto = () => {
             </h2>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
               <Link 
-                to={getLanguagePath('/contact')} 
+                to={getLanguagePath('/onboarding')} 
                 className="bg-black text-white px-10 py-5 text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform flex items-center justify-center gap-3"
               >
                 {t.common.inquireNow} <ExternalLink className="w-4 h-4" />
               </Link>
               <Link 
-                to={getLanguagePath('/creative')} 
+                to={getLanguagePath('/automation')} 
                 className="bg-white text-black border border-black px-10 py-5 text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform"
               >
-                {t.common.viewFramework}
+                Automate
               </Link>
             </div>
             <p className="mt-24 text-[10px] font-bold uppercase tracking-[0.5em] text-black/20">{t.common.copyright} × QUINTA DO PINTO.</p>

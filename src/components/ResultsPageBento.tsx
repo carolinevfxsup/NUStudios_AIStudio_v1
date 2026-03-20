@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { showcases } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
+import { LazyVideo } from './LazyVideo';
 
 export const ResultsPageBento = () => {
   const { getLanguagePath } = useLanguage();
@@ -13,7 +14,7 @@ export const ResultsPageBento = () => {
       {/* Project 1 (Wide) */}
       <Link to={getLanguagePath(showcases[0].slug)} className={`relative md:col-span-8 aspect-video ${bgColor} flex flex-col items-center justify-center`}>
         <div className="relative w-full h-full md:w-[75%] md:h-[75%] overflow-hidden rounded-md">
-          <video 
+          <LazyVideo 
             src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/salt-lily/salt-lily-zoom.mp4" 
             className="w-full h-full object-cover transition-all duration-700" 
             autoPlay 
@@ -30,7 +31,7 @@ export const ResultsPageBento = () => {
       {/* Project 3 (Portrait 9:16) - Quinta Do Pinto */}
       <Link to={getLanguagePath(showcases[2].slug)} className={`relative md:col-span-4 md:row-span-2 ${bgColor} flex flex-col items-center justify-center`}>
         <div className="relative w-full h-full md:w-[75%] md:h-[75%] overflow-hidden rounded-md">
-          <video 
+          <LazyVideo 
             src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/quinta-results-02.mp4" 
             className="w-full h-full object-cover transition-all duration-700" 
             autoPlay 
@@ -47,7 +48,7 @@ export const ResultsPageBento = () => {
       {/* Project 2 (Square) */}
       <Link to={getLanguagePath(showcases[1].slug)} className={`relative md:col-span-4 aspect-square ${bgColor} flex flex-col items-center justify-center`}>
         <div className="relative w-full h-full md:w-[75%] md:h-[75%] overflow-hidden rounded-md">
-          <video 
+          <LazyVideo 
             src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/Beach_Franks1.mp4" 
             className="w-full h-full object-cover transition-all duration-700" 
             autoPlay 
@@ -72,7 +73,7 @@ export const ResultsPageBento = () => {
       {/* Project 4 (Wide) */}
       <Link to={getLanguagePath(showcases[3].slug)} className={`relative md:col-span-8 aspect-video ${bgColor} flex flex-col items-center justify-center`}>
         <div className="relative w-full h-full md:w-[75%] md:h-[75%] overflow-hidden rounded-md">
-          <video 
+          <LazyVideo 
             src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/OP_SQUARE.mp4" 
             className="w-full h-full object-cover transition-all duration-700" 
             autoPlay 
