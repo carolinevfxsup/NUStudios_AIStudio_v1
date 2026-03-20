@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ShowcaseHero } from '../components/ShowcaseHero';
+import { LazyVideo } from '../components/LazyVideo';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { 
@@ -26,7 +27,8 @@ export const Automations = () => {
       <main>
         <ShowcaseHero 
           title={t.automations.heroTitle}
-          mobileTitle="AUTO- MATE YOUR FUTURE"
+          titleClassName="text-4xl sm:text-6xl md:text-[clamp(3.5rem,9.5vw,145px)]"
+          mobileTitle="Automate Your Future"
           subtitle={t.automations.heroTitleItalic}
           description={t.automations.heroSub}
           imageSrc="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1920"
@@ -75,6 +77,22 @@ export const Automations = () => {
                   </motion.div>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Automation Process Video */}
+        <section className="py-24 bg-black overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="aspect-video w-full bg-zinc-900 rounded-lg overflow-hidden border border-white/5">
+              <LazyVideo 
+                src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automation%20Final%20Video%20v3.mp4"
+                className="w-full h-full object-cover"
+                showControls={true}
+                controlsColor="red-600"
+                autoPlay={false}
+                muted={false}
+              />
             </div>
           </div>
         </section>

@@ -212,16 +212,16 @@ export const FranksAustralia = () => {
             <h2 className="text-6xl md:text-8xl font-display uppercase mb-16 text-black">{t.common.speedSoulScale}<span className="text-primary">.</span></h2>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
               <Link 
-                to={getLanguagePath('/contact')} 
+                to={getLanguagePath('/onboarding')} 
                 className="bg-black text-white px-10 py-5 text-sm font-black uppercase tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-primary transition-colors"
               >
                 {t.common.inquireNow} <ExternalLink className="w-4 h-4" />
               </Link>
               <Link 
-                to={getLanguagePath('/creative')} 
+                to={getLanguagePath('/automation')} 
                 className="bg-white text-black border border-black px-10 py-5 text-sm font-black uppercase tracking-[0.3em] hover:bg-black hover:text-white transition-colors"
               >
-                {t.common.viewFramework}
+                Automate
               </Link>
             </div>
             <p className="mt-20 text-[10px] font-bold uppercase tracking-[0.5em] text-black/20">{t.common.copyright} × FRANKS AUSTRALIA.</p>

@@ -6,9 +6,9 @@ export const Blog = () => {
       <motion.h1 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-6xl md:text-9xl font-display font-bold uppercase tracking-tighter mb-12"
+        className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-12"
       >
-        Insights
+        Insights<span className="text-red-600">.</span>
       </motion.h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[1, 2, 3, 4, 5, 6].map((i) => (

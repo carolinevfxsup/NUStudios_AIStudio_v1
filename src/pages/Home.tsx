@@ -55,17 +55,19 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
             {/* Images */}
             <div className={`grid grid-cols-1 ${service.id === '03' ? 'sm:grid-cols-1' : (service.id === '06' || service.id === '05' || service.id === '02' || service.id === '01' ? 'sm:grid-cols-3' : 'sm:grid-cols-2')} gap-8 mb-16`}>
               {service.images.map((img: any, idx: number) => (
-                <div key={idx} className="space-y-4">
+                <div key={idx} className={service.id === '03' ? 'space-y-12' : 'space-y-4'}>
                   <div className={`${service.id === '04' ? 'aspect-[19/6]' : (service.id === '03' ? 'aspect-video' : 'aspect-[4/6]')} overflow-hidden rounded-none`}>
                     {img.src.endsWith('.mp4') ? (
                       <LazyVideo 
                         src={getAssetUrl(img.src)} 
                         className="w-full h-full object-cover rounded-none"
-                        autoPlay 
+                        autoPlay={true}
                         loop 
-                        muted 
+                        muted={true}
                         playsInline
                         showControls={service.id === '03'}
+                        controlsColor={service.id === '03' ? 'red-600' : undefined}
+                        poster={img.poster}
                       />
                     ) : (
                       <img 
@@ -321,7 +323,11 @@ export const Home = () => {
                 desc: t.home.services.items.automation.desc,
                 subServices: t.home.services.items.automation.subServices,
                 images: [
-                  { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automation%20Final%20Video%20v3.mp4', caption: 'AUTOMATION WORKFLOW' }
+                  { 
+                    src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Automation%20Final%20Video%20v3.mp4', 
+                    caption: 'AUTOMATION WORKFLOW',
+                    poster: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Gemini_Generated_Image_n4ulyon4ulyon4ul%20(1).png'
+                  }
                 ]
               },
               { 

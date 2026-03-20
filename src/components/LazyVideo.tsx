@@ -5,14 +5,15 @@ import { useLanguage } from '../contexts/LanguageContext';
 interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
   src: string;
   showControls?: boolean;
+  controlsColor?: string;
 }
 
-export const LazyVideo = ({ src, className, showControls, ...props }: LazyVideoProps) => {
+export const LazyVideo = ({ src, className, showControls, controlsColor, ...props }: LazyVideoProps) => {
   const { t } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isInView, setIsInView] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(props.muted !== false); // Default to muted unless explicitly false
+  const [isPlaying, setIsPlaying] = useState(props.autoPlay !== false); // Default to playing unless explicitly false
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -71,32 +72,32 @@ export const LazyVideo = ({ src, className, showControls, ...props }: LazyVideoP
       />
       {showControls && isInView && (
         <>
-          <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2">
+          <div className="absolute bottom-6 right-6 z-10 flex items-center gap-3">
             <button
               onClick={togglePlay}
-              className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all flex items-center justify-center"
+              className={`${controlsColor ? `bg-${controlsColor}` : 'bg-black/50'} text-white w-10 h-10 rounded-full backdrop-blur-sm transition-all flex items-center justify-center hover:scale-105 active:scale-95`}
             >
-              {isPlaying ? <Pause size={14} /> : <Play size={14} />}
+              {isPlaying ? <Pause size={16} strokeWidth={3} /> : <Play size={16} fill="currentColor" />}
             </button>
             <button
               onClick={toggleMute}
-              className="bg-black/50 hover:bg-black/70 text-white px-3 py-1.5 rounded-full text-[10px] font-bold tracking-widest backdrop-blur-sm transition-all flex items-center gap-2 uppercase"
+              className={`${controlsColor ? `bg-${controlsColor}` : 'bg-black/50'} text-white px-5 py-2.5 rounded-full text-[11px] font-bold tracking-[0.15em] backdrop-blur-sm transition-all flex items-center gap-2.5 uppercase hover:scale-105 active:scale-95`}
             >
               {isMuted ? (
                 <>
-                  <VolumeX size={12} />
+                  <VolumeX size={14} strokeWidth={2.5} />
                   <span>UNMUTE</span>
                 </>
               ) : (
                 <>
-                  <Volume2 size={12} />
+                  <Volume2 size={14} strokeWidth={2.5} />
                   <span>MUTE</span>
                 </>
               )}
             </button>
           </div>
-          <div className="absolute bottom-4 left-4 z-10">
-            <p className="text-[10px] font-sans font-bold uppercase tracking-widest text-white/60 drop-shadow-md">
+          <div className="absolute bottom-6 left-6 z-10">
+            <p className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/80 drop-shadow-md">
               {t.common.playWithSound}
             </p>
           </div>

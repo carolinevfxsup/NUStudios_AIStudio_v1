@@ -18,7 +18,7 @@ export const Services = () => {
   return (
     <div className="pt-32 pb-32 px-6 max-w-7xl mx-auto">
       <FadeIn delay={0.1}>
-        <h1 className="text-6xl md:text-9xl font-display font-bold uppercase tracking-tighter mb-24">
+        <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-24">
           Services<span className="text-red-600">.</span>
         </h1>
       </FadeIn>

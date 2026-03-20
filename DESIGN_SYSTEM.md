@@ -20,10 +20,21 @@ This document outlines the visual language and design patterns used across the N
 ### Heading Styles
 | Level | Font | Case | Characteristics |
 | :--- | :--- | :--- | :--- |
-| **H1 (Hero)** | Sans | Bold Italic | `text-[15vw] md:text-[12vw]`, tracking-tighter, white |
+| **H1 (Hero)** | Sans | Bold Italic | `text-4xl sm:text-5xl md:text-[10vw] lg:text-[12vw]`, tracking-tighter, white, mixed case. *Note: Automation page uses custom sizing to fit "Autonomous" on one line.* |
 | **H2 (Showcase)** | Display | Uppercase | `text-4xl md:text-6xl`, tracking-tight, **Black Text Only**, **Red Full Stop at End** |
 | **H2 (Home)** | Display | Normal/Mixed | `text-5xl md:text-7xl`, tracking-tighter |
 | **H3** | Display | Uppercase | `text-xl md:text-2xl`, tracking-tight |
+
+### Page Titles (Results, Services, Contact)
+All main page titles should be standardized to `text-5xl md:text-7xl` with uppercase tracking-tighter and a red full stop.
+
+### Hero Title Consistency
+All hero section titles on showcase, blog, and automation pages must be consistent in casing (mixed case) and sizing. Titles must respect the max-width of their container. If a single word is too long, the font size should scale down to fit (using responsive units like `vw` or `clamp`). **ALL CAPS titles are strictly forbidden.**
+
+### Video Controls
+All video controls across the site MUST be visible and styled in **Primary Red** (`red-600`).
+- **LazyVideo Props:** `showControls={true}`, `controlsColor="red-600"`.
+- **Background Videos:** Should typically be muted, autoplay, and loop without controls, but if controls are needed, they must follow the red styling.
 
 ### Special Text Patterns
 - **Section Labels:** `font-sans text-xs uppercase tracking-widest text-text/60`
@@ -73,6 +84,9 @@ Used for results and infographics.
 - **Primary:** `bg-red-600 text-white rounded-none px-10 py-4 uppercase tracking-widest font-bold text-xs`
 - **Secondary:** `bg-black text-white rounded-none` or `border border-black text-black rounded-none`
 - **Rule:** All buttons **MUST** be square (`rounded-none`). Rounded or pill-shaped buttons are strictly forbidden.
+- **Navigation Rule:**
+  - "Inquire Now" buttons should link to the onboarding process (`/onboarding`).
+  - "Automate" buttons on showcase pages should link to the automation service page (`/automation`).
 
 ### Dark Mode / Contrast Rules
 - **Color Inversion:** On dark backgrounds (`bg-black`, `bg-[#0A0A0A]`), all primary text and titles **MUST** invert to white for maximum contrast.

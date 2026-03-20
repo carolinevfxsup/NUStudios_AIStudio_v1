@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { LazyVideo } from './LazyVideo';
 
 const SUPABASE_ASSET_BASE = 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/';
 
@@ -13,42 +12,46 @@ const logos = [
 ];
 
 export const LogoScroll = () => {
+  // Repeat logos multiple times to ensure they fill the screen and loop seamlessly
+  const repeatedLogos = Array(20).fill(logos).flat();
+
   return (
     <div className="relative py-16 md:py-24 overflow-hidden flex items-center min-h-[200px] bg-black">
       
-      {/* Background Video - Using your Supabase link but ensuring attributes are set */}
-      <LazyVideo 
-        key="bg-video"
-        className="absolute inset-0 w-full h-full object-cover opacity-60 z-0"
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        src={`${SUPABASE_ASSET_BASE}BG_rev.mp4`}
-      />
+      {/* Background Video - Using standard video tag for background to ensure it loads immediately */}
+      <div className="absolute inset-0 z-0">
+        <video 
+          key="bg-video"
+          className="w-full h-full object-cover opacity-60"
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          src={`${SUPABASE_ASSET_BASE}BG_rev.mp4`}
+        />
+      </div>
       
-      {/* Dark Overlay to help logo legibility - reduced by 30% */}
-      <div className="absolute inset-0 bg-black/20 z-1" />
+      {/* Dark Overlay to help logo legibility */}
+      <div className="absolute inset-0 bg-black/20 z-[1]" />
 
       <div className="relative z-10 w-full overflow-hidden">
         
         <motion.div 
-          className="flex whitespace-nowrap gap-16 md:gap-32 items-center"
+          className="flex whitespace-nowrap gap-16 md:gap-32 items-center w-max"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 30, // Slower is usually more professional
+              duration: 60, // Slower for a more premium feel
               ease: "linear",
             },
           }}
         >
-          {/* Loop twice for seamlessness */}
-          {[...logos, ...logos].map((logo, i) => (
+          {repeatedLogos.map((logo, i) => (
             <div key={i} className="flex-shrink-0 h-12 w-32 md:w-48 flex items-center justify-center">
               <img 
-                src={`${SUPABASE_ASSET_BASE}${logo}`} // Direct Supabase path
+                src={`${SUPABASE_ASSET_BASE}${logo}`}
                 alt="Partner Logo" 
                 className="h-full w-full object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
                 referrerPolicy="no-referrer"

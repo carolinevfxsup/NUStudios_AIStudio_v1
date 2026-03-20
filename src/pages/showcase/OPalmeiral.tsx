@@ -163,7 +163,7 @@ export const OPalmeiral = () => {
               className="relative aspect-video rounded-md overflow-hidden shadow-2xl border border-black/5"
             >
               <LazyVideo 
-                src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/OPalmeiral_TVformat.mp4"
+                src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/OPalm_website_v2.mp4"
                 loop
                 playsInline
                 controls

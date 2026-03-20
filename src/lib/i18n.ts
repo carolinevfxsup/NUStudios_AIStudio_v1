@@ -59,7 +59,7 @@ export const translations = {
             title: 'Automation',
             desc: "The connective tissue of the agency. We build autonomous systems that power the entire brand lifecycle. From our bread-and-butter Social Media Automation to bespoke AI-driven marketing systems, we ensure your brand remains 'always-on' while protecting your creative margins.",
             subServices: ['Social Media Automation', 'Workflow Automation', 'AI Pipeline Design', 'Content Iteration Tools', 'API & CRM Integration', 'Autonomous Production'],
-            captions: ['POSTING LOGIC THAT FEELS HUMAN', 'AUTOMATION WORKFLOWS', 'AUTOMATION WITH A HUMAN CHECKPOINT'],
+            captions: ['POSTING LOGIC THAT FEELS HUMAN', 'AUTOMATION WORKFLOW', 'AUTOMATION WITH A HUMAN CHECKPOINT'],
           },
           growth: {
             title: 'Growth',
@@ -162,8 +162,8 @@ export const translations = {
       gallerySub: 'A collection of lasting visuals.'
     },
     automations: {
-      heroTitle: 'AUTONOMOUS SYSTEMS',
-      heroTitleItalic: 'VOLUME & QUALITY',
+      heroTitle: 'Autonomous Systems',
+      heroTitleItalic: 'Volume & Quality',
       heroSub: 'Autonomous systems that keep your brand voice, protect your margins and give you back your time.',
       capabilitiesLabel: '01. CAPABILITIES',
       capabilitiesTitle: 'WHAT WE AUTOMATE',
@@ -857,7 +857,7 @@ export const translations = {
             title: 'Automação',
             desc: "O tecido conjuntivo da agência. Construímos sistemas autónomos que alimentam todo o ciclo de vida da marca. Desde a nossa base de Automação de Redes Sociais até sistemas de marketing personalizados baseados em IA, garantimos que a sua marca permanece 'sempre ativa' enquanto protegemos as suas margens criativas.",
             subServices: ['Automação de Redes Sociais', 'Automação de Fluxo de Trabalho', 'Design de Pipeline de IA', 'Ferramentas de Iteração de Conteúdo', 'Integração de API e CRM', 'Produção Autónoma'],
-            captions: ['LÓGICA DE PUBLICAÇÃO QUE PARECE HUMANA', 'FLUXOS DE TRABALHO DE AUTOMAÇÃO', 'AUTOMAÇÃO COM UM PONTO DE CONTROLO HUMANO'],
+            captions: ['LÓGICA DE PUBLICAÇÃO QUE PARECE HUMANA', 'FLUXO DE TRABALHO DE AUTOMAÇÃO', 'AUTOMAÇÃO COM UM PONTO DE CONTROLO HUMANO'],
           },
           growth: {
             title: 'Crescimento',
@@ -960,8 +960,8 @@ export const translations = {
       gallerySub: 'Uma coleção de visuais duradouros.'
     },
     automations: {
-      heroTitle: 'SISTEMAS AUTÓNOMOS',
-      heroTitleItalic: 'VOLUME E QUALIDADE',
+      heroTitle: 'Sistemas Autónomos',
+      heroTitleItalic: 'Volume e Qualidade',
       heroSub: 'Sistemas autónomos que mantêm a voz da sua marca, protegem as suas margens e devolvem-lhe o seu tempo.',
       capabilitiesLabel: '01. CAPACIDADES',
       capabilitiesTitle: 'O QUE AUTOMATIZAMOS',
