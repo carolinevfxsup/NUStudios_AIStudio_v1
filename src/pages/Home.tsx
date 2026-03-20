@@ -555,17 +555,17 @@ export const Home = () => {
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <Laptop className="w-8 h-8 text-red-600" />
-                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.contact.emailTitle}</h2>
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home?.contact?.emailTitle ?? ""}</h2>
                 </div>
                 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
                   <div className="space-y-1">
-                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">{t.contact.emailLabel}</p>
+                    <p className="text-xs font-sans font-bold text-text/40 uppercase tracking-widest">{t.home?.contact?.emailLabel ?? ""}</p>
                     <p className="text-lg font-display font-bold">hello@nustudios.co.uk</p>
                   </div>
                 </div>
                 <p className="text-xl text-text/70 font-sans leading-relaxed max-w-md">
-                  {t.contact.emailDesc}
+                  {t.home?.contact?.emailDesc ?? ""}
                 </p>
               </div>
             </FadeIn>
@@ -575,7 +575,7 @@ export const Home = () => {
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <Phone className="w-8 h-8 text-red-600" />
-                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.contact.locationsTitle}</h2>
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home?.contact?.locationsTitle ?? ""}</h2>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -605,9 +605,9 @@ export const Home = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
               <div>
                 <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-12 leading-[0.8] !text-white">
-                  {t.contact.title}<span className="text-red-600">.</span>
+                  {t.home.contact.title}<span className="text-red-600">.</span>
                 </h2>
-                <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">{t.contact.subtitle}</p>
+                <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">{t.home.contact.subtitle}</p>
                 
                 <AnimatePresence mode="wait">
                   {!isSubmitted ? (
@@ -621,7 +621,7 @@ export const Home = () => {
                     >
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div className="space-y-2 relative">
-                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.contact.form.firstName}</label>
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.home.contact.form.firstName}</label>
                           <div className="relative">
                             <input
                               type="text"
@@ -639,7 +639,7 @@ export const Home = () => {
                           </div>
                         </div>
                         <div className="space-y-2 relative">
-                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.contact.form.lastName}</label>
+                          <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.home.contact.form.lastName}</label>
                           <div className="relative">
                             <input
                               type="text"
@@ -659,7 +659,7 @@ export const Home = () => {
                       </div>
 
                       <div className="space-y-2 relative">
-                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.contact.form.email}</label>
+                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.home.contact.form.email}</label>
                         <div className="relative">
                           <input
                             type="email"
@@ -678,7 +678,7 @@ export const Home = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.contact.form.message}</label>
+                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.home.contact.form.message}</label>
                         <textarea
                           name="message"
                           required
@@ -690,7 +690,7 @@ export const Home = () => {
                       </div>
 
                       <div className="space-y-4">
-                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.contact.form.attachments}</label>
+                        <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/60">{t.home.contact.form.attachments}</label>
                         <div 
                           onClick={() => fileInputRef.current?.click()}
                           className="w-full border border-dashed border-white/10 rounded-sm p-8 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-white/30 hover:bg-white/5 transition-all group"
@@ -711,7 +711,7 @@ export const Home = () => {
                               <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
                                 <span className="text-xl font-light text-white/40 group-hover:text-white">+</span>
                               </div>
-                              <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-white/40 group-hover:text-white/60">{t.contact.form.addFile}</span>
+                              <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-white/40 group-hover:text-white/60">{t.home.contact.form.addFile}</span>
                             </>
                           )}
                         </div>
@@ -731,11 +731,11 @@ export const Home = () => {
                         {isSubmitting ? (
                           <>
                             <Loader2 className="w-3 h-3 animate-spin" />
-                            <span>{t.contact.form.sending}</span>
+                            <span>{t.home.contact.form.sending}</span>
                           </>
                         ) : (
                           <>
-                            <span>{t.contact.form.button}</span>
+                            <span>{t.home.contact.form.button}</span>
                             <Send className="w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                           </>
                         )}
@@ -752,16 +752,16 @@ export const Home = () => {
                         <Check className="w-10 h-10 text-[#E11D48]" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="text-3xl font-display font-bold uppercase tracking-tighter text-white">{t.contact.form.success.title}<span className="text-red-600">.</span></h3>
+                        <h3 className="text-3xl font-display font-bold uppercase tracking-tighter text-white">{t.home.contact.form.success.title}<span className="text-red-600">.</span></h3>
                         <p className="text-white/60 font-sans max-w-sm">
-                          {t.contact.form.success.desc}
+                          {t.home.contact.form.success.desc}
                         </p>
                       </div>
                       <button
                         onClick={() => setIsSubmitted(false)}
                         className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors border-b border-white/20 pb-1"
                       >
-                        {t.contact.form.success.another}
+                        {t.home.contact.form.success.another}
                       </button>
                     </motion.div>
                   )}
