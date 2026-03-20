@@ -232,8 +232,8 @@ export const translations = {
       roiSub: 'The cost of a junior, the velocity of a global lab.',
       roiStat1: 'Time Recovered',
       roiStat2: 'Margin Protection',
-      benefitsLabel: '05. SOLVING REAL LIFE PROBLEMS',
-      benefitsTitle: 'THIS SOLVES MY LIFE',
+      benefitsLabel: '05. THE OUTCOME',
+      benefitsTitle: 'SOLVING REAL LIFE PROBLEMS',
       benefitsList: [
         "Stop answering the same messages every day",
         "Never miss a lead again",
@@ -241,7 +241,7 @@ export const translations = {
         "Focus on creative work, not admin",
         "Scale without increasing workload"
       ],
-      finalCtaTitle: 'READY TO SCALE?',
+      finalCtaTitle: 'READY TO SCALE',
       finalCtaDesc: 'Stop trading your creative margins for repetitive execution. Build your autonomous moat today.',
       finalCtaButton: 'Book a Strategy Call',
     },
@@ -1030,8 +1030,8 @@ export const translations = {
       roiSub: 'O custo de um júnior, a velocidade de um laboratório global.',
       roiStat1: 'Tempo Recuperado',
       roiStat2: 'Proteção de Margem',
-      benefitsLabel: '05. RESOLVENDO PROBLEMAS DA VIDA REAL',
-      benefitsTitle: 'ISTO RESOLVE A MINHA VIDA',
+      benefitsLabel: '05. O RESULTADO',
+      benefitsTitle: 'RESOLVEMOS PROBLEMAS REAIS',
       benefitsList: [
         "Pare de responder às mesmas mensagens todos os dias",
         "Nunca mais perca uma lead",
@@ -1039,7 +1039,7 @@ export const translations = {
         "Foque-se no trabalho criativo, não no administrativo",
         "Escale sem aumentar a carga de trabalho"
       ],
-      finalCtaTitle: 'PRONTO PARA ESCALAR?',
+      finalCtaTitle: 'PRONTO PARA ESCALAR',
       finalCtaDesc: 'Pare de trocar as suas margens criativas por execução repetitiva. Construa o seu fosso autónomo hoje.',
       finalCtaButton: 'Marcar Chamada de Estratégia',
     },

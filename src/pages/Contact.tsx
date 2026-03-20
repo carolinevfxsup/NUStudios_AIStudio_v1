@@ -80,14 +80,14 @@ export const Contact = () => {
     <div className="pt-32 pb-32 px-6 max-w-7xl mx-auto min-h-screen">
       <FadeIn delay={0.1}>
         <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-12 leading-[0.8]">
-          {t.home.contact.title}<span className="text-red-600">.</span>
+          {t.contact.title}<span className="text-red-600">.</span>
         </h1>
       </FadeIn>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
         <FadeIn delay={0.2}>
           <div>
-            <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">{t.home.contact.subtitle}</p>
+            <p className="text-2xl md:text-3xl font-display font-bold uppercase mb-12">{t.contact.subtitle}</p>
             
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
@@ -101,7 +101,7 @@ export const Contact = () => {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="space-y-2 relative">
-                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.home.contact.form.firstName}</label>
+                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.contact.form.firstName}</label>
                       <div className="relative">
                         <input 
                           {...register('firstName')}
@@ -116,7 +116,7 @@ export const Contact = () => {
                       {errors.firstName && <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest mt-1">{errors.firstName.message}</p>}
                     </div>
                     <div className="space-y-2 relative">
-                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.home.contact.form.lastName}</label>
+                      <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.contact.form.lastName}</label>
                       <div className="relative">
                         <input 
                           {...register('lastName')}
@@ -133,7 +133,7 @@ export const Contact = () => {
                   </div>
                   
                   <div className="space-y-2 relative">
-                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.home.contact.form.email}</label>
+                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.contact.form.email}</label>
                     <div className="relative">
                       <input 
                         {...register('email')}
@@ -149,7 +149,7 @@ export const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.home.contact.form.message}</label>
+                    <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60">{t.contact.form.message}</label>
                     <textarea 
                       {...register('message')}
                       rows={1} 
@@ -160,8 +160,8 @@ export const Contact = () => {
 
                   <div className="space-y-2">
                     <label className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/60 flex justify-between items-center">
-                      <span>{t.home.contact.form.attachments}</span>
-                      <span className="text-black/30">{t.home.contact.form.maxFileSize}</span>
+                      <span>{t.contact.form.attachments}</span>
+                      <span className="text-black/30">{t.contact.form.maxFileSize}</span>
                     </label>
                     <div className="relative">
                       <input 
@@ -197,11 +197,11 @@ export const Contact = () => {
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-3 h-3 animate-spin" />
-                        <span>{t.home.contact.form.sending}</span>
+                        <span>{t.contact.form.sending}</span>
                       </>
                     ) : (
                       <>
-                        <span>{t.home.contact.form.button}</span>
+                        <span>{t.contact.form.button}</span>
                         <Send className="w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                       </>
                     )}
@@ -218,16 +218,16 @@ export const Contact = () => {
                     <Check className="w-10 h-10 text-[#E11D48]" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-3xl font-display font-bold uppercase tracking-tighter">{t.home.contact.form.success.title}<span className="text-red-600">.</span></h3>
+                    <h3 className="text-3xl font-display font-bold uppercase tracking-tighter">{t.contact.form.success.title}<span className="text-red-600">.</span></h3>
                     <p className="text-black/60 font-sans max-w-sm">
-                      {t.home.contact.form.success.desc}
+                      {t.contact.form.success.desc}
                     </p>
                   </div>
                   <button
                     onClick={() => setIsSubmitted(false)}
                     className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-black/40 hover:text-black transition-colors border-b border-black/20 pb-1"
                   >
-                    {t.home.contact.form.success.another}
+                    {t.contact.form.success.another}
                   </button>
                 </motion.div>
               )}
@@ -257,17 +257,17 @@ export const Contact = () => {
             <div className="space-y-8">
               <div className="flex items-center gap-4">
                 <Laptop className="w-8 h-8 text-red-600" />
-                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home.contact.emailTitle}</h2>
+                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.contact.emailTitle}</h2>
               </div>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
                 <div className="space-y-1">
-                  <p className="text-xs font-sans font-bold text-black/40 uppercase tracking-widest">{t.home.contact.emailLabel}</p>
+                  <p className="text-xs font-sans font-bold text-black/40 uppercase tracking-widest">{t.contact.emailLabel}</p>
                   <p className="text-lg font-display font-bold">hello@nustudios.co.uk</p>
                 </div>
               </div>
               <p className="text-xl text-black/70 font-sans leading-relaxed max-w-md">
-                {t.home.contact.emailDesc}
+                {t.contact.emailDesc}
               </p>
             </div>
           </FadeIn>
@@ -277,7 +277,7 @@ export const Contact = () => {
             <div className="space-y-8">
               <div className="flex items-center gap-4">
                 <Phone className="w-8 h-8 text-red-600" />
-                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home.contact.locationsTitle}</h2>
+                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.contact.locationsTitle}</h2>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

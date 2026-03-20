@@ -43,7 +43,7 @@ export const LogoScroll = () => {
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 60, // Slower for a more premium feel
+              duration: 120, // Slower for a more premium feel
               ease: "linear",
             },
           }}

@@ -399,19 +399,19 @@ export const OnboardingForm = () => {
                 </div>
                 <div>
                   <label className="block text-[10px] font-black uppercase tracking-widest text-red-600 mb-2">
-                    {t.home.contact.form.attachments} (Optional) <span className="text-white/40 ml-2">{t.home.contact.form.maxFileSize}</span>
+                    {t.contact.form.attachments} (Optional) <span className="text-white/40 ml-2">{t.contact.form.maxFileSize}</span>
                   </label>
                   <input 
                     type="file"
                     onChange={e => {
                       const selectedFile = e.target.files?.[0] || null;
                       if (selectedFile && selectedFile.size > 10 * 1024 * 1024) {
-                        setSubmitError(`File size exceeds ${t.home.contact.form.maxFileSize} limit.`);
+                        setSubmitError(`File size exceeds ${t.contact.form.maxFileSize} limit.`);
                         setFile(null);
                         e.target.value = '';
                       } else {
                         setFile(selectedFile);
-                        if (submitError === `File size exceeds ${t.home.contact.form.maxFileSize} limit.`) setSubmitError(null);
+                        if (submitError === `File size exceeds ${t.contact.form.maxFileSize} limit.`) setSubmitError(null);
                       }
                     }}
                     className="w-full bg-transparent border-b border-white/20 p-4 rounded-none focus:border-red-600 outline-none transition-all text-sm"

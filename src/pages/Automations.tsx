@@ -90,8 +90,8 @@ export const Automations = () => {
                 className="w-full h-full object-cover"
                 showControls={true}
                 controlsColor="red-600"
-                autoPlay={false}
-                muted={false}
+                autoPlay={true}
+                muted={true}
               />
             </div>
           </div>
@@ -253,21 +253,12 @@ export const Automations = () => {
                 transition={{ duration: 0.8 }}
                 className="w-full"
               >
-                <div className="relative border border-black/5 shadow-2xl overflow-hidden rounded-md bg-neutral p-6 md:p-12 w-full max-w-full">
-                  <div className="space-y-4 md:space-y-6">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="h-12 md:h-16 bg-white rounded border border-border flex items-center px-4 md:px-6 justify-between w-full">
-                        <div className="flex items-center gap-3 md:gap-4">
-                          <div className="w-6 h-6 md:w-8 md:h-8 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                            <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4 text-primary" />
-                          </div>
-                          <div className="w-20 md:w-32 h-1.5 md:h-2 bg-border rounded-full" />
-                        </div>
-                        <div className="w-10 md:w-12 h-3 md:h-4 bg-primary/20 rounded shrink-0" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <img 
+                  src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Gemini_Generated_Image_mhi8qvmhi8qvmhi8%20(1).png"
+                  alt="Margin Protector"
+                  className="w-full h-auto rounded-md shadow-2xl"
+                  referrerPolicy="no-referrer"
+                />
               </motion.div>
             </div>
           </div>
@@ -278,9 +269,9 @@ export const Automations = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-24 items-center">
               <motion.div {...fadeInUp}>
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">05. THE OUTCOME</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">{t.automations.benefitsLabel}</span>
                 <h2 className="text-5xl md:text-8xl font-display font-bold mb-12 leading-[0.85] tracking-tighter uppercase text-white">
-                  SOLVING REAL <br />LIFE PROBLEMS<span className="text-primary">.</span>
+                  {t.automations.benefitsTitle}<span className="text-primary">.</span>
                 </h2>
                 <div className="space-y-8">
                   {t.automations.benefitsList.map((benefit: string, i: number) => (

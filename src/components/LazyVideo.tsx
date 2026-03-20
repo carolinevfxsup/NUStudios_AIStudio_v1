@@ -37,6 +37,14 @@ export const LazyVideo = ({ src, className, showControls, controlsColor, ...prop
     };
   }, []);
 
+  useEffect(() => {
+    if (isInView && props.autoPlay && videoRef.current) {
+      videoRef.current.play().catch(err => {
+        console.warn("Autoplay failed:", err);
+      });
+    }
+  }, [isInView, props.autoPlay]);
+
   const toggleMute = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
