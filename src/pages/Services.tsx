@@ -26,7 +26,7 @@ export const Services = () => {
       
       <FadeIn delay={0.2}>
         <div className="flex flex-col border-t border-black">
-          {t.servicesPage.list.map((service: any, index: number) => (
+          {t.servicesPage.items.map((service: any, index: number) => (
             <ServiceAccordionItem 
               key={index} 
               service={service} 

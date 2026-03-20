@@ -1,5 +1,4 @@
 import express from "express";
-import { createServer as createViteServer } from "vite";
 import { Resend } from "resend";
 import dotenv from "dotenv";
 import path from "path";
@@ -18,14 +17,11 @@ function escapeHtml(str: string) {
     .replaceAll("'", "&#039;");
 }
 
-async function startServer() {
-  const app = express();
-  const PORT = 3000;
+const app = express();
+app.use(express.json());
 
-  app.use(express.json());
-
-  // API route for lead submission (Onboarding)
-  app.post("/api/submit-brief", async (req, res) => {
+// API route for lead submission (Onboarding)
+app.post("/api/submit-brief", async (req, res) => {
     const { businessName, email, phone, message, outcomes, website, size, market, socials, attachment } = req.body;
     const senderEmail = email.trim();
     const senderName = businessName.trim();
@@ -161,8 +157,12 @@ Source: ${sourceUrl}
     }
   });
 
+async function startServer() {
+  const PORT = process.env.PORT || 3000;
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -182,4 +182,8 @@ Source: ${sourceUrl}
   });
 }
 
-startServer();
+if (!process.env.VERCEL) {
+  startServer();
+}
+
+export default app;
