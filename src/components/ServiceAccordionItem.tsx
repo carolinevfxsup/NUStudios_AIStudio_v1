@@ -1,10 +1,16 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { getAssetUrl } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LazyVideo } from './LazyVideo';
 
-export const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isOpen: boolean, onToggle: () => void }) => {
+export interface ServiceAccordionItemProps {
+  service: any;
+  isOpen: boolean;
+  onToggle: () => void;
+  index: number;
+}
+
+export const ServiceAccordionItem = ({ service, isOpen, onToggle, index }: ServiceAccordionItemProps) => {
   const { getLanguagePath } = useLanguage();
   return (
     <div className="border-b border-black overflow-hidden">
@@ -45,10 +51,10 @@ export const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: a
                 {/* Images Row */}
                 <div className={`grid ${service.images.length === 3 ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-2 md:grid-cols-3'} gap-4`}>
                   {service.images.map((img: any, idx: number) => (
-                    <div key={idx} className={`${service.id === '04' ? 'aspect-[19/6]' : 'aspect-[4/6]'} overflow-hidden rounded-md`}>
+                    <Link key={idx} to={getLanguagePath(`/services?service=${index}`)} className={`${service.id === '04' ? 'aspect-[19/6]' : 'aspect-[4/6]'} overflow-hidden rounded-md block`}>
                       {img.src.endsWith('.mp4') ? (
                         <LazyVideo 
-                          src={getAssetUrl(img.src)} 
+                          src={img.src} 
                           className="w-full h-full object-cover rounded-md"
                           autoPlay 
                           loop 
@@ -57,13 +63,12 @@ export const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: a
                         />
                       ) : (
                         <img 
-                          src={getAssetUrl(img.src)} 
+                          src={img.src} 
                           alt={img.caption} 
                           className="w-full h-full object-cover rounded-md"
-                          referrerPolicy="no-referrer"
                         />
                       )}
-                    </div>
+                    </Link>
                   ))}
                 </div>
 

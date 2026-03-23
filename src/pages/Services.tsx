@@ -29,6 +29,7 @@ export const Services = () => {
           {t.servicesPage.items.map((service: any, index: number) => (
             <ServiceAccordionItem 
               key={index} 
+              index={index}
               service={service} 
               isOpen={openIndex === index} 
               onToggle={() => setOpenIndex(openIndex === index ? null : index)}

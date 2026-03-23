@@ -1,4 +1,5 @@
 export const getAssetUrl = (path: string) => {
+  console.log('getAssetUrl path:', path);
   if (!path) return '';
   if (path.startsWith('http')) return path;
   

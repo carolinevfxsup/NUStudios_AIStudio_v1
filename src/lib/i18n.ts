@@ -10,6 +10,7 @@ export const translations = {
       pricing: 'PRICING',
       faqs: 'FAQS',
       contact: 'CONTACT',
+      services: 'SERVICES',
       learnMore: 'LEARN MORE',
       bookCall: 'Book a Call',
       watchShowreel: 'Watch Showreel',
@@ -170,9 +171,9 @@ export const translations = {
             'Model & Lighting Control: Absolute precision over model aesthetic and lighting atmosphere, maintaining brand consistency across all shoots and ensuring every image looks like it was captured in the same elite studio.'
           ],
           images: [
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREATIVE_1.png', caption: 'ELEVATING E-COMMERCE THROUGH ARTFUL DESIGN' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREATIVE_2.png', caption: 'CRAFTING IMMERSIVE BRAND EXPERIENCES' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREATIVE_3.png', caption: 'CRAFTING IMMERSIVE BRAND EXPERIENCES' }
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREAT_1.png', caption: 'ELEVATING E-COMMERCE THROUGH ARTFUL DESIGN' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Trend.png', caption: 'CRAFTING IMMERSIVE BRAND EXPERIENCES' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Develp.png', caption: 'CRAFTING IMMERSIVE BRAND EXPERIENCES' }
           ]
         },
         {
@@ -188,9 +189,9 @@ export const translations = {
             'Autonomous Production: Content generation systems that run without constant supervision, allowing your brand to produce high-quality assets at a speed impossible for a human team.'
           ],
           images: [
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_1.png', caption: 'POSTING LOGIC THAT FEELS HUMAN' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_2.png', caption: 'AUTOMATION WORKFLOW' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_3.png', caption: 'AUTOMATION WITH A HUMAN CHECKPOINT' }
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png', caption: 'POSTING LOGIC THAT FEELS HUMAN' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png', caption: 'AUTOMATION WORKFLOW' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png', caption: 'AUTOMATION WITH A HUMAN CHECKPOINT' }
           ]
         },
         {
@@ -207,7 +208,7 @@ export const translations = {
             'Active Audience Growth: Proactive strategies to expand your reach and attract new followers, using data and insights to optimize growth sustainably.'
           ],
           images: [
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/GROWTH_1.png', caption: 'SCALING BRAND GROWTH' }
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Growth_Vid.mp4', caption: 'SCALING BRAND GROWTH' }
           ]
         },
         {
@@ -225,7 +226,7 @@ export const translations = {
           ],
           images: [
             { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_1.png', caption: 'PRODUCT FLAT-LAYS' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_2.png', caption: 'PRODUCT IMAGERY' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECCOM_2.png', caption: 'PRODUCT IMAGERY' },
             { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_3.png', caption: 'ECOMM PRODUCT IMAGES' }
           ]
         },
@@ -243,9 +244,9 @@ export const translations = {
             'Member-Only API Access'
           ],
           images: [
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/TOOLKIT_1.png', caption: 'EDITORIAL SHOTS' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/TOOLKIT_2.png', caption: 'CONSISTENT MODELS' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/TOOLKIT_3.png', caption: 'ADD & REMOVE ACCESSORIES' }
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_1.png', caption: 'EDITORIAL SHOTS' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_2_1.png', caption: 'CONSISTENT MODELS' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_3.png', caption: 'ADD & REMOVE ACCESSORIES' }
           ]
         }
       ]
@@ -907,6 +908,7 @@ export const translations = {
       pricing: 'PREÇOS',
       faqs: 'FAQS',
       contact: 'CONTACTO',
+      services: 'SERVIÇOS',
       learnMore: 'SABER MAIS',
       bookCall: 'Marcar Chamada',
       watchShowreel: 'Ver Showreel',
@@ -1321,9 +1323,9 @@ export const translations = {
             'Controlo de Modelos e Iluminação: Precisão absoluta sobre a estética do modelo e a atmosfera de iluminação, mantendo a consistência da marca em todas as sessões e garantindo que cada imagem pareça ter sido capturada no mesmo estúdio de elite.'
           ],
           images: [
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREATIVE_1.png', caption: 'ELEVANDO O E-COMMERCE ATRAVÉS DE DESIGN ARTÍSTICO' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREATIVE_2.png', caption: 'CRIANDO EXPERIÊNCIAS DE MARCA IMERSIVAS' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREATIVE_3.png', caption: 'CRIANDO EXPERIÊNCIAS DE MARCA IMERSIVAS' }
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREAT_1.png', caption: 'ELEVANDO O E-COMMERCE ATRAVÉS DE DESIGN ARTÍSTICO' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Trend.png', caption: 'CRIANDO EXPERIÊNCIAS DE MARCA IMERSIVAS' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Develp.png', caption: 'CRIANDO EXPERIÊNCIAS DE MARCA IMERSIVAS' }
           ]
         },
         {
@@ -1340,9 +1342,9 @@ export const translations = {
             'Produção Autónoma: Sistemas de geração de conteúdo que funcionam sem supervisão constante, permitindo que a sua marca produza ativos de alta qualidade a uma velocidade impossível para uma equipa humana.'
           ],
           images: [
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_1.png', caption: 'LÓGICA DE PUBLICAÇÃO QUE PARECE HUMANA' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_2.png', caption: 'FLUXO DE TRABALHO DE AUTOMAÇÃO' },
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_3.png', caption: 'AUTOMAÇÃO COM UM PONTO DE VERIFICAÇÃO HUMANO' }
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png', caption: 'LÓGICA DE PUBLICAÇÃO QUE PARECE HUMANA' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png', caption: 'FLUXO DE TRABALHO DE AUTOMAÇÃO' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png', caption: 'AUTOMAÇÃO COM UM PONTO DE VERIFICAÇÃO HUMANO' }
           ]
         },
         {
@@ -1359,7 +1361,7 @@ export const translations = {
             'Crescimento Ativo de Audiência: Estratégias proativas para expandir o seu alcance e atrair novos seguidores, utilizando dados e insights para otimizar o crescimento de forma sustentável.'
           ],
           images: [
-            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/GROWTH_1.png', caption: 'ESCALANDO O CRESCIMENTO DA MARCA' }
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Growth_Vid.mp4', caption: 'ESCALANDO O CRESCIMENTO DA MARCA' }
           ]
         },
         {

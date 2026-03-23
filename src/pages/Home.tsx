@@ -10,22 +10,24 @@ import { ShowreelModal } from '../components/ShowreelModal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LazyVideo } from '../components/LazyVideo';
 
-const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isOpen: boolean, onToggle: () => void }) => {
+const ServiceAccordionItem = ({ service, isOpen, onToggle, index }: { service: any, isOpen: boolean, onToggle: () => void, index: number }) => {
   const { t, getLanguagePath } = useLanguage();
   return (
     <div className="border-b border-border overflow-hidden">
-      <button 
-        onClick={onToggle}
-        className="w-full flex items-center justify-between py-12 text-left group"
-      >
-        <div className="flex items-baseline gap-8">
-          <span className="text-red-600 font-display font-bold text-2xl md:text-3xl">{service.id}</span>
-          <h3 className="text-4xl md:text-7xl font-display font-bold tracking-tighter uppercase group-hover:text-red-600 transition-colors">{service.title}</h3>
-        </div>
-        <div className="text-4xl font-light text-red-600">
-          {isOpen ? '×' : '+'}
-        </div>
-      </button>
+      <Link to={getLanguagePath(`/services?service=${index}`)} className="block">
+        <button 
+          onClick={onToggle}
+          className="w-full flex items-center justify-between py-12 text-left group"
+        >
+          <div className="flex items-baseline gap-8">
+            <span className="text-red-600 font-display font-bold text-2xl md:text-3xl">{service.id}</span>
+            <h3 className="text-4xl md:text-7xl font-display font-bold tracking-tighter uppercase group-hover:text-red-600 transition-colors">{service.title}</h3>
+          </div>
+          <div className="text-4xl font-light text-red-600">
+            {isOpen ? '×' : '+'}
+          </div>
+        </button>
+      </Link>
       
       {isOpen && (
         <div className="pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 animate-in fade-in slide-in-from-top-4 duration-500">
@@ -367,6 +369,7 @@ export const Home = () => {
             ].map((service, i) => (
               <ServiceAccordionItem 
                 key={i} 
+                index={i}
                 service={service} 
                 isOpen={openServiceIndex === i} 
                 onToggle={() => setOpenServiceIndex(openServiceIndex === i ? null : i)}

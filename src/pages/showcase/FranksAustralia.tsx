@@ -6,23 +6,24 @@ import { BeforeAfterSlider } from '../../components/BeforeAfterSlider';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { LazyVideo } from '../../components/LazyVideo';
 import { ExternalLink, Heart, MessageCircle, Send, Bookmark } from 'lucide-react';
+import { getAssetUrl } from '../../constants';
 
 export const FranksAustralia = () => {
   const { t, getLanguagePath } = useLanguage();
 
   const instagramPosts = [
     {
-      image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/1_SOCIAL_FRANKS.png",
+      image: getAssetUrl('franks/1_SOCIAL_FRANKS.png'),
       caption: "Sunshine State Of Mind... more",
       likes: "1,234"
     },
     {
-      image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2_SOCIAL_FRANKS.png",
+      image: getAssetUrl('franks/2_SOCIAL_FRANKS.png'),
       caption: "Pattern to Publication... more",
       likes: "856"
     },
     {
-      image: "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/3_SOCIAL_FRANKS.png",
+      image: getAssetUrl('franks/3_SOCIAL_FRANKS.png'),
       caption: "Australian Sun... more",
       likes: "2,102"
     }
@@ -36,7 +37,7 @@ export const FranksAustralia = () => {
           title={t.franks.heroTitle}
           subtitle={t.franks.heroSubtitle}
           description={t.franks.heroDescription}
-          imageSrc="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/FRANKS_HEAD%20(1).jpg"
+          imageSrc={getAssetUrl('franks/FRANKS_HEAD (1).jpg')}
           caseStudyNumber="04"
           sector="Fashion"
           deliverables="Pattern / Publication / Video"
@@ -62,9 +63,9 @@ export const FranksAustralia = () => {
                 </div>
               </div>
               <div className="relative">
-                <BeforeAfterSlider 
-                  beforeImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/SLIDE_1_1.png"
-                  afterImage="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/SLIDE_2_1.png"
+                  <BeforeAfterSlider 
+                  beforeImage={getAssetUrl('franks/SLIDE_1_1.png')}
+                  afterImage={getAssetUrl('franks/SLIDE_2_1.png')}
                   beforeLabel={t.franks.beforeLabel}
                   afterLabel={t.franks.afterLabel}
                   className="aspect-[4/5] shadow-2xl"
@@ -99,13 +100,13 @@ export const FranksAustralia = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
-                <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/Eccom_1.png" className="w-full h-full object-cover rounded-md" alt="E-comm 1" referrerPolicy="no-referrer" />
+                <img src={getAssetUrl('franks/Eccom_1.png')} className="w-full h-full object-cover rounded-md" alt="E-comm 1" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
-                <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/ECOM_FRONT.png" className="w-full h-full object-cover rounded-md" alt="E-comm 2" referrerPolicy="no-referrer" />
+                <img src={getAssetUrl('franks/ECOM_FRONT.png')} className="w-full h-full object-cover rounded-md" alt="E-comm 2" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[9/16] overflow-hidden shadow-lg border border-black/5 rounded-md">
-                <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/ECOM_BACK_1%20(1).png" className="w-full h-full object-cover rounded-md" alt="E-comm 3" referrerPolicy="no-referrer" />
+                <img src={getAssetUrl('franks/ECOM_BACK_1 (1).png')} className="w-full h-full object-cover rounded-md" alt="E-comm 3" referrerPolicy="no-referrer" />
               </div>
             </div>
           </div>
@@ -136,11 +137,11 @@ export const FranksAustralia = () => {
             
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="aspect-[9/16] overflow-hidden shadow-2xl rounded-md">
-                <img src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/2Artboard%202.png" className="w-full h-full object-cover rounded-md" alt="Lifestyle 1" referrerPolicy="no-referrer" />
+                <img src={getAssetUrl('franks/2Artboard 2.png')} className="w-full h-full object-cover rounded-md" alt="Lifestyle 1" referrerPolicy="no-referrer" />
               </div>
               <div className="aspect-[9/16] overflow-hidden shadow-2xl max-w-sm mx-auto md:ml-auto rounded-md">
                 <LazyVideo 
-                  src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/franks/Franks%20Lifestyle.%20Vid%20.mp4" 
+                  src={getAssetUrl('franks/Franks Lifestyle. Vid .mp4')} 
                   className="w-full h-full object-cover rounded-md" 
                   autoPlay 
                   loop 
@@ -177,7 +178,7 @@ export const FranksAustralia = () => {
                     <div className="text-xs font-bold">franksaustralia • <span className="text-primary">{t.common.follow}</span></div>
                   </div>
                   <div className="aspect-square overflow-hidden bg-gray-100">
-                    <img src={post.image} className="w-full h-full object-cover" alt="Instagram post" referrerPolicy="no-referrer" />
+                    <img src={getAssetUrl(post.image)} className="w-full h-full object-cover" alt="Instagram post" referrerPolicy="no-referrer" />
                   </div>
                   <div className="p-4">
                     <div className="flex justify-between mb-3">
