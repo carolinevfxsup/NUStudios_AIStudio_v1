@@ -16,7 +16,7 @@ export const Header = () => {
 
   const navLinks = [
     { href: getLanguagePath('/results'), label: t.nav.showcase },
-    { href: getLanguagePath('/services'), label: t.nav.creativePage },
+    { href: getLanguagePath('/services'), label: t.servicesPage.title },
     { href: getLanguagePath('/automation'), label: t.nav.automation },
     { href: getLanguagePath('/about'), label: t.nav.aboutUs },
     { href: getLanguagePath('/contact'), label: t.nav.contact },

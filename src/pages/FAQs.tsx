@@ -45,7 +45,7 @@ export const FAQs = () => {
   return (
     <div className="min-h-screen bg-white pb-16 pt-24">
       <div className="max-w-3xl mx-auto px-6">
-        <h1 className="text-4xl md:text-5xl font-bold mb-12 uppercase tracking-tighter">
+        <h1 className="text-5xl md:text-7xl font-bold mb-12 uppercase tracking-tighter">
           Common <span className="sans-pink italic">Questions.</span>
         </h1>
 

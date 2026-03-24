@@ -6,6 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import { LazyVideo } from '../components/LazyVideo';
 
 const contactSchema = z.object({
   firstName: z.string().min(2, 'First name is required'),
@@ -236,7 +237,7 @@ export const Contact = () => {
 
         <FadeIn delay={0.3} className="hidden lg:flex items-center justify-center">
           <div className="w-full max-w-md aspect-square overflow-hidden rounded-none border border-black/10">
-            <video 
+            <LazyVideo 
               src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/pnn495jt8srmr0cwyy3a1q4te8_result_.mp4"
               autoPlay
               loop
@@ -256,17 +257,17 @@ export const Contact = () => {
             <div className="space-y-8">
               <div className="flex items-center gap-4">
                 <Laptop className="w-8 h-8 text-red-600" />
-                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home.contact.emailTitle}</h2>
+                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home?.contact?.emailTitle ?? ""}</h2>
               </div>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
                 <div className="space-y-1">
-                  <p className="text-xs font-sans font-bold text-black/40 uppercase tracking-widest">{t.home.contact.emailLabel}</p>
+                  <p className="text-xs font-sans font-bold text-black/40 uppercase tracking-widest">{t.home?.contact?.emailLabel ?? ""}</p>
                   <p className="text-lg font-display font-bold">hello@nustudios.co.uk</p>
                 </div>
               </div>
               <p className="text-xl text-black/70 font-sans leading-relaxed max-w-md">
-                {t.home.contact.emailDesc}
+                {t.home?.contact?.emailDesc ?? ""}
               </p>
             </div>
           </FadeIn>
@@ -276,7 +277,7 @@ export const Contact = () => {
             <div className="space-y-8">
               <div className="flex items-center gap-4">
                 <Phone className="w-8 h-8 text-red-600" />
-                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home.contact.locationsTitle}</h2>
+                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home?.contact?.locationsTitle ?? ""}</h2>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -300,3 +301,5 @@ export const Contact = () => {
     </div>
   );
 };
+
+export default Contact;

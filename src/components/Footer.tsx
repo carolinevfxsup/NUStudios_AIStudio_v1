@@ -5,7 +5,7 @@ import { services } from '../data/services';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Footer = () => {
-  const { getLanguagePath } = useLanguage();
+  const { t, getLanguagePath } = useLanguage();
   
   return (
     <footer className="bg-red-600 text-white py-16 px-8 border-t border-black">
@@ -42,7 +42,7 @@ export const Footer = () => {
               <ul className="space-y-2 text-sm">
                 <li><Link to={getLanguagePath('/')} className="hover:underline">Home</Link></li>
                 <li><Link to={getLanguagePath('/results')} className="hover:underline">Results</Link></li>
-                <li><Link to={getLanguagePath('/services')} className="hover:underline">Services</Link></li>
+                <li><Link to={getLanguagePath('/services')} className="hover:underline">{t.nav.services}</Link></li>
                 <li><Link to={getLanguagePath('/industries')} className="hover:underline">Industries</Link></li>
                 <li><Link to={getLanguagePath('/about')} className="hover:underline">About</Link></li>
                 <li><Link to={getLanguagePath('/contact')} className="hover:underline">Contact</Link></li>

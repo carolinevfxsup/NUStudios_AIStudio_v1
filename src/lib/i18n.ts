@@ -10,6 +10,7 @@ export const translations = {
       pricing: 'PRICING',
       faqs: 'FAQS',
       contact: 'CONTACT',
+      services: 'SERVICES',
       learnMore: 'LEARN MORE',
       bookCall: 'Book a Call',
       watchShowreel: 'Watch Showreel',
@@ -59,7 +60,7 @@ export const translations = {
             title: 'Automation',
             desc: "The connective tissue of the agency. We build autonomous systems that power the entire brand lifecycle. From our bread-and-butter Social Media Automation to bespoke AI-driven marketing systems, we ensure your brand remains 'always-on' while protecting your creative margins.",
             subServices: ['Social Media Automation', 'Workflow Automation', 'AI Pipeline Design', 'Content Iteration Tools', 'API & CRM Integration', 'Autonomous Production'],
-            captions: ['POSTING LOGIC THAT FEELS HUMAN', 'AUTOMATION WORKFLOWS', 'AUTOMATION WITH A HUMAN CHECKPOINT'],
+            captions: ['POSTING LOGIC THAT FEELS HUMAN', 'AUTOMATION WORKFLOW', 'AUTOMATION WITH A HUMAN CHECKPOINT'],
           },
           growth: {
             title: 'Growth',
@@ -134,6 +135,122 @@ export const translations = {
         },
       },
     },
+    servicesPage: {
+      title: 'Services',
+      items: [
+        {
+          id: '01',
+          title: 'Branding',
+          subHeading: 'Strategy & Identity',
+          desc: 'Our Identity Mapping process begins here. Before a single pixel is moved, we define your strategic foundation. We conduct deep Market Research and Brand Strategy to craft a Visual Identity and Messaging framework that anchors your brand soul.',
+          subServices: [
+            'Market Research: Deep dive into competitor landscapes and audience psychology to identify unexplored white spaces where your brand\'s unique identity can achieve absolute market dominance and resonance.',
+            'Brand Strategy & Positioning: Defining your brand\'s North Star, anchoring your unique value proposition in a strategic framework that guides all future creative and commercial decisions.',
+            'Brand Identity Design: Crafting your brand\'s visual soul through sophisticated typography, color theory, and iconography that communicates prestige and ensures instant recognition across all global platforms.',
+            'Strategic Messaging: Developing a high-value tone of voice and narrative framework that speaks directly to your audience\'s aspirations, turning casual observers into a dedicated and loyal community.',
+            'Visual DNA Mapping: A technical and artistic audit of your signature aesthetic to create a permanent style lock, allowing our AI engine to scale your look without drift.',
+            'Market Equity Audits: Measuring the current strength of your brand\'s perceived value against competitors to identify "Scale Leaks" and opportunities for immediate visual and strategic elevation.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/BRAND_1.png', caption: 'Brand Visual DNA Mapping' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Trend.png', caption: 'Forcasting & Research' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Develp.png', caption: 'DEFINING THE STRATEGIC DNA' }
+          ]
+        },
+        {
+          id: '02',
+          title: 'Creative',
+          subHeading: 'The Virtual Studio',
+          desc: 'Premium Art Direction at the speed of AI, powered by our HITL (Human-In-The-Loop) standard. We translate your Branding into high-impact Campaigns, Editorial Shoots, and Social Media content, ensuring consistent artistic prestige across every output.',
+          subServices: [
+            'Art Direction: Cinematic-level artistic curation that elevates your brand above the digital noise, utilizing elite lighting and composition techniques to create visuals that demand attention.',
+            'Campaign Production: From concept to execution, we craft complete visual narratives that tell your brand\'s story, ready for global launch on any platform or medium.',
+            'Graphic Design: High-precision design that communicates authority and sophistication, ensuring every visual element reinforces your market position and unique value proposition.',
+            'Social Media Content: High-performance assets designed for the algorithm and the audience, optimized to maximize engagement and build a loyal community around your brand.',
+            'Location-Based Shoots: Global location synthesis — film anywhere in the world, virtually, without the costs or logistics of a traditional physical production.',
+            'Model & Lighting Control: Absolute precision over model aesthetic and lighting atmosphere, maintaining brand consistency across all shoots and ensuring every image looks like it was captured in the same elite studio.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREAT_1.png', caption: 'ELEVATING E-COMMERCE THROUGH ARTFUL DESIGN' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Trend.png', caption: 'CRAFTING IMMERSIVE BRAND EXPERIENCES' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Develp.png', caption: 'CRAFTING IMMERSIVE BRAND EXPERIENCES' }
+          ]
+        },
+        {
+          id: '03',
+          title: 'Automation',
+          desc: "The connective tissue of the agency. We build autonomous systems that power the entire brand lifecycle. From our bread-and-butter Social Media Automation to bespoke AI-driven marketing systems, we ensure your brand remains 'always-on' while protecting your creative margins.",
+          subServices: [
+            'Social Media Automation: Intelligent posting systems that keep your feed active and engaging 24/7, using posting logic that feels human and ensures absolute consistency.',
+            'Workflow Automation: Elimination of repetitive tasks through intelligent systems, allowing your team to focus on high-value creative work instead of administrative tasks.',
+            'AI Pipeline Design: Architecture of custom AI systems that integrate seamlessly with your existing tools, creating a work ecosystem that scales with your business.',
+            'Content Iteration Tools: Systems that allow for rapid creation and iteration of marketing assets, ensuring your brand always has fresh and relevant content for your audience.',
+            'API & CRM Integration: Direct connection between your sales, marketing, and production systems, ensuring data flows effortlessly and your brand is always in sync.',
+            'Autonomous Production: Content generation systems that run without constant supervision, allowing your brand to produce high-quality assets at a speed impossible for a human team.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png', caption: 'POSTING LOGIC THAT FEELS HUMAN' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png', caption: 'AUTOMATION WORKFLOW' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png', caption: 'AUTOMATION WITH A HUMAN CHECKPOINT' }
+          ]
+        },
+        {
+          id: '04',
+          title: 'Growth',
+          subHeading: 'Blogs & Social Engagement',
+          desc: "Feeding the social media beast so you don't have to. We produce high-equity long-form content and drive active social engagement to ensure your brand is not just seen, but heard. From SEO-optimized blogs to community management, we keep your audience anchored and growing.",
+          subServices: [
+            'SEO Blog Production: Creating long-form content that not only educates your audience but also dominates search engines, attracting qualified traffic and establishing your brand as an authority in the sector.',
+            'Community Management: Active engagement with your audience, responding to comments, managing conversations, and building a loyal community that defends your brand.',
+            'Social Engagement Strategy: Strategic planning of social interactions that maximize reach and engagement, turning followers into fans and customers.',
+            'Newsletter Curation: Creating newsletters that bring real value to your audience, keeping your brand top-of-mind and driving return traffic to your site.',
+            'Narrative Long-form: Telling your brand\'s story through articles, case studies, and deep narratives that create a lasting emotional connection with your audience.',
+            'Active Audience Growth: Proactive strategies to expand your reach and attract new followers, using data and insights to optimize growth sustainably.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Growth_Vid.mp4', caption: 'SCALING BRAND GROWTH' }
+          ]
+        },
+        {
+          id: '05',
+          title: 'Ecomm',
+          subHeading: 'Product & Storefront',
+          desc: 'The Technical Engine. We function as an embedded department for surgical product execution. From high-fidelity Product Flatlays to specialized Pattern Repeats and CADs, we handle the precision required to turn art into shippable product.',
+          subServices: [
+            'Ecomm Product Flatlays: High-fidelity product photography that highlights every detail, designed to convert viewers into buyers through a clean and professional presentation.',
+            'Product shots on models: Showcasing products on models in a realistic and attractive way, allowing customers to visualize the product in use and increase their confidence in the purchase.',
+            'Product Development: Technical support in the development of new products, ensuring design and functionality are aligned with market needs and brand identity.',
+            'Technical CAD Design: Creation of precise technical drawings required for production, ensuring every piece is manufactured with maximum quality and consistency.',
+            'Pattern Repeats: Design of complex and repetitive patterns for textiles and other materials, ensuring the design is visually appealing and technically perfect for production.',
+            'Shopify Storefronts: Design and configuration of Shopify stores that not only look amazing but are also optimized for conversion, ensuring a frictionless shopping experience.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_1.png', caption: 'PRODUCT FLAT-LAYS' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECCOM_2.png', caption: 'PRODUCT IMAGERY' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_3.png', caption: 'ECOMM PRODUCT IMAGES' }
+          ]
+        },
+        {
+          id: '06',
+          title: 'Ai Tool Kit',
+          subHeading: 'Subscription-Based Member Lab',
+          desc: 'Ultimate editorial control for high-growth brands. Our subscription-based Tool Kit provides members with private infrastructure to generate, style, and lock their brand identity with surgical precision and cinematic quality.',
+          subServices: [
+            "Director's Chair: Ultimate GFX/Video Control",
+            'Model Agency: Locked Brand Models',
+            'The Virtual Stylist: AI Outfit Generator',
+            'Garment Fit & Accessory Tools',
+            'Infinite Generation Bandwidth',
+            'Member-Only API Access'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_1.png', caption: 'EDITORIAL SHOTS' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_2_1.png', caption: 'CONSISTENT MODELS' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AI_TOOL_3.png', caption: 'ADD & REMOVE ACCESSORIES' }
+          ]
+        }
+      ]
+    },
     creative: {
       heroTitle: 'AI is the Brush.',
       heroTitleItalic: 'We are the Artist.',
@@ -162,32 +279,88 @@ export const translations = {
       gallerySub: 'A collection of lasting visuals.'
     },
     automations: {
-      heroTitle: 'Scalable Excellence.',
-      heroTitleItalic: 'Autonomous Soul.',
-      heroSub: 'Stop trading quality for volume. Protect your margins with HITL-certified pipelines.',
-      flywheelTitle: 'The Agency Flywheel',
-      flywheelSub: 'Turning elite creative DNA into a high-velocity growth engine.',
-      flywheelStep1: 'Creative DNA',
-      flywheelStep2: 'Automated Production',
-      flywheelStep3: 'Exponential Growth',
-      flywheelDesc: 'Once the DNA is locked, the automation engine takes over the repetitive execution, allowing the brand to be "Always-On".',
-      pipelinesTitle: 'The Pipelines',
-      pipelinesSub: 'Custom workflows designed for surgical precision.',
-      pipeline1Title: 'Content Pipelines',
-      pipeline1Desc: 'From a single hero asset to 1,000+ omnichannel iterations (Social, Display, Print).',
-      pipeline2Title: 'Dynamic Personalization',
-      pipeline2Desc: 'Leveraging live data to adapt messaging in real-time based on audience intent.',
-      pipeline3Title: 'Lead Gen DNA Scanners',
-      pipeline3Desc: 'Automated market audits that find scale leaks for your clients.',
-      pipeline4Title: 'Strategic Reporting',
-      pipeline4Desc: 'Automated dashboards that track "Identity Equity" and ROI.',
-      moatTitle: 'The Technical Moat',
-      moatSub: 'Unify, Automate, and Scale.',
-      moatDesc: 'Real-time catalog syncing, multi-territory localization, and privacy-compliant data adaptation.',
-      roiTitle: 'The Margin Protector',
+      heroTitle: 'Autonomous Systems',
+      heroTitleItalic: 'Volume & Quality',
+      heroSub: 'Autonomous systems that keep your brand voice, protect your margins and give you back your time.',
+      capabilitiesLabel: '01. CAPABILITIES',
+      capabilitiesTitle: 'WHAT WE AUTOMATE',
+      capabilitiesDesc: 'Surgical precision across every touchpoint. We build the connective tissue that powers your brand lifecycle.',
+      pillars: [
+        {
+          title: "AI Chatbots",
+          items: [
+            "Customer support (24/7 replies)",
+            "Sales chatbots (lead conversion)",
+            "Instagram & Messenger automation",
+            "FAQ + product recommendation bots"
+          ]
+        },
+        {
+          title: "Workflow Automation",
+          items: [
+            "Repetitive tasks eliminated",
+            "Internal operations automated",
+            "CRM + API integrations",
+            "Order / client workflows"
+          ]
+        },
+        {
+          title: "Marketing Automation",
+          items: [
+            "Email flows (welcome, abandoned cart)",
+            "Lead nurturing systems",
+            "Campaign automation",
+            "Retention systems"
+          ]
+        },
+        {
+          title: "Content & Social Automation",
+          items: [
+            "Auto-posting systems (like O Palmeiral)",
+            "Content pipelines (Drive → IG/TikTok)",
+            "AI-assisted content generation",
+            "Scheduling & repurposing"
+          ]
+        }
+      ],
+      processLabel: '02. PROCESS',
+      processTitle: 'THE ARCHITECTURE',
+      processDesc: 'A horizontal flow from audit to autonomous scale, connected by a circuit-board-style trace.',
+      processSteps: [
+        { step: "01", title: "Audit", desc: "We map your existing workflows and identify efficiency leaks." },
+        { step: "02", title: "Strategy", desc: "Architecting the custom AI layer tailored to your brand soul." },
+        { step: "03", title: "Build", desc: "Developing and stress-testing your autonomous pipelines." },
+        { step: "04", title: "Scale", desc: "Hands-off growth with 24/7 HITL-certified monitoring." }
+      ],
+      caseStudiesLabel: '03. CASE STUDIES',
+      caseStudiesTitle: 'REAL IMPACT',
+      caseStudiesSub: 'Proven results for established brands',
+      viewAllWork: 'VIEW ALL WORK',
+      palmeiralCardTitle: 'O Palmeiral',
+      palmeiralCardDesc: 'How we turned a static Google Drive into a 24/7 automated marketing engine.',
+      palmeiralStat1Label: 'Manual Posting Time',
+      palmeiralStat2Label: 'Content Cadence',
+      saltLilyCardTitle: 'Salt Lily',
+      saltLilyCardDesc: 'Automating high-intent SEO blogs and Shopify product syncs for revenue growth.',
+      saltLilyStat1Label: 'Organic Traffic',
+      saltLilyStat2Label: 'Autonomous Sync',
+      roiLabel: '04. THE MARGIN PROTECTOR',
+      roiTitle: 'THE MARGIN PROTECTOR',
       roiSub: 'The cost of a junior, the velocity of a global lab.',
       roiStat1: 'Time Recovered',
       roiStat2: 'Margin Protection',
+      benefitsLabel: '05. THE OUTCOME',
+      benefitsTitle: 'SOLVING REAL LIFE PROBLEMS',
+      benefitsList: [
+        "Stop answering the same messages every day",
+        "Never miss a lead again",
+        "Run your business 24/7 without hiring",
+        "Focus on creative work, not admin",
+        "Scale without increasing workload"
+      ],
+      finalCtaTitle: 'READY TO SCALE',
+      finalCtaDesc: 'Stop trading your creative margins for repetitive execution. Build your autonomous moat today.',
+      finalCtaButton: 'Book a Strategy Call',
     },
     dnaScan: {
       title: 'Strategic DNA Scan',
@@ -376,23 +549,6 @@ export const translations = {
       success: 'Thanks! We\'ll be in touch soon.',
       selectPackage: 'Select a package',
     },
-    services: {
-      aiContent: {
-        title: 'Content Creation',
-        description: 'As an AI-first studio, we use cutting-edge tools to generate or enhance creative, but we also work with real footage and product photography when a hybrid approach delivers more impact. Whether fully AI-generated, human-shot, or a blend of both, we design, direct, and deliver scroll-stopping content that feels authentic, premium, and built for scale.',
-      },
-      aiAutomation: {
-        title: 'Automations',
-        description: 'Transform how you operate. Our AI automation solutions free up valuable time and resources, eliminating tedious tasks and empowering your team to achieve more with less effort.',
-        bullets: ['Content Repurposing', 'Content distribution and scheduling', 'AI blogging and SEO automations'],
-        cta: 'View Full List',
-      },
-      vfx: {
-        title: 'Solutions',
-        description: 'Selected VFX work delivered by NU Studios Ltd. partnerships.',
-        bullets: ['VFX consulting & supervision (on set & off)', 'Script breakdowns & budgeting', 'Compositing & shot production', 'Delivering full VFX shots/projects/productions either directly or through industry'],
-      },
-    },
     quinta: {
       heroTitle: 'Quinta do Pinto',
       heroSubtitle: 'AI Content for Wine Brands',
@@ -405,8 +561,8 @@ export const translations = {
       altBefore: 'Before',
       altAfter: 'After',
       altWhyItWorks: 'Why it works',
-      heroQuote: 'The wine is aged in cement vats — a distinctive winemaking choice that speaks to both tradition and innovation. We used this as the conceptual anchor for the entire visual direction.',
-      footerQuote: 'NUstudios didn\'t just give us content; they gave us a content engine. Our brand is now always-on, always-growing, and always-consistent across every platform.',
+      heroQuote: "The speed at which they turn around high-quality creative is unlike anything we've seen in the industry.",
+      footerQuote: "NUstudios didn't just give us content; they gave us a system that scales with our ambition.",
       briefTitle: 'The brief',
       briefText: 'Quinta do Pinto, a distinguished Portuguese winery with deep roots in the Lisbon wine region, approached us ahead of a new wine launch. They needed launch content that would translate the craftsmanship and character of their winemaking into scroll-stopping social visuals — without the time, cost, or complexity of a traditional production shoot. The timeline was tight, the expectations high, and the product deserved more than stock photography.',
       whatWeDidTitle: 'What We Did',
@@ -484,12 +640,12 @@ export const translations = {
       impactPresenceText: 'Always-on social strategy with zero manual content creation required.',
       impactQualityTitle: 'Quality',
       impactQualityText: 'Premium jewelry visuals that outperform traditional photography in engagement.',
-      footerQuote: '“NUstudios didn\'t just give us content; they gave us a content engine. Our brand is now always-on, always-growing, and always-consistent across every platform.”',
+      footerQuote: "NUstudios didn't just give us content; they gave us a system that scales with our ambition.",
       viewWork: 'View the Work',
       bookCall: 'Book a Call',
       brandTitle: 'The Brand We Built This For',
       brandTitleItalic: '',
-      brandText1: 'Salt Lily is a modern waterproof jewellery brand with an established Shopify store.',
+      brandText1: 'Salt Lily is a modern waterproof jewellery brand with an established Shopify store and an active, engaged Instagram presence. Their visual identity is refined, their audience loyal. The challenge wasn\'t creating content—it was producing enough high-quality visuals at scale while maintaining the brand consistency their customers expect.',
       whyHardTitle: 'Why Jewellery is One of the',
       whyHardTitleItalic: 'Hardest Categories for AI',
       whyHardText1: 'Jewellery presents unique challenges like reflections and accurate color representation.',
@@ -571,7 +727,7 @@ export const translations = {
       socialText: 'High-velocity assets designed for Instagram and TikTok, optimized for engagement and reach.',
       socialPower: 'Narrative-driven content that stops the scroll.',
       socialResult: 'Increased engagement through consistent, high-quality storytelling.',
-      footerQuote: 'NUstudios didn\'t just give us content; they gave us a content engine. Our brand is now always-on, always-growing, and always-consistent across every platform.',
+      footerQuote: "NUstudios didn't just give us content; they gave us a system that scales with our ambition.",
     },
     palmeiral: {
       heroTitle: 'O Palmeiral',
@@ -671,6 +827,7 @@ export const translations = {
     },
     common: {
       inquireNow: 'INQUIRE NOW',
+      playWithSound: 'play with sound',
       viewFramework: 'VIEW FRAMEWORK',
       speedSoulScale: 'Speed. Soul. Scale',
       copyright: '© 2024 NUSTUDIOS.',
@@ -751,6 +908,7 @@ export const translations = {
       pricing: 'PREÇOS',
       faqs: 'FAQS',
       contact: 'CONTACTO',
+      services: 'SERVIÇOS',
       learnMore: 'SABER MAIS',
       bookCall: 'Marcar Chamada',
       watchShowreel: 'Ver Showreel',
@@ -765,8 +923,8 @@ export const translations = {
       },
       vision: {
         label: 'IA Como Se Fosse a Sério',
-        title: 'Hora de desencadear um crescimento explosivo.',
-        desc: "Ajudamos empresas independentes, fundadores ambiciosos e visionários locais a parecerem e operarem como líderes globais da indústria. Não fornecemos apenas \"imagens bonitas\"—construímos manualmente sistemas criativos e de automação usando o poder da IA desenhados para um crescimento tangível.",
+        title: 'Produção Digital de Impacto. Performance Explosiva.',
+        desc: "Através de fluxos de trabalho AI-native, eliminamos a fricção logística e elevamos o padrão estético. Menos recursos, maior performance, resultados mensuráveis.",
         cta: 'FAÇA CRESCER O SEU NEGÓCIO',
       },
       results: {
@@ -800,7 +958,7 @@ export const translations = {
             title: 'Automação',
             desc: "O tecido conjuntivo da agência. Construímos sistemas autónomos que alimentam todo o ciclo de vida da marca. Desde a nossa base de Automação de Redes Sociais até sistemas de marketing personalizados baseados em IA, garantimos que a sua marca permanece 'sempre ativa' enquanto protegemos as suas margens criativas.",
             subServices: ['Automação de Redes Sociais', 'Automação de Fluxo de Trabalho', 'Design de Pipeline de IA', 'Ferramentas de Iteração de Conteúdo', 'Integração de API e CRM', 'Produção Autónoma'],
-            captions: ['LÓGICA DE PUBLICAÇÃO QUE PARECE HUMANA', 'FLUXOS DE TRABALHO DE AUTOMAÇÃO', 'AUTOMAÇÃO COM UM PONTO DE CONTROLO HUMANO'],
+            captions: ['LÓGICA DE PUBLICAÇÃO QUE PARECE HUMANA', 'FLUXO DE TRABALHO DE AUTOMAÇÃO', 'AUTOMAÇÃO COM UM PONTO DE CONTROLO HUMANO'],
           },
           growth: {
             title: 'Crescimento',
@@ -903,32 +1061,88 @@ export const translations = {
       gallerySub: 'Uma coleção de visuais duradouros.'
     },
     automations: {
-      heroTitle: 'Excelência Escalável.',
-      heroTitleItalic: 'Alma Autónoma.',
-      heroSub: 'Pare de trocar qualidade por volume. Proteja as suas margens com pipelines certificados por HITL.',
-      flywheelTitle: 'O Flywheel da Agência',
-      flywheelSub: 'Transformando o DNA criativo de elite num motor de crescimento de alta velocidade.',
-      flywheelStep1: 'DNA Criativo',
-      flywheelStep2: 'Produção Automatizada',
-      flywheelStep3: 'Crescimento Exponencial',
-      flywheelDesc: 'Uma vez bloqueado o DNA, o motor de automação assume a execução repetitiva, permitindo que a marca esteja "Sempre Ativa".',
-      pipelinesTitle: 'As Pipelines',
-      pipelinesSub: 'Workflows personalizados desenhados para precisão cirúrgica.',
-      pipeline1Title: 'Pipelines de Conteúdo',
-      pipeline1Desc: 'De um único ativo hero para mais de 1.000 iterações omnicanal (Social, Display, Print).',
-      pipeline2Title: 'Personalização Dinâmica',
-      pipeline2Desc: 'Aproveitando dados em tempo real para adaptar mensagens com base na intenção do público.',
-      pipeline3Title: 'Scanners de DNA de Lead Gen',
-      pipeline3Desc: 'Auditorias de mercado automatizadas que encontram fugas de escala para os seus clientes.',
-      pipeline4Title: 'Relatórios Estratégicos',
-      pipeline4Desc: 'Dashboards automatizados que rastreiam a "Equidade de Identidade" e o ROI.',
-      moatTitle: 'O Fosso Técnico',
-      moatSub: 'Unificar, Automatizar e Escalar.',
-      moatDesc: 'Sincronização de catálogo em tempo real, localização multi-território e adaptação de dados em conformidade com a privacidade.',
-      roiTitle: 'O Protetor de Margem',
+      heroTitle: 'Sistemas Autónomos',
+      heroTitleItalic: 'Volume e Qualidade',
+      heroSub: 'Sistemas autónomos que mantêm a voz da sua marca, protegem as suas margens e devolvem-lhe o seu tempo.',
+      capabilitiesLabel: '01. CAPACIDADES',
+      capabilitiesTitle: 'O QUE AUTOMATIZAMOS',
+      capabilitiesDesc: 'Precisão cirúrgica em cada ponto de contacto. Construímos o tecido conjuntivo que alimenta o ciclo de vida da sua marca.',
+      pillars: [
+        {
+          title: "Chatbots de IA",
+          items: [
+            "Suporte ao cliente (respostas 24/7)",
+            "Chatbots de vendas (conversão de leads)",
+            "Automação de Instagram e Messenger",
+            "Bots de FAQ + recomendação de produtos"
+          ]
+        },
+        {
+          title: "Automação de Workflow",
+          items: [
+            "Tarefas repetitivas eliminadas",
+            "Operações internas automatizadas",
+            "Integrações de CRM + API",
+            "Workflows de pedidos / clientes"
+          ]
+        },
+        {
+          title: "Automação de Marketing",
+          items: [
+            "Fluxos de email (boas-vindas, carrinho abandonado)",
+            "Sistemas de nutrição de leads",
+            "Automação de campanhas",
+            "Sistemas de retenção"
+          ]
+        },
+        {
+          title: "Automação de Conteúdo e Social",
+          items: [
+            "Sistemas de auto-postagem (como O Palmeiral)",
+            "Pipelines de conteúdo (Drive → IG/TikTok)",
+            "Geração de conteúdo assistida por IA",
+            "Agendamento e reaproveitamento"
+          ]
+        }
+      ],
+      processLabel: '02. PROCESSO',
+      processTitle: 'A ARQUITETURA',
+      processDesc: 'Um fluxo horizontal desde a auditoria até à escala autónoma, ligado por um traço estilo placa de circuito.',
+      processSteps: [
+        { step: "01", title: "Auditoria", desc: "Mapeamos os seus workflows existentes e identificamos fugas de eficiência." },
+        { step: "02", title: "Estratégia", desc: "Arquitetando a camada de IA personalizada adaptada à alma da sua marca." },
+        { step: "03", title: "Construção", desc: "Desenvolvendo e testando as suas pipelines autónomas." },
+        { step: "04", title: "Escala", desc: "Crescimento sem intervenção com monitorização certificada por HITL 24/7." }
+      ],
+      caseStudiesLabel: '03. CASOS DE ESTUDO',
+      caseStudiesTitle: 'IMPACTO REAL',
+      caseStudiesSub: 'Resultados comprovados para marcas estabelecidas',
+      viewAllWork: 'VER TODO O TRABALHO',
+      palmeiralCardTitle: 'O Palmeiral',
+      palmeiralCardDesc: 'Como transformámos um Google Drive estático num motor de marketing automatizado 24/7.',
+      palmeiralStat1Label: 'Tempo de Postagem Manual',
+      palmeiralStat2Label: 'Cadência de Conteúdo',
+      saltLilyCardTitle: 'Salt Lily',
+      saltLilyCardDesc: 'Automatizando blogs de SEO de alta intenção e sincronizações de produtos Shopify para crescimento de receita.',
+      saltLilyStat1Label: 'Tráfego Orgânico',
+      saltLilyStat2Label: 'Sincronização Autónoma',
+      roiLabel: '04. O PROTETOR DE MARGEM',
+      roiTitle: 'O PROTETOR DE MARGEM',
       roiSub: 'O custo de um júnior, a velocidade de um laboratório global.',
       roiStat1: 'Tempo Recuperado',
       roiStat2: 'Proteção de Margem',
+      benefitsLabel: '05. O RESULTADO',
+      benefitsTitle: 'RESOLVEMOS PROBLEMAS REAIS',
+      benefitsList: [
+        "Pare de responder às mesmas mensagens todos os dias",
+        "Nunca mais perca uma lead",
+        "Gira o seu negócio 24/7 sem contratar",
+        "Foque-se no trabalho criativo, não no administrativo",
+        "Escale sem aumentar a carga de trabalho"
+      ],
+      finalCtaTitle: 'PRONTO PARA ESCALAR',
+      finalCtaDesc: 'Pare de trocar as suas margens criativas por execução repetitiva. Construa o seu fosso autónomo hoje.',
+      finalCtaButton: 'Marcar Chamada de Estratégia',
     },
     dnaScan: {
       title: 'Scan de DNA Estratégico',
@@ -1073,6 +1287,123 @@ export const translations = {
         description: 'Entregas + orientação; retenção opcional de automação.',
       },
     },
+    servicesPage: {
+      title: 'Serviços',
+      items: [
+        {
+          id: '01',
+          title: 'Branding',
+          subHeading: 'Estratégia e Identidade',
+          desc: "O nosso processo de Mapeamento de Identidade começa aqui. Antes de mover um único pixel, definimos a sua base estratégica. Realizamos uma profunda Pesquisa de Mercado e Estratégia de Marca para criar uma Identidade Visual e um quadro de Mensagens que ancora a alma da sua marca.",
+          subServices: [
+            'Pesquisa de Mercado: Mergulho profundo nos cenários dos concorrentes e na psicologia do público para identificar espaços em branco inexplorados onde a identidade única da sua marca pode alcançar domínio absoluto e ressonância no mercado.',
+            'Estratégia e Posicionamento de Marca: Definindo a Estrela Polar da sua marca, ancorando a sua proposta de valor única num quadro estratégico que guia todas as decisões criativas e comerciais futuras.',
+            'Design de Identidade de Marca: Criando a alma visual da sua marca através de tipografia sofisticada, teoria das cores e iconografia que comunica prestígio e garante reconhecimento instantâneo em todas as plataformas globais.',
+            'Mensagens Estratégicas: Desenvolvendo um tom de voz de alto valor e um quadro narrativo que fala diretamente às aspirações do seu público, transformando observadores casuais numa comunidade dedicada e leal.',
+            'Mapeamento de DNA Visual: Uma auditoria técnica e artística da sua estética de assinatura para criar um bloqueio de estilo permanente, permitindo que o nosso motor de IA escale o seu visual sem desvios.',
+            'Auditorias de Valor de Mercado: Medindo a força atual do valor percebido da sua marca em relação aos concorrentes para identificar "Fugas de Escala" e oportunidades para elevação visual e estratégica imediata.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/BRAND_1.png', caption: 'Mapeamento de DNA Visual da Marca' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Trend.png', caption: 'Previsão e Pesquisa' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Develp.png', caption: 'DEFININDO O DNA ESTRATÉGICO' }
+          ]
+        },
+        {
+          id: '02',
+          title: 'Criativo',
+          subHeading: 'O Estúdio Virtual',
+          desc: 'Direção de Arte Premium à velocidade da IA, alimentada pelo nosso padrão HITL (Human-In-The-Loop). Traduzimos a sua Marca em Campanhas de alto impacto, Sessões Editoriais e Conteúdo para Redes Sociais, garantindo prestígio artístico consistente em cada saída.',
+          subServices: [
+            'Direção de Arte: Curadoria artística de nível cinematográfico que eleva a sua marca acima do ruído digital, utilizando técnicas de iluminação e composição de elite para criar visuais que exigem atenção.',
+            'Produção de Campanhas: Do conceito à execução, criamos narrativas visuais completas que contam a história da sua marca, prontas para lançamento global em qualquer plataforma ou meio.',
+            'Design Gráfico: Design de alta precisão que comunica autoridade e sofisticação, garantindo que cada elemento visual reforce a sua posição de mercado e a sua proposta de valor única.',
+            'Conteúdo para Redes Sociais: Ativos de alto desempenho desenhados para o algoritmo e para o público, otimizados para maximizar o envolvimento e construir uma comunidade leal em torno da sua marca.',
+            'Sessões Baseadas em Localização: Síntese de localização global — filme em qualquer lugar do mundo, virtualmente, sem os custos ou a logística de uma produção física tradicional.',
+            'Controlo de Modelos e Iluminação: Precisão absoluta sobre a estética do modelo e a atmosfera de iluminação, mantendo a consistência da marca em todas as sessões e garantindo que cada imagem pareça ter sido capturada no mesmo estúdio de elite.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/CREAT_1.png', caption: 'ELEVANDO O E-COMMERCE ATRAVÉS DE DESIGN ARTÍSTICO' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Trend.png', caption: 'CRIANDO EXPERIÊNCIAS DE MARCA IMERSIVAS' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Brand_Develp.png', caption: 'CRIANDO EXPERIÊNCIAS DE MARCA IMERSIVAS' }
+          ]
+        },
+        {
+          id: '03',
+          title: 'Automação',
+          subHeading: 'O Volante',
+          desc: "O tecido conjuntivo da agência. Construímos sistemas autónomos que alimentam todo o ciclo de vida da marca. Desde a nossa Automação de Redes Sociais até sistemas de marketing personalizados baseados em IA, garantimos que a sua marca permanece 'sempre ativa' enquanto protegemos as suas margens criativas.",
+          subServices: [
+            'Automação de Redes Sociais: Sistemas de publicação inteligentes que mantêm o seu feed ativo e envolvente 24/7, utilizando lógica de publicação que parece humana e garante consistência absoluta.',
+            'Automação de Fluxo de Trabalho: Eliminação de tarefas repetitivas através de sistemas inteligentes, permitindo que a sua equipa se foque no trabalho criativo de alto valor em vez de tarefas administrativas.',
+            'Desenho de Pipeline de IA: Arquitetura de sistemas de IA personalizados que integram perfeitamente com as suas ferramentas existentes, criando um ecossistema de trabalho que escala com o seu negócio.',
+            'Ferramentas de Iteração de Conteúdo: Sistemas que permitem a criação rápida e a iteração de ativos de marketing, garantindo que a sua marca tenha sempre conteúdo novo e relevante para o seu público.',
+            'Integração de API e CRM: Ligação direta entre os seus sistemas de vendas, marketing e produção, garantindo que os dados fluem sem esforço e que a sua marca está sempre sincronizada.',
+            'Produção Autónoma: Sistemas de geração de conteúdo que funcionam sem supervisão constante, permitindo que a sua marca produza ativos de alta qualidade a uma velocidade impossível para uma equipa humana.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-content.png', caption: 'LÓGICA DE PUBLICAÇÃO QUE PARECE HUMANA' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/AUTO_STACK.png', caption: 'FLUXO DE TRABALHO DE AUTOMAÇÃO' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/palmeiral-growth.png', caption: 'AUTOMAÇÃO COM UM PONTO DE VERIFICAÇÃO HUMANO' }
+          ]
+        },
+        {
+          id: '04',
+          title: 'Crescimento',
+          subHeading: 'Blogs e Envolvimento Social',
+          desc: "Alimentando a besta das redes sociais para que não tenha de o fazer. Produzimos conteúdo de longo formato de alta equidade e impulsionamos o envolvimento social ativo para garantir que a sua marca não seja apenas vista, mas ouvida. Desde blogs otimizados para SEO até à gestão de comunidade, mantemos o seu público ancorado e a crescer.",
+          subServices: [
+            'Produção de Blogs SEO: Criação de conteúdo de longo formato que não só educa o seu público, mas também domina os motores de busca, atraindo tráfego qualificado e estabelecendo a sua marca como autoridade no setor.',
+            'Gestão de Comunidade: Envolvimento ativo com o seu público, respondendo a comentários, gerindo conversas e construindo uma comunidade leal que defende a sua marca.',
+            'Estratégia de Envolvimento Social: Planeamento estratégico de interações sociais que maximizam o alcance e o envolvimento, transformando seguidores em fãs e clientes.',
+            'Curadoria de Newsletter: Criação de newsletters que trazem valor real ao seu público, mantendo a sua marca no topo da mente e impulsionando o tráfego de retorno para o seu site.',
+            'Narrativa de Longo Formato: Contar a história da sua marca através de artigos, estudos de caso e narrativas profundas que criam uma ligação emocional duradoura com o seu público.',
+            'Crescimento Ativo de Audiência: Estratégias proativas para expandir o seu alcance e atrair novos seguidores, utilizando dados e insights para otimizar o crescimento de forma sustentável.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/Growth_Vid.mp4', caption: 'ESCALANDO O CRESCIMENTO DA MARCA' }
+          ]
+        },
+        {
+          id: '05',
+          title: 'E-commerce',
+          subHeading: 'Produto e Montra',
+          desc: 'O Motor Técnico. Funcionamos como um departamento incorporado para execução cirúrgica de produtos. Desde Flatlays de Produto de alta fidelidade a Repetições de Padrão especializadas e CADs, tratamos da precisão necessária para transformar arte em produto comercializável.',
+          subServices: [
+            'Flatlays de Produto Ecomm: Fotografia de produto de alta fidelidade que destaca cada detalhe, desenhada para converter visualizadores em compradores através de uma apresentação limpa e profissional.',
+            'Fotos de Produto em Modelos: Apresentação de produtos em modelos de forma realista e atraente, permitindo que os clientes visualizem o produto em uso e aumentem a sua confiança na compra.',
+            'Desenvolvimento de Produto: Apoio técnico no desenvolvimento de novos produtos, garantindo que o design e a funcionalidade estão alinhados com as necessidades do mercado e a identidade da marca.',
+            'Design CAD Técnico: Criação de desenhos técnicos precisos necessários para a produção, garantindo que cada peça é fabricada com a máxima qualidade e consistência.',
+            'Repetições de Padrão: Design de padrões complexos e repetitivos para têxteis e outros materiais, garantindo que o design é visualmente apelativo e tecnicamente perfeito para produção.',
+            'Montras Shopify: Design e configuração de lojas Shopify que não só parecem incríveis, mas também são otimizadas para conversão, garantindo uma experiência de compra sem fricção.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_1.png', caption: 'FLAT-LAYS DE PRODUTO' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_2.png', caption: 'IMAGEM DE PRODUTO' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/ECOMM_3.png', caption: 'IMAGENS DE PRODUTO ECOMM' }
+          ]
+        },
+        {
+          id: '06',
+          title: 'Ai Tool Kit',
+          subHeading: 'Laboratório de Membros por Subscrição',
+          desc: 'Controlo editorial definitivo para marcas de alto crescimento. O nosso Tool Kit baseado em subscrição fornece aos membros infraestrutura privada para gerar, estilizar e bloquear a identidade da sua marca com precisão cirúrgica e qualidade cinematográfica.',
+          subServices: [
+            "Cadeira do Diretor: Controlo definitivo de GFX/Vídeo, permitindo ajustes precisos e direção artística de alto nível em cada ativo gerado.",
+            'Agência de Modelos: Modelos de marca bloqueados, garantindo consistência absoluta em todas as campanhas e sessões fotográficas.',
+            'O Estilista Virtual: Gerador de outfits de IA que permite criar combinações de moda ilimitadas com estilo e precisão.',
+            'Ferramentas de Ajuste de Vestuário e Acessórios: Ferramentas especializadas para garantir que o vestuário e os acessórios estão perfeitamente ajustados e apresentados.',
+            'Largura de Banda de Geração Infinita: Capacidade de gerar ativos ilimitados, garantindo que nunca lhe falta conteúdo para as suas campanhas ou redes sociais.',
+            'Acesso à API Exclusivo para Membros: Integração direta com o nosso motor de IA, permitindo que a sua equipa técnica construa soluções personalizadas sobre a nossa infraestrutura.'
+          ],
+          images: [
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/TOOLKIT_1.png', caption: 'SESSÕES EDITORIAIS' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/TOOLKIT_2.png', caption: 'MODELOS CONSISTENTES' },
+            { src: 'https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Services/TOOLKIT_3.png', caption: 'ADICIONAR E REMOVER ACESSÓRIOS' }
+          ]
+        }
+      ]
+    },
     icp: {
       title: 'Com Quem Trabalhamos',
       description: 'Pequenas marcas de e-commerce (2–20 pessoas) no Reino Unido/UE/PT/BR. Fundador ou gestor de marketing. Querem conteúdo pronto, vitórias rápidas, preços claros.',
@@ -1117,23 +1448,6 @@ export const translations = {
       success: 'Obrigado! Entraremos em contacto em breve.',
       selectPackage: 'Selecione um pacote',
     },
-    services: {
-      aiContent: {
-        title: 'Criação de Conteúdo',
-        description: 'Como um estúdio focado em IA, usamos ferramentas de ponta para gerar ou melhorar o criativo, mas também trabalhamos com filmagens reais e fotografia de produto quando uma abordagem híbrida entrega mais impacto. Seja totalmente gerado por IA, filmado por humanos ou uma mistura de ambos, desenhamos, dirigimos e entregamos conteúdo que parece autêntico, premium e construído para escalar.',
-      },
-      aiAutomation: {
-        title: 'Automações',
-        description: 'Transforme a forma como opera. As nossas soluções de automação com IA libertam tempo e recursos valiosos, eliminando tarefas tediosas e capacitando a sua equipa a alcançar mais com menos esforço.',
-        bullets: ['Reaproveitamento de Conteúdo', 'Distribuição e agendamento de conteúdo', 'Automações de blogging e SEO com IA'],
-        cta: 'Ver Lista Completa',
-      },
-      vfx: {
-        title: 'Soluções',
-        description: 'Trabalhos de VFX selecionados entregues através de parcerias da NU Studios Ltd.',
-        bullets: ['Consultoria e supervisão de VFX (no set e fora)', 'Análise de guião e orçamentação', 'Composição e produção de planos', 'Entrega de planos/projetos/produções de VFX completos diretamente ou através da indústria'],
-      },
-    },
     quinta: {
       heroTitle: 'Quinta do Pinto',
       heroSubtitle: 'Conteúdo de IA para Marcas de Vinho',
@@ -1146,8 +1460,8 @@ export const translations = {
       altBefore: 'Antes',
       altAfter: 'Depois',
       altWhyItWorks: 'Porque funciona',
-      heroQuote: 'O vinho é envelhecido em cubas de cimento — uma escolha distintiva de vinificação que fala tanto de tradição como de inovação. Usámos isto como a âncora conceptual para toda a direção visual.',
-      footerQuote: 'A NUstudios não nos deu apenas conteúdo; deu-nos um motor de conteúdo. A nossa marca está agora sempre ativa, sempre a crescer e sempre consistente em todas as plataformas.',
+      heroQuote: 'A velocidade com que entregam criativos de alta qualidade é diferente de tudo o que já vimos na indústria.',
+      footerQuote: 'A NUstudios não nos deu apenas conteúdo; deu-nos um sistema que escala com a nossa ambição.',
       briefTitle: 'O brief',
       briefText: 'A Quinta do Pinto, uma prestigiada vinícola portuguesa com raízes profundas na região vinícola de Lisboa, abordou-nos antes de um novo lançamento de vinho. Precisavam de conteúdo de lançamento que traduzisse a mestria e o caráter da sua produção em visuais sociais impactantes — sem o tempo, custo ou complexidade de uma produção tradicional.',
       whatWeDidTitle: 'O Que Fizemos',
@@ -1225,12 +1539,12 @@ export const translations = {
       impactPresenceText: 'Estratégia social sempre ativa com zero criação manual de conteúdo necessária.',
       impactQualityTitle: 'Qualidade',
       impactQualityText: 'Visuais de joalharia premium que superam a fotografia tradicional em envolvimento.',
-      footerQuote: '“A NUstudios não nos deu apenas conteúdo; deu-nos um motor de conteúdo. A nossa marca está agora sempre ativa, sempre a crescer e sempre consistente em todas as plataformas.”',
+      footerQuote: 'A NUstudios não nos deu apenas conteúdo; deu-nos um sistema que escala com a nossa ambição.',
       viewWork: 'Ver o Trabalho',
       bookCall: 'Marcar Chamada',
       brandTitle: 'A Marca Para a Qual',
       brandTitleItalic: 'Construímos Isto',
-      brandText1: 'A Salt Lily é uma marca moderna de joalharia à prova de água com uma loja Shopify estabelecida.',
+      brandText1: 'A Salt Lily é uma marca moderna de joalharia à prova de água com uma loja Shopify estabelecida e uma presença ativa e envolvente no Instagram. A sua identidade visual é refinada, o seu público fiel. O desafio não era criar conteúdo — era produzir visuais de alta qualidade suficientes em escala, mantendo a consistência da marca que os seus clientes esperam.',
       whyHardTitle: 'Porque é que a Joalharia é uma das',
       whyHardTitleItalic: 'Categorias Mais Difíceis para a IA',
       whyHardText1: 'A joalharia apresenta desafios únicos como reflexos e representação precisa de cores.',
@@ -1253,6 +1567,11 @@ export const translations = {
       aiBrainTitleItalic: 'Por Trás da Publicação',
       aiBrainText: 'Construímos um sistema que analisa produtos e publica diariamente no Instagram e TikTok.',
       aiBrainLink: 'Quer ver que outras automações construímos? → O Palmeiral',
+      instagramEngineTitle: 'O Motor do',
+      instagramEngineTitleItalic: 'Instagram',
+      instagramEngineText: 'Construímos um sistema que pega em ativos de produtos brutos e os formata automaticamente para o Instagram, adicionando sobreposições e legendas consistentes com a marca.',
+      instagramEngineLabel1: 'ATIVO BRUTO',
+      instagramEngineLabel2: 'PRONTO PARA O INSTAGRAM',
       howSocialsTitle: 'Como a IA',
       howSocialsTitleItalic: 'Funciona para as Redes Sociais',
       socialSteps: [
@@ -1312,7 +1631,7 @@ export const translations = {
       socialText: 'Ativos de alta velocidade desenhados para Instagram e TikTok, otimizados para envolvimento e alcance.',
       socialPower: 'Conteúdo focado na narrativa que prende a atenção.',
       socialResult: 'Aumento do envolvimento através de storytelling consistente e de alta qualidade.',
-      footerQuote: 'A NUstudios não nos deu apenas conteúdo; deu-nos um motor de conteúdo. A nossa marca está agora sempre ativa, sempre a crescer e sempre consistente em todas as plataformas.',
+      footerQuote: 'A NUstudios não nos deu apenas conteúdo; deu-nos um sistema que escala com a nossa ambição.',
     },
     palmeiral: {
       heroTitle: 'O Palmeiral',
@@ -1412,6 +1731,7 @@ export const translations = {
     },
     common: {
       inquireNow: 'SOLICITAR AGORA',
+      playWithSound: 'reproduzir com som',
       viewFramework: 'VER FRAMEWORK',
       speedSoulScale: 'Velocidade. Alma. Escala',
       copyright: '© 2024 NUSTUDIOS.',

@@ -3,6 +3,7 @@ import { getAssetUrl } from '../constants';
 
 interface ShowcaseHeroProps {
   title: string;
+  mobileTitle?: string;
   subtitle: string;
   description: string;
   imageSrc: string;
@@ -11,10 +12,12 @@ interface ShowcaseHeroProps {
   deliverables: string;
   railText: string;
   imagePosition?: string;
+  titleClassName?: string;
 }
 
 export const ShowcaseHero = ({
   title,
+  mobileTitle,
   subtitle,
   description,
   imageSrc,
@@ -23,6 +26,7 @@ export const ShowcaseHero = ({
   deliverables,
   railText,
   imagePosition = 'center',
+  titleClassName,
 }: ShowcaseHeroProps) => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pt-20 pb-12 md:pb-24">
@@ -49,8 +53,9 @@ export const ShowcaseHero = ({
               <span className="text-primary font-bold tracking-[0.4em] uppercase text-[10px] mb-6 block">
                 Case Study / {caseStudyNumber}
               </span>
-              <h1 className="text-[15vw] md:text-[12vw] font-display font-bold italic text-white leading-[0.85] tracking-tighter mb-8">
-                {title}
+              <h1 className={`font-display font-bold italic text-white leading-[0.85] tracking-tighter mb-8 break-words ${titleClassName || "text-4xl sm:text-5xl md:text-[10vw] lg:text-[12vw]"}`}>
+                <span className={mobileTitle ? 'hidden md:inline' : ''}>{title}</span>
+                {mobileTitle && <span className="md:hidden">{mobileTitle}</span>}
               </h1>
             </div>
             <div className="md:w-1/3 pb-4">
