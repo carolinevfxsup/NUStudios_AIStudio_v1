@@ -104,12 +104,7 @@ export const LazyVideo = ({ src, className, showControls, controlsColor, ...prop
               )}
             </button>
           </div>
-          <div className="absolute bottom-6 left-6 z-10">
-            <p className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-white/80 drop-shadow-md">
-              {t.common.playWithSound}
-            </p>
-          </div>
-        </>
+          </>
       )}
     </div>
   );
