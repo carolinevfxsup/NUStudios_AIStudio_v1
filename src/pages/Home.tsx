@@ -10,11 +10,10 @@ import { ShowreelModal } from '../components/ShowreelModal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LazyVideo } from '../components/LazyVideo';
 
-const ServiceAccordionItem = ({ service, isOpen, onToggle, index }: { service: any, isOpen: boolean, onToggle: () => void, index: number }) => {
+const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isOpen: boolean, onToggle: () => void }) => {
   const { t, getLanguagePath } = useLanguage();
   return (
     <div className="border-b border-border overflow-hidden">
-      <Link to={getLanguagePath(`/services?service=${index}`)} className="block">
         <button 
           onClick={onToggle}
           className="w-full flex items-center justify-between py-12 text-left group"
@@ -27,7 +26,6 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle, index }: { service: a
             {isOpen ? '×' : '+'}
           </div>
         </button>
-      </Link>
       
       {isOpen && (
         <div className="pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 animate-in fade-in slide-in-from-top-4 duration-500">
@@ -40,7 +38,7 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle, index }: { service: a
             </div>
             
             {/* Description + Sub-services */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <div className="grid grid-cols-2 gap-12 mb-16">
               <p className="text-xl md:text-2xl text-text/70 font-sans leading-relaxed">
                 {service.desc}
               </p>
@@ -369,7 +367,6 @@ export const Home = () => {
             ].map((service, i) => (
               <ServiceAccordionItem 
                 key={i} 
-                index={i}
                 service={service} 
                 isOpen={openServiceIndex === i} 
                 onToggle={() => setOpenServiceIndex(openServiceIndex === i ? null : i)}
