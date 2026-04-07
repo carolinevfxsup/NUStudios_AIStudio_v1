@@ -38,7 +38,7 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
             </div>
             
             {/* Description + Sub-services */}
-            <div className="grid grid-cols-2 gap-12 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
               <p className="text-xl md:text-2xl text-text/70 font-sans leading-relaxed">
                 {service.desc}
               </p>
@@ -212,7 +212,7 @@ export const Home = () => {
             </FadeIn>
             <FadeIn delay={0.2}>
               <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter leading-[0.85] mb-12 uppercase mt-12 md:mt-0">
-                {t.home.vision.title}
+                {t.home.vision.title.replace('.', '')}
               </h2>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -555,7 +555,10 @@ export const Home = () => {
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <Laptop className="w-8 h-8 text-red-600" />
-                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home?.contact?.emailTitle ?? ""}</h2>
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">
+                    {t.home?.contact?.emailTitle?.replace('.', '') ?? ""}
+                    <span className="text-red-600">.</span>
+                  </h2>
                 </div>
                 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
@@ -575,7 +578,10 @@ export const Home = () => {
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <Phone className="w-8 h-8 text-red-600" />
-                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">{t.home?.contact?.locationsTitle ?? ""}</h2>
+                  <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">
+                    {t.home?.contact?.locationsTitle?.replace('.', '') ?? ""}
+                    <span className="text-red-600">.</span>
+                  </h2>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

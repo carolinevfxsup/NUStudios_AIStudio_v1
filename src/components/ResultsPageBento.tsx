@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { LazyVideo } from './LazyVideo';
 
 export const ResultsPageBento = () => {
-  const { getLanguagePath } = useLanguage();
+  const { t, getLanguagePath } = useLanguage();
   // Results page theme is light
   const bgColor = 'bg-black/5';
   const textColor = 'text-black';
@@ -65,9 +65,9 @@ export const ResultsPageBento = () => {
       {/* Quote Block 1 (Square) */}
       <div className={`md:col-span-4 p-8 flex flex-col justify-center italic ${bgColor} aspect-square`}>
         <p className={`text-xl font-display font-medium leading-tight mb-6 ${textColor}`}>
-          "NUstudios didn't just give us content; they gave us a system that scales with our ambition."
+          "{t.home.results.quotes[0].quote}"
         </p>
-        <p className="section-label text-red-600">— Sarah J., Brand Director</p>
+        <p className="section-label text-red-600">— {t.home.results.quotes[0].author}</p>
       </div>
 
       {/* Project 4 (Wide) */}
@@ -90,9 +90,9 @@ export const ResultsPageBento = () => {
       {/* Quote Block 2 (Square) */}
       <div className={`md:col-span-4 p-8 flex flex-col justify-center italic ${bgColor}`}>
         <p className={`text-xl font-display font-medium leading-tight mb-6 ${textColor}`}>
-          "The speed at which they turn around high-quality creative is unlike anything we've seen in the industry."
+          "{t.home.results.quotes[1].quote}"
         </p>
-        <p className="section-label text-red-600">— Michael R., CMO</p>
+        <p className="section-label text-red-600">— {t.home.results.quotes[1].author}</p>
       </div>
     </div>
   );

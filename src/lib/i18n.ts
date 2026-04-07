@@ -30,9 +30,12 @@ export const translations = {
         cta: 'GROW YOUR BUSINESS',
       },
       results: {
-        label: 'OUR WORK',
         title: 'RESULTS',
         cta: 'VIEW ALL RESULTS',
+        quotes: [
+          { quote: "NUstudios didn't just give us content; they gave us a system that scales with our ambition.", author: "Sarah J., Brand Director" },
+          { quote: "The speed at which they turn around high-quality creative is unlike anything we've seen in the industry.", author: "Michael R., CMO" }
+        ]
       },
       quote: "Forget the algorithms, the AI hype, and the tech buzzwords. We use the world's most advanced technology to do two very simple, human things: make your brand look beautiful, and give you your weekends back.",
       partners: 'OUR PARTNERS',
@@ -923,14 +926,17 @@ export const translations = {
       },
       vision: {
         label: 'IA Como Se Fosse a Sério',
-        title: 'Produção Digital de Impacto. Performance Explosiva.',
+        title: 'Produção Digital de Impacto Performance Explosiva.',
         desc: "Através de fluxos de trabalho AI-native, eliminamos a fricção logística e elevamos o padrão estético. Menos recursos, maior performance, resultados mensuráveis.",
         cta: 'FAÇA CRESCER O SEU NEGÓCIO',
       },
       results: {
-        label: 'O NOSSO TRABALHO',
         title: 'RESULTADOS',
         cta: 'VER TODOS OS RESULTADOS',
+        quotes: [
+          { quote: "A NUstudios não nos deu apenas conteúdo; deu-nos um sistema que escala com a nossa ambição.", author: "Sarah J., Brand Director" },
+          { quote: "A velocidade com que entregam criativos de alta qualidade é diferente de tudo o que já vimos na indústria.", author: "Michael R., CMO" }
+        ]
       },
       quote: "Esqueça os algoritmos, o hype da IA e as buzzwords tecnológicas. Usamos a tecnologia mais avançada do mundo para fazer duas coisas muito simples e humanas: tornar a sua marca bonita e devolver-lhe os seus fins de semana.",
       partners: 'OS NOSSOS PARCEIROS',
