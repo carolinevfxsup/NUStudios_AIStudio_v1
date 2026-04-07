@@ -212,7 +212,7 @@ export const Home = () => {
             </FadeIn>
             <FadeIn delay={0.2}>
               <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter leading-[0.85] mb-12 uppercase mt-12 md:mt-0">
-                {t.home.vision.title.replace('.', '')}
+                {t.home.vision.title.replace('.', '')}<span className="text-red-600">.</span>
               </h2>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -557,7 +557,7 @@ export const Home = () => {
                   <Laptop className="w-8 h-8 text-red-600" />
                   <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">
                     {t.home?.contact?.emailTitle?.replace('.', '') ?? ""}
-                    <span className="text-red-600">.</span>
+                    <span className="text-red-600 font-sans text-5xl">.</span>
                   </h2>
                 </div>
                 
@@ -580,7 +580,7 @@ export const Home = () => {
                   <Phone className="w-8 h-8 text-red-600" />
                   <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter">
                     {t.home?.contact?.locationsTitle?.replace('.', '') ?? ""}
-                    <span className="text-red-600">.</span>
+                    <span className="text-red-600 font-sans text-5xl">.</span>
                   </h2>
                 </div>
 
