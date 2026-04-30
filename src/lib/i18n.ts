@@ -18,6 +18,7 @@ export const translations = {
       dnaScan: 'DNA SCAN',
       creativePage: 'CREATIVE',
       aboutUs: 'ABOUT US',
+      login: 'LOGIN',
     },
     home: {
       hero: {
@@ -30,6 +31,7 @@ export const translations = {
         cta: 'GROW YOUR BUSINESS',
       },
       results: {
+        label: 'OUR WORK',
         title: 'RESULTS',
         cta: 'VIEW ALL RESULTS',
         quotes: [
@@ -919,6 +921,7 @@ export const translations = {
       dnaScan: 'DNA SCAN',
       creativePage: 'CRIATIVO',
       aboutUs: 'SOBRE NÓS',
+      login: 'LOGIN',
     },
     home: {
       hero: {
@@ -931,6 +934,7 @@ export const translations = {
         cta: 'FAÇA CRESCER O SEU NEGÓCIO',
       },
       results: {
+        label: 'O NOSSO TRABALHO',
         title: 'RESULTADOS',
         cta: 'VER TODOS OS RESULTADOS',
         quotes: [

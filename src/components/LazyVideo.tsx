@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
 import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
 
 interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
   src: string;
@@ -9,7 +8,6 @@ interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
 }
 
 export const LazyVideo = ({ src, className, showControls, controlsColor, ...props }: LazyVideoProps) => {
-  const { t } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isInView, setIsInView] = useState(false);
   const [isMuted, setIsMuted] = useState(props.muted !== false); // Default to muted unless explicitly false

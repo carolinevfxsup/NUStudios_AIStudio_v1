@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
+import { User } from 'lucide-react';
 import { ShowreelModal } from './ShowreelModal';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -72,6 +73,17 @@ export const Header = () => {
               {t.nav.watchShowreel}
             </button>
 
+            {/* Login Icon */}
+            <a 
+              href="https://studio.nustudios.co.uk/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-black hover:text-red-600 transition-colors"
+              aria-label="Login"
+            >
+              <User className="w-5 h-5 md:w-6 md:h-6" />
+            </a>
+
             <button 
               className="flex items-center gap-2 px-2 py-2 transition-colors text-black font-sans font-bold text-[10px] uppercase tracking-widest hover:text-red-600"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -112,9 +124,14 @@ export const Header = () => {
               </nav>
               <div className="lg:col-span-4 flex flex-col justify-between h-full gap-12">
                 <div className="space-y-8">
-                  <Link to={getLanguagePath('/blog')} className="block text-3xl font-display font-bold uppercase tracking-tighter text-text hover:text-red-600 transition-colors">
-                    {t.footer.links.blog}
-                  </Link>
+                  <div className="space-y-8">
+                    <a href="https://studio.nustudios.co.uk/" target="_blank" rel="noopener noreferrer" className="block text-3xl font-display font-bold uppercase tracking-tighter text-text hover:text-red-600 transition-colors">
+                      {t.nav.login}
+                    </a>
+                    <Link to={getLanguagePath('/blog')} className="block text-3xl font-display font-bold uppercase tracking-tighter text-text hover:text-red-600 transition-colors">
+                      {t.footer.links.blog}
+                    </Link>
+                  </div>
                   <div className="h-px w-full bg-border" />
                   <div className="space-y-4">
                     <p className="font-sans text-sm font-bold uppercase tracking-widest text-text/60">Socials</p>
