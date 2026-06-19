@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Phone, FileText, Laptop, Send, Loader2, Check, ExternalLink, ArrowRight } from 'lucide-react';
 import { LogoScroll } from '../components/LogoScroll';
@@ -107,6 +107,31 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
 
 export const Home = () => {
   const { t, getLanguagePath } = useLanguage();
+  const [isMobilePortrait, setIsMobilePortrait] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 767px) and (orientation: portrait)');
+    setIsMobilePortrait(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => {
+      setIsMobilePortrait(e.matches);
+    };
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handler);
+    } else {
+      mediaQuery.addListener(handler);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', handler);
+      } else {
+        mediaQuery.removeListener(handler);
+      }
+    };
+  }, []);
+
   const [url, setUrl] = useState('');
   const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -174,7 +199,11 @@ export const Home = () => {
       <section id="growth" className="relative w-full h-screen flex items-center justify-center overflow-hidden border-b border-border">
         <div className="absolute inset-0 z-0">
           <video 
-            src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Bird_Granade_HD.mp4" 
+            key={isMobilePortrait ? "portrait-916" : "landscape-169"}
+            src={isMobilePortrait 
+              ? "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Header_Website_916.mp4"
+              : "https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/Header_Website(6).mp4"
+            }
             className="w-full h-full object-cover"
             autoPlay 
             loop 

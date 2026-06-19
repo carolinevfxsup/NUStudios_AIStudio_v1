@@ -7,7 +7,7 @@ interface ShowreelModalProps {
   videoUrl?: string;
 }
 
-export const ShowreelModal = ({ isOpen, onClose, videoUrl = "https://www.youtube.com/embed/0ipzZpintNQ?autoplay=1" }: ShowreelModalProps) => {
+export const ShowreelModal = ({ isOpen, onClose, videoUrl = "https://www.youtube.com/embed/jrrKEKi5fBc?autoplay=1" }: ShowreelModalProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
