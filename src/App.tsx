@@ -16,6 +16,7 @@ import { FranksAustralia } from './pages/showcase/FranksAustralia';
 import { QuintaDoPinto } from './pages/showcase/QuintaDoPinto';
 import { OPalmeiral } from './pages/showcase/OPalmeiral';
 import { Onboarding } from './pages/Onboarding';
+import { Nulaabs } from './pages/Nulaabs';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -55,6 +56,8 @@ export default function App() {
               <Route path="/pt/showcase/o-palmeiral" element={<OPalmeiral />} />
               <Route path="/onboarding" element={<Onboarding />} />
               <Route path="/pt/onboarding" element={<Onboarding />} />
+              <Route path="/nulaabs" element={<Nulaabs />} />
+              <Route path="/pt/nulaabs" element={<Nulaabs />} />
             </Routes>
           </main>
           <Footer />

@@ -93,8 +93,8 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
             </div>
 
             <div className="flex justify-end">
-              <Link to={getLanguagePath(service.id === '03' ? '/automation' : '/onboarding')} className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit group">
-                {service.id === '06' ? t.home.services.ctaDemo : t.home.services.cta}
+              <Link to={getLanguagePath(service.id === '03' ? '/automation' : (service.id === '06' ? '/nulaabs' : '/onboarding'))} className="bg-white text-black border border-black px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center gap-3 w-fit group">
+                {t.home.services.cta}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -106,7 +106,7 @@ const ServiceAccordionItem = ({ service, isOpen, onToggle }: { service: any, isO
 };
 
 export const Home = () => {
-  const { t, getLanguagePath } = useLanguage();
+  const { t, getLanguagePath, language } = useLanguage();
   const [isMobilePortrait, setIsMobilePortrait] = useState(false);
 
   useEffect(() => {
@@ -298,13 +298,91 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Section 4: Brands (Logo Scroll) */}
-      <section className="border-b border-border">
-        <div className="px-6 md:px-[120px] mb-2 flex items-end gap-4">
-          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/60">
-            {t.home.partners}
-          </p>
+      {/* NULAABS Banner Section */}
+      <section className="py-32 bg-black text-white border-y border-white/10 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-left mb-16">
+            <FadeIn delay={0.1}>
+              <span className="text-[10px] font-bold text-white/50 tracking-[0.3em] uppercase block mb-3">
+                {language === 'pt' ? 'MOTOR SINTÉTICO' : 'SYNTHETIC STUDIO ENGINE'}
+              </span>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.8] uppercase text-white">
+                NULAABS<span className="text-[#E11D48]">.</span>
+              </h2>
+            </FadeIn>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-1 mb-16">
+            {/* Left Column: Product Synthesis Image */}
+            <FadeIn delay={0.3} className="md:col-span-4">
+              <div className="relative bg-white/5 aspect-square overflow-hidden h-full">
+                <img 
+                  src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NULAABS/item-127-1k.png" 
+                  alt={language === 'pt' ? 'sintese de produto' : 'product synthesis'}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </FadeIn>
+
+            {/* Middle Column: Visual Synthesis Text */}
+            <FadeIn delay={0.4} className="md:col-span-4">
+              <div className="relative bg-white/5 flex flex-col justify-center items-center text-center p-8 aspect-square h-full">
+                <span className="text-[10px] font-sans font-black uppercase tracking-[0.4em] text-[#E11D48] mb-4">
+                  {language === 'pt' ? 'O FLUXO DE CAMPANHA' : 'THE WORKFLOW ENGINE'}
+                </span>
+                <p className="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-white mb-6 leading-tight max-w-sm">
+                  {language === 'pt' 
+                    ? 'DIRIJA A ARTE COMO UM PROFISSIONAL.' 
+                    : 'ART DIRECT LIKE A PRO.'}
+                </p>
+                <p className="text-xs text-white/50 leading-relaxed font-sans font-light max-w-xs">
+                  {language === 'pt'
+                    ? 'O nosso workflow proprietário de estúdio que encapsula produtos de marcas, elenco de modelos e ambientes de luz em editoriais de campanhas prontos para produção, sem pegada física.'
+                    : 'Our proprietary studio workflow sandboxes raw brand products, facial modeling roster, and curated lighting environments into production-ready campaign editorials with zero physical footprint.'}
+                </p>
+              </div>
+            </FadeIn>
+
+            {/* Right Column: Editorial Frame Image */}
+            <FadeIn delay={0.5} className="md:col-span-4">
+              <div className="relative bg-white/5 aspect-square overflow-hidden h-full">
+                <img 
+                  src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NULAABS/lisbon_necklace_social.png" 
+                  alt={language === 'pt' ? 'moldura editorial' : 'editorial frame'} 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Underneath Action Buttons */}
+          <FadeIn delay={0.6}>
+            <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link 
+                to={getLanguagePath('/nulaabs')} 
+                className="w-full sm:w-auto text-center bg-transparent text-white border border-white/20 px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black hover:border-white transition-all inline-block hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] duration-300"
+              >
+                {language === 'pt' ? 'Saber Mais' : 'Learn More'}
+              </Link>
+              <a 
+                href="https://studio.nustudios.co.uk/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-full sm:w-auto text-center bg-white text-black border border-white px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all inline-block hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] duration-300"
+              >
+                {language === 'pt' ? 'Registar' : 'Sign Up'}
+              </a>
+            </div>
+          </FadeIn>
         </div>
+      </section>
+
+      {/* Section 4: Brands (Logo Scroll) */}
+      <section className="bg-black">
         <LogoScroll />
       </section>
 

@@ -5,7 +5,7 @@ export const translations = {
     nav: {
       creative: 'CREATIVE',
       automation: 'AUTOMATION',
-      aiToolkit: 'AI TOOL KIT',
+      aiToolkit: 'NULAABS',
       showcase: 'SHOWCASE',
       pricing: 'PRICING',
       faqs: 'FAQS',
@@ -40,6 +40,40 @@ export const translations = {
         ]
       },
       quote: "Forget the algorithms, the AI hype, and the tech buzzwords. We use the world's most advanced technology to do two very simple, human things: make your brand look beautiful, and give you your weekends back.",
+      nulaabs: {
+        label: 'OUR SYSTEM',
+        title: 'NULAABS',
+        quote: "Forget the algorithms, the AI hype, and the tech buzzword...",
+        steps: [
+          {
+            number: '01',
+            label: 'Concept & Cast',
+            title: '01 / Concept & Cast',
+            desc: "Lock in your brand's visual identity. nulaabs allows you to instantly generate locked-prompt moodboards and cast talent from an internal roster tailored perfectly to your campaign's aesthetic."
+          },
+          {
+            number: '02',
+            label: 'Seamless Product Placement',
+            title: '02 / Seamless Product Placement',
+            desc: "Import your entire physical inventory into your digital workspace. From high-end jewellery to structured apparel, build out custom asset sheets ready to be instantly placed into any editorial environment."
+          },
+          {
+            number: '03',
+            label: 'Infinite Environments',
+            title: '03 / Infinite Environments',
+            desc: "Place your products and models in any corner of the world. Select from our curated preset libraries—ranging from flooded luxury architecture to sun-drenched European courtyards—to establish a cohesive global aesthetic."
+          },
+          {
+            number: '04',
+            label: 'Platform-Ready Output',
+            title: '04 / Platform-Ready Output',
+            desc: "From high-fidelity lifestyle editorials to e-com-ready imagery optimized directly for Shopify. nulaabs outputs stunning, brand-consistent content ready for socials and storefronts alike, bypassing traditional post-production bottlenecks."
+          }
+        ],
+        beforeAfter: 'BEFORE / AFTER',
+        shopifyReady: 'Shopify Ready',
+        dimensions: 'Dimensions: 1080 x 1350px'
+      },
       partners: 'OUR PARTNERS',
       services: {
         label: 'OUR CAPABILITIES',
@@ -82,7 +116,7 @@ export const translations = {
             captions: ['PRODUCT FLAT-LAYS', 'PRODUCT IMAGERY', 'ECOMM PRODUCT IMAGES'],
           },
           aiToolkit: {
-            title: 'Ai Tool Kit',
+            title: 'NULAABS',
             subHeading: 'Subscription-Based Member Lab',
             desc: 'Ultimate editorial control for high-growth brands. Our subscription-based Tool Kit provides members with private infrastructure to generate, style, and lock their brand identity with surgical precision and cinematic quality.',
             subServices: ["Director's Chair: Ultimate GFX/Video Control", 'Model Agency: Locked Brand Models', 'The Virtual Stylist: AI Outfit Generator', 'Garment Fit & Accessory Tools', 'Infinite Generation Bandwidth', 'Member-Only API Access'],
@@ -908,7 +942,7 @@ export const translations = {
     nav: {
       creative: 'CRIATIVO',
       automation: 'AUTOMAÇÃO',
-      aiToolkit: 'AI TOOL KIT',
+      aiToolkit: 'NULAABS',
       showcase: 'SHOWCASE',
       pricing: 'PREÇOS',
       faqs: 'FAQS',
@@ -943,6 +977,40 @@ export const translations = {
         ]
       },
       quote: "Esqueça os algoritmos, o hype da IA e as buzzwords tecnológicas. Usamos a tecnologia mais avançada do mundo para fazer duas coisas muito simples e humanas: tornar a sua marca bonita e devolver-lhe os seus fins de semana.",
+      nulaabs: {
+        label: 'O NOSSO SISTEMA',
+        title: 'NULAABS',
+        quote: "Esqueça os algoritmos, o hype de IA e as palavras do momento tecnológicas...",
+        steps: [
+          {
+            number: '01',
+            label: 'Conceito e Elenco',
+            title: '01 / Conceito e Elenco',
+            desc: "Defina a identidade visual da sua marca. O nulaabs permite-lhe gerar instantaneamente moodboards de prompt bloqueado e selecionar talentos de uma lista interna perfeitamente adaptada à estética da sua campanha."
+          },
+          {
+            number: '02',
+            label: 'Integração de Produto Perfeita',
+            title: '02 / Integração de Produto Perfeita',
+            desc: "Importe todo o seu inventário físico para o seu espaço de trabalho digital. Desde joalharia de alta gama a vestuário estruturado, crie folhas de ativos personalizadas prontas para serem colocadas instantaneamente em qualquer ambiente editorial."
+          },
+          {
+            number: '03',
+            label: 'Ambientes Infinitos',
+            title: '03 / Ambientes Infinitos',
+            desc: "Coloque os seus produtos e modelos em qualquer canto do mundo. Escolha a partir das nossas bibliotecas selecionadas de predefinições — desde arquitetura de luxo inundada a pátios europeus banhados pelo sol — para estabelecer uma estética global coesa."
+          },
+          {
+            number: '04',
+            label: 'Resultados Prontos para Plataforma',
+            title: '04 / Resultados Prontos para Plataforma',
+            desc: "Desde editoriais de lifestyle de alta fidelidade a imagens prontas para comércio eletrónico e otimizadas diretamente para Shopify. O nulaabs produz conteúdo deslumbrante e consistente com a marca, pronto para redes sociais e e-commerce, ultrapassando os gargalos virtuais de pós-produção."
+          }
+        ],
+        beforeAfter: 'ANTES / DEPOIS',
+        shopifyReady: 'Pronto para Shopify',
+        dimensions: 'Dimensões: 1080 x 1350px'
+      },
       partners: 'OS NOSSOS PARCEIROS',
       services: {
         label: 'AS NOSSAS CAPACIDADES',
@@ -985,7 +1053,7 @@ export const translations = {
             captions: ['FLAT-LAYS DE PRODUTO', 'IMAGENS DE PRODUTO', 'IMAGENS DE PRODUTO ECOMM'],
           },
           aiToolkit: {
-            title: 'Kit de Ferramentas IA',
+            title: 'NULAABS',
             subHeading: 'Laboratório de Membros por Subscrição',
             desc: 'Controlo editorial supremo para marcas de alto crescimento. O nosso Kit de Ferramentas baseado em subscrição fornece aos membros infraestrutura privada para gerar, estilizar e fixar a identidade da sua marca com precisão cirúrgica e qualidade cinematográfica.',
             subServices: ['Cadeira do Realizador: Controlo Supremo de GFX/Vídeo', 'Agência de Modelos: Modelos de Marca Fixos', 'O Estilista Virtual: Gerador de Outfits IA', 'Ferramentas de Ajuste de Vestuário e Acessórios', 'Largura de Banda de Geração Infinita', 'Acesso a API Exclusivo para Membros'],

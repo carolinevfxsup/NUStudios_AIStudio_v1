@@ -87,8 +87,13 @@ export const ServiceAccordionItem = ({ service, isOpen, onToggle, index }: Servi
                 </div>
 
                 <div className="flex justify-end">
-                  <Link to={getLanguagePath('/onboarding')} className="bg-red-600 text-white px-8 py-3 font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-red-700 transition-all w-fit inline-block">
-                    {service.title === 'Ai Tool Kit' ? 'Book A Demo' : 'Learn More'}
+                  <Link 
+                    to={getLanguagePath(
+                      service.id === '03' ? '/automation' : (service.id === '06' ? '/nulaabs' : '/onboarding')
+                    )} 
+                    className="bg-red-600 text-white px-8 py-3 font-sans font-bold text-[10px] uppercase tracking-widest hover:bg-red-700 transition-all w-fit inline-block"
+                  >
+                    Learn More
                   </Link>
                 </div>
               </div>
