@@ -317,7 +317,7 @@ export const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-1 mb-16">
             {/* Left Column: Product Synthesis Image */}
             <FadeIn delay={0.3} className="md:col-span-4">
-              <div className="relative bg-white/5 aspect-square overflow-hidden h-full">
+              <div className="relative bg-white/5 aspect-[9/16] overflow-hidden h-full">
                 <img 
                   src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NULAABS/item-127-1k.png" 
                   alt={language === 'pt' ? 'sintese de produto' : 'product synthesis'}
@@ -329,7 +329,7 @@ export const Home = () => {
 
             {/* Middle Column: Visual Synthesis Text */}
             <FadeIn delay={0.4} className="md:col-span-4">
-              <div className="relative bg-white/5 flex flex-col justify-center items-center text-center p-8 aspect-square h-full">
+              <div className="relative bg-white/5 flex flex-col justify-center items-center text-center p-8 aspect-[9/16] h-full">
                 <span className="text-[10px] font-sans font-black uppercase tracking-[0.4em] text-[#E11D48] mb-4">
                   {language === 'pt' ? 'O FLUXO DE CAMPANHA' : 'THE WORKFLOW ENGINE'}
                 </span>
@@ -348,7 +348,7 @@ export const Home = () => {
 
             {/* Right Column: Editorial Frame Image */}
             <FadeIn delay={0.5} className="md:col-span-4">
-              <div className="relative bg-white/5 aspect-square overflow-hidden h-full">
+              <div className="relative bg-white/5 aspect-[9/16] overflow-hidden h-full">
                 <img 
                   src="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NULAABS/lisbon_necklace_social.png" 
                   alt={language === 'pt' ? 'moldura editorial' : 'editorial frame'} 
