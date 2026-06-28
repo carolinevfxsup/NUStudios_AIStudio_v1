@@ -6,7 +6,8 @@ interface ShowcaseHeroProps {
   mobileTitle?: string;
   subtitle: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: string;
+  videoSrc?: string;
   caseStudyNumber: string;
   sector: string;
   deliverables: string;
@@ -20,7 +21,8 @@ export const ShowcaseHero = ({
   mobileTitle,
   subtitle,
   description,
-  imageSrc,
+  imageSrc = '',
+  videoSrc,
   caseStudyNumber,
   sector,
   deliverables,
@@ -31,13 +33,27 @@ export const ShowcaseHero = ({
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pt-20 pb-12 md:pb-24">
       <div className="absolute inset-0 z-0">
-        <img 
-          src={getAssetUrl(imageSrc)} 
-          alt={title} 
-          className="w-full h-full object-cover opacity-40 grayscale rounded-none" 
-          style={{ objectPosition: imagePosition }}
-          referrerPolicy="no-referrer"
-        />
+        {videoSrc ? (
+          <video
+            src={getAssetUrl(videoSrc)}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-35 rounded-none"
+            style={{ objectPosition: imagePosition }}
+          />
+        ) : (
+          imageSrc && (
+            <img 
+              src={getAssetUrl(imageSrc)} 
+              alt={title} 
+              className="w-full h-full object-cover opacity-40 grayscale rounded-none" 
+              style={{ objectPosition: imagePosition }}
+              referrerPolicy="no-referrer"
+            />
+          )
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
       </div>
       

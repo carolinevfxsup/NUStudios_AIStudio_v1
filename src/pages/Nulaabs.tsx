@@ -211,7 +211,7 @@ export const Nulaabs = () => {
           mobileTitle="Nulaabs Sandbox"
           subtitle={t.heroSubtitle}
           description={t.heroDesc}
-          imageSrc={assets.heroModel}
+          videoSrc="https://muncxkojigqqaakscbjs.supabase.co/storage/v1/object/public/Src/assets/NULAABS/header_nulaabs-_v3.mp4"
           caseStudyNumber="06"
           sector="E-Commerce / Fashion"
           deliverables="3D Asset Ingestion / Virtual Casting / Infinite presets"
