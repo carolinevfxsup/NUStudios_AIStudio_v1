@@ -1,10 +1,11 @@
+import { ReactNode } from 'react';
 import { motion } from 'motion/react';
 import { getAssetUrl } from '../constants';
 
 interface ShowcaseHeroProps {
   title: string;
   mobileTitle?: string;
-  subtitle: string;
+  subtitle?: string;
   description: string;
   imageSrc?: string;
   videoSrc?: string;
@@ -14,6 +15,10 @@ interface ShowcaseHeroProps {
   railText: string;
   imagePosition?: string;
   titleClassName?: string;
+  customTitle?: ReactNode;
+  customDescription?: ReactNode;
+  customButtons?: ReactNode;
+  customCaseStudyLabel?: string;
 }
 
 export const ShowcaseHero = ({
@@ -29,6 +34,10 @@ export const ShowcaseHero = ({
   railText,
   imagePosition = 'center',
   titleClassName,
+  customTitle,
+  customDescription,
+  customButtons,
+  customCaseStudyLabel,
 }: ShowcaseHeroProps) => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pt-20 pb-12 md:pb-24">
@@ -66,26 +75,41 @@ export const ShowcaseHero = ({
         >
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div className="max-w-4xl">
-              <span className="text-primary font-bold tracking-[0.4em] uppercase text-[10px] mb-6 block">
-                Case Study / {caseStudyNumber}
+              <span className="text-primary font-bold tracking-[0.4em] uppercase text-[10px] mb-6 block text-[#DC2626]">
+                {customCaseStudyLabel || `Case Study / ${caseStudyNumber}`}
               </span>
-              <h1 className={`font-display font-bold italic text-white leading-[0.85] tracking-tighter mb-8 break-words ${titleClassName || "text-4xl sm:text-5xl md:text-[10vw] lg:text-[12vw]"}`}>
-                <span className={mobileTitle ? 'hidden md:inline' : ''}>{title}</span>
-                {mobileTitle && <span className="md:hidden">{mobileTitle}</span>}
-              </h1>
+              {customTitle ? (
+                customTitle
+              ) : (
+                <h1 className={`font-display font-bold italic text-white leading-[0.85] tracking-tighter mb-8 break-words ${titleClassName || "text-4xl sm:text-5xl md:text-[10vw] lg:text-[12vw]"}`}>
+                  <span className={mobileTitle ? 'hidden md:inline' : ''}>{title}</span>
+                  {mobileTitle && <span className="md:hidden">{mobileTitle}</span>}
+                </h1>
+              )}
             </div>
-            <div className="md:w-1/3 pb-4">
-              <p className="text-white/60 text-sm md:text-base font-medium leading-relaxed uppercase tracking-widest">
-                {subtitle}
-              </p>
-            </div>
+            {subtitle && (
+              <div className="md:w-1/3 pb-4">
+                <p className="text-white/60 text-sm md:text-base font-medium leading-relaxed uppercase tracking-widest">
+                  {subtitle}
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col md:flex-row gap-12 items-start border-t border-white/10 pt-12">
             <div className="md:w-1/2">
-              <p className="text-xl md:text-2xl text-white font-sans italic leading-relaxed">
-                {description}
-              </p>
+              {customDescription ? (
+                customDescription
+              ) : (
+                <p className="text-xl md:text-2xl text-white font-sans italic leading-relaxed">
+                  {description}
+                </p>
+              )}
+              {customButtons && (
+                <div className="mt-8">
+                  {customButtons}
+                </div>
+              )}
             </div>
             <div className="md:w-1/2 flex justify-end">
               <div className="flex gap-8">

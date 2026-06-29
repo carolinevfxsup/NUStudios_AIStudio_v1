@@ -75,7 +75,7 @@ export const Header = () => {
 
             {/* Login Icon */}
             <a 
-              href="https://studio.nustudios.co.uk/" 
+              href="https://nulaabs.com/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-black hover:text-red-600 transition-colors"
@@ -125,7 +125,7 @@ export const Header = () => {
               <div className="lg:col-span-4 flex flex-col justify-between h-full gap-12">
                 <div className="space-y-8">
                   <div className="space-y-8">
-                    <a href="https://studio.nustudios.co.uk/" target="_blank" rel="noopener noreferrer" className="block text-3xl font-display font-bold uppercase tracking-tighter text-text hover:text-red-600 transition-colors">
+                    <a href="https://nulaabs.com/" target="_blank" rel="noopener noreferrer" className="block text-3xl font-display font-bold uppercase tracking-tighter text-text hover:text-red-600 transition-colors">
                       {t.nav.login}
                     </a>
                     <Link to={getLanguagePath('/blog')} className="block text-3xl font-display font-bold uppercase tracking-tighter text-text hover:text-red-600 transition-colors">

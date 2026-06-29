@@ -265,8 +265,8 @@ export const Pricing = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     className="flex flex-col items-center justify-center py-20 text-center space-y-6"
                   >
-                    <div className="w-20 h-20 rounded-none bg-[#E11D48]/10 flex items-center justify-center">
-                      <Check className="w-10 h-10 text-[#E11D48]" />
+                    <div className="w-20 h-20 rounded-none bg-[#DC2626]/10 flex items-center justify-center">
+                      <Check className="w-10 h-10 text-[#DC2626]" />
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-3xl font-display font-bold uppercase tracking-tighter text-white">Thank You<span className="text-red-600">.</span></h3>

@@ -214,8 +214,8 @@ export const Contact = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex flex-col items-start justify-center py-12 text-left space-y-6"
                 >
-                  <div className="w-20 h-20 rounded-none bg-[#E11D48]/10 flex items-center justify-center">
-                    <Check className="w-10 h-10 text-[#E11D48]" />
+                  <div className="w-20 h-20 rounded-none bg-[#DC2626]/10 flex items-center justify-center">
+                    <Check className="w-10 h-10 text-[#DC2626]" />
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-3xl font-display font-bold uppercase tracking-tighter">{t.home.contact.form.success.title}<span className="text-red-600">.</span></h3>

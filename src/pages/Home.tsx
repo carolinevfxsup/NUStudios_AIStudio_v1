@@ -309,7 +309,7 @@ export const Home = () => {
             </FadeIn>
             <FadeIn delay={0.2}>
               <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.8] uppercase text-white">
-                NULAABS<span className="text-[#E11D48]">.</span>
+                NULAABS<span className="text-[#DC2626]">.</span>
               </h2>
             </FadeIn>
           </div>
@@ -330,7 +330,7 @@ export const Home = () => {
             {/* Middle Column: Visual Synthesis Text */}
             <FadeIn delay={0.4} className="md:col-span-4">
               <div className="relative bg-white/5 flex flex-col justify-center items-center text-center p-8 aspect-[9/16] h-full">
-                <span className="text-[10px] font-sans font-black uppercase tracking-[0.4em] text-[#E11D48] mb-4">
+                <span className="text-[10px] font-sans font-black uppercase tracking-[0.4em] text-[#DC2626] mb-4">
                   {language === 'pt' ? 'O FLUXO DE CAMPANHA' : 'THE WORKFLOW ENGINE'}
                 </span>
                 <p className="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-white mb-6 leading-tight max-w-sm">
@@ -369,7 +369,7 @@ export const Home = () => {
                 {language === 'pt' ? 'Saber Mais' : 'Learn More'}
               </Link>
               <a 
-                href="https://studio.nustudios.co.uk/" 
+                href="https://nulaabs.com/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-full sm:w-auto text-center bg-white text-black border border-white px-10 py-5 font-sans font-bold text-xs uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all inline-block hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] duration-300"
@@ -861,8 +861,8 @@ export const Home = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       className="flex flex-col items-center justify-center py-20 text-center space-y-6"
                     >
-                      <div className="w-20 h-20 rounded-none bg-[#E11D48]/10 flex items-center justify-center">
-                        <Check className="w-10 h-10 text-[#E11D48]" />
+                      <div className="w-20 h-20 rounded-none bg-[#DC2626]/10 flex items-center justify-center">
+                        <Check className="w-10 h-10 text-[#DC2626]" />
                       </div>
                       <div className="space-y-2">
                         <h3 className="text-3xl font-display font-bold uppercase tracking-tighter text-white">{t.home.contact.form.success.title}<span className="text-red-600">.</span></h3>
